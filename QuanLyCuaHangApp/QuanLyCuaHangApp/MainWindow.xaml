@@ -16,8 +16,21 @@
         <TextBox x:Name="passwordTxtBox"  Margin="442,220,9,169" Background="White" Width="250" Height="30" BorderBrush="Black"></TextBox>
         <PasswordBox x:Name="passBox" Margin="442,220,9,169" Background="White" Width="250" Height="30" BorderBrush="Black" PasswordChar="*">
         </PasswordBox>
-        <Button Width="200" Height="30" Margin="442,270,58,119" Background="Red" Content="LOGIN" FontSize="20" FontWeight="Bold" FontFamily="Cooper Black" Foreground="White"/>
-        <TextBlock Width="460" HorizontalAlignment="Left" Background="Red"></TextBlock>
+        <Button Width="200" Height="30" Margin="442,270,58,119" Content="LOGIN" FontSize="20" FontWeight="Bold" FontFamily="Cooper Black" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF8000FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock Width="460" HorizontalAlignment="Left">
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF6B00EC" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Background></TextBlock>
         <TextBlock Width="300" Height="100" Margin="86,59,506,360" FontSize="40" Text="WELCOME TO ABC STORE" FontFamily="Stencil" Foreground="White" TextWrapping="WrapWithOverflow"></TextBlock>
         <Image Source="D:\lol\aaa.png" Stretch="Uniform" Width="400" Height="280" Margin="-400,129,10,10">
         </Image>
