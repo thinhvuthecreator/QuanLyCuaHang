@@ -1,0 +1,14 @@
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\AddStaffWPF.exe.config
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\AddStaffWPF.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\AddStaffWPF.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\MainWindow.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\App.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF_MarkupCompile.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF_MarkupCompile.lref
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\MainWindow.baml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.g.resources
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.Properties.Resources.resources
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.csproj.GenerateResource.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.csproj.CoreCompileInputs.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.pdb
