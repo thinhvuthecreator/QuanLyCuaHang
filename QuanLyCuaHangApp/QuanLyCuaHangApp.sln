@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL_LAYER", "DAL_LAYER", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignUpWPF", "SignUpWPF\SignUpWPF.csproj", "{1509CF4D-5735-4C3A-AA43-DADE65FA2DC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductWPF", "ProductWPF\ProductWPF.csproj", "{4CC36C07-ABE2-4DA8-A89F-13E70F4B68A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddProductWPF", "ProductWPF\AddProductWPF.csproj", "{4CC36C07-ABE2-4DA8-A89F-13E70F4B68A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
