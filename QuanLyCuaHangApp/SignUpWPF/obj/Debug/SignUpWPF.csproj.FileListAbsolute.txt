@@ -1,0 +1,15 @@
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\bin\Debug\SignUpWPF.exe.config
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\bin\Debug\SignUpWPF.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\bin\Debug\SignUpWPF.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\SignUpWPF.csproj.AssemblyReference.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\MainWindow.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\App.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\SignUpWPF_MarkupCompile.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\SignUpWPF_MarkupCompile.lref
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\MainWindow.baml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\SignUpWPF.g.resources
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\SignUpWPF.Properties.Resources.resources
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\SignUpWPF.csproj.GenerateResource.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\SignUpWPF.csproj.CoreCompileInputs.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\SignUpWPF.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\SignUpWPF.pdb
