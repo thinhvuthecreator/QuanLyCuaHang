@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL_LAYER", "DAL_LAYER", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignUpWPF", "SignUpWPF\SignUpWPF.csproj", "{1509CF4D-5735-4C3A-AA43-DADE65FA2DC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductWPF", "ProductWPF\ProductWPF.csproj", "{4CC36C07-ABE2-4DA8-A89F-13E70F4B68A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1509CF4D-5735-4C3A-AA43-DADE65FA2DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1509CF4D-5735-4C3A-AA43-DADE65FA2DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1509CF4D-5735-4C3A-AA43-DADE65FA2DC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CC36C07-ABE2-4DA8-A89F-13E70F4B68A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CC36C07-ABE2-4DA8-A89F-13E70F4B68A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CC36C07-ABE2-4DA8-A89F-13E70F4B68A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CC36C07-ABE2-4DA8-A89F-13E70F4B68A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1CE3AE36-34CF-4C3B-A7DF-5F8BCBBF4993} = {5421FE37-B3A0-412C-AC92-08BB2E24CB26}
 		{1509CF4D-5735-4C3A-AA43-DADE65FA2DC6} = {5421FE37-B3A0-412C-AC92-08BB2E24CB26}
+		{4CC36C07-ABE2-4DA8-A89F-13E70F4B68A9} = {5421FE37-B3A0-412C-AC92-08BB2E24CB26}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0EAE3512-F0FC-4F30-B7A4-081DC411BF58}
