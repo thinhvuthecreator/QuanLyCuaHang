@@ -35,9 +35,9 @@
         <Image Source="D:\lol\aaa.png" Stretch="Uniform" Width="400" Height="280" Margin="42,164,452,77">
         </Image>
 
-        <Image Source="D:\lol\user.png" Stretch="Fill" Width="22" Height="22" Margin="486,223,378,268" >
+        <Image Source="D:\lol\user.png" Stretch="Fill" Width="22" Height="22" Margin="449,150,320,200">
         </Image>
-        <Image Source="D:\lol\pass.png" Stretch="Fill" Width="22" Height="22" Margin="486,271,378,220">
+        <Image Source="D:\lol\pass.png" Stretch="Fill" Width="22" Height="22" Margin="449,252,320,200">
         </Image>
 
 
