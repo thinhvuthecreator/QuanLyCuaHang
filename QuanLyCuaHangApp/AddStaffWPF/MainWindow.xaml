@@ -16,23 +16,20 @@
 
 
 
-        <Grid HorizontalAlignment="Right">
+        <Grid HorizontalAlignment="Right" >
             <TextBox x:Name="maNVTxtbox" Width="80" Height="30" Margin="276,70,238.54,369">
             </TextBox>
             <TextBox x:Name="tenNVTxtbox" Width="280" Height="30" Margin="276,124,38.54,315">
             </TextBox>
-            <TextBox x:Name="loaiSPTxtbox" Width="280" Height="30" Margin="276,180,38.54,259">
+            <TextBox x:Name="sdtNVTxtbox" Width="280" Height="30" Margin="276,180,38.54,259">
             </TextBox>
-            <TextBox x:Name="giaTxtbox" Width="200" Height="30" Margin="276,234,118.54,205">
-            </TextBox>
-            <TextBox x:Name="soluongTxtbox" Width="150" Height="30" Margin="276,284,168.54,155">
+            <TextBox x:Name="luongTxtbox" Width="200" Height="30" Margin="276,234,118.54,205">
             </TextBox>
 
             <TextBlock Width="200" Height="25" Margin="210,-350,50,0" Foreground="White" FontSize="15" Text="Mã nhân viên"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-240,50,0" Foreground="White" FontSize="15" Text="Tên nhân viên"></TextBlock>
-            <TextBlock Width="200" Height="25" Margin="210,-130,50,0" Foreground="White" FontSize="15" Text="Loại sản phẩm"></TextBlock>
-            <TextBlock Width="200" Height="25" Margin="210,-20,50,0" Foreground="White" FontSize="15" Text="Giá sản phẩm"></TextBlock>
-            <TextBlock Width="200" Height="25" Margin="210,80,50,0" Foreground="White" FontSize="15" Text="Số lượng sản phẩm"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,-130,50,0" Foreground="White" FontSize="15" Text="Số điện thoại nhân viên"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,-20,50,0" Foreground="White" FontSize="15" Text="Lương nhân viên"></TextBlock>
             <Button x:Name="themspBtn" Width="100" Height="30" Content="Thêm sản phẩm" FontWeight="Bold" Foreground="White" Margin="110,250,50,0" BorderBrush="Black">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
