@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Security;
+using Microsoft.Win32;
 
 namespace AddStaffWPF
 {
@@ -26,6 +27,25 @@ namespace AddStaffWPF
             InitializeComponent();
         }
 
-      
+        private void addImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog loadImage = new OpenFileDialog();
+            if(loadImage.ShowDialog() == true)
+            {
+                Uri fileUri = new Uri(loadImage.FileName);
+                loadimageImage.Source = new BitmapImage(fileUri);
+
+            }
+        }
+
+        private void huyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void themNVBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

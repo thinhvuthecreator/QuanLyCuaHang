@@ -30,7 +30,7 @@
             <TextBlock Width="200" Height="25" Margin="210,-240,50,0" Foreground="White" FontSize="15" Text="Tên nhân viên"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-130,50,0" Foreground="White" FontSize="15" Text="Số điện thoại nhân viên"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-20,50,0" Foreground="White" FontSize="15" Text="Lương nhân viên"></TextBlock>
-            <Button x:Name="themNVBtn" Width="100" Height="30" Content="Thêm nhân viên" FontWeight="Bold" Foreground="White" Margin="110,250,50,0" BorderBrush="Black">
+            <Button x:Name="themNVBtn" Width="100" Height="30" Content="Thêm nhân viên" FontWeight="Bold" Foreground="White" Margin="110,250,50,0" BorderBrush="Black" Click="themNVBtn_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -38,7 +38,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="huyBtn" Width="100" Height="30" Content="Hủy" FontWeight="Bold" Foreground="White" Margin="420,250,50,0" BorderBrush="Black">
+            <Button x:Name="huyBtn" Width="100" Height="30" Content="Hủy" FontWeight="Bold" Foreground="White" Margin="420,250,50,0" BorderBrush="Black" Click="huyBtn_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -50,9 +50,9 @@
 
         </Grid>
 
-        <Image Width="300" Height="280" Margin="-280,-90,50,0" Source="D:\lol\imageDefault.jpg" Stretch="Fill" >
+        <Image x:Name="loadimageImage" Width="300" Height="280" Margin="-280,-90,50,0" Source="D:\lol\imageDefault.jpg" Stretch="Fill" >
         </Image>
-        <Button x:Name="addImageBtn" Width="130" Height="30" Margin="-450,245,50,0" BorderBrush="Black" Content="Thêm hình ảnh" FontSize="14" FontWeight="Bold" Foreground="White">
+        <Button x:Name="addImageBtn" Width="130" Height="30" Margin="-450,245,50,0" BorderBrush="Black" Content="Thêm hình ảnh" FontSize="14" FontWeight="Bold" Foreground="White" Click="addImageBtn_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>

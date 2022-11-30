@@ -10,6 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DTO_LAYER", "DTO_LAYER", "{0C4AEFE7-539F-43FE-86E0-E11C239C408D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL_LAYER", "DAL_LAYER", "{870FBCE1-8CDA-4602-A943-D9B5DCA896CD}"
+	ProjectSection(SolutionItems) = preProject
+		SQL_Connection.cs = SQL_Connection.cs
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignUpWPF", "SignUpWPF\SignUpWPF.csproj", "{1509CF4D-5735-4C3A-AA43-DADE65FA2DC6}"
 EndProject
