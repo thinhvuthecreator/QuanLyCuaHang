@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignInWPF", "QuanLyCuaHangApp\SignInWPF.csproj", "{1CE3AE36-34CF-4C3B-A7DF-5F8BCBBF4993}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GUI", "GUI", "{5421FE37-B3A0-412C-AC92-08BB2E24CB26}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{5421FE37-B3A0-412C-AC92-08BB2E24CB26}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignUpWPF", "SignUpWPF\SignUpWPF.csproj", "{1509CF4D-5735-4C3A-AA43-DADE65FA2DC6}"
 EndProject
@@ -16,6 +16,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "addHoaDonWPF", "addHoaDonWPF\addHoaDonWPF.csproj", "{44105335-68FE-4AF4-A21C-AB3CE0C73E17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quanlynhanvienWPF", "quanlynhanvienWPF\quanlynhanvienWPF.csproj", "{1BD02AA9-125D-4B0A-81D8-C23679A82F6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewsModel", "ViewsModel", "{5994875D-5729-41C8-86D9-DFD8F9FAFAB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{C7968396-DA39-4F0E-9E94-B0758165BFF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
