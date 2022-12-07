@@ -17,6 +17,13 @@
 
 
         <Grid HorizontalAlignment="Right" >
+            <ComboBox x:Name="genderCombobox" Width="60" Height="30" Margin="100,-299,-260,0">
+                <ComboBoxItem x:Name="namItem"> Nam </ComboBoxItem>
+                <ComboBoxItem x:Name="nuItem"> Nữ </ComboBoxItem>
+            </ComboBox>
+
+
+            
             <TextBox x:Name="maNVTxtbox" Width="80" Height="30" Margin="276,70,238.54,369">
             </TextBox>
             <TextBox x:Name="tenNVTxtbox" Width="280" Height="30" Margin="276,124,38.54,315">
@@ -30,6 +37,7 @@
             <TextBlock Width="200" Height="25" Margin="210,-240,50,0" Foreground="White" FontSize="15" Text="Tên nhân viên"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-130,50,0" Foreground="White" FontSize="15" Text="Số điện thoại nhân viên"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-20,50,0" Foreground="White" FontSize="15" Text="Lương nhân viên"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,93,50,0" Foreground="White" FontSize="15" Text="Ngày sinh nhân viên"></TextBlock>
             <Button x:Name="themNVBtn" Width="100" Height="30" Content="Thêm nhân viên" FontWeight="Bold" Foreground="White" Margin="110,250,50,0" BorderBrush="Black" Click="themNVBtn_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -46,7 +54,8 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-
+            <DatePicker x:Name="ngsinhNVDatePicker" Width="200" Margin="255,290,100,100">
+            </DatePicker>
 
         </Grid>
 
