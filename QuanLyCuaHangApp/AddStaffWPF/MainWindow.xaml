@@ -15,7 +15,7 @@
     <Grid>
 
 
-
+        <TextBlock Width="200" Height="25" Margin="649,-350,50,0" Foreground="White" FontSize="15" Text="Giới tính"></TextBlock>
         <Grid HorizontalAlignment="Right" >
             <ComboBox x:Name="genderCombobox" Width="60" Height="30" Margin="100,-299,-260,0">
                 <ComboBoxItem x:Name="namItem"> Nam </ComboBoxItem>
@@ -34,6 +34,7 @@
             </TextBox>
 
             <TextBlock Width="200" Height="25" Margin="210,-350,50,0" Foreground="White" FontSize="15" Text="Mã nhân viên"></TextBlock>
+           
             <TextBlock Width="200" Height="25" Margin="210,-240,50,0" Foreground="White" FontSize="15" Text="Tên nhân viên"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-130,50,0" Foreground="White" FontSize="15" Text="Số điện thoại nhân viên"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-20,50,0" Foreground="White" FontSize="15" Text="Lương nhân viên"></TextBlock>
