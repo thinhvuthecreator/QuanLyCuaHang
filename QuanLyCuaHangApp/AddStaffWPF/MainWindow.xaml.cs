@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Security;
 using Microsoft.Win32;
+using Models;
 
 namespace AddStaffWPF
 {

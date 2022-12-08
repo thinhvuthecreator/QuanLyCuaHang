@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewsModel", "ViewsModel", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{C7968396-DA39-4F0E-9E94-B0758165BFF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhanVien_Model", "NhanVien_Model\NhanVien_Model.csproj", "{6716402C-37D2-4F19-A39F-E0F8148818A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "NhanVien_Model\Models.csproj", "{6716402C-37D2-4F19-A39F-E0F8148818A0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL_Connection", "SQL_Connection\SQL_Connection.csproj", "{15379EDE-436B-49B5-B560-33EEE3DAD98E}"
 EndProject

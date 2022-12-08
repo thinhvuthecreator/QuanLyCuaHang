@@ -55,7 +55,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <DatePicker x:Name="ngsinhNVDatePicker" Width="200" Margin="255,290,100,100">
+            <DatePicker x:Name="ngsinhNVDatePicker" Width="200" Height="26" Margin="255,240,100,100">
             </DatePicker>
 
         </Grid>
