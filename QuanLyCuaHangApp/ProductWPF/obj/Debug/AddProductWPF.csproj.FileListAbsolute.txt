@@ -13,3 +13,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\obj\De
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\obj\Debug\AddProductWPF.csproj.CoreCompileInputs.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\obj\Debug\ProductWPF.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\obj\Debug\ProductWPF.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\bin\Debug\NhanVien_Model.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\bin\Debug\NhanVien_Model.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\obj\Debug\AddProductWPF.csproj.CopyComplete
