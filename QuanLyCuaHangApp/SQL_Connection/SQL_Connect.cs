@@ -8,6 +8,6 @@ namespace SQL_Connection
 {
     public class SQL_Connect
     {
-
+        
     }
 }

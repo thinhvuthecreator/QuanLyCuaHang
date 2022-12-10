@@ -95,9 +95,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NhanVien_Model\Models.csproj">
+    <ProjectReference Include="..\NhanVien_Model\DTO_Models.csproj">
       <Project>{6716402c-37d2-4f19-a39f-e0f8148818a0}</Project>
-      <Name>Models</Name>
+      <Name>DTO_Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

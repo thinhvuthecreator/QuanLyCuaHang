@@ -12,11 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.IO;
 using Microsoft.Win32;
 using Models;
-
-namespace ProductWPF
+namespace AddKhachHangWPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -28,48 +26,45 @@ namespace ProductWPF
             InitializeComponent();
         }
 
-
         #region methods
-
-        void ganGiaTriSP(SanPham sp)
+        void ganDuLieuKH(KhachHang kh)
         {
-            int maSP;
-            decimal giaSP;
-            int soLuong;
-            sp.MaSP = int.TryParse(maSPTxtbox.Text,out maSP) == true ? maSP : -1;
-            sp.TenSP = tenSPTxtbox.Text;
-            sp.GiaSP = decimal.TryParse(giaTxtbox.Text, out giaSP) == true ? giaSP : -1;
-            sp.NgThemSp = DateTime.Parse(ngThemspDatePicker.Text);
-            sp.SoLuongSP = int.TryParse(soluongTxtbox.Text, out soLuong) == true ? soLuong : -1;
-
+            int maKH, sdtKH, doanhSoKH;
+            kh.MaKH = int.TryParse(maKHTxtbox.Text, out maKH) == true ? maKH : -1;
+            kh.TenKH = tenKHTxtbox.Text;
+            kh.SdtKH = int.TryParse(sdtKHTxtbox.Text, out sdtKH) == true ? sdtKH : -1;
+            kh.NgSinhKH = DateTime.Parse(ngsinhKHDatePicker.Text);
+            kh.DoanhSoKH = int.TryParse(doanhSoKHTxtbox.Text, out doanhSoKH) == true ? doanhSoKH : -1;
+            kh.GioiTinhKH = genderCombobox.SelectedValue.ToString();
         }
+
+
 
         #endregion
 
         #region events
         private void addImageBtn_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog loadImage = new OpenFileDialog();
-            if (loadImage.ShowDialog() == true)
+            OpenFileDialog loadKHImage = new OpenFileDialog();
+
+            if(loadKHImage.ShowDialog() == true)
             {
-                Uri fileUri = new Uri(loadImage.FileName);
-                ProductImage.Source = new BitmapImage(fileUri);
-
+                Uri imageUri = new Uri(loadKHImage.FileName);
+                loadimageImage.Source = new BitmapImage(imageUri);
             }
-
+           
         }
         private void huyBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-        private void themspBtn_Click(object sender, RoutedEventArgs e)
+        private void themNVBtn_Click(object sender, RoutedEventArgs e)
         {
-            SanPham sp = new SanPham();
-            ganGiaTriSP(sp);
+            KhachHang kh = new KhachHang();
+            ganDuLieuKH(kh);
         }
 
         #endregion
-
 
     }
 }
