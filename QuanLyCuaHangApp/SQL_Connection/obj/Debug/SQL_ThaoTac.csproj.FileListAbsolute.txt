@@ -1,0 +1,9 @@
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\bin\Debug\SQL_Connection.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\bin\Debug\SQL_Connection.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\bin\Debug\NhanVien_Model.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\bin\Debug\NhanVien_Model.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\obj\Debug\SQL_ThaoTac.csproj.AssemblyReference.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\obj\Debug\SQL_ThaoTac.csproj.CoreCompileInputs.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\obj\Debug\SQL_ThaoTac.csproj.CopyComplete
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\obj\Debug\SQL_Connection.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\obj\Debug\SQL_Connection.pdb

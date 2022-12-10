@@ -4,7 +4,7 @@ namespace Models
 {
     public class NhanVien
     {
-        private string maNV, tenNV, gioiTinh;
+        private string maNV, tenNV, gioiTinh,fileAnh;
         private int sdtNV, luongNV;
         private DateTime ngSinhNV;
 
@@ -15,6 +15,6 @@ namespace Models
         public int SdtNV { get => sdtNV; set => sdtNV = value; }
         public int LuongNV { get => luongNV; set => luongNV = value; }
         public DateTime NgSinhNV { get => ngSinhNV; set => ngSinhNV = value; }
-
+        public string FileAnh { get => fileAnh; set => fileAnh = value; }
     }
 }

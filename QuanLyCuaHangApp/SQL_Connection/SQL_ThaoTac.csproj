@@ -41,8 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NhanVien_DAL.cs" />
     <Compile Include="SQL_Connect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NhanVien_Model\DTO_Models.csproj">
+      <Project>{6716402c-37d2-4f19-a39f-e0f8148818a0}</Project>
+      <Name>DTO_Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

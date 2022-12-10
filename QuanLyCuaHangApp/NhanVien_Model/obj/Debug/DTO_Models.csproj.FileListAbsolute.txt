@@ -1,0 +1,6 @@
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\NhanVien_Model\bin\Debug\NhanVien_Model.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\NhanVien_Model\bin\Debug\NhanVien_Model.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\NhanVien_Model\obj\Debug\DTO_Models.csproj.AssemblyReference.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\NhanVien_Model\obj\Debug\DTO_Models.csproj.CoreCompileInputs.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\NhanVien_Model\obj\Debug\NhanVien_Model.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\NhanVien_Model\obj\Debug\NhanVien_Model.pdb

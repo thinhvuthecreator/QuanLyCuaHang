@@ -16,3 +16,5 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\D
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\NhanVien_Model.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\NhanVien_Model.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.csproj.CopyComplete
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\SQL_Connection.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\SQL_Connection.pdb

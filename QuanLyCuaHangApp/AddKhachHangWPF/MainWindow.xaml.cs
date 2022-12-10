@@ -37,7 +37,11 @@ namespace AddKhachHangWPF
             kh.DoanhSoKH = int.TryParse(doanhSoKHTxtbox.Text, out doanhSoKH) == true ? doanhSoKH : -1;
             kh.GioiTinhKH = genderCombobox.SelectedValue.ToString();
         }
+        bool themVaoDatabase(KhachHang kh)
+        {
 
+            return false;
+        }
 
 
         #endregion
@@ -62,6 +66,7 @@ namespace AddKhachHangWPF
         {
             KhachHang kh = new KhachHang();
             ganDuLieuKH(kh);
+            themVaoDatabase(kh);
         }
 
         #endregion

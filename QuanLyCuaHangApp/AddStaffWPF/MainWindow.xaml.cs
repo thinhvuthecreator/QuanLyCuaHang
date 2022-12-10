@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Security;
 using Microsoft.Win32;
 using Models;
+using SQL_Connection;
 
 namespace AddStaffWPF
 {
@@ -32,10 +33,15 @@ namespace AddStaffWPF
 
         void ganGiaTriNhanVien(NhanVien nv)
         {
+            #region xuLyChuoiCombobox
+            string[] chuoi = genderCombobox.SelectedValue.ToString().Split();
+            string gioiTinh = chuoi[1];
+            #endregion
+
             int sdt, luong;
-            nv.MaNV = maNVTxtbox.Text;
+          
             nv.TenNV = tenNVTxtbox.Text;
-            nv.GioiTinh = genderCombobox.SelectedValue.ToString();
+            nv.GioiTinh = gioiTinh;
             nv.SdtNV = int.TryParse(sdtNVTxtbox.Text,out sdt) == true ? sdt : 0;
             nv.NgSinhNV = DateTime.Parse(ngsinhNVDatePicker.Text);
             nv.LuongNV = int.TryParse(luongTxtbox.Text, out luong) == true ? luong : 0;
@@ -56,6 +62,11 @@ namespace AddStaffWPF
                 loadimageImage.Source = new BitmapImage(fileUri);
 
             }
+
+            string sourceAnh = loadImage.FileName;
+            string sourceAnhApp = "..//..//..//Hinh anh//Nhan vien//" + System.IO.Path.GetFileName(loadImage.FileName);
+            System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+
         }
 
         private void huyBtn_Click(object sender, RoutedEventArgs e)
@@ -66,9 +77,18 @@ namespace AddStaffWPF
         private void themNVBtn_Click(object sender, RoutedEventArgs e)
         {
             NhanVien nv = new NhanVien();
-            ganGiaTriNhanVien(nv);   //tao mot nv se mang gia tri add vao
-            // add du lieu xuong database thông qua lớp sql_connection trong viewsmodel
-
+            ganGiaTriNhanVien(nv);      
+            if(NhanVien_DAL.themNhanVien(nv))
+            {
+                MessageBox.Show("thêm thành công !");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("thêm thất bại !");
+                
+            }
+            
            
         }
         #endregion
