@@ -13,6 +13,8 @@ namespace SQL_Connection
 
        static public DataTable loadDuLieuNV()
         {
+            
+           
             string getNVQuerry = "EXEC NhanVienSelect";            // lấy dữ liệu tất cả nhân viên
             DataTable getNhanVien = new DataTable();
             getNhanVien = SQL_Connect.Instance.ExecuteSQL(getNVQuerry);

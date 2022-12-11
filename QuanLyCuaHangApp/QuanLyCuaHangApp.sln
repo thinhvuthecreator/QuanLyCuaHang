@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignInWPF", "QuanLyCuaHangApp\SignInWPF.csproj", "{1CE3AE36-34CF-4C3B-A7DF-5F8BCBBF4993}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GUI", "GUI", "{5421FE37-B3A0-412C-AC92-08BB2E24CB26}"
-	ProjectSection(SolutionItems) = preProject
-		Hinh anh\ResourceAppImage\imageDefault.jpg = Hinh anh\ResourceAppImage\imageDefault.jpg
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignUpWPF", "SignUpWPF\SignUpWPF.csproj", "{1509CF4D-5735-4C3A-AA43-DADE65FA2DC6}"
 EndProject

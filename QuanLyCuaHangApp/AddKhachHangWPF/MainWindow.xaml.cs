@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 using Models;
+using SQL_Connection;
 namespace AddKhachHangWPF
 {
     /// <summary>
@@ -29,19 +30,19 @@ namespace AddKhachHangWPF
         #region methods
         void ganDuLieuKH(KhachHang kh)
         {
-            int maKH, sdtKH, doanhSoKH;
-            kh.MaKH = int.TryParse(maKHTxtbox.Text, out maKH) == true ? maKH : -1;
+            #region xuLyChuoi
+            string[] chuoi = genderCombobox.SelectedValue.ToString().Split();
+            string cmbValue = chuoi[1];
+            #endregion
+            int sdtKH, doanhSoKH;
+  
             kh.TenKH = tenKHTxtbox.Text;
             kh.SdtKH = int.TryParse(sdtKHTxtbox.Text, out sdtKH) == true ? sdtKH : -1;
             kh.NgSinhKH = DateTime.Parse(ngsinhKHDatePicker.Text);
             kh.DoanhSoKH = int.TryParse(doanhSoKHTxtbox.Text, out doanhSoKH) == true ? doanhSoKH : -1;
-            kh.GioiTinhKH = genderCombobox.SelectedValue.ToString();
+            kh.GioiTinhKH = cmbValue;
         }
-        bool themVaoDatabase(KhachHang kh)
-        {
-
-            return false;
-        }
+       
 
 
         #endregion
@@ -55,6 +56,9 @@ namespace AddKhachHangWPF
             {
                 Uri imageUri = new Uri(loadKHImage.FileName);
                 loadimageImage.Source = new BitmapImage(imageUri);
+                string sourceAnh = loadKHImage.FileName;
+                string sourceAnhApp = "..//..//..//Hinh anh//Khach hang//" + System.IO.Path.GetFileName(loadKHImage.FileName);
+                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
             }
            
         }
@@ -66,7 +70,17 @@ namespace AddKhachHangWPF
         {
             KhachHang kh = new KhachHang();
             ganDuLieuKH(kh);
-            themVaoDatabase(kh);
+            if(KhachHang_DAL.themKhachHang(kh))
+            {
+                MessageBox.Show("Thêm thành công !");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("thêm thất bại !");
+            }
+
+
         }
 
         #endregion

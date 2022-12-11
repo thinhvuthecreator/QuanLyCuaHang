@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KhachHang_DAL.cs" />
     <Compile Include="NhanVien_DAL.cs" />
     <Compile Include="SQL_Connect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

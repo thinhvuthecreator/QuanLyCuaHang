@@ -99,6 +99,10 @@
       <Project>{6716402c-37d2-4f19-a39f-e0f8148818a0}</Project>
       <Name>DTO_Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SQL_Connection\SQL_ThaoTac.csproj">
+      <Project>{15379ede-436b-49b5-b560-33eee3dad98e}</Project>
+      <Name>SQL_ThaoTac</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
