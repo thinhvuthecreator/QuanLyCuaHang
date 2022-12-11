@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
 using Models;
+using SQL_Connection;
 
 namespace ProductWPF
 {
@@ -54,8 +55,12 @@ namespace ProductWPF
             {
                 Uri fileUri = new Uri(loadImage.FileName);
                 ProductImage.Source = new BitmapImage(fileUri);
-
+                string sourceAnh = loadImage.FileName;
+                string sourceAnhApp = "..//..//..//Hinh anh//Nhan vien//" + System.IO.Path.GetFileName(loadImage.FileName);
+                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
             }
+
+
 
         }
         private void huyBtn_Click(object sender, RoutedEventArgs e)
@@ -66,6 +71,14 @@ namespace ProductWPF
         {
             SanPham sp = new SanPham();
             ganGiaTriSP(sp);
+            if(SanPham_DAL.themSanPham(sp))
+            {
+                MessageBox.Show("Thêm thành công !");
+            }
+            else
+            {
+                MessageBox.Show("Thêm thất bại !");
+            }
         }
 
         #endregion

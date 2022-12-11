@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KhachHang_DAL.cs" />
+    <Compile Include="LoaiSanPham_DAL.cs" />
     <Compile Include="NhanVien_DAL.cs" />
+    <Compile Include="SanPham_DAL.cs" />
     <Compile Include="SQL_Connect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

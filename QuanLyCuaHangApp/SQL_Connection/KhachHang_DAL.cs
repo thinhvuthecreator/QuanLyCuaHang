@@ -51,7 +51,7 @@ namespace SQL_Connection
                 }
                 else
                 {
-                    string updateKHQuerry = "UPDATE KHACHHANG SET TENNV = N'" + kh.TenKH + "', NGSINHNV = '" + kh.NgSinhKH.ToShortDateString() + "', GIOITINHNV = N'" + kh.GioiTinhKH + "',SDTNV = " + kh.SdtKH + ",DOANHSO =" + kh.DoanhSoKH + " WHERE MANV = N'" + kh.MaKH + "'";
+                    string updateKHQuerry = "UPDATE KHACHHANG SET TENSP = N'" + kh.TenKH + "', NGSINH = '" + kh.NgSinhKH.ToShortDateString() + "', GIOITINH = N'" + kh.GioiTinhKH + "',SDTKH = " + kh.SdtKH + ",DOANHSO =" + kh.DoanhSoKH + " WHERE MAKH = N'" + kh.MaKH + "'";
                     SQL_Connect.Instance.ExecuteNONquerrySQL(updateKHQuerry);
                 }
             }
