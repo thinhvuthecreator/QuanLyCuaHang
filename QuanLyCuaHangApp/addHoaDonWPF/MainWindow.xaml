@@ -5,8 +5,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:addHoaDonWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="500">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF481FFF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel Margin="0,30,0,0" HorizontalAlignment="Left" Width="300">
+            <StackPanel.Resources>
+                <Style TargetType="ComboBox">
+                    <Setter Property="HorizontalAlignment" Value="Left" ></Setter>
+                    <Setter Property="Margin" Value="20,0,0,0"></Setter>
+                </Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="HorizontalAlignment" Value="Left" ></Setter>
+                    <Setter Property="Margin" Value="20,0,0,0"></Setter>
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="HorizontalAlignment" Value="Left" ></Setter>
+                    <Setter Property="Margin" Value="20,0,0,0"></Setter>
+                </Style>
+                <Style TargetType="DatePicker">
+                    <Setter Property="HorizontalAlignment" Value="Left" ></Setter>
+                    <Setter Property="Margin" Value="20,0,0,0"></Setter>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Text="Nhân viên lập hóa đơn"  Foreground="White"></TextBlock>
+            <ComboBox x:Name="nhanVienCombobox" Width="215">
+            </ComboBox>
+            <TextBlock Text="Khách mua hàng" Foreground="White"></TextBlock>
+            <ComboBox x:Name="khachhangCombobox" Width="215" >
+            </ComboBox>
+            <TextBlock Text="Ngày lập hóa đơn" Foreground="White"></TextBlock>
+            <DatePicker x:Name="ngHoaDonDatePicker" Width="215">
+            </DatePicker>
+            <TextBlock Text="Sản phẩm trong giỏ hàng" Foreground="White"></TextBlock>
+            <DockPanel >
+                <ComboBox x:Name ="sanPhamCombobox" Width="150"></ComboBox>
+                <Button x:Name="addBtn" Width="30" Margin="4,0,0,0" Content="+" Foreground="White" >
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF1C106A" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="reduceBtn" Width="30" Margin="0,0,62,0" Content="-" Foreground="White">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF1C106A" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </DockPanel>
+            <TextBlock Text="Tổng trị giá hóa đơn"  Foreground="White"></TextBlock>
+            <TextBox  x:Name ="tongtriGiaTextbox" Width="215"></TextBox>
+        </StackPanel>
+        <StackPanel Margin="0,27,20,0">
+            <TextBlock Text="Danh sách sản phẩm" HorizontalAlignment="Right" Foreground="White" Margin="0,0,89,0"></TextBlock>
+            <ListView  Width="200" Height="350" HorizontalAlignment="Right" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Sản phẩm" Width="50" ></GridViewColumn>
+                        <GridViewColumn Header="Số lượng" Width="50" ></GridViewColumn>
+                        <GridViewColumn Header="Giá" Width="120" ></GridViewColumn>
+                    </GridView>
+               </ListView.View>
+            </ListView>
+
+        </StackPanel>
+        <Image Source="D:\lol\shop.png" Margin="25,0,0,30" Width="200" Height="200" VerticalAlignment="Bottom" HorizontalAlignment="Left" Stretch="Uniform"></Image>
+
     </Grid>
 </Window>

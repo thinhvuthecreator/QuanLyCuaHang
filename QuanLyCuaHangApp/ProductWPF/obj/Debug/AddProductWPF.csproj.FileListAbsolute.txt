@@ -18,5 +18,3 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\bin\De
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\obj\Debug\AddProductWPF.csproj.CopyComplete
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\bin\Debug\SQL_Connection.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\bin\Debug\SQL_Connection.pdb
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\obj\Debug\AddLoaiSP.g.cs
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\obj\Debug\AddLoaiSP.baml

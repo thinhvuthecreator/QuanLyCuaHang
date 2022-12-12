@@ -17,20 +17,18 @@
 
 
 
-        <Grid HorizontalAlignment="Right" Height="500">
+        <Grid HorizontalAlignment="Right" Height="500" Margin="0,-60,0,0">
 
-            <TextBox x:Name="maSPTxtbox" Width="80" Height="30" Margin="276,-15,238.54,369">
-            </TextBox>
+            
             <TextBox x:Name="tenSPTxtbox" Width="280" Height="30" Margin="276,49,38.54,315">
             </TextBox>
-            <TextBox x:Name="loaiSPTxtbox" Width="280" Height="30" Margin="276,115,38.54,259">
-            </TextBox>
+            <ComboBox x:Name="loaiSPcombobox" Width="280" Height="30" Margin="278,163,37,307">
+            </ComboBox>
             <TextBox x:Name="giaTxtbox" Width="200" Height="30" Margin="276,182,118.54,205">
             </TextBox>
             <TextBox x:Name="soluongTxtbox" Width="150" Height="30" Margin="276,254,168.54,155">
             </TextBox>
 
-            <TextBlock Width="200" Height="25" Margin="210,-440,50,0" Foreground="White" FontSize="15" Text="Mã sản phẩm"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-320,50,0" Foreground="White" FontSize="15" Text="Tên sản phẩm"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-199,50,0" Foreground="White" FontSize="15" Text="Loại sản phẩm"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-76,50,0" Foreground="White" FontSize="15" Text="Giá sản phẩm"></TextBlock>
