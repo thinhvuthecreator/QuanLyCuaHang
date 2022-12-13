@@ -303,10 +303,9 @@ namespace addHoaDonWPF
             this.Close();
         }
 
-
-
         private void addHDBtn_Click(object sender, RoutedEventArgs e)
         {
+            #region themHoaDon
             decimal tongTriGia = 0;
 
             for (int i = 0; i < dsSPListview.Items.Count; i++)
@@ -328,8 +327,32 @@ namespace addHoaDonWPF
             {
                 MessageBox.Show("Thêm thất bại !");
             }
+            #endregion
+
+            #region themCTHD
+            string layMAHD = "SELECT MAX(SOHD) FROM HOADON";
+            DataTable data = SQL_Connect.Instance.ExecuteSQL(layMAHD);
+            DataRow dataRow = data.Rows[0];
+            string SoHD = dataRow[0].ToString();   //lấy dc số hóa đơn, --> còn mã sản phẩm, số lượng
+            for(int i = 0; i < dsSPListview.Items.Count; i++)
+            {
+                
+                danhSachSanPham sp = (danhSachSanPham)dsSPListview.Items[i];
+                string layMASP = "SELECT MASP FROM SANPHAM WHERE TENSP = N'" + sp.tenSP + "'";
+                DataTable dataMASP = SQL_Connect.Instance.ExecuteSQL(layMASP);
+                DataRow dataRowMASP = dataMASP.Rows[0];
+                string MaSP = dataRowMASP[0].ToString();
+                CTHD cthd = new CTHD();
+                cthd.MaHD = int.Parse(SoHD);
+                cthd.MaSP = int.Parse(MaSP);
+                cthd.SoLuong = sp.SoLuong;
+                CTHD_DAL.themCTHD(cthd);
+            }
+            #endregion
 
         }
+
+
 
 
         #endregion
