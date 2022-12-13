@@ -23,8 +23,9 @@ namespace addHoaDonWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        int soLuong = 0;
+        
         List<danhSachSanPham> dsSP = new List<danhSachSanPham>();
+       
         public MainWindow()
         {
             InitializeComponent();
@@ -91,6 +92,54 @@ namespace addHoaDonWPF
 
         #region methods
 
+        int upDateGia(string tenSP, int sl) // đã OK !! chỉ cần update lại
+        {
+            int soLanXuatHien = 0;
+            int ketQua = 0;
+            for(int i =0; i < dsSPListview.Items.Count;i++) 
+            {
+                danhSachSanPham sp = (danhSachSanPham)dsSPListview.Items[i];
+                if(tenSP == sp.tenSP)
+                {
+                   soLanXuatHien++;
+                    if (soLanXuatHien <= 1)
+                    {
+                        dsSPListview.Items.Remove(dsSPListview.Items[i]);
+                        sp.SoLuong += sl;
+                        dsSPListview.Items.Add(sp);
+                        ketQua = sp.SoLuong;
+                    }
+                    else
+                    {
+
+                    }
+                }
+                 
+            }
+
+            return ketQua;
+        }
+                   
+                    
+        bool checkTrung(string tenSP)            
+        {
+            if (dsSPListview.Items.IsEmpty)
+            {
+                return false;
+            }
+            else
+            {
+                for (int i = 0; i < dsSPListview.Items.Count; i++)           
+                {
+                    danhSachSanPham data = (danhSachSanPham)dsSPListview.Items[i];                   
+                    if (tenSP == data.tenSP)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
         void loadNVcmb()
         {
             List<NhanVienAo> listNV = new List<NhanVienAo>();
@@ -155,28 +204,31 @@ namespace addHoaDonWPF
             return int.Parse(khachhangCombobox.SelectedValue.ToString());
         }
         #endregion
-        void themSPListView()
+            
+        void themSPListView() // thêm 1 sản phẩm vào danh sách sản phẩm
+
         {
-            decimal Gia = 0;
-
-            soLuong++;
-
-            DataTable data = SQL_Connect.Instance.ExecuteSQL("SELECT GIA FROM SANPHAM WHERE MASP = " + sanPhamCombobox.SelectedValue);
-
-            foreach (DataRow dt in data.Rows)
-            {
-                Gia = decimal.Parse(dt[0].ToString());
-            }
-
-            danhSachSanPham ds = new danhSachSanPham();
-            ds.tenSP = sanPhamCombobox.Text;
-            ds.gia = Gia;
-            ds.SoLuong = soLuong;
-            dsSP.Add(ds);                 // dsSP là List<danhsachsanpham>
-            dsSPListview.Items.Add(ds);
+                #region layGia
+                decimal Gia = 0;
+                DataTable data = SQL_Connect.Instance.ExecuteSQL("SELECT GIA FROM SANPHAM WHERE MASP = " + sanPhamCombobox.SelectedValue);
+                foreach (DataRow dt in data.Rows)
+                {
+                    Gia = decimal.Parse(dt[0].ToString());
+                }
+                #endregion
+                danhSachSanPham ds = new danhSachSanPham();  
+                ds.tenSP = sanPhamCombobox.Text;
+                ds.gia = Gia;
+                ds.SoLuong = 1;
+                dsSPListview.Items.Add(ds);
         }
 
+
+
+       
         #region events
+         
+
        
 
        
@@ -193,23 +245,43 @@ namespace addHoaDonWPF
 
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
-
-            themSPListView();
-           
+            int soLuong = 1; 
+            
+            // nếu có rồi thì update giá
+            if(checkTrung(sanPhamCombobox.Text))
+            {
+               
+                upDateGia(sanPhamCombobox.Text,soLuong);
+               
+            }
+            else  // chưa có thì thêm mới
+            {
+                themSPListView();
+            }
         }
 
         private void reduceBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (soLuong == 0)
+            int soLuong = -1;      
+            if(upDateGia(sanPhamCombobox.Text, soLuong) == 0)
             {
-                MessageBox.Show("Không có sản phẩm này trong giỏ hàng !");
+                for(int i = 0; i < dsSPListview.Items.Count;i++)
+                {
+                    danhSachSanPham SP = (danhSachSanPham)dsSPListview.Items[i];
+                    if(SP.tenSP == sanPhamCombobox.Text)
+                    {
+                        dsSPListview.Items.Remove(dsSPListview.Items[i]);
+                    }
+                }
             }
-            else
-            {
-                soLuong--;
-                MessageBox.Show(soLuong.ToString());
-            }
+            
+            
+            
+
         }
+
+
+           
 
         private void huyThemHDBtn_Click(object sender, RoutedEventArgs e)
         {
