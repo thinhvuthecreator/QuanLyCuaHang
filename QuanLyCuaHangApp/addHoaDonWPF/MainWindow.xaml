@@ -67,7 +67,7 @@
             <TextBlock Text="Tổng trị giá hóa đơn"  Foreground="White"></TextBlock>
             <TextBox  x:Name ="tongtriGiaTextbox" Width="215"></TextBox>
             <DockPanel>
-                <Button x:Name="addHDBtn" Width="70" Height="25" Margin="20,10,0,0" Content="Thêm" Foreground="White">
+                <Button x:Name="addHDBtn" Width="70" Height="25" Margin="20,10,0,0" Content="Thêm" Foreground="White" Click="addHDBtn_Click">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="0"/>

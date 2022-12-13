@@ -66,7 +66,7 @@ namespace SQL_Connection
             bool isSuccess = true;
             try
             {
-                string deleteKHQuerry = "DELETE KHACHHANG WHERE MAKH = N'" + ma + "'";
+                string deleteKHQuerry = "DELETE KHACHHANG WHERE MAKH = " + ma;
                 SQL_Connect.Instance.ExecuteNONquerrySQL(deleteKHQuerry);
             }
             catch

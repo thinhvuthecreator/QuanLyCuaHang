@@ -66,7 +66,7 @@ namespace SQL_Connection
             bool isSuccess = true;
             try
             {
-                string deleteSPQuerry = "DELETE SANPHAM WHERE MASP = N'" + ma + "'";
+                string deleteSPQuerry = "DELETE SANPHAM WHERE MASP =" + ma ;
                 SQL_Connect.Instance.ExecuteNONquerrySQL(deleteSPQuerry);
             }
             catch

@@ -203,8 +203,7 @@ namespace addHoaDonWPF
         {
             return int.Parse(khachhangCombobox.SelectedValue.ToString());
         }
-        #endregion
-            
+       
         void themSPListView() // thêm 1 sản phẩm vào danh sách sản phẩm
 
         {
@@ -225,30 +224,24 @@ namespace addHoaDonWPF
 
 
 
+        int layTongTriGiaHoaDon()
+        {
+
+            return 0;
+        }
+            
+        #endregion
+
        
         #region events
-         
-
-       
-
-       
-
-        private void addHDBtn_Click(object sender, RoutedEventArgs e)
-        {
-            HoaDon hd = new HoaDon();
-            hd.TriGia = int.Parse(tongtriGiaTextbox.Text);
-            hd.MaKH = layMaKH();
-            hd.MaNV = layMaNV();
-        }
-
-        #endregion 
-
+        
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
-            int soLuong = 1; 
-            
+
+            #region capNhatDS
+            int soLuong = 1;
             // nếu có rồi thì update giá
-            if(checkTrung(sanPhamCombobox.Text))
+            if (checkTrung(sanPhamCombobox.Text))
             {
                
                 upDateGia(sanPhamCombobox.Text,soLuong);
@@ -258,10 +251,24 @@ namespace addHoaDonWPF
             {
                 themSPListView();
             }
+            #endregion
+            #region capNhatTriGiaTextBox
+
+            decimal tongTriGia = 0;
+
+            for(int i = 0; i < dsSPListview.Items.Count;i++)
+            {
+                danhSachSanPham sp = (danhSachSanPham)dsSPListview.Items[i];
+                tongTriGia += sp.gia * sp.SoLuong;
+            }
+
+            tongtriGiaTextbox.Text = tongTriGia.ToString().Remove(tongTriGia.ToString().IndexOf(".")) + " VND";
+            #endregion
         }
 
         private void reduceBtn_Click(object sender, RoutedEventArgs e)
         {
+            #region capNhatDS
             int soLuong = -1;      
             if(upDateGia(sanPhamCombobox.Text, soLuong) == 0)
             {
@@ -274,18 +281,63 @@ namespace addHoaDonWPF
                     }
                 }
             }
-            
-            
-            
+            #endregion
+
+            #region capNhatTriGiaTextBox
+            decimal tongTriGia = 0;
+            for (int i = 0; i < dsSPListview.Items.Count; i++)
+            {
+                danhSachSanPham sp = (danhSachSanPham)dsSPListview.Items[i];
+                tongTriGia += sp.gia * sp.SoLuong;
+            }
+
+            tongtriGiaTextbox.Text = tongTriGia.ToString().Remove(tongTriGia.ToString().IndexOf(".")) + "VND";
+            #endregion
+
+
 
         }
-
-
-           
 
         private void huyThemHDBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+
+
+        private void addHDBtn_Click(object sender, RoutedEventArgs e)
+        {
+            decimal tongTriGia = 0;
+
+            for (int i = 0; i < dsSPListview.Items.Count; i++)
+            {
+                danhSachSanPham sp = (danhSachSanPham)dsSPListview.Items[i];
+                tongTriGia += sp.gia * sp.SoLuong;
+            }
+
+            HoaDon hd = new HoaDon();
+            hd.MaKH = layMaKH();
+            hd.MaNV = layMaNV();
+            hd.TriGia = tongTriGia;
+            hd.NgHoaDon = DateTime.Parse(ngHoaDonDatePicker.Text);
+            if (HoaDon_DAL.themHoaDon(hd))
+            {
+                MessageBox.Show("Thêm thành công !");
+            }
+            else
+            {
+                MessageBox.Show("Thêm thất bại !");
+            }
+
+        }
+
+
+        #endregion
+
+
+
+
+
+
     }
 }
