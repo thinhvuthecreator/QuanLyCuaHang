@@ -12,8 +12,8 @@
         <Grid Width="900" Height="500"  Margin="-10,120,50,0">
             <TextBlock Width="300" Height="60" Margin="70,-420,50,0" FontSize="40" Text="         SIGN UP" FontFamily="Adobe Caslon Pro Bold">
             </TextBlock>
-            <TextBox x:Name="MNV_Txtbox" Width="180" Height="25" BorderBrush="Black" HorizontalAlignment="Center" Margin="100,-300,200,0">
-            </TextBox>
+            <ComboBox x:Name="nhanvienCombobox" Width="180" Height="25" BorderBrush="Black" HorizontalAlignment="Center" Margin="100,-300,200,0">
+            </ComboBox>
             <TextBox x:Name="emailTxtbox" Width="280" Height="25" BorderBrush="Black" HorizontalAlignment="Center" Margin="200,-200,200,0">
             </TextBox>
             <TextBox  x:Name="usernameTxtbox" Width="180" Height="25" BorderBrush="Black" HorizontalAlignment="Center" Margin="100,-100,200,0">
@@ -22,15 +22,15 @@
             </TextBox>
             <TextBox x:Name="comfirmPasswordTxtbox" Width="300" Height="25" BorderBrush="Black" HorizontalAlignment="Center" Margin="220,100,200,0">
             </TextBox>
-            <Button x:Name="signUpBtn" Width="100" Height="40" Margin="-150,250,20,0" Content="SIGN UP" FontSize="15" Foreground="White" FontFamily="Helvetica Neue LT Std" Background="#FFFF9494"/>
+            <Button x:Name="signUpBtn" Width="100" Height="40" Margin="-150,250,20,0" Content="SIGN UP" FontSize="15" Foreground="White" FontFamily="Helvetica Neue LT Std" Background="#FFFF9494" Click="signUpBtn_Click"/>
             <Button x:Name="signInBtn" Width="100" Height="40" Margin="229,250,20,0" Content="SIGN IN" FontSize="15" Foreground="White" FontFamily="Helvetica Neue LT Std" Background="#FFFF9494">
             </Button>
             <TextBlock Width="100" Height="34" Margin="245,175,20,0" Text="Already got an account ?" TextWrapping="Wrap" FontSize="12" FontWeight="Bold"></TextBlock>
-            <TextBlock Width="200" Height="20" Margin="240,-350,315,0" Text="STAFF CODE" FontSize="15"></TextBlock>
-            <TextBlock Width="200" Height="20" Margin="240,-250,315,0" Text="EMAIL" FontSize="15"></TextBlock>
-            <TextBlock Width="200" Height="20" Margin="240,-150,315,0" Text="USERNAME" FontSize="15"></TextBlock>
-            <TextBlock Width="200" Height="20" Margin="240,-50,315,0" Text="PASSWORD" FontSize="15"></TextBlock>
-            <TextBlock Width="200" Height="20" Margin="240,50,315,0" Text="CONFIRM PASSWORD" FontSize="15"></TextBlock>
+            <TextBlock Width="200" Height="20" Margin="240,-350,315,0" Text="Nhân viên lập tài khoản" FontSize="15"></TextBlock>
+            <TextBlock Width="200" Height="20" Margin="240,-250,315,0" Text="Email" FontSize="15"></TextBlock>
+            <TextBlock Width="200" Height="20" Margin="240,-150,315,0" Text="Tài khoản" FontSize="15"></TextBlock>
+            <TextBlock Width="200" Height="20" Margin="240,-50,315,0" Text="Mật khẩu" FontSize="15"></TextBlock>
+            <TextBlock Width="200" Height="20" Margin="240,50,315,0" Text="Xác nhận mật khẩu" FontSize="15"></TextBlock>
         </Grid>
 
 
