@@ -59,7 +59,7 @@ namespace SQL_Connection
 
             try
             {
-                string updateNVQuerry = "UPDATE NHANVIEN SET TENNV = N'" + nv.TenNV + "', NGSINHNV = '" + nv.NgSinhNV.ToShortDateString() + "', GIOITINHNV = N'" + nv.GioiTinh + "',SDTNV = " + nv.SdtNV + ",LUONG =" + nv.LuongNV + " WHERE MANV = N'" + nv.MaNV + "'";
+                string updateNVQuerry = "UPDATE NHANVIEN SET TENNV = N'" + nv.TenNV + "', NGSINHNV = '" + nv.NgSinhNV.ToShortDateString() + "', GIOITINHNV = N'" + nv.GioiTinh + "',SDTNV = " + nv.SdtNV + ",LUONG =" + nv.LuongNV + " WHERE MANV =" + nv.MaNV;
                 SQL_Connect .Instance.ExecuteNONquerrySQL(updateNVQuerry);
             }
             catch

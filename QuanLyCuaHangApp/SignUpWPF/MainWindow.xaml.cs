@@ -15,7 +15,9 @@ using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
 using SQL_Connection;
-
+using System.Net.Mail;
+using Models;
+using QuanLyCuaHangApp;
 namespace SignUpWPF
 {
     /// <summary>
@@ -47,6 +49,7 @@ namespace SignUpWPF
         #endregion
 
         #region methods
+
         void loadNhanVienCombobox()
         {
             List<NhanVien> nvList = new List<NhanVien>();
@@ -61,22 +64,68 @@ namespace SignUpWPF
             nhanvienCombobox.DisplayMemberPath = "tenNV";
             nhanvienCombobox.SelectedValuePath = "maNV";
         }
-
         bool kiemTraEmail(string email)
         {
-            return false;
+            try
+            {
+                MailAddress m = new MailAddress(email);
+                return true;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Email không hợp lệ !");
+                return false;
+            }
         }
         bool kiemTraTenNguoiDung(string taiKhoan)
         {
-            return false;
+            if( taiKhoan.Length <= 20  && Encoding.ASCII.GetByteCount(taiKhoan) == Encoding.UTF8.GetByteCount(taiKhoan))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Tên người dùng không hợp lệ !");
+                return false;
+            }
         }
-        bool kiemTraMatKhau(string matKau)
+        bool kiemTraMatKhau(string matKhau)
         {
-            return false;
+            if( matKhau.Length <= 30 && Encoding.ASCII.GetByteCount(matKhau) == Encoding.UTF8.GetByteCount(matKhau))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Mật khẩu không hợp lệ !");
+                return false;
+            }
         }
         bool kiemTraXavNhanMatKau(string matKhau,string matkhauXacNhan)
         {
-            return false;
+            bool isEqual = true;
+            if (matKhau.Length != matkhauXacNhan.Length)
+            {
+                MessageBox.Show("Mật khẩu không trùng khớp !");
+                return false;
+            }
+            else
+            {
+                for (int i = 0; i < matKhau.Length; i++)
+                {
+                    if (matKhau[i] != matkhauXacNhan[i])
+                    {
+                        isEqual = false;
+                    }
+                }
+
+                if(isEqual == false)
+                {
+                    MessageBox.Show("Mật khẩu không trùng khớp !");
+                }
+                return isEqual;
+            }
+           
         }
 
         #endregion
@@ -84,13 +133,37 @@ namespace SignUpWPF
         #region events
         private void signUpBtn_Click(object sender, RoutedEventArgs e)
         {
+            
             if(kiemTraEmail(emailTxtbox.Text) && kiemTraTenNguoiDung(usernameTxtbox.Text) && kiemTraMatKhau(passwordTxtbox.Text) &&  kiemTraXavNhanMatKau(passwordTxtbox.Text,comfirmPasswordTxtbox.Text))
             {
-               // thêm tài khoản vào database
+                TaiKhoan tk = new TaiKhoan();
+                tk.MaNV = int.Parse(nhanvienCombobox.SelectedValue.ToString());
+                tk.taiKhoan = usernameTxtbox.Text;
+                tk.MatKhau = passwordTxtbox.Text;
+                tk.EMail = emailTxtbox.Text;
+
+                 if(TaiKhoan_DAL.themTaiKhoan(tk))
+                 {
+                    MessageBox.Show("Thêm thành công !");
+                 }
+                 else
+                 {
+                    MessageBox.Show("Thêm thất bại !");
+                 }
+            }
+            else
+            {
+                MessageBox.Show("Lỗi !");
             }
         }
 
         #endregion
 
+        private void signInBtn_Click(object sender, RoutedEventArgs e)
+        {
+            QuanLyCuaHangApp.MainWindow SignInwindow = new QuanLyCuaHangApp.MainWindow();
+            SignInwindow.Show();
+            this.Hide();
+        }
     }
 }

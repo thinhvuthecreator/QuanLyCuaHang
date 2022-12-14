@@ -49,6 +49,7 @@
     <Compile Include="SanPham_DAL.cs" />
     <Compile Include="SQL_Connect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaiKhoan_DAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NhanVien_Model\DTO_Models.csproj">

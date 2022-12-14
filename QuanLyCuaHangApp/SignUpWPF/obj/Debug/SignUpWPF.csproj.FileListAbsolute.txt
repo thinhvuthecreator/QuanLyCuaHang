@@ -18,3 +18,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\bin\Deb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\bin\Debug\NhanVien_Model.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\bin\Debug\SQL_Connection.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\obj\Debug\SignUpWPF.csproj.CopyComplete
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\bin\Debug\QuanLyCuaHangApp.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\bin\Debug\QuanLyCuaHangApp.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SignUpWPF\bin\Debug\QuanLyCuaHangApp.exe.config

@@ -51,7 +51,7 @@ namespace SQL_Connection
                 }
                 else
                 {
-                    string updateSPQuerry = "UPDATE SANPHAM SET TENSP = N'" + sp.TenSP + "', GIA =" + sp.GiaSP + ", MALOAISP = N'" + sp.MaLoaiSP + "',SOLUONGSP = " + sp.SoLuongSP + ",NGAYTHEM =" + sp.NgThemSp.ToShortDateString() + " WHERE MASP = N'" + sp.MaSP + "'";
+                    string updateSPQuerry = "UPDATE SANPHAM SET TENSP = N'" + sp.TenSP + "', GIA =" + sp.GiaSP + ", MALOAISP = N'" + sp.MaLoaiSP + "',SOLUONGSP = " + sp.SoLuongSP + ",NGAYTHEM =" + sp.NgThemSp.ToShortDateString() + " WHERE MASP =" + sp.MaSP;
                     SQL_Connect.Instance.ExecuteNONquerrySQL(updateSPQuerry);
                 }
             }
