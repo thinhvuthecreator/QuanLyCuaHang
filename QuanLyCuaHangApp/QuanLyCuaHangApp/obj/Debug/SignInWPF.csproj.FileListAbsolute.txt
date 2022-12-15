@@ -13,3 +13,8 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\obj\Debug\SignInWPF.csproj.CoreCompileInputs.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\obj\Debug\QuanLyCuaHangApp.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\obj\Debug\QuanLyCuaHangApp.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\SQL_Connection.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\NhanVien_Model.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\SQL_Connection.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\NhanVien_Model.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\obj\Debug\SignInWPF.csproj.CopyComplete
