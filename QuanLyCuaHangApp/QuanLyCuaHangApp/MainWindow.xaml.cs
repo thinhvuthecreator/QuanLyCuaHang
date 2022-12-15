@@ -55,5 +55,12 @@ namespace QuanLyCuaHangApp
                 MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu !");
             }
         }
+
+        private void signUpButton_Click(object sender, RoutedEventArgs e)
+        {
+            SignUpWPF signUpWindow = new SignUpWPF();
+            this.Hide();
+            signUpWindow.Show();
+        }
     }
 }
