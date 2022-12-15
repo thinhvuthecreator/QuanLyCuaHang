@@ -37,8 +37,8 @@
             </TextBox>
             <ComboBox x:Name="gioiTinhNVCombobox" Width="180" Height="20" Margin="585,338,98,0">
             </ComboBox>
-            <ComboBox x:Name="ngSinhNVDatePicker" Width="180" Height="20" Margin="585,420,98,0">
-            </ComboBox>
+            <DatePicker x:Name="ngSinhNVDatePicker" Width="180" Height="20" Margin="585,420,98,0">
+            </DatePicker>
 
             <TextBlock Width="130" Height="25" FontSize="15" Text="Mã nhân viên" Margin="500,0,60,0" Foreground="White"></TextBlock>
             <TextBlock Width="130" Height="25" FontSize="15" Text="Tên nhân viên" Margin="500,77,60,0" Foreground="White"></TextBlock>
@@ -55,7 +55,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="deleteBtn" Width="150" Height="25" Margin="578,545,90,0" Content="Xóa nhân viên" FontSize="16" Foreground="White">
+            <Button x:Name="deleteBtn" Width="150" Height="25" Margin="578,545,90,0" Content="Xóa nhân viên" FontSize="16" Foreground="White" Click="deleteBtn_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -63,7 +63,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="updateBtn" Width="150" Height="25" Margin="578,600,90,0" Content="Sứa thông tin" FontSize="16" Foreground="White">
+            <Button x:Name="updateBtn" Width="150" Height="25" Margin="578,600,90,0" Content="Sứa thông tin" FontSize="16" Foreground="White" Click="updateBtn_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -72,7 +72,7 @@
                 </Button.Background>
             </Button>
         </Grid>
-        <ListView x:Name="nhanVienListView" Width="535" Height="530" HorizontalAlignment="Left" Margin="30,60,0,31" Background ="Black" Foreground="BlueViolet" ItemsSource="{Binding listNV}">
+        <ListView x:Name="nhanVienListView" Width="535" Height="530" HorizontalAlignment="Left" Margin="30,60,0,31" Background ="Black" Foreground="BlueViolet" ItemsSource="{Binding ListNV}" SelectionChanged="nhanVienListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" DisplayMemberBinding="{Binding MaNV}" Width="30" ></GridViewColumn>

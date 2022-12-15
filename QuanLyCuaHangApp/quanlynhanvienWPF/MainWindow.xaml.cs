@@ -17,6 +17,8 @@ using System.Data;
 using System.Data.SqlClient;
 using SQL_Connection;
 using Models;
+using System.Collections.ObjectModel;
+
 namespace quanlynhanvienWPF
 {
     /// <summary>
@@ -30,11 +32,11 @@ namespace quanlynhanvienWPF
         {
             InitializeComponent();
             loadDuLieuNVListView();
-    
+            loadGioiTinhCombobox();
         }
 
         #region objects
-
+        
         #endregion
 
         #region methods
@@ -48,7 +50,13 @@ namespace quanlynhanvienWPF
             }
             nhanVienListView.ItemsSource = listNV;
         }
-
+        void loadGioiTinhCombobox()
+        {
+            List<string> gioiTinh = new List<string> { "Nam","Nữ"};
+            gioiTinhNVCombobox.ItemsSource = gioiTinh;
+           
+           
+        }
         #endregion
 
         #region events
@@ -59,19 +67,55 @@ namespace quanlynhanvienWPF
             
         }
 
-
-        #endregion
-
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
             loadDuLieuNVListView();
         }
 
-        private void Grid_IsMouseCapturedChanged(object sender, DependencyPropertyChangedEventArgs e)
+
+
+
+
+        #endregion
+
+        private void nhanVienListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            loadDuLieuNVListView();
+                NhanVien nv = (NhanVien)nhanVienListView.SelectedItem;
+                if (nv == null)
+                {
+
+                }
+                else
+                {
+                    maNVTxtbox.Text = nv.MaNV.ToString();
+                    tenNVTxtbox.Text = nv.TenNV;
+                    sdtNVTxtbox.Text = nv.SdtNV.ToString();
+                    luongNVTxtbox.Text = nv.LuongNV.ToString();
+                    gioiTinhNVCombobox.Text = nv.GioiTinh;
+                    ngSinhNVDatePicker.Text = nv.NgSinhNV.ToString();
+                }
+         
         }
 
-       
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult decicion = MessageBox.Show("Bạn có muốn xóa nhân viên này không ?", "", MessageBoxButton.YesNo);
+            if (decicion == MessageBoxResult.Yes)
+            {
+                if (NhanVien_DAL.xoaNhanVien(maNVTxtbox.Text))
+                {
+                    MessageBox.Show("Xóa thành công !");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại ! Tài khoản nhân viên còn tồn tại trong hệ thống");
+                }
+            }
+        }
+
+        private void updateBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
