@@ -13,3 +13,11 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\obj\Debug\quanlynhanvienWPF.csproj.CoreCompileInputs.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\obj\Debug\quanlynhanvienWPF.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\obj\Debug\quanlynhanvienWPF.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\NhanVien_Model.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\NhanVien_Model.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\obj\Debug\quanlynhanvienWPF.csproj.CopyComplete
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\AddStaffWPF.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\SQL_Connection.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\AddStaffWPF.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\AddStaffWPF.exe.config
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\SQL_Connection.pdb

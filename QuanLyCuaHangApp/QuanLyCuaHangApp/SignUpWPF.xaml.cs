@@ -128,6 +128,7 @@ namespace QuanLyCuaHangApp
 
         #endregion
 
+        #region events
         private void signUpBtn_Click(object sender, RoutedEventArgs e)
         {
             if (kiemTraEmail(emailTxtbox.Text) && kiemTraTenNguoiDung(usernameTxtbox.Text) && kiemTraMatKhau(passwordTxtbox.Text) && kiemTraXavNhanMatKau(passwordTxtbox.Text, comfirmPasswordTxtbox.Text))
@@ -159,5 +160,6 @@ namespace QuanLyCuaHangApp
             this.Hide();
             loginWindow.Show();
         }
+        #endregion
     }
 }
