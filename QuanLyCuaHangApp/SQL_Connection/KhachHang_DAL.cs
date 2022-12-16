@@ -29,7 +29,7 @@ namespace SQL_Connection
                 }
                 else
                 {
-                    string themKHQuerry = "INSERT KHACHHANG VALUES (N'"+ kh.TenKH +"','" +kh.NgSinhKH.ToShortDateString() + "',N'" + kh.GioiTinhKH +"'," + kh.SdtKH + "," + kh.DoanhSoKH + ")";
+                    string themKHQuerry = "INSERT KHACHHANG VALUES (N'"+ kh.TenKH +"','" +kh.NgSinhKH.ToShortDateString() + "',N'" + kh.GioiTinhKH +"'," + kh.SdtKH + "," + kh.DoanhSoKH + ",N'" + kh.FileAnh + "')";
                     SQL_Connect.Instance.ExecuteNONquerrySQL(themKHQuerry);
                 }
             }
@@ -51,7 +51,7 @@ namespace SQL_Connection
                 }
                 else
                 {
-                    string updateKHQuerry = "UPDATE KHACHHANG SET TENSP = N'" + kh.TenKH + "', NGSINH = '" + kh.NgSinhKH.ToShortDateString() + "', GIOITINH = N'" + kh.GioiTinhKH + "',SDTKH = " + kh.SdtKH + ",DOANHSO =" + kh.DoanhSoKH + " WHERE MAKH = " + kh.MaKH;
+                    string updateKHQuerry = "UPDATE KHACHHANG SET TENSP = N'" + kh.TenKH + "', NGSINH = '" + kh.NgSinhKH.ToShortDateString() + "', GIOITINH = N'" + kh.GioiTinhKH + "',SDTKH = " + kh.SdtKH + ",DOANHSO =" + kh.DoanhSoKH +",IMAGEKH =N'" + kh.FileAnh + "' WHERE MAKH = " + kh.MaKH;
                     SQL_Connect.Instance.ExecuteNONquerrySQL(updateKHQuerry);
                 }
             }

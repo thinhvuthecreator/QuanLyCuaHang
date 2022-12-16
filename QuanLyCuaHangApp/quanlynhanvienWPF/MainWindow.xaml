@@ -23,7 +23,7 @@
 
             <Grid Width="190" Height="200" Margin="500,-250,10,0">
                 <Border BorderBrush="Black" BorderThickness="1">
-                    <Image Width="190" Height="200"  Source="D:\lol\staff.jpg" Stretch="Uniform">
+                    <Image x:Name="nvImage" Width="190" Height="200"  Stretch="Fill">
                     </Image>
                 </Border>
             </Grid>
@@ -81,6 +81,7 @@
                     <GridViewColumn Header="Lương" DisplayMemberBinding="{Binding LuongNV}" Width="100" ></GridViewColumn>
                     <GridViewColumn Header="Giới tính" DisplayMemberBinding="{Binding GioiTinh}" Width="45" ></GridViewColumn>
                     <GridViewColumn Header="Ngày sinh" DisplayMemberBinding="{Binding NgSinhNV}" Width="150" ></GridViewColumn>
+                    <GridViewColumn Header="Ảnh nhân viên" DisplayMemberBinding="{Binding FileAnh}" Width="80" ></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

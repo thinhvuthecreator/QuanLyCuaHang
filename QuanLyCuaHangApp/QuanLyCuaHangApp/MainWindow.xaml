@@ -8,7 +8,7 @@
         Title="ABC STORE MANAGEMENT" Height="550" Width="900" ResizeMode="NoResize">
 
     <Grid >
-        <Image Width="430" HorizontalAlignment="Right" Source="D:\lol\productLogin1.jpg" Stretch="Fill">
+        <Image x:Name="backgroundImage" Width="430" HorizontalAlignment="Right"  Stretch="Fill">
         </Image>
         <TextBlock x:Name="signinTxtBlock" Text="SIGN IN" Foreground="Black" Margin="442,120,10,259" Width="250" Height="32" FontSize="30" FontFamily="Stencil" FontWeight="Bold"></TextBlock>
         <TextBox x:Name="usernameTxtBox" Margin="442,172,9,217" Background="White" Width="250" Height="30" BorderBrush="Black">
@@ -33,12 +33,12 @@
                 </LinearGradientBrush>
             </TextBlock.Background></TextBlock>
         <TextBlock Width="300" Height="100" Margin="87,44,507,377" FontSize="40" Text="WELCOME TO ABC STORE" FontFamily="Stencil" Foreground="White" TextWrapping="WrapWithOverflow"></TextBlock>
-        <Image Source="D:\lol\aaa.png" Stretch="Uniform" Width="400" Height="280" Margin="42,164,452,77">
+        <Image x:Name="mainImage" Stretch="Uniform" Width="400" Height="280" Margin="42,164,452,77">
         </Image>
 
-        <Image Source="D:\lol\user.png" Stretch="Fill" Width="22" Height="22" Margin="449,150,320,200">
+        <Image x:Name="userImage" Stretch="Fill" Width="22" Height="22" Margin="449,150,320,200">
         </Image>
-        <Image Source="D:\lol\pass.png" Stretch="Fill" Width="22" Height="22" Margin="449,252,320,200">
+        <Image x:Name="passImage" Stretch="Fill" Width="22" Height="22" Margin="449,252,320,200">
         </Image>
 
 

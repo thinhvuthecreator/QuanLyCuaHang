@@ -33,6 +33,7 @@ namespace quanlynhanvienWPF
             InitializeComponent();
             loadDuLieuNVListView();
             loadGioiTinhCombobox();
+            loadImages();
         }
 
         #region objects
@@ -46,7 +47,7 @@ namespace quanlynhanvienWPF
             DataTable dataNhanVien = NhanVien_DAL.loadDuLieuNV();
             foreach(DataRow nhanvienData in dataNhanVien.Rows )
             {
-                listNV.Add(new NhanVien() { MaNV = int.Parse(nhanvienData[0].ToString()), TenNV = nhanvienData[1].ToString(),SdtNV = int.Parse(nhanvienData[2].ToString()),LuongNV = decimal.Parse(nhanvienData[3].ToString()),GioiTinh = nhanvienData[4].ToString(),NgSinhNV = DateTime.Parse(nhanvienData[5].ToString()) });
+                listNV.Add(new NhanVien() { MaNV = int.Parse(nhanvienData[0].ToString()), TenNV = nhanvienData[1].ToString(),SdtNV = int.Parse(nhanvienData[2].ToString()),LuongNV = decimal.Parse(nhanvienData[3].ToString()),GioiTinh = nhanvienData[4].ToString(),NgSinhNV = DateTime.Parse(nhanvienData[5].ToString()),FileAnh = nhanvienData[6].ToString() });
             }
             nhanVienListView.ItemsSource = listNV;
         }
@@ -56,6 +57,29 @@ namespace quanlynhanvienWPF
             gioiTinhNVCombobox.ItemsSource = gioiTinh;
            
            
+        }
+        void loadImages()
+        {
+            string resourceImage1 = System.IO.Path.GetFullPath("staff.jpg");
+            BitmapImage logoStaff = new BitmapImage();
+            logoStaff.BeginInit();
+            logoStaff.UriSource = new Uri(resourceImage1);
+            logoStaff.EndInit();
+            nvImage.Source = logoStaff;
+        }
+        string xuLyChuoi(string s)
+        {
+            if (s == "")
+            {
+                string fileAnhmacDinh = System.IO.Path.GetFullPath("staff.jpg");
+
+                s = fileAnhmacDinh;
+            }
+            else
+            {
+                s = s.Remove(0, 8);
+            }
+            return s;
         }
         #endregion
 
@@ -72,30 +96,38 @@ namespace quanlynhanvienWPF
             loadDuLieuNVListView();
         }
 
-
-
-
-
-        #endregion
-
         private void nhanVienListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-                NhanVien nv = (NhanVien)nhanVienListView.SelectedItem;
-                if (nv == null)
-                {
+              NhanVien nv = (NhanVien)nhanVienListView.SelectedItem;
 
-                }
-                else
-                {
-                    maNVTxtbox.Text = nv.MaNV.ToString();
-                    tenNVTxtbox.Text = nv.TenNV;
-                    sdtNVTxtbox.Text = nv.SdtNV.ToString();
-                    luongNVTxtbox.Text = nv.LuongNV.ToString();
-                    gioiTinhNVCombobox.Text = nv.GioiTinh;
-                    ngSinhNVDatePicker.Text = nv.NgSinhNV.ToString();
-                }
+            if (nv == null)
+            {
+
+            }
+            else
+            {
+
+               
+                string fileAnh = nv.FileAnh != null ? nv.FileAnh : System.IO.Path.GetFullPath("staffWPF.jpg");
+
+                string resourceImage1 = xuLyChuoi(fileAnh);
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(resourceImage1);
+                image.EndInit();
+
+
+                maNVTxtbox.Text = nv.MaNV.ToString();
+                tenNVTxtbox.Text = nv.TenNV;
+                sdtNVTxtbox.Text = nv.SdtNV.ToString();
+                luongNVTxtbox.Text = nv.LuongNV.ToString();
+                gioiTinhNVCombobox.Text = nv.GioiTinh;
+                ngSinhNVDatePicker.Text = nv.NgSinhNV.ToString();
+                nvImage.Source = image;
+            }
          
         }
+
 
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -112,10 +144,15 @@ namespace quanlynhanvienWPF
                 }
             }
         }
-
         private void updateBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+
+        #endregion
+
+
+
     }
 }

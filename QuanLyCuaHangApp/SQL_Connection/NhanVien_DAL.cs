@@ -36,7 +36,7 @@ namespace SQL_Connection
                 }
                 else
                 {
-                    string addNVQuerry = "INSERT NHANVIEN (TENNV,NGSINH,GIOITINH,SDTNV,LUONG) VALUES (" + "N'" + nv.TenNV + "','" + nv.NgSinhNV.ToShortDateString() + "'," + "N'" + nv.GioiTinh + "'," + nv.SdtNV + "," + nv.LuongNV + ")";
+                    string addNVQuerry = "INSERT NHANVIEN (TENNV,NGSINH,GIOITINH,SDTNV,LUONG,IMAGENV) VALUES (" + "N'" + nv.TenNV + "','" + nv.NgSinhNV.ToShortDateString() + "'," + "N'" + nv.GioiTinh + "'," + nv.SdtNV + "," + nv.LuongNV + ",N'" + nv.FileAnh + "')";
                     SQL_Connect.Instance.ExecuteNONquerrySQL(addNVQuerry);
                 }
             }
@@ -59,7 +59,7 @@ namespace SQL_Connection
 
             try
             {
-                string updateNVQuerry = "UPDATE NHANVIEN SET TENNV = N'" + nv.TenNV + "', NGSINHNV = '" + nv.NgSinhNV.ToShortDateString() + "', GIOITINHNV = N'" + nv.GioiTinh + "',SDTNV = " + nv.SdtNV + ",LUONG =" + nv.LuongNV + " WHERE MANV =" + nv.MaNV;
+                string updateNVQuerry = "UPDATE NHANVIEN SET TENNV = N'" + nv.TenNV + "', NGSINHNV = '" + nv.NgSinhNV.ToShortDateString() + "', GIOITINHNV = N'" + nv.GioiTinh + "',SDTNV = " + nv.SdtNV + ",LUONG =" + nv.LuongNV + ",IMAGENV = N'"+ nv.FileAnh + "' WHERE MANV =" + nv.MaNV;
                 SQL_Connect .Instance.ExecuteNONquerrySQL(updateNVQuerry);
             }
             catch

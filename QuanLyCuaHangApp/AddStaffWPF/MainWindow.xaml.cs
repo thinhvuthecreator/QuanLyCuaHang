@@ -27,6 +27,7 @@ namespace AddStaffWPF
         public MainWindow()
         {
             InitializeComponent();
+            loadImages();
         }
 
         #region methods
@@ -45,8 +46,21 @@ namespace AddStaffWPF
             nv.SdtNV = int.TryParse(sdtNVTxtbox.Text,out sdt) == true ? sdt : 0;
             nv.NgSinhNV = DateTime.Parse(ngsinhNVDatePicker.Text);
             nv.LuongNV = int.TryParse(luongTxtbox.Text, out luong) == true ? luong : 0;
+            nv.FileAnh = loadimageImage.Source.ToString();
+        }
+
+        void loadImages()
+        {
+            string resourceImage1 = System.IO.Path.GetFullPath("imageDefault.jpg");
+            BitmapImage logoStaff = new BitmapImage();
+            logoStaff.BeginInit();
+            logoStaff.UriSource = new Uri(resourceImage1);
+            logoStaff.EndInit();
+            loadimageImage.Source = logoStaff;
 
         }
+            
+
 
         #endregion
 
@@ -58,14 +72,18 @@ namespace AddStaffWPF
             OpenFileDialog loadImage = new OpenFileDialog();
             if(loadImage.ShowDialog() == true)
             {
-                Uri fileUri = new Uri(loadImage.FileName);
+                
+
+                string sourceAnh = loadImage.FileName;
+                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadImage.FileName));
+                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+                Uri fileUri = new Uri(sourceAnhApp);
                 loadimageImage.Source = new BitmapImage(fileUri);
+
 
             }
 
-            string sourceAnh = loadImage.FileName;
-            string sourceAnhApp = "..//..//..//Hinh anh//Nhan vien//" + System.IO.Path.GetFileName(loadImage.FileName);
-            System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+            
 
         }
 

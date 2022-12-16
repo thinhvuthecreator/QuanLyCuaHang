@@ -13,6 +13,7 @@ namespace Models
         private string tenSP;
         private decimal giaSP;
         private DateTime ngThemSp;
+        private string fileAnh;
 
         public int MaSP { get => maSP; set => maSP = value; }
         public int MaLoaiSP { get => maLoaiSP; set => maLoaiSP = value; }
@@ -20,5 +21,6 @@ namespace Models
         public decimal GiaSP { get => giaSP; set => giaSP = value; }
         public DateTime NgThemSp { get => ngThemSp; set => ngThemSp = value; }
         public int SoLuongSP { get => soLuongSP; set => soLuongSP = value; }
+        public string FileAnh { get => fileAnh; set => fileAnh = value; }
     }
 }

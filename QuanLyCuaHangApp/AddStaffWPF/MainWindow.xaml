@@ -59,7 +59,7 @@
 
         </Grid>
 
-        <Image x:Name="loadimageImage" Width="300" Height="280" Margin="-280,-90,50,0" Source="D:/lol/imageDefault.jpg" Stretch="Fill" >
+        <Image x:Name="loadimageImage" Width="300" Height="280" Margin="-280,-90,50,0"  Stretch="Fill" >
         </Image>
         <Button x:Name="addImageBtn" Width="130" Height="30" Margin="-450,245,50,0" BorderBrush="Black" Content="Thêm hình ảnh" FontSize="14" FontWeight="Bold" Foreground="White" Click="addImageBtn_Click">
             <Button.Background>

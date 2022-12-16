@@ -30,6 +30,7 @@ namespace ProductWPF
         {
             InitializeComponent();
             loadForm();
+            loadImages();
         }
 
 
@@ -53,7 +54,19 @@ namespace ProductWPF
             }
 
         }
-          
+
+        void loadImages()
+        {
+            string resourceImage1 = System.IO.Path.GetFullPath("imageDefault.jpg");
+            BitmapImage logoStaff = new BitmapImage();
+            logoStaff.BeginInit();
+            logoStaff.UriSource = new Uri(resourceImage1);
+            logoStaff.EndInit();
+            ProductImage.Source = logoStaff;
+
+
+
+        }
 
         void ganGiaTriSP(SanPham sp)
         {
@@ -67,8 +80,9 @@ namespace ProductWPF
             sp.NgThemSp = DateTime.Parse(ngThemspDatePicker.Text);
             sp.SoLuongSP = int.TryParse(soluongTxtbox.Text, out soLuong) == true ? soLuong : -1;
             sp.MaLoaiSP = int.Parse(returnMaLoaiSPcuaCombobox());
-
+            sp.FileAnh = ProductImage.Source.ToString();
         }
+
 
         #endregion
 
@@ -78,11 +92,13 @@ namespace ProductWPF
             OpenFileDialog loadImage = new OpenFileDialog();
             if (loadImage.ShowDialog() == true)
             {
-                Uri fileUri = new Uri(loadImage.FileName);
-                ProductImage.Source = new BitmapImage(fileUri);
+                
+                
                 string sourceAnh = loadImage.FileName;
-                string sourceAnhApp = "..//..//..//Hinh anh//Nhan vien//" + System.IO.Path.GetFileName(loadImage.FileName);
+                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadImage.FileName));
                 System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+                Uri fileUri = new Uri(sourceAnhApp);
+                ProductImage.Source = new BitmapImage(fileUri);
             }
 
             

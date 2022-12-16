@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using SQL_Connection;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace QuanLyCuaHangApp
 {
@@ -26,6 +27,7 @@ namespace QuanLyCuaHangApp
         public MainWindow()
         {
             InitializeComponent();
+            loadImages();
         }
 
 
@@ -33,6 +35,37 @@ namespace QuanLyCuaHangApp
         #endregion
 
         #region methods
+        void loadImages()
+        {
+            string resourceImage1 = System.IO.Path.GetFullPath("aaa.png");
+            BitmapImage logoLogin = new BitmapImage();
+            logoLogin.BeginInit();
+            logoLogin.UriSource = new Uri(resourceImage1);
+            logoLogin.EndInit();
+            mainImage.Source = logoLogin;
+
+            string resourceImage2 = System.IO.Path.GetFullPath("user.png");
+            BitmapImage logoUser = new BitmapImage();
+            logoUser.BeginInit();
+            logoUser.UriSource = new Uri(resourceImage2);
+            logoUser.EndInit();
+            userImage.Source = logoUser;
+
+            string resourceImage3 = System.IO.Path.GetFullPath("pass.png");
+            BitmapImage logoPass = new BitmapImage();
+            logoPass.BeginInit();
+            logoPass.UriSource = new Uri(resourceImage3);
+            logoPass.EndInit();
+            passImage.Source = logoPass;
+
+            string resourceImage4 = System.IO.Path.GetFullPath("productLogin1.jpg");
+            BitmapImage logoBackground = new BitmapImage();
+            logoBackground.BeginInit();
+            logoBackground.UriSource = new Uri(resourceImage4);
+            logoBackground.EndInit();
+            backgroundImage.Source = logoBackground;
+
+        }
         bool login(string tk,string mk)
         {
             string loginQuerry = "EXEC Login @TK = N'" + tk + "', @MK = N'" + mk + "'";

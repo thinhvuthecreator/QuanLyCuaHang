@@ -25,6 +25,7 @@ namespace AddKhachHangWPF
         public MainWindow()
         {
             InitializeComponent();
+            loadImages();
         }
 
         #region methods
@@ -41,9 +42,21 @@ namespace AddKhachHangWPF
             kh.NgSinhKH = DateTime.Parse(ngsinhKHDatePicker.Text);
             kh.DoanhSoKH = int.TryParse(doanhSoKHTxtbox.Text, out doanhSoKH) == true ? doanhSoKH : -1;
             kh.GioiTinhKH = cmbValue;
+            kh.FileAnh = loadimageImage.Source.ToString();
         }
-       
 
+        void loadImages()
+        {
+            string resourceImage1 = System.IO.Path.GetFullPath("imageDefault.jpg");
+            BitmapImage logoStaff = new BitmapImage();
+            logoStaff.BeginInit();
+            logoStaff.UriSource = new Uri(resourceImage1);
+            logoStaff.EndInit();
+            loadimageImage.Source = logoStaff;
+
+
+
+        }
 
         #endregion
 
@@ -54,11 +67,13 @@ namespace AddKhachHangWPF
 
             if(loadKHImage.ShowDialog() == true)
             {
-                Uri imageUri = new Uri(loadKHImage.FileName);
-                loadimageImage.Source = new BitmapImage(imageUri);
+                
+                
                 string sourceAnh = loadKHImage.FileName;
-                string sourceAnhApp = "..//..//..//Hinh anh//Khach hang//" + System.IO.Path.GetFileName(loadKHImage.FileName);
+                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadKHImage.FileName));
                 System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+                Uri imageUri = new Uri(sourceAnhApp);
+                loadimageImage.Source = new BitmapImage(imageUri);
             }
            
         }
