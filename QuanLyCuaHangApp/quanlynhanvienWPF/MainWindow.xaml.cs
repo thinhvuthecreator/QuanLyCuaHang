@@ -18,6 +18,7 @@ using System.Data.SqlClient;
 using SQL_Connection;
 using Models;
 using System.Collections.ObjectModel;
+using Microsoft.Win32;
 
 namespace quanlynhanvienWPF
 {
@@ -146,13 +147,42 @@ namespace quanlynhanvienWPF
         }
         private void updateBtn_Click(object sender, RoutedEventArgs e)
         {
+            NhanVien nvUpdate = new NhanVien();
+            nvUpdate.MaNV = int.Parse(maNVTxtbox.Text);
+            nvUpdate.TenNV = tenNVTxtbox.Text;
+            nvUpdate.SdtNV = int.Parse(sdtNVTxtbox.Text);
+            nvUpdate.NgSinhNV = DateTime.Parse(ngSinhNVDatePicker.Text);
+            nvUpdate.GioiTinh = gioiTinhNVCombobox.Text;
+            nvUpdate.FileAnh =  nvImage.Source.ToString();
 
+            if(NhanVien_DAL.updateNhanVien(nvUpdate) == true)
+            {
+                MessageBox.Show("Cập nhật thành công !");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thất bại !");
+            }
         }
+
+
 
 
         #endregion
 
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
 
+            OpenFileDialog imageChoose = new OpenFileDialog();
+            if (imageChoose.ShowDialog() == true)
+            {
 
+                string sourceAnh = imageChoose.FileName;
+                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(imageChoose.FileName));
+                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+                Uri fileUri = new Uri(sourceAnhApp);
+                nvImage.Source = new BitmapImage(fileUri);
+            }
+        }
     }
 }
