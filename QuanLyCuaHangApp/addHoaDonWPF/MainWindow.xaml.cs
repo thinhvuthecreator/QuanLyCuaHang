@@ -120,7 +120,6 @@ namespace addHoaDonWPF
             return ketQua;
         }
                    
-                    
         bool checkTrung(string tenSP)            
         {
             if (dsSPListview.Items.IsEmpty)
@@ -140,6 +139,7 @@ namespace addHoaDonWPF
                 return false;
             }
         }
+                    
         void loadNVcmb()
         {
             List<NhanVienAo> listNV = new List<NhanVienAo>();
@@ -224,10 +224,19 @@ namespace addHoaDonWPF
 
 
 
-        int layTongTriGiaHoaDon()
+        bool themDoanhSoKH(decimal triGia,int maKH)
         {
-
-            return 0;
+            bool isSuccess = true;
+            try
+            {
+                string addDoanhSoKHQuerry = "UPDATE KHACHHANG SET DOANHSO = " + triGia + " WHERE MAKH =" + maKH;
+                SQL_Connect.Instance.ExecuteNONquerrySQL(addDoanhSoKHQuerry);
+            }
+            catch
+            {
+                isSuccess = false;
+            }
+            return isSuccess;
         }
             
         #endregion
@@ -319,7 +328,8 @@ namespace addHoaDonWPF
             hd.MaNV = layMaNV();
             hd.TriGia = tongTriGia;
             hd.NgHoaDon = DateTime.Parse(ngHoaDonDatePicker.Text);
-            if (HoaDon_DAL.themHoaDon(hd))
+          
+            if (HoaDon_DAL.themHoaDon(hd) && themDoanhSoKH(hd.TriGia, hd.MaKH))
             {
                 MessageBox.Show("Thêm thành công !");
             }
