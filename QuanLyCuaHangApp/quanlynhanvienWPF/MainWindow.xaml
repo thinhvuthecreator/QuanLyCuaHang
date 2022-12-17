@@ -22,7 +22,7 @@
             </Grid.Background>
 
             <Grid Width="190" Height="200" Margin="500,-250,10,0">
-                <Border BorderBrush="Black" BorderThickness="1" MouseDown="Border_MouseDown">
+                <Border BorderBrush="Black" BorderThickness="1">
                     <Image x:Name="nvImage" Width="190" Height="200"  Stretch="Fill" >
                     </Image>
                 </Border>

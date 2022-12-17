@@ -35,12 +35,13 @@ namespace AddKhachHangWPF
             string[] chuoi = genderCombobox.SelectedValue.ToString().Split();
             string cmbValue = chuoi[1];
             #endregion
-            int sdtKH, doanhSoKH;
+            int sdtKH;
+            decimal doanhSoKH;
   
             kh.TenKH = tenKHTxtbox.Text;
             kh.SdtKH = int.TryParse(sdtKHTxtbox.Text, out sdtKH) == true ? sdtKH : -1;
             kh.NgSinhKH = DateTime.Parse(ngsinhKHDatePicker.Text);
-            kh.DoanhSoKH = int.TryParse(doanhSoKHTxtbox.Text, out doanhSoKH) == true ? doanhSoKH : -1;
+            kh.DoanhSoKH = decimal.TryParse(doanhSoKHTxtbox.Text, out doanhSoKH) == true ? doanhSoKH : -1;
             kh.GioiTinhKH = cmbValue;
             kh.FileAnh = loadimageImage.Source.ToString();
         }

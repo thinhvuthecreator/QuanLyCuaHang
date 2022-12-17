@@ -165,12 +165,6 @@ namespace quanlynhanvienWPF
                 MessageBox.Show("Cập nhật thất bại !");
             }
         }
-
-
-
-
-        #endregion
-
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
@@ -185,5 +179,11 @@ namespace quanlynhanvienWPF
                 nvImage.Source = new BitmapImage(fileUri);
             }
         }
+
+
+
+
+        #endregion
+
     }
 }
