@@ -36,12 +36,12 @@ namespace AddKhachHangWPF
             string cmbValue = chuoi[1];
             #endregion
             int sdtKH;
-            decimal doanhSoKH;
+           
   
             kh.TenKH = tenKHTxtbox.Text;
             kh.SdtKH = int.TryParse(sdtKHTxtbox.Text, out sdtKH) == true ? sdtKH : -1;
             kh.NgSinhKH = DateTime.Parse(ngsinhKHDatePicker.Text);
-            kh.DoanhSoKH = decimal.TryParse(doanhSoKHTxtbox.Text, out doanhSoKH) == true ? doanhSoKH : -1;
+            kh.DoanhSoKH = 0;
             kh.GioiTinhKH = cmbValue;
             kh.FileAnh = loadimageImage.Source.ToString();
         }

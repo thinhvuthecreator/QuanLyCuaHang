@@ -30,15 +30,12 @@
             </TextBox>
             <TextBox x:Name="sdtKHTxtbox" Width="280" Height="30" Margin="276,180,38.54,259">
             </TextBox>
-            <TextBox x:Name="doanhSoKHTxtbox" Width="200" Height="30" Margin="276,234,118.54,205">
-            </TextBox>
 
-            
+
 
             <TextBlock Width="200" Height="25" Margin="210,-240,50,0" Foreground="White" FontSize="15" Text="Tên khách hàng"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-130,50,0" Foreground="White" FontSize="15" Text="Số điện thoại khách hàng"></TextBlock>
-            <TextBlock Width="200" Height="25" Margin="210,-20,50,0" Foreground="White" FontSize="15" Text="Doanh số khách hàng"></TextBlock>
-            <TextBlock Width="200" Height="25" Margin="210,93,50,0" Foreground="White" FontSize="15" Text="Ngày sinh khách hàng"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,-14,50,0" Foreground="White" FontSize="15" Text="Ngày sinh khách hàng"></TextBlock>
             <Button x:Name="themKHBtn" Width="105" Height="30" Content="Thêm khách hàng" FontWeight="Bold" Foreground="White" Margin="110,250,50,0" BorderBrush="Black" Click="themNVBtn_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -55,7 +52,8 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <DatePicker x:Name="ngsinhKHDatePicker" Width="200" Height="26" Margin="255,240,100,100">
+           
+            <DatePicker x:Name="ngsinhKHDatePicker" Width="200" Height="26" Margin="255,240,100,201">
             </DatePicker>
 
         </Grid>
