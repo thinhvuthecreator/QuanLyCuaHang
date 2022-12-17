@@ -154,6 +154,7 @@ namespace quanlynhanvienWPF
             nvUpdate.NgSinhNV = DateTime.Parse(ngSinhNVDatePicker.Text);
             nvUpdate.GioiTinh = gioiTinhNVCombobox.Text;
             nvUpdate.FileAnh =  nvImage.Source.ToString();
+            nvUpdate.LuongNV = decimal.Parse(luongNVTxtbox.Text);
 
             if(NhanVien_DAL.updateNhanVien(nvUpdate) == true)
             {
