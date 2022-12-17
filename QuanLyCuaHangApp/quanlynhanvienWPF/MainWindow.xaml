@@ -72,7 +72,7 @@
                 </Button.Background>
             </Button>
         </Grid>
-        <ListView x:Name="nhanVienListView" Width="535" Height="530" HorizontalAlignment="Left" Margin="30,60,0,31" Background ="Black" Foreground="BlueViolet" ItemsSource="{Binding ListNV}" SelectionChanged="nhanVienListView_SelectionChanged">
+        <ListView x:Name="nhanVienListView" Width="535" Height="530" HorizontalAlignment="Left" Margin="30,60,0,31" Background ="Black" Foreground="BlueViolet" ItemsSource="{Binding ListNV}" SelectionChanged="nhanVienListView_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility ="Visible" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" DisplayMemberBinding="{Binding MaNV}" Width="30" ></GridViewColumn>
