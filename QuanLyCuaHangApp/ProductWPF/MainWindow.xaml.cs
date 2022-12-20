@@ -57,6 +57,7 @@ namespace ProductWPF
 
         void loadImages()
         {
+          
             string resourceImage1 = System.IO.Path.GetFullPath("imageDefault.jpg");
             BitmapImage logoStaff = new BitmapImage();
             logoStaff.BeginInit();
@@ -64,9 +65,9 @@ namespace ProductWPF
             logoStaff.EndInit();
             ProductImage.Source = logoStaff;
 
-
-
         }
+
+
 
         void ganGiaTriSP(SanPham sp)
         {
