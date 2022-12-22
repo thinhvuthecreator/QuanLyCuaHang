@@ -28,8 +28,7 @@ namespace QuanLySanPham
         public MainWindow()
         {
             InitializeComponent();
-            loadSanPhamView();
-         
+
         }
             
 
@@ -50,7 +49,7 @@ namespace QuanLySanPham
             }
             return s;
         }
-        void loadSanPhamView()
+        public void loadSanPhamView()
         {
             DataTable dataSP = SanPham_DAL.loadDuLieuSP();
             foreach(DataRow row in dataSP.Rows)
@@ -143,12 +142,12 @@ namespace QuanLySanPham
             thongtinSP.Show();
         }
 
-
-         
-           
-
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            spViewWrapPanel.Children.Clear();
+            loadSanPhamView();
+        }
         #endregion
-
 
     }
 }

@@ -5,15 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLySanPham"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="800">
+        Title="MainWindow" Height="650" Width="800" Activated="Window_Activated">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition Width="61*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black" Offset="0"/>
                 <GradientStop Color="#FF1B0055" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <WrapPanel x:Name="spViewWrapPanel" Width="550" Height="480" HorizontalAlignment="Left" Margin="30,75,0,0" ScrollViewer.VerticalScrollBarVisibility ="Visible">
+        <WrapPanel x:Name="spViewWrapPanel" Width="550" Height="480" HorizontalAlignment="Left" Margin="30,107,0,32" ScrollViewer.VerticalScrollBarVisibility ="Visible" Grid.ColumnSpan="2" x:FieldModifier="public">
             <WrapPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -21,6 +25,6 @@
                 </LinearGradientBrush>
             </WrapPanel.Background>
         </WrapPanel>
-       
+
     </Grid>
 </Window>

@@ -185,5 +185,17 @@ namespace quanlynhanvienWPF
 
         #endregion
 
+        private void quanLyNVWindow_Activated(object sender, EventArgs e)
+        {
+            if (!nhanVienListView.Items.IsEmpty)
+            {
+                nhanVienListView.ItemsSource = null;
+                loadDuLieuNVListView();
+            }
+            else
+            {
+                loadDuLieuNVListView();
+            }
+        }
     }
 }

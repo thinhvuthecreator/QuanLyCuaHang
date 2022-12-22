@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using SQL_Connection;
 using System.Data;
 using System.Data.SqlClient;
+using Models;
+using Microsoft.Win32;
 
 namespace QuanLySanPham
 {
@@ -31,17 +33,66 @@ namespace QuanLySanPham
         #region methods      
         void loadLoaiSPCombobox()
         {
+            List<LoaiSP> lsp = new List<LoaiSP>();
             DataTable LoaiSPSource = LoaiSanPham_DAL.loadDuLieuLOAISP();
             foreach (DataRow data in LoaiSPSource.Rows)
             {
-                loaiSPcombobox.Items.Add(data[1]);
+                lsp.Add(new LoaiSP { MaLSP = int.Parse(data[0].ToString()), TenSP = data[1].ToString() });
             }
-        }
-        #endregion
 
+            loaiSPcombobox.ItemsSource = lsp;
+            loaiSPcombobox.DisplayMemberPath = "TenSP";
+            loaiSPcombobox.SelectedValuePath = "MaLSP";
+        }
+
+        #endregion
 
         #region events
+        private void updateSPBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            SanPham sp = new SanPham();
+            sp.MaSP = int.Parse(maSPTxtbox.Text);
+            sp.TenSP = tenSPTxtbox.Text;
+            sp.MaLoaiSP = int.Parse(loaiSPcombobox.SelectedValue.ToString());
+            sp.GiaSP = decimal.Parse(giaTxtbox.Text);
+            sp.SoLuongSP = int.Parse(soluongTxtbox.Text);
+            sp.NgThemSp = DateTime.Parse(ngThemspDatePicker.Text);
+            sp.FileAnh = ProductImage.Source.ToString();
+            if(SanPham_DAL.updateSanPham(sp))
+            {
+                MessageBox.Show("Cập nhật sản phẩm thành công !");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật sản phẩm thất bại !"); 
+            }
+        }
+        private void huyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private void updateImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog loadImage = new OpenFileDialog();
+            if (loadImage.ShowDialog() == true)
+            {
+
+
+                string sourceAnh = loadImage.FileName;
+                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadImage.FileName));
+                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+                Uri fileUri = new Uri(sourceAnhApp);
+                ProductImage.Source = new BitmapImage(fileUri);
+            }
+
+        }
+
         #endregion
+
+
+
 
     }
 }
