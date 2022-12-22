@@ -147,6 +147,10 @@ namespace QuanLySanPham
             spViewWrapPanel.Children.Clear();
             loadSanPhamView();
         }
+        private void addSPButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
         #endregion
 
     }
