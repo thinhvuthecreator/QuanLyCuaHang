@@ -103,9 +103,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AddLoaiSPWPF\AddLoaiSPWPF.csproj">
+      <Project>{d7dad77b-4644-4f6f-b57d-ac0c8d6d92f5}</Project>
+      <Name>AddLoaiSPWPF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NhanVien_Model\DTO_Models.csproj">
       <Project>{6716402c-37d2-4f19-a39f-e0f8148818a0}</Project>
       <Name>DTO_Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProductWPF\AddProductWPF.csproj">
+      <Project>{4cc36c07-abe2-4da8-a89f-13e70f4b68a9}</Project>
+      <Name>AddProductWPF</Name>
     </ProjectReference>
     <ProjectReference Include="..\SQL_Connection\SQL_ThaoTac.csproj">
       <Project>{15379ede-436b-49b5-b560-33eee3dad98e}</Project>

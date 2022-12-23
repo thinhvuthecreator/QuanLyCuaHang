@@ -116,6 +116,7 @@ namespace ProductWPF
             if(SanPham_DAL.themSanPham(sp))
             {
                 MessageBox.Show("Thêm thành công !");
+                this.Close();
             }
             else
             {

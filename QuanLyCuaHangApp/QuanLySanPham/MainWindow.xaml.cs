@@ -17,6 +17,7 @@ using Models;
 using SQL_Connection;
 using System.Data;
 using System.Data.SqlClient;
+using ProductWPF;
 
 namespace QuanLySanPham
 {
@@ -146,10 +147,18 @@ namespace QuanLySanPham
         {
             spViewWrapPanel.Children.Clear();
             loadSanPhamView();
+    
         }
+
         private void addSPButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ProductWPF.MainWindow themSPWindow = new ProductWPF.MainWindow();
+            themSPWindow.Show();
+        }
+        private void lspSPButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddLoaiSPWPF.MainWindow themLSPWindow = new AddLoaiSPWPF.MainWindow();
+            themLSPWindow.Show();
         }
         #endregion
 
