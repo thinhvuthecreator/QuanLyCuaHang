@@ -1,0 +1,14 @@
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\bin\Debug\QuanLyHoaDon.exe.config
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\bin\Debug\QuanLyHoaDon.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\bin\Debug\QuanLyHoaDon.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\obj\Debug\MainWindow.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\obj\Debug\App.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\obj\Debug\QuanLyHoaDon_MarkupCompile.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\obj\Debug\QuanLyHoaDon_MarkupCompile.lref
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\obj\Debug\MainWindow.baml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\obj\Debug\QuanLyHoaDon.g.resources
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\obj\Debug\QuanLyHoaDon.Properties.Resources.resources
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\obj\Debug\QuanLyHoaDon.csproj.GenerateResource.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\obj\Debug\QuanLyHoaDon.csproj.CoreCompileInputs.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\obj\Debug\QuanLyHoaDon.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyHoaDon\obj\Debug\QuanLyHoaDon.pdb
