@@ -31,6 +31,7 @@ namespace QuanLyKhachHangWPF
             loadDuLieuKHListView();
             loadImages();
             loadGioiTinhCombobox();
+            loadTimKiemCmb();
         }
         #region objects
         #endregion
@@ -57,6 +58,7 @@ namespace QuanLyKhachHangWPF
                 listKH.Add(new KhachHang() { MaKH = int.Parse(khachhangData[0].ToString()), TenKH = khachhangData[1].ToString(), SdtKH = int.Parse(khachhangData[4].ToString()), DoanhSoKH = decimal.Parse(khachhangData[5].ToString()), GioiTinhKH = khachhangData[3].ToString(), NgSinhKH = DateTime.Parse(khachhangData[2].ToString()), FileAnh = khachhangData[6].ToString() });
             }
             khachhangListView.ItemsSource = listKH;
+            khachhangListView.SelectedIndex = 0;
         }
         string xuLyChuoi(string s)
         {
@@ -79,6 +81,13 @@ namespace QuanLyKhachHangWPF
 
 
         }
+        void loadTimKiemCmb()
+        {
+            List<string> danhMuc = new List<string> { "ID", "Tên", "SDT", "Doanh số", "Giới tính" };
+            timKiemCmb.ItemsSource = danhMuc;
+            timKiemCmb.SelectedIndex = 0;
+        }
+
 
         #endregion
 
@@ -166,21 +175,62 @@ namespace QuanLyKhachHangWPF
                 khImage.Source = image;
             }
         }
-        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        private void Window_Activated(object sender, EventArgs e)
         {
             loadDuLieuKHListView();
         }
-       
+
+        private void timKiemTxtbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string Querry = "";
+            if (timKiemCmb.SelectedIndex == 0)
+            {
+                Querry = "SELECT * FROM KHACHHANG WHERE MAKH LIKE '%" + timKiemTxtbox.Text + "%'";
+            }
+            else if (timKiemCmb.SelectedIndex == 1)
+            {
+                Querry = "SELECT * FROM KHACHHANG WHERE TENKH LIKE N'%" + timKiemTxtbox.Text + "%'";
+            }
+            else if (timKiemCmb.SelectedIndex == 2)
+            {
+                Querry = "SELECT * FROM KHACHHANG WHERE SDTKH LIKE '%" + timKiemTxtbox.Text + "%'";
+            }
+            else if (timKiemCmb.SelectedIndex == 3)
+            {
+                Querry = "SELECT * FROM KHACHHANG WHERE DOANHSO LIKE '%" + timKiemTxtbox.Text + "%'";
+            }
+            else if (timKiemCmb.SelectedIndex == 4)
+            {
+                Querry = "SELECT * FROM KHACHHANG WHERE GIOITINH LIKE N'%" + timKiemTxtbox.Text + "%'";
+            }
+            List<KhachHang> listKH = new List<KhachHang>();
+            DataTable dataKhachHang = SQL_Connect.Instance.ExecuteSQL(Querry);
+            foreach (DataRow khachhangData in dataKhachHang.Rows)
+            {
+                try
+                {
+                    listKH.Add(new KhachHang() { MaKH = int.Parse(khachhangData[0].ToString()), TenKH = khachhangData[1].ToString(), SdtKH = int.Parse(khachhangData[4].ToString()), DoanhSoKH = decimal.Parse(khachhangData[5].ToString()), GioiTinhKH = khachhangData[3].ToString(), NgSinhKH = DateTime.Parse(khachhangData[2].ToString()), FileAnh = khachhangData[6].ToString() });
+                }
+                catch
+                {
+
+                }
+            }
+            khachhangListView.ItemsSource = listKH;
+            khachhangListView.SelectedIndex = 0;
+        }
+
+
+
+
+
+
+
+
+
+
         #endregion
-        
-        
-        
-        
-
-
-
-
-
 
     }
 }
+

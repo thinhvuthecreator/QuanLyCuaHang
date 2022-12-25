@@ -5,15 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyKhachHangWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="870" ResizeMode="NoResize">
+        Title="MainWindow" Height="650" Width="870" ResizeMode="NoResize" Activated="Window_Activated">
     <Grid>
-        <Grid Width="880">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="17*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Width="880" Grid.ColumnSpan="2" Margin="0,0,-16,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="663*"/>
                 <ColumnDefinition Width="162*"/>
                 <ColumnDefinition Width="24*"/>
                 <ColumnDefinition Width="31*"/>
             </Grid.ColumnDefinitions>
+           
             <Grid Margin="0,-55,0,0" Grid.ColumnSpan="4">
                 <Grid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -86,14 +91,10 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-            <Button x:Name="RefreshButton" Width="50" Height="20" Content="Refresh" Margin="0,0,550,520" Foreground="AliceBlue" Click="RefreshButton_Click">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="#FF6510AC" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
+            <ComboBox x:Name ="timKiemCmb" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,35,0,0">
+            </ComboBox>
+            <TextBox x:Name="timKiemTxtbox" Width="300" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,35,0,0" TextChanged="timKiemTxtbox_TextChanged">
+            </TextBox>
         </Grid>
     </Grid>
 </Window>

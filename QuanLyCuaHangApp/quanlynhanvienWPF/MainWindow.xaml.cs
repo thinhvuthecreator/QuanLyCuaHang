@@ -35,6 +35,7 @@ namespace quanlynhanvienWPF
             loadDuLieuNVListView();
             loadGioiTinhCombobox();
             loadImages();
+            loadTimKiemCmb();
         }
 
         #region objects
@@ -42,6 +43,12 @@ namespace quanlynhanvienWPF
         #endregion
 
         #region methods
+        void loadTimKiemCmb()
+        {
+            List<string> danhMuc = new List<string> { "ID", "Tên","SDT","Lương","Giới tính"};
+            timKiemCmb.ItemsSource = danhMuc;
+            timKiemCmb.SelectedIndex = 0;
+        }
         void loadDuLieuNVListView()
         {
             List<NhanVien> listNV = new List<NhanVien>();
@@ -51,6 +58,7 @@ namespace quanlynhanvienWPF
                 listNV.Add(new NhanVien() { MaNV = int.Parse(nhanvienData[0].ToString()), TenNV = nhanvienData[1].ToString(),SdtNV = int.Parse(nhanvienData[2].ToString()),LuongNV = decimal.Parse(nhanvienData[3].ToString()),GioiTinh = nhanvienData[4].ToString(),NgSinhNV = DateTime.Parse(nhanvienData[5].ToString()),FileAnh = nhanvienData[6].ToString() });
             }
             nhanVienListView.ItemsSource = listNV;
+            nhanVienListView.SelectedIndex = 0;
         }
         void loadGioiTinhCombobox()
         {
@@ -92,10 +100,7 @@ namespace quanlynhanvienWPF
             
         }
 
-        private void RefreshButton_Click(object sender, RoutedEventArgs e)
-        {
-            loadDuLieuNVListView();
-        }
+    
 
         private void nhanVienListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -179,12 +184,6 @@ namespace quanlynhanvienWPF
                 nvImage.Source = new BitmapImage(fileUri);
             }
         }
-
-
-
-
-        #endregion
-
         private void quanLyNVWindow_Activated(object sender, EventArgs e)
         {
             if (!nhanVienListView.Items.IsEmpty)
@@ -197,5 +196,51 @@ namespace quanlynhanvienWPF
                 loadDuLieuNVListView();
             }
         }
+        private void timKiemTxtbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string Querry = "";
+            if(timKiemCmb.SelectedIndex == 0)
+            {
+                Querry = "SELECT * FROM NHANVIEN WHERE MANV LIKE '%" + timKiemTxtbox.Text + "%'";
+            }
+            else if(timKiemCmb.SelectedIndex == 1)
+            {
+                Querry = "SELECT * FROM NHANVIEN WHERE TENNV LIKE N'%" + timKiemTxtbox.Text + "%'";
+            }
+            else if(timKiemCmb.SelectedIndex == 2)
+            {
+                Querry = "SELECT * FROM NHANVIEN WHERE SDTNV LIKE '%" + timKiemTxtbox.Text + "%'";
+            }
+            else if(timKiemCmb.SelectedIndex == 3)
+            {
+                Querry = "SELECT * FROM NHANVIEN WHERE LUONG LIKE '%" + timKiemTxtbox.Text + "%'";
+            }         
+            else if (timKiemCmb.SelectedIndex == 4)
+            {
+                Querry = "SELECT * FROM NHANVIEN WHERE GIOITINH LIKE N'%" + timKiemTxtbox.Text + "%'";
+            }
+            List<NhanVien> listNV = new List<NhanVien>();
+            DataTable dataNhanVien = SQL_Connect.Instance.ExecuteSQL(Querry);
+            foreach (DataRow nhanvienData in dataNhanVien.Rows)
+            {
+                try
+                {
+                    listNV.Add(new NhanVien() { MaNV = int.Parse(nhanvienData[0].ToString()), TenNV = nhanvienData[1].ToString(), SdtNV = int.Parse(nhanvienData[2].ToString()), LuongNV = decimal.Parse(nhanvienData[3].ToString()), GioiTinh = nhanvienData[4].ToString(), NgSinhNV = DateTime.Parse(nhanvienData[5].ToString()), FileAnh = nhanvienData[6].ToString() });
+                }
+                catch
+                {
+
+                }
+            }
+            nhanVienListView.ItemsSource = listNV;
+            nhanVienListView.SelectedIndex = 0;
+        }
+
+        #endregion
+
+
+
+
+
     }
 }

@@ -27,6 +27,12 @@
                     </Image>
                 </Border>
             </Grid>
+
+            <ComboBox x:Name ="timKiemCmb" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,92,0,0">
+            </ComboBox>
+            <TextBox x:Name="timKiemTxtbox" Width="300" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,92,0,0" TextChanged="timKiemTxtbox_TextChanged">
+            </TextBox>
+
             <TextBox x:Name="maNVTxtbox" Width="100" Height="20" Margin="505,40,98,0">
             </TextBox>
             <TextBox x:Name="tenNVTxtbox" Width="180" Height="20" Margin="585,110,98,0">
