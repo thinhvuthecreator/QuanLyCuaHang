@@ -58,7 +58,9 @@
             </StackPanel>
 
         </Grid>
-
+        <ComboBox x:Name ="timKiemCmb" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,78,0,0">
+        </ComboBox>
+        <TextBox x:Name="timKiemTxtbox" Width="300" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,78,0,0" TextChanged="timKiemTxtbox_TextChanged"/>
 
 
 
