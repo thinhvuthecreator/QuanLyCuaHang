@@ -89,10 +89,24 @@ namespace QuanLySanPham
 
         }
 
+
+        private void xoaBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (SanPham_DAL.xoaSanPham(maSPTxtbox.Text))
+            {
+                MessageBox.Show("Xóa thành công !");
+                this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Xóa thất bại !");
+            }
+
+        }
+
+
         #endregion
-
-
-
 
     }
 }

@@ -51,6 +51,14 @@
                         </Button.Background>
                     </Button>
                 </DockPanel>
+                <Button x:Name="xoaBtn" Width="100" Height="30" Content="Xóa" FontWeight="Bold" Foreground="White" Margin="103,5,0,0" BorderBrush="Black" Click="xoaBtn_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF860DFF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
             </StackPanel>
 
         </Grid>
