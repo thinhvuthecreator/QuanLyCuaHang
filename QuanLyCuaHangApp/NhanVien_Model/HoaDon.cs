@@ -8,6 +8,7 @@ namespace Models
 {
     public class HoaDon
     {
+        private int soHD;
         private DateTime ngHoaDon;
         private int maKH, maNV;
         private decimal triGia;
@@ -16,5 +17,6 @@ namespace Models
         public int MaKH { get => maKH; set => maKH = value; }
         public int MaNV { get => maNV; set => maNV = value; }
         public decimal TriGia { get => triGia; set => triGia = value; }
+        public int SoHD { get => soHD; set => soHD = value; }
     }
 }

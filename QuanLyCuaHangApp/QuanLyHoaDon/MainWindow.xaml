@@ -5,8 +5,134 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyHoaDon"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600">
+        Title="MainWindow" Height="650" Width="690">
     <Grid>
-        
+        <StackPanel>
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF000D3A" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <DockPanel Width="690" Height="220" VerticalAlignment="Top">
+                <DockPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF030038" Offset="1"/>
+                    </LinearGradientBrush>
+                </DockPanel.Background>
+                <StackPanel Width="300" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" >
+                    <StackPanel.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF4633FF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </StackPanel.Background>
+                    <StackPanel.Resources >
+                        <Style x:Key="childTitle" TargetType="TextBlock">
+                            <Setter Property="FontFamily" Value="Arial Rounded MT Bold"></Setter>
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                            <Setter Property="Foreground" Value="White"></Setter>
+                            <Setter Property="Margin" Value="0,0,100,0"></Setter>
+                        </Style>
+                        <Style TargetType="ComboBox">
+                            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                            <Setter Property="Margin" Value="10,0,0,0"></Setter>
+                            <Setter Property="Width" Value="200"></Setter>
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                            <Setter Property="Margin" Value="10,0,0,0"></Setter>
+                            <Setter Property="Width" Value="200"></Setter>
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+                        <Style TargetType="DatePicker">
+                            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                            <Setter Property="Margin" Value="10,0,0,0"></Setter>
+                            <Setter Property="Width" Value="200"></Setter>
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+                    </StackPanel.Resources>
+
+
+                    <TextBlock Text="Hóa Đơn" FontSize="22" HorizontalAlignment="Center" Foreground="White" FontFamily="Arial Rounded MT Bold" ></TextBlock>
+                    <TextBlock Text="Số hóa đơn" FontSize="10" Style="{StaticResource ResourceKey=childTitle}" Margin="0,0,135,0"></TextBlock>
+                    <TextBox x:Name="soHDTextBox"></TextBox>
+                    <TextBlock Text="Người lập hóa đơn" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
+                    <TextBox x:Name="nvTextbox"></TextBox>
+                    <TextBlock Text="Khách hàng" FontSize="10" Style="{StaticResource ResourceKey=childTitle}" Margin="0,0,127,0"></TextBlock>
+                    <TextBox x:Name="khTextbox"></TextBox>
+                    <TextBlock Text="Ngày tạo hoá đơn" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
+                    <TextBox x:Name="ngHdTextBox"></TextBox>
+                    <TextBlock Text="Trị giá hoá đơn" FontSize="10" Style="{StaticResource ResourceKey=childTitle}" Margin="0,0,110,0"></TextBlock>
+                    <TextBox x:Name="triGiaHDTextbox"></TextBox>
+                </StackPanel>
+                <StackPanel Margin="20,20,25,20" Height="160">
+                    <StackPanel.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF3929D6" Offset="1"/>
+                        </LinearGradientBrush>
+                    </StackPanel.Background>
+
+                    <StackPanel.Resources >
+                        <Style x:Key="childTitle" TargetType="TextBlock">
+                            <Setter Property="FontFamily" Value="Arial Rounded MT Bold"></Setter>
+                            <Setter Property="Foreground" Value="White"></Setter>
+                            <Setter Property="Margin" Value="72,0,0,0"></Setter>
+
+                        </Style>
+                        <Style TargetType="ComboBox">
+                            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                            <Setter Property="Margin" Value="10,0,0,0"></Setter>
+                            <Setter Property="Width" Value="200"></Setter>
+
+                        </Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                            <Setter Property="Margin" Value="10,0,0,0"></Setter>
+                            <Setter Property="Width" Value="200"></Setter>
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+                        <Style TargetType="DatePicker">
+                            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                            <Setter Property="Margin" Value="10,0,0,0"></Setter>
+                            <Setter Property="Width" Value="200"></Setter>
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBlock Text="Chi Tiết Hóa Đơn" FontSize="22" HorizontalAlignment="Center" Foreground="White" FontFamily="Arial Rounded MT Bold" ></TextBlock>
+
+                    <TextBlock Text="Sản phẩm" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
+                    <TextBox x:Name="spTextBox"></TextBox>
+                    <TextBlock Text="Đơn giá" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
+                    <TextBox x:Name="donGiaTextbox"></TextBox>
+                    <TextBlock Text="Số lượng" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
+                    <TextBox x:Name="soLuongTextBox"></TextBox>
+                    <TextBlock Text="Khuyến mãi (%)" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
+                    <TextBox x:Name="khuyenMaiTextBox"></TextBox>
+                </StackPanel>
+            </DockPanel>
+            <ListView x:Name="hoadonListView" Width="680" Height="400" Foreground="Black" ItemsSource="{Binding ListNV}" ScrollViewer.VerticalScrollBarVisibility ="Visible" SelectionChanged="hoadonListView_SelectionChanged" >
+                <ListView.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF000B3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListView.Background>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Số hóa đơn" DisplayMemberBinding="{Binding MaNV}" Width="70" ></GridViewColumn>
+                        <GridViewColumn Header="Tên sản phẩm" DisplayMemberBinding="{Binding TenNV}" Width="100" ></GridViewColumn>
+                        <GridViewColumn Header="Đơn giá" DisplayMemberBinding="{Binding SdtNV}" Width="150" ></GridViewColumn>
+                        <GridViewColumn Header="Số lượng" DisplayMemberBinding="{Binding LuongNV}" Width="100" ></GridViewColumn>
+                        <GridViewColumn Header="Khuyến mãi(%)" DisplayMemberBinding="{Binding GioiTinh}" Width="95" ></GridViewColumn>
+                        <GridViewColumn Header="Tổng đơn giá" DisplayMemberBinding="{Binding NgSinhNV}" Width="190" ></GridViewColumn>
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
     </Grid>
 </Window>

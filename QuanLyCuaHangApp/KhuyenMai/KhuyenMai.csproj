@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A056A983-7769-4EB6-BE5E-90A54B3E4BE1}</ProjectGuid>
+    <ProjectGuid>{62B3C948-B13D-4F97-976B-6D1AEEBFBFF8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>QuanLyHoaDon</RootNamespace>
-    <AssemblyName>QuanLyHoaDon</AssemblyName>
+    <RootNamespace>KhuyenMai</RootNamespace>
+    <AssemblyName>KhuyenMai</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -93,20 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\addHoaDonWPF\addHoaDonWPF.csproj">
-      <Project>{44105335-68fe-4af4-a21c-ab3ce0c73e17}</Project>
-      <Name>addHoaDonWPF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NhanVien_Model\DTO_Models.csproj">
-      <Project>{6716402c-37d2-4f19-a39f-e0f8148818a0}</Project>
-      <Name>DTO_Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQL_Connection\SQL_ThaoTac.csproj">
-      <Project>{15379ede-436b-49b5-b560-33eee3dad98e}</Project>
-      <Name>SQL_ThaoTac</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
