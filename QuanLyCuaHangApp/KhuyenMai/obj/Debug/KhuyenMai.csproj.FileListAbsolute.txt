@@ -1,0 +1,15 @@
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\KhuyenMai.exe.config
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\KhuyenMai.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\KhuyenMai.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMai.csproj.AssemblyReference.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\MainWindow.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\App.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMai_MarkupCompile.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMai_MarkupCompile.lref
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\MainWindow.baml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMai.g.resources
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMai.Properties.Resources.resources
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMai.csproj.GenerateResource.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMai.csproj.CoreCompileInputs.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMai.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMai.pdb

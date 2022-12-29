@@ -5,8 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KhuyenMai"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="650">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF27049E" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel Width="120" HorizontalAlignment="Right" Margin="0,40,20,0">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Foreground" Value="White"></Setter>
+                    <Setter Property="FontFamily" Value="Arial Rouned MT Bold"></Setter>
+                    <Setter Property="Width" Value="120"></Setter>
+                    <Setter Property="Height" Value="30"></Setter>
+                    <Setter Property="Margin" Value="0,10,0,0"></Setter>
+                </Style>
+            </StackPanel.Resources>
+            <Button x:Name="addBtn" Content="Thêm khuyến mãi">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF322AD3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="updateBtn" Content="Sửa khuyến mãi">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF322AD3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="deleteBtn" Content="Xóa khuyến mãi">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF322AD3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        <DockPanel Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,50,0,0">
+            <StackPanel >
+                <TextBlock Text="Mức giá (trở lên) để được khuyến mãi" FontSize="12" Foreground="White"></TextBlock>
+                <TextBox Height="20" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top">
+                </TextBox>
+            </StackPanel>
+            <StackPanel Margin="40,0,0,0">
+                <TextBlock Text="Giá trị khuyến mãi" FontSize="12" Foreground="White"></TextBlock>
+                <TextBox Height="20" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top">
+                </TextBox>
+            </StackPanel>
+        </DockPanel>
+        <StackPanel Width="400" Height="300" HorizontalAlignment="Left" Margin="50,80,0,0">
+            
+        </StackPanel>
     </Grid>
 </Window>
