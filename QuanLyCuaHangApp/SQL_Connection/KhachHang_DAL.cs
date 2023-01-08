@@ -61,7 +61,7 @@ namespace SQL_Connection
             }
             return isSuccess;
         }
-        static public bool xoaKhachHang(string ma)
+        static public bool xoaKhachHang(int ma)
         {
             bool isSuccess = true;
             try
