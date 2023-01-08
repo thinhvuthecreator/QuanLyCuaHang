@@ -44,6 +44,7 @@
     <Compile Include="CTHD_DAL.cs" />
     <Compile Include="HoaDon_DAL.cs" />
     <Compile Include="KhachHang_DAL.cs" />
+    <Compile Include="KhuyenMai_DAL.cs" />
     <Compile Include="LoaiSanPham_DAL.cs" />
     <Compile Include="NhanVien_DAL.cs" />
     <Compile Include="SanPham_DAL.cs" />
