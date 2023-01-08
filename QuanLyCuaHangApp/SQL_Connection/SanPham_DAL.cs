@@ -61,7 +61,7 @@ namespace SQL_Connection
             }
             return isSuccess;
         }
-        static public bool xoaSanPham(string ma)
+        static public bool xoaSanPham(int ma)
         {
             bool isSuccess = true;
             try
