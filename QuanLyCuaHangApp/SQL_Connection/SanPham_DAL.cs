@@ -29,7 +29,7 @@ namespace SQL_Connection
                 }
                 else
                 {
-                    string themSPQuerry = "INSERT SANPHAM VALUES (N'" + sp.TenSP + "'," + sp.GiaSP + "," + sp.MaLoaiSP + "," + sp.SoLuongSP + ",'" + sp.NgThemSp.ToShortDateString() + "',N'" + sp.FileAnh +"')";
+                    string themSPQuerry = "INSERT SANPHAM VALUES (N'" + sp.TenSP + "'," + sp.GiaSP + "," + sp.MaLoaiSP + "," + sp.SoLuongSP + ",'" + sp.NgThemSp.ToShortDateString() + "',N'" + sp.FileAnh +"',"+sp.GiaBanSP +")";
                     SQL_Connect.Instance.ExecuteNONquerrySQL(themSPQuerry);
                 }
             }
@@ -51,7 +51,7 @@ namespace SQL_Connection
                 }
                 else
                 {
-                    string updateSPQuerry = "UPDATE SANPHAM SET TENSP = N'" + sp.TenSP + "', GIA =" + sp.GiaSP + ", MALOAISP = N'" + sp.MaLoaiSP + "',SOLUONGSP = " + sp.SoLuongSP + ",NGAYTHEM =" + sp.NgThemSp.ToShortDateString() + ",IMAGESP =N'" +sp.FileAnh + "' WHERE MASP =" + sp.MaSP;
+                    string updateSPQuerry = "UPDATE SANPHAM SET TENSP = N'" + sp.TenSP + "', GIA =" + sp.GiaSP + ",GIABAN =" + sp.GiaBanSP + ",MALOAISP = N'" + sp.MaLoaiSP + "',SOLUONGSP = " + sp.SoLuongSP + ",NGAYTHEM =" + sp.NgThemSp.ToShortDateString() + ",IMAGESP =N'" +sp.FileAnh + "' WHERE MASP =" + sp.MaSP;
                     SQL_Connect.Instance.ExecuteNONquerrySQL(updateSPQuerry);
                 }
             }
