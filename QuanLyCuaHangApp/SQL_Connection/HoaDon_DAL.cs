@@ -24,7 +24,7 @@ namespace SQL_Connection
             try
             {
                
-                    string themHDQuerry = "INSERT HOADON VALUES ('"+ hd.NgHoaDon.ToShortDateString() + "'," + hd.TriGia + "," + hd.MaKH + "," + hd.MaNV + ")";
+                    string themHDQuerry = "INSERT HOADON VALUES ('"+ hd.NgHoaDon.ToShortDateString() + "'," + hd.TriGia + "," + hd.MaKH + "," + hd.MaNV + "," + hd.MaKM + ")";
                     SQL_Connect.Instance.ExecuteNONquerrySQL(themHDQuerry);
                 
             }
@@ -34,7 +34,6 @@ namespace SQL_Connection
             }
             return isSuccess;
         }
-       
         static public bool xoaHoaDon(string ma)
         {
             bool isSuccess = true;
@@ -49,5 +48,6 @@ namespace SQL_Connection
             }
             return isSuccess;
         }
+       
     }
 }
