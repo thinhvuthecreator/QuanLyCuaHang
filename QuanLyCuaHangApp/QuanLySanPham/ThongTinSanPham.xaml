@@ -26,8 +26,9 @@
                 <ComboBox x:Name="loaiSPcombobox" Width="280" Height="20" HorizontalAlignment="Left">
                 </ComboBox>
                 <TextBlock Width="200" Height="25"  Foreground="White" FontSize="15" Text="Giá sản phẩm" HorizontalAlignment="Left"></TextBlock>
-                <TextBox x:Name="giaTxtbox" Width="200" Height="20" HorizontalAlignment="Left">
-                </TextBox>
+                <TextBox x:Name="giaTxtbox" Width="200" Height="20" HorizontalAlignment="Left"></TextBox>
+                <TextBlock Width="200" Height="25"  Foreground="White" FontSize="15" Text="Giá bán sản phẩm" HorizontalAlignment="Left"></TextBlock>
+                <TextBox x:Name="giaBanTxtbox" Width="200" Height="20" HorizontalAlignment="Left"></TextBox>
                 <TextBlock Width="200" Height="25"  Foreground="White" FontSize="15" Text="Số lượng sản phẩm" HorizontalAlignment="Left"></TextBlock>
                 <TextBox x:Name="soluongTxtbox" Width="150" Height="20" HorizontalAlignment="Left">
                 </TextBox>

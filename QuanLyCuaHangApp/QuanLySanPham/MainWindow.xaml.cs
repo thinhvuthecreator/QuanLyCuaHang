@@ -61,7 +61,7 @@ namespace QuanLySanPham
             DataTable dataSP = SanPham_DAL.loadDuLieuSP();
             foreach(DataRow row in dataSP.Rows)
             {
-                
+                decimal giaBan;
                 StackPanel SPstckPanel = new StackPanel();
                 SPstckPanel.Width = 130;
                 SPstckPanel.Height = 130;
@@ -89,6 +89,7 @@ namespace QuanLySanPham
                 spObject.MaLoaiSP = int.Parse(row[3].ToString());
                 spObject.SoLuongSP = int.Parse(row[4].ToString());
                 spObject.NgThemSP = DateTime.Parse(row[5].ToString());
+                spObject.giaBanSP = decimal.TryParse(row[7].ToString(), out giaBan) == true ? giaBan : 0;
                 spObject.MouseDown += ImgeSP_MouseDown;
                 #endregion
 
@@ -144,6 +145,7 @@ namespace QuanLySanPham
                     (window as ThongTinSanPham).loaiSPcombobox.Text = layTenLoaiSP(spObject.MaLoaiSP);
                     (window as ThongTinSanPham).ngThemspDatePicker.Text = spObject.NgThemSP.ToString();
                     (window as ThongTinSanPham).maSPTxtbox.Text = spObject.MaSP.ToString();
+                    (window as ThongTinSanPham).giaBanTxtbox.Text = spObject.giaBanSP.ToString();
                 }
             }
             thongtinSP.Show();
@@ -156,6 +158,7 @@ namespace QuanLySanPham
     
         }
 
+        
         private void addSPButton_Click(object sender, RoutedEventArgs e)
         {
             ProductWPF.MainWindow themSPWindow = new ProductWPF.MainWindow();

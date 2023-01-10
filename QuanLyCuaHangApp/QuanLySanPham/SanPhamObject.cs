@@ -15,6 +15,7 @@ namespace QuanLySanPham
         public int SoLuongSP { get; set; }
         public DateTime NgThemSP { get; set; }
         public string FileAnh { get; set; }
+        public decimal giaBanSP { get; set;}
 
     }
 }

@@ -59,6 +59,7 @@ namespace QuanLySanPham
             sp.SoLuongSP = int.Parse(soluongTxtbox.Text);
             sp.NgThemSp = DateTime.Parse(ngThemspDatePicker.Text);
             sp.FileAnh = ProductImage.Source.ToString();
+            sp.GiaBanSP = decimal.Parse(giaBanTxtbox.Text);
             if(SanPham_DAL.updateSanPham(sp))
             {
                 MessageBox.Show("Cập nhật sản phẩm thành công !");
