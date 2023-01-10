@@ -10,7 +10,7 @@ using SQL_Connection;
 
 namespace SQL_Connection
 {
-    public class KhuyenMai_DAL
+    static public class KhuyenMai_DAL
     {
         static public DataTable loadDuLieuKM()
         {
@@ -21,7 +21,7 @@ namespace SQL_Connection
             getKhuyenMai = SQL_Connect.Instance.ExecuteSQL(getKMQuerry);
             return getKhuyenMai;
         }
-        static public bool themKhuyenMai(KhuyenMai km)
+        static public bool themKhuyenMai(Khuyenmai km)
         {
 
             bool isSuccess = true;
@@ -49,7 +49,7 @@ namespace SQL_Connection
 
             return isSuccess;
         }
-        static public bool updateKhuyenMai(KhuyenMai km)
+        static public bool updateKhuyenMai(Khuyenmai km)
         {
             bool isSuccess = true;
 

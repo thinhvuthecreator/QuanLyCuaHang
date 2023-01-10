@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class KhuyenMai
+    public class Khuyenmai
     {
         private int maKM;
         private decimal giaTriKM;

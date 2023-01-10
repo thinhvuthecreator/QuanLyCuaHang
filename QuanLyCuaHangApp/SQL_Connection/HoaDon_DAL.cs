@@ -35,7 +35,7 @@ namespace SQL_Connection
             return isSuccess;
         }
        
-        static public bool xoaHoaDon(int ma)
+        static public bool xoaHoaDon(string ma)
         {
             bool isSuccess = true;
             try

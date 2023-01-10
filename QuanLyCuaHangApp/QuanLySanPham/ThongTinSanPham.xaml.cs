@@ -92,7 +92,7 @@ namespace QuanLySanPham
 
         private void xoaBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (SanPham_DAL.xoaSanPham(maSPTxtbox.Text))
+            if (SanPham_DAL.xoaSanPham(int.Parse(maSPTxtbox.Text)))
             {
                 MessageBox.Show("Xóa thành công !");
                 this.Close();

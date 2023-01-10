@@ -102,7 +102,7 @@ namespace QuanLyKhachHangWPF
             MessageBoxResult decicion = MessageBox.Show("Bạn có muốn xóa khách hàng này không ?", "", MessageBoxButton.YesNo);
             if (decicion == MessageBoxResult.Yes)
             {
-                if (KhachHang_DAL.xoaKhachHang(maKHTxtbox.Text))
+                if (KhachHang_DAL.xoaKhachHang(int.Parse(maKHTxtbox.Text)))
                 {
                     MessageBox.Show("Xóa thành công !");
                 }

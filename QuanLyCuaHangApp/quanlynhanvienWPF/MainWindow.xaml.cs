@@ -140,7 +140,7 @@ namespace quanlynhanvienWPF
             MessageBoxResult decicion = MessageBox.Show("Bạn có muốn xóa nhân viên này không ?", "", MessageBoxButton.YesNo);
             if (decicion == MessageBoxResult.Yes)
             {
-                if (NhanVien_DAL.xoaNhanVien(maNVTxtbox.Text))
+                if (NhanVien_DAL.xoaNhanVien(int.Parse(maNVTxtbox.Text)))
                 {
                     MessageBox.Show("Xóa thành công !");
                 }

@@ -41,7 +41,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyHoaDon", "QuanLyHoaDo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuWPF", "MenuWPF\MenuWPF.csproj", "{8FA3B3F4-FD8F-436B-82A5-08F90E3893D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KhuyenMai", "KhuyenMai\KhuyenMai.csproj", "{62B3C948-B13D-4F97-976B-6D1AEEBFBFF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KhuyenMaiWPF", "KhuyenMai\KhuyenMaiWPF.csproj", "{62B3C948-B13D-4F97-976B-6D1AEEBFBFF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
