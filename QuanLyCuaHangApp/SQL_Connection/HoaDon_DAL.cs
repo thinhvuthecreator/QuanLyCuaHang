@@ -24,7 +24,7 @@ namespace SQL_Connection
             try
             {
                
-                    string themHDQuerry = "INSERT HOADON VALUES ('"+ hd.NgHoaDon.ToShortDateString() + "'," + hd.TriGia + "," + hd.MaKH + "," + hd.MaNV + "," + hd.MaKM + ")";
+                    string themHDQuerry = "INSERT HOADON VALUES ('"+ hd.NgHoaDon.ToShortDateString() + "'," + hd.TriGia + "," + hd.MaKH + "," + hd.MaNV + "," + hd.MaKM + "," + hd.TriGiaSauKM + ")";
                     SQL_Connect.Instance.ExecuteNONquerrySQL(themHDQuerry);
                 
             }

@@ -13,6 +13,7 @@ namespace Models
         private int maKH, maNV;
         private decimal triGia;
         private int maKM;
+        private decimal triGiaSauKM;
        
         public DateTime NgHoaDon { get => ngHoaDon; set => ngHoaDon = value; }
         public int MaKH { get => maKH; set => maKH = value; }
@@ -20,5 +21,6 @@ namespace Models
         public decimal TriGia { get => triGia; set => triGia = value; }
         public int SoHD { get => soHD; set => soHD = value; }
         public int MaKM { get => maKM; set => maKM = value; }
+        public decimal TriGiaSauKM { get => triGiaSauKM; set => triGiaSauKM = value; }
     }
 }

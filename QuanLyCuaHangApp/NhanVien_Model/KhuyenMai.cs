@@ -9,11 +9,11 @@ namespace Models
     public class Khuyenmai
     {
         private int maKM;
-        private decimal giaTriKM;
+        private int giaTriKM;
         private decimal giaTriDK;
 
         public int MaKM { get => maKM; set => maKM = value; }
-        public decimal GiaTriKM { get => giaTriKM; set => giaTriKM = value; }
+        public int GiaTriKM { get => giaTriKM; set => giaTriKM = value; }
         public decimal GiaTriDK { get => giaTriDK; set => giaTriDK = value; }
     }
 }

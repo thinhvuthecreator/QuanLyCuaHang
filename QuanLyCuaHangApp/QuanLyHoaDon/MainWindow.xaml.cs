@@ -54,7 +54,7 @@ namespace QuanLyHoaDon
         void loadDuLieuHDListView()
         {
             List<HoaDonView> listHD = new List<HoaDonView>();
-            DataTable dataHD = SQL_Connect.Instance.ExecuteSQL("SELECT HD.SOHD, TENSP, GIA, SOLUONG, GIATRIKM, HD.TRIGA FROM HOADON HD, CTHD CT, SANPHAM SP, KHUYENMAI KM WHERE HD.SOHD = CT.SOHD AND  CT.MASP = SP.MASP AND HD.SOHD = KM.SOHD");
+            DataTable dataHD = SQL_Connect.Instance.ExecuteSQL("SELECT HD.SOHD, TENSP, GIA, SOLUONG, GIATRIKM, HD.TRIGA FROM HOADON HD, CTHD CT, SANPHAM SP, KHUYENMAI KM WHERE HD.SOHD = CT.SOHD AND  CT.MASP = SP.MASP AND HD.MAKM = KM.MAKM");
             foreach (DataRow HDdata in dataHD.Rows)
             {
                 listHD.Add(new HoaDonView() { soHD = int.Parse(HDdata[0].ToString()), tenSP = HDdata[1].ToString(), donGia = decimal.Parse(HDdata[2].ToString()), soLuong = int.Parse(HDdata[3].ToString()), khuyenMai = int.Parse(HDdata[4].ToString()), tongTriGia = decimal.Parse(HDdata[5].ToString()) });

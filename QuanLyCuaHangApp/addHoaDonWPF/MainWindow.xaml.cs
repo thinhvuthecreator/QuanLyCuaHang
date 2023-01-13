@@ -92,6 +92,19 @@ namespace addHoaDonWPF
 
         #region methods
 
+        string xuLyChuoi(string s)
+        {
+            string outPut = "";
+            if (s.Contains("V"))
+            {
+                outPut = s.Remove(s.IndexOf(" "), 4);
+            }
+            else if (s.Contains("."))
+            {
+                outPut = s.Remove(s.IndexOf("."), 5);
+            }
+            return outPut;
+        }
         int upDateGia(string tenSP, int sl) // đã OK !! chỉ cần update lại
         {
             int soLanXuatHien = 0;
@@ -238,6 +251,25 @@ namespace addHoaDonWPF
             }
             return isSuccess;
         }
+        int layMaKM(int giaTriKM)
+        {
+            if (kmTextBlock.Visibility == Visibility.Hidden)
+            {
+                return 0;
+            }
+            else
+            {
+                DataTable dataKM = KhuyenMai_DAL.loadDuLieuKM();
+                foreach (DataRow row in dataKM.Rows)
+                {
+                    if (giaTriKM == int.Parse(row[1].ToString()))
+                    {
+                        return int.Parse(row[0].ToString());
+                    }
+                }
+                return -1;
+            }
+        }
             
         #endregion
 
@@ -264,7 +296,8 @@ namespace addHoaDonWPF
             #region capNhatTriGiaTextBox
 
             decimal tongTriGia = 0;
-
+            
+           
             for(int i = 0; i < dsSPListview.Items.Count;i++)
             {
                 danhSachSanPham sp = (danhSachSanPham)dsSPListview.Items[i];
@@ -272,9 +305,9 @@ namespace addHoaDonWPF
             }
 
             tongtriGiaTextbox.Text = tongTriGia.ToString().Remove(tongTriGia.ToString().IndexOf(".")) + " VND";
+          
             #endregion
         }
-
         private void reduceBtn_Click(object sender, RoutedEventArgs e)
         {
             #region capNhatDS
@@ -300,18 +333,17 @@ namespace addHoaDonWPF
                 tongTriGia += sp.gia * sp.SoLuong;
             }
 
-            tongtriGiaTextbox.Text = tongTriGia.ToString().Remove(tongTriGia.ToString().IndexOf(".")) + "VND";
+            tongtriGiaTextbox.Text = tongTriGia > 0 ?  tongTriGia.ToString().Remove(tongTriGia.ToString().IndexOf(".")) + " VND" : "0";
+          
             #endregion
 
 
 
         }
-
         private void huyThemHDBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
         private void addHDBtn_Click(object sender, RoutedEventArgs e)
         {
             #region themHoaDon
@@ -328,6 +360,8 @@ namespace addHoaDonWPF
             hd.MaNV = layMaNV();
             hd.TriGia = tongTriGia;
             hd.NgHoaDon = DateTime.Parse(ngHoaDonDatePicker.Text);
+            hd.MaKM = layMaKM(int.Parse(kmTextBlock.Text));
+
           
             if (HoaDon_DAL.themHoaDon(hd) && themDoanhSoKH(hd.TriGia, hd.MaKH))
             {
@@ -361,16 +395,73 @@ namespace addHoaDonWPF
             #endregion
 
         }
+        private void kmCheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            int giaTriKm = 0;
+            if(kmCheckBox.IsChecked == false)
+            {
+                tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
+                kmTextBlock.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                if (tongtriGiaTextbox.Text != "")
+                {
+                    DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
+                    foreach (DataRow row in dataKm.Rows)
+                    {
+                        // MessageBox.Show(decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)).ToString());
+                        if (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) >= decimal.Parse(xuLyChuoi(row[2].ToString())))
+                        {
+                            tongtriGiaSauKMTextbox.Text = (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) - (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) * int.Parse(row[1].ToString())) / 100).ToString() + " VND";
+                            giaTriKm = int.Parse(row[1].ToString());
+                        }
+                    }
+                }
+                kmTextBlock.Text = giaTriKm.ToString();
+                kmTextBlock.Visibility = Visibility.Visible;
+
+            }
+        }
+        private void tongtriGiaTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(tongtriGiaTextbox.Text == "0")
+            {
+                kmTextBlock.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                if (kmCheckBox.IsChecked == true)
+                {
+                    kmTextBlock.Visibility = Visibility.Visible;
+                    DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
+                    int i = 0;
+                    while (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) >= decimal.Parse(dataKm.Rows[i][2].ToString()) && i < dataKm.Columns.Count)   // có thể từ đầu nó đã không bằng
+                    {
+                        i++;
+                    }
+                    kmTextBlock.Text = dataKm.Rows[i][1].ToString();
+                    tongtriGiaSauKMTextbox.Text = (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) - (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) * int.Parse(dataKm.Rows[i - 1][1].ToString())) / 100).ToString() + " VND";
+                }
+                else
+                {
+                    tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
+                }
+            }
+        }
+
+
+
+
+
+
+
+
 
 
 
 
         #endregion
-
-
-
-
-
 
     }
 }
