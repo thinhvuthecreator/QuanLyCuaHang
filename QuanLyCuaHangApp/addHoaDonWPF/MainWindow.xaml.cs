@@ -413,7 +413,7 @@ namespace addHoaDonWPF
                     kmTextBlock.Visibility = Visibility.Visible;
                     DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
 
-                    for (int i = 0; i < dataKm.Columns.Count; i++)
+                    for (int i = 0; i < dataKm.Rows.Count; i++)
                     {
                         if (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) >= decimal.Parse(dataKm.Rows[i][2].ToString()))
                         {
@@ -445,7 +445,7 @@ namespace addHoaDonWPF
                     kmTextBlock.Visibility = Visibility.Visible;
                     DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
                                       
-                    for(int i = 0; i < dataKm.Columns.Count;i++)
+                    for(int i = 0; i < dataKm.Rows.Count;i++)
                     {
                         if(decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) >= decimal.Parse(dataKm.Rows[i][2].ToString()))
                         {
