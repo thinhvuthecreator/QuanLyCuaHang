@@ -361,7 +361,7 @@ namespace addHoaDonWPF
             hd.TriGia = tongTriGia;
             hd.NgHoaDon = DateTime.Parse(ngHoaDonDatePicker.Text);
             hd.MaKM = layMaKM(int.Parse(kmTextBlock.Text));
-
+            hd.TriGiaSauKM = decimal.Parse(xuLyChuoi(tongtriGiaSauKMTextbox.Text));
           
             if (HoaDon_DAL.themHoaDon(hd) && themDoanhSoKH(hd.TriGia, hd.MaKH))
             {
@@ -395,39 +395,16 @@ namespace addHoaDonWPF
             #endregion
 
         }
+
+
         private void kmCheckBox_Click(object sender, RoutedEventArgs e)
         {
-            int giaTriKm = 0;
-            if(kmCheckBox.IsChecked == false)
+           
+            int giaTriKM_MaxPossible = 0;
+            if (tongtriGiaTextbox.Text == "0")
             {
+                kmTextBlock.Visibility = Visibility.Hidden;
                 tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
-                kmTextBlock.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                if (tongtriGiaTextbox.Text != "")
-                {
-                    DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
-                    foreach (DataRow row in dataKm.Rows)
-                    {
-                        // MessageBox.Show(decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)).ToString());
-                        if (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) >= decimal.Parse(xuLyChuoi(row[2].ToString())))
-                        {
-                            tongtriGiaSauKMTextbox.Text = (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) - (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) * int.Parse(row[1].ToString())) / 100).ToString() + " VND";
-                            giaTriKm = int.Parse(row[1].ToString());
-                        }
-                    }
-                }
-                kmTextBlock.Text = giaTriKm.ToString();
-                kmTextBlock.Visibility = Visibility.Visible;
-
-            }
-        }
-        private void tongtriGiaTextbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if(tongtriGiaTextbox.Text == "0")
-            {
-                kmTextBlock.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -435,13 +412,48 @@ namespace addHoaDonWPF
                 {
                     kmTextBlock.Visibility = Visibility.Visible;
                     DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
-                    int i = 0;
-                    while (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) >= decimal.Parse(dataKm.Rows[i][2].ToString()) && i < dataKm.Columns.Count)   // có thể từ đầu nó đã không bằng
+
+                    for (int i = 0; i < dataKm.Columns.Count; i++)
                     {
-                        i++;
+                        if (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) >= decimal.Parse(dataKm.Rows[i][2].ToString()))
+                        {
+                            giaTriKM_MaxPossible = int.Parse(dataKm.Rows[i][1].ToString());
+                        }
                     }
-                    kmTextBlock.Text = dataKm.Rows[i][1].ToString();
-                    tongtriGiaSauKMTextbox.Text = (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) - (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) * int.Parse(dataKm.Rows[i - 1][1].ToString())) / 100).ToString() + " VND";
+                    kmTextBlock.Text = giaTriKM_MaxPossible.ToString();
+                    tongtriGiaSauKMTextbox.Text = (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) - (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) * giaTriKM_MaxPossible) / 100).ToString() + " VND";
+                }
+                else
+                {
+                    tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
+                    kmTextBlock.Visibility = Visibility.Hidden;
+                }
+            }
+        }
+        private void tongtriGiaTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int giaTriKM_MaxPossible = 0;
+            if(tongtriGiaTextbox.Text == "0")
+            {
+                kmTextBlock.Visibility = Visibility.Hidden;
+                tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
+            }
+            else
+            {
+                if (kmCheckBox.IsChecked == true)
+                {
+                    kmTextBlock.Visibility = Visibility.Visible;
+                    DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
+                                      
+                    for(int i = 0; i < dataKm.Columns.Count;i++)
+                    {
+                        if(decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) >= decimal.Parse(dataKm.Rows[i][2].ToString()))
+                        {
+                            giaTriKM_MaxPossible = int.Parse(dataKm.Rows[i][1].ToString());
+                        }
+                    }
+                    kmTextBlock.Text = giaTriKM_MaxPossible.ToString();
+                    tongtriGiaSauKMTextbox.Text = (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) - (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) * giaTriKM_MaxPossible) / 100).ToString() + " VND";
                 }
                 else
                 {
@@ -450,18 +462,18 @@ namespace addHoaDonWPF
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
         #endregion
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
