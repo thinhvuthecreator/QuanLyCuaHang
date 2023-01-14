@@ -255,7 +255,7 @@ namespace addHoaDonWPF
         {
             if (kmTextBlock.Visibility == Visibility.Hidden)
             {
-                return 0;
+                return -1;
             }
             else
             {
@@ -360,11 +360,24 @@ namespace addHoaDonWPF
             hd.MaNV = layMaNV();
             hd.TriGia = tongTriGia;
             hd.NgHoaDon = DateTime.Parse(ngHoaDonDatePicker.Text);
-            hd.MaKM = layMaKM(int.Parse(kmTextBlock.Text));
+            if (kmCheckBox.IsChecked == true && tongtriGiaTextbox.Text != "0")
+            {
+                hd.MaKM = layMaKM(int.Parse(kmTextBlock.Text));    // lỗi
+            }
+            else
+            {
+                hd.MaKM = -1;
+            }
             hd.TriGiaSauKM = decimal.Parse(xuLyChuoi(tongtriGiaSauKMTextbox.Text));
           
             if (HoaDon_DAL.themHoaDon(hd) && themDoanhSoKH(hd.TriGia, hd.MaKH))
             {
+                if(hd.MaKM != -1)
+                {
+                   DataTable soHDCuaHDMoiThemVao = SQL_Connect.Instance.ExecuteSQL("SELECT SOHD FROM HOADON WHERE SOHD = (SELECT MAX(SOHD) FROM HOADON)");
+                   int soHD = int.Parse(soHDCuaHDMoiThemVao.Rows[0][0].ToString());
+                   HoaDon_DAL.capNhatKhuyenMai(hd.MaKM, soHD);
+                }
                 MessageBox.Show("Thêm thành công !");
             }
             else
@@ -429,9 +442,10 @@ namespace addHoaDonWPF
                     kmTextBlock.Visibility = Visibility.Hidden;
                 }
             }
+           
         }
         private void tongtriGiaTextbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
+        { 
             int giaTriKM_MaxPossible = 0;
             if(tongtriGiaTextbox.Text == "0")
             {
@@ -460,6 +474,8 @@ namespace addHoaDonWPF
                     tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
                 }
             }
+
+        
         }
 
         #endregion

@@ -24,9 +24,23 @@ namespace SQL_Connection
             try
             {
                
-                    string themHDQuerry = "INSERT HOADON VALUES ('"+ hd.NgHoaDon.ToShortDateString() + "'," + hd.TriGia + "," + hd.MaKH + "," + hd.MaNV + "," + hd.MaKM + "," + hd.TriGiaSauKM + ")";
+                    string themHDQuerry = "INSERT HOADON (NGHD,TRIGA,MAKH,MANV,TRIGIASAUKM) VALUES ('"+ hd.NgHoaDon.ToShortDateString() + "'," + hd.TriGia + "," + hd.MaKH + "," + hd.MaNV + "," + hd.TriGiaSauKM + ")";
                     SQL_Connect.Instance.ExecuteNONquerrySQL(themHDQuerry);
                 
+            }
+            catch
+            {
+                isSuccess = false;
+            }
+            return isSuccess;
+        }
+        static public bool capNhatKhuyenMai(int maKM,int soHD)
+        {
+            bool isSuccess = true;
+            string updateQuerry = "UPDATE HOADON SET MAKM =" + maKM + " WHERE SOHD =" + soHD; 
+            try
+            {
+                SQL_Connect.Instance.ExecuteNONquerrySQL(updateQuerry);
             }
             catch
             {

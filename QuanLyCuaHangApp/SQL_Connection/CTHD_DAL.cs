@@ -12,9 +12,9 @@ namespace SQL_Connection
 {
     public class CTHD_DAL
     {
-        static public DataTable loadDuLieuCTHD()
+        static public DataTable loadDuLieuCTHD(int soHD)
         {
-            string getCTHDQuerry = "EXEC CTHDSelect";            // lấy dữ liệu tất cả nhân viên
+            string getCTHDQuerry = "EXEC CTHD_HOADON_Select @soHD =" + soHD;            // lấy dữ liệu tất cả nhân viên
             DataTable getCTHD = new DataTable();
             getCTHD = SQL_Connect.Instance.ExecuteSQL(getCTHDQuerry);
             return getCTHD;

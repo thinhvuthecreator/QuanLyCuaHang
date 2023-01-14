@@ -27,17 +27,21 @@ namespace QuanLyHoaDon
         public MainWindow()
         {
             InitializeComponent();
-            loadDuLieuHDListView();
+         // loadDuLieuHDListView();
+         // loadDuLieuCTHDListView();
         }
 
         #region objects
         class HoaDonView
         {
-            public int soHD;
-            public string tenSP;
-            public decimal donGia, tongTriGia;
-            public int soLuong, khuyenMai;
-            
+            public int soHD { get; set; }
+            public string tenNV { get; set; }
+            public string tenKH { get; set; } 
+            public decimal triGia { get; set; }
+            public int giaTriKM { get; set; }
+            public decimal  triGiaSauKM { get; set; }
+            public DateTime ngHD { get; set; }
+
         }
         class HoaDonAboveView
         {
@@ -48,50 +52,90 @@ namespace QuanLyHoaDon
             public decimal triGia;
 
         }
+        class CTHDView
+        {
+            public string TenSP { get; set; }
+            public decimal DonGia { get; set; }
+            public int SoLuong { get; set; }
+        }
         #endregion
 
         #region methods
         void loadDuLieuHDListView()
         {
+            hoadonListView.ItemsSource = null;
             List<HoaDonView> listHD = new List<HoaDonView>();
-            DataTable dataHD = SQL_Connect.Instance.ExecuteSQL("SELECT HD.SOHD, TENSP, GIA, SOLUONG, GIATRIKM, HD.TRIGA FROM HOADON HD, CTHD CT, SANPHAM SP, KHUYENMAI KM WHERE HD.SOHD = CT.SOHD AND  CT.MASP = SP.MASP AND HD.MAKM = KM.MAKM");
+            DataTable dataHD = SQL_Connect.Instance.ExecuteSQL("SELECT SOHD,TENNV,TENKH,NGHD,TRIGA,GIATRIKM,TRIGIASAUKM FROM HOADON AS HD INNER JOIN NHANVIEN AS NV ON HD.MANV = NV.MANV INNER JOIN KHACHHANG AS KH ON HD.MAKH = KH.MAKH LEFT JOIN KHUYENMAI AS KM ON HD.MAKM = KM.MAKM");
             foreach (DataRow HDdata in dataHD.Rows)
             {
-                listHD.Add(new HoaDonView() { soHD = int.Parse(HDdata[0].ToString()), tenSP = HDdata[1].ToString(), donGia = decimal.Parse(HDdata[2].ToString()), soLuong = int.Parse(HDdata[3].ToString()), khuyenMai = int.Parse(HDdata[4].ToString()), tongTriGia = decimal.Parse(HDdata[5].ToString()) });
+                listHD.Add(new HoaDonView() { soHD = int.Parse(HDdata[0].ToString()), tenNV = HDdata[1].ToString(), tenKH = HDdata[2].ToString(), ngHD = DateTime.Parse(HDdata[3].ToString()), triGia = decimal.Parse(HDdata[4].ToString()), giaTriKM = HDdata[5].ToString() != "" ? int.Parse(HDdata[5].ToString()) : 0, triGiaSauKM = decimal.Parse(HDdata[6].ToString())});
             }
             hoadonListView.ItemsSource = listHD;
             hoadonListView.SelectedIndex = 0;
+            CTHDListView.SelectedIndex = 0;
+        }
+        void loadDuLieuCTHDListView(int soHD)
+        {
+            CTHDListView.ItemsSource = null;
+            List<CTHDView> cthdList = new List<CTHDView>();
+            DataTable dataCTHD = CTHD_DAL.loadDuLieuCTHD(soHD);
+            foreach (DataRow row in dataCTHD.Rows)
+            {
+                cthdList.Add(new CTHDView { TenSP = row[0].ToString(), DonGia = decimal.Parse(row[1].ToString()),SoLuong = int.Parse(row[2].ToString()) });
+            }
+            CTHDListView.ItemsSource = cthdList;
+            CTHDListView.SelectedIndex = 0;
         }
         #endregion
 
         #region events
         private void hoadonListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
-            DataTable hoaDonData = SQL_Connect.Instance.ExecuteSQL("SELECT SOHD,TENNV,TENKH,NGHD,TRIGA FROM HOADON HD,NHANVIEN NV,KHACHHANG KH WHERE HD.MAKH = KH.MAKH AND HD.MANV = NV.MANV ");
-
-            foreach(DataRow data in hoaDonData.Rows)
+            HoaDonView hd = (HoaDonView)hoadonListView.SelectedItem;
+            if (hd == null)
             {
-                soHDTextBox.Text = data[0].ToString();
-                nvTextbox.Text = data[1].ToString();
-                khTextbox.Text = data[2].ToString();
-                ngHdTextBox.Text = data[3].ToString();
-                triGiaHDTextbox.Text = data[4].ToString();
+
             }
-
-            DataTable cthdData = SQL_Connect.Instance.ExecuteSQL("SELECT TENSP,GIA,SOLUONG,GIATRIKM FROM CTHD CT, HOADON HD, KHUYENMAI KM,SANPHAM SP WHERE CT.SOHD = HD.SOHD AND CT.MASP = SP.MASP AND HD.SOHD = KM.SOHD");
-
-            foreach (DataRow data in cthdData.Rows)
+            else
             {
-                spTextBox.Text = data[0].ToString();
-                donGiaTextbox.Text = data[1].ToString();
-                soLuongTextBox.Text = data[2].ToString();
-                khuyenMaiTextBox.Text = data[3].ToString();
+                soHDTextBox.Text = hd.soHD.ToString();
+                nvTextbox.Text = hd.tenNV;
+                khTextbox.Text = hd.tenKH;
+                ngHdTextBox.Text = hd.ngHD.ToString();
+                triGiaHDTextbox.Text = hd.triGia.ToString();
+                kmTextbox.Text = hd.giaTriKM.ToString();
+                triGiaHDSauKMTextbox.Text = hd.triGiaSauKM.ToString();
+                loadDuLieuCTHDListView(hd.soHD);
+                CTHDListView.SelectedIndex = 0;
+            }
+        }
+        private void CTHDListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CTHDView cthd = (CTHDView)CTHDListView.SelectedItem;   // chương trình chạy vào đây trước ? 
+           
+            if(cthd == null)
+            {
                
             }
-
-
+            else
+            {
+                spTextBox.Text = cthd.TenSP;
+                donGiaTextbox.Text = cthd.DonGia.ToString();
+                soLuongTextBox.Text = cthd.SoLuong.ToString();
+            }
+           
         }
+        private void addHDButton_Click(object sender, RoutedEventArgs e)
+        {
+            addHoaDonWPF.MainWindow addHoaDonWindow = new addHoaDonWPF.MainWindow();
+            addHoaDonWindow.Show();
+        }
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            loadDuLieuHDListView(); 
+        }
+
         #endregion
+
     }
 }
