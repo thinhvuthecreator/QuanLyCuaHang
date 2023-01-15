@@ -82,6 +82,7 @@ namespace ProductWPF
             sp.SoLuongSP = int.TryParse(soluongTxtbox.Text, out soLuong) == true ? soLuong : -1;
             sp.MaLoaiSP = int.Parse(returnMaLoaiSPcuaCombobox());
             sp.FileAnh = ProductImage.Source.ToString();
+            sp.GiaBanSP = decimal.Parse(giaBanTxtbox.Text);
         }
 
 

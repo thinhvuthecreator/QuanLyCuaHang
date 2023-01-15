@@ -379,7 +379,7 @@ namespace addHoaDonWPF
             hd.MaNV = layMaNV();
             hd.TriGia = tongTriGia;
             hd.NgHoaDon = DateTime.Parse(ngHoaDonDatePicker.Text);
-            if (kmCheckBox.IsChecked == true && tongtriGiaTextbox.Text != "0")
+            if (kmCheckBox.IsChecked == true && tongtriGiaTextbox.Text != "0 VND")
             {
                 hd.MaKM = layMaKM(int.Parse(kmTextBlock.Text));   
             }
@@ -440,7 +440,7 @@ namespace addHoaDonWPF
             }
             else
             {
-                if (kmCheckBox.IsChecked == true)
+                if (kmCheckBox.IsChecked == true && tongtriGiaTextbox.Text != "0 VND")
                 {
                     kmTextBlock.Visibility = Visibility.Visible;
                     DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
@@ -458,6 +458,11 @@ namespace addHoaDonWPF
                     giaTriKM_MaxPossible = layGiaTriKM(giaTriDKMax);
                     kmTextBlock.Text = giaTriKM_MaxPossible.ToString();
                     tongtriGiaSauKMTextbox.Text = (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) - (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) * giaTriKM_MaxPossible) / 100).ToString() + " VND";
+                }
+                else if (kmCheckBox.IsChecked == true && tongtriGiaTextbox.Text == "0")
+                {
+                    kmTextBlock.Visibility = Visibility.Visible;
+                    kmTextBlock.Text = "0";
                 }
                 else
                 {
