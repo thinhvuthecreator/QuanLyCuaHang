@@ -134,6 +134,28 @@ namespace QuanLyHoaDon
         {
             loadDuLieuHDListView(); 
         }
+        private void deleteHDButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult decicion = MessageBox.Show("Bạn có muốn xóa hóa đơn này không ?", "", MessageBoxButton.YesNo);
+            if (decicion == MessageBoxResult.Yes)
+            {
+               
+                string deleteHDfromCTHD_Querry = "DELETE FROM CTHD WHERE SOHD =" + soHDTextBox.Text;
+                SQL_Connect.Instance.ExecuteNONquerrySQL(deleteHDfromCTHD_Querry);
+                if (HoaDon_DAL.xoaHoaDon(soHDTextBox.Text))
+                {
+                    MessageBox.Show("Xóa thành công !");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại !");
+                }
+            }
+            else
+            {
+
+            }
+        }
 
         #endregion
 

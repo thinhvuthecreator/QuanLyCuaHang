@@ -53,7 +53,7 @@ namespace SQL_Connection
             bool isSuccess = true;
             try
             {
-                string deleteHDQuerry = "DELETE HOADON WHERE MAHD =" + ma;
+                string deleteHDQuerry = "DELETE HOADON WHERE SOHD =" + ma;
                 SQL_Connect.Instance.ExecuteNONquerrySQL(deleteHDQuerry);
             }
             catch

@@ -123,7 +123,7 @@
                             </LinearGradientBrush>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="deleteHDButton" Height="20" Width="90" Margin="50,160,0,0" Content="Xóa hóa đơn" Foreground="White">
+                    <Button x:Name="deleteHDButton" Height="20" Width="90" Margin="50,160,0,0" Content="Xóa hóa đơn" Foreground="White" Click="deleteHDButton_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="0"/>
