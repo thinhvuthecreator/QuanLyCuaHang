@@ -233,7 +233,7 @@ namespace addHoaDonWPF
         {
                 #region layGia
                 decimal Gia = 0;
-                DataTable data = SQL_Connect.Instance.ExecuteSQL("SELECT GIA FROM SANPHAM WHERE MASP = " + sanPhamCombobox.SelectedValue);
+                DataTable data = SQL_Connect.Instance.ExecuteSQL("SELECT GIABAN FROM SANPHAM WHERE MASP = " + sanPhamCombobox.SelectedValue);
                 foreach (DataRow dt in data.Rows)
                 {
                     Gia = decimal.Parse(dt[0].ToString());
