@@ -1,7 +1,6 @@
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\QuanLyCuaHangApp.exe.config
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\QuanLyCuaHangApp.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\QuanLyCuaHangApp.pdb
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\obj\Debug\SignInWPF.csproj.AssemblyReference.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\obj\Debug\MainWindow.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\obj\Debug\App.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\obj\Debug\QuanLyCuaHangApp_MarkupCompile.cache

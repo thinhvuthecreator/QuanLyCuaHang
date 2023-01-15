@@ -42,3 +42,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\AddLoaiSPWPF.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\AddLoaiSPWPF.exe.config
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\obj\Debug\MenuWPF.csproj.CopyComplete
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\addHoaDonWPF.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\addHoaDonWPF.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\addHoaDonWPF.exe.config
