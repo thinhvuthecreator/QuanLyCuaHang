@@ -10,7 +10,7 @@
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="#FF7252C5" Offset="1"/>
+                <GradientStop Color="#FF1F0070" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
@@ -20,7 +20,7 @@
             <ColumnDefinition Width="30*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="Tên loại sản phẩm" FontSize="20" Foreground="White" Width="200" Height="50" Margin="103.577,24,46,75" Grid.ColumnSpan="2" Grid.Column="1"></TextBlock>
-        <TextBox x:Name="addTextbox" Width="330" Height="35" FontSize="20" Margin="27.577,62,22,52" Grid.ColumnSpan="3" Grid.Column="1">
+        <TextBox x:Name="addTextbox" Padding="0" Background="White" Foreground="Black" Width="330" Height="35" FontSize="20" Margin="27.577,62,22,52" Grid.ColumnSpan="3" Grid.Column="1">
         </TextBox>
         <Button x:Name="xong" Width="80" Height="29" Margin="78.577,105,126,6" Content="OK" FontSize="12" Foreground="White" Click="xong_Click" Grid.Column="1">
             <Button.Background>
