@@ -13,13 +13,17 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="92*"/>
+            <ColumnDefinition Width="703*"/>
+        </Grid.ColumnDefinitions>
 
 
 
 
-        <Grid HorizontalAlignment="Right" Height="500" Margin="0,-60,0,0">
+        <Grid HorizontalAlignment="Right" Height="500" Margin="0,-44,0,15" Grid.Column="1">
 
-            
+
             <TextBox x:Name="tenSPTxtbox" Width="280" Height="20" Margin="276,29,38.54,315">
             </TextBox>
             <ComboBox x:Name="loaiSPcombobox" Width="280" Height="20" Margin="278,103,37,307">
@@ -54,14 +58,14 @@
                 </Button.Background>
             </Button>
             <DatePicker x:Name="ngThemspDatePicker" Height="25" Margin="274,280,154,146"/>
-                
+
         </Grid>
 
 
 
-        <Image x:Name="ProductImage" Width="300" Height="280" Margin="-280,-90,50,0"  Stretch="Fill" >
+        <Image x:Name="ProductImage" Width="300" Height="280" Margin="82,50,412,141"  Stretch="Fill" Grid.ColumnSpan="2" >
         </Image>
-        <Button x:Name="addImageBtn" Width="130" Height="30" Margin="-450,245,50,0" BorderBrush="Black" Content="Thêm hình ảnh" FontSize="14" FontWeight="Bold" Foreground="White" Click="addImageBtn_Click">
+        <Button x:Name="addImageBtn" Width="130" Height="30" Margin="82,343,582,98" BorderBrush="Black" Content="Thêm hình ảnh" FontSize="14" FontWeight="Bold" Foreground="White" Click="addImageBtn_Click" Grid.ColumnSpan="2">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
