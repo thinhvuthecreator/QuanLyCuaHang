@@ -5,8 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ThemNhanVien"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+         TextElement.FontWeight="Regular"
+         TextElement.FontSize="13"
+         TextOptions.TextFormattingMode="Ideal"
+         TextOptions.TextRenderingMode="Auto"
+         FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="500" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="#FF4700E0" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        
+        <TextBlock Width="200" Height="25" Margin="400,-344,50,0" Foreground="White" FontSize="15" Text="Giới tính"></TextBlock>
+        <Grid HorizontalAlignment="Right" >
+            <ComboBox x:Name="genderCombobox" Background="White" Foreground="Black" Width="60" Height="30" Margin="100,-299,81,0">
+                <ComboBoxItem x:Name="namItem">Nam</ComboBoxItem>
+                <ComboBoxItem x:Name="nuItem">Nữ</ComboBoxItem>
+            </ComboBox>
+
+
+
+
+            <TextBox x:Name="tenNVTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="280" Height="30" Margin="276,124,38.54,315">
+            </TextBox>
+            <TextBox x:Name="sdtNVTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Width="280" Background="White" Foreground="Black" Height="30" Margin="276,180,38.54,259">
+            </TextBox>
+            <TextBox x:Name="luongTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Width="200" Background="White" Foreground="Black" Height="30" Margin="276,234,118.54,205">
+            </TextBox>
+
+
+
+            <TextBlock Width="200" Height="25" Margin="210,-240,50,0" Foreground="White" FontSize="15" Text="Tên nhân viên"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,-130,50,0" Foreground="White" FontSize="15" Text="Số điện thoại nhân viên"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,-20,50,0" Foreground="White" FontSize="15" Text="Lương nhân viên"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,93,50,0" Foreground="White" FontSize="15" Text="Ngày sinh nhân viên"></TextBlock>
+            <Button x:Name="themNVBtn" Width="140" Height="30" Content="Thêm nhân viên" FontWeight="Bold" Foreground="White" Margin="150,250,50,0" BorderBrush="Black" Click="themNVBtn_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF3B0FFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="huyBtn" Width="100" Height="30" Content="Hủy" FontWeight="Bold" Foreground="White" Margin="450,250,50,0" BorderBrush="Black" Click="huyBtn_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF3B0FFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <DatePicker x:Name="ngsinhNVDatePicker" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="200" Height="26" Margin="255,240,100,100">
+            </DatePicker>
+
+        </Grid>
+
+        <Image x:Name="loadimageImage" Width="300" Height="280" Margin="-280,-90,50,0"  Stretch="Fill" >
+        </Image>
+        <Button x:Name="addImageBtn" Width="130" Height="30" Margin="-450,245,50,0" BorderBrush="Black" Content="Thêm hình ảnh" FontSize="14" FontWeight="Bold" Foreground="White" Click="addImageBtn_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF3B0FFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
     </Grid>
 </Window>
