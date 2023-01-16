@@ -53,7 +53,7 @@
             <TextBlock Width="130" Height="25" FontSize="13" Text="Lương nhân viên" Margin="500,237,60,0" Foreground="White"></TextBlock>
             <TextBlock Width="130" Height="25" FontSize="13" Text="Giới tính" Margin="500,313,60,0" Foreground="White"></TextBlock>
             <TextBlock Width="130" Height="25" FontSize="13" Text="Ngày sinh" Margin="500,387,60,0" Foreground="White"></TextBlock>
-
+             
             <Button x:Name="addBtn" Width="150" Height="25" Margin="578,490,90,0" Content="Thêm nhân viên" FontSize="16" Foreground="White" Click="addBtn_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

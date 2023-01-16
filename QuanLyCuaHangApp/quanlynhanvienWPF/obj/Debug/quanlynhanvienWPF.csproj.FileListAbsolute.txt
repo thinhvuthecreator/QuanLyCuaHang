@@ -16,10 +16,7 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\NhanVien_Model.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\NhanVien_Model.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\obj\Debug\quanlynhanvienWPF.csproj.CopyComplete
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\AddStaffWPF.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\SQL_Connection.dll
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\AddStaffWPF.pdb
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\AddStaffWPF.exe.config
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\SQL_Connection.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\MaterialDesignColors.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\MaterialDesignThemes.Wpf.dll
@@ -30,3 +27,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\obj\Debug\App.baml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\ThemNhanVien.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\ThemNhanVien.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\ThemNhanVien.exe.config

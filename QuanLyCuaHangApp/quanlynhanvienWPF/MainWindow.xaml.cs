@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AddStaffWPF;
+using ThemNhanVien;
 using System.Data;
 using System.Data.SqlClient;
 using SQL_Connection;
@@ -95,7 +95,7 @@ namespace quanlynhanvienWPF
         #region events
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddStaffWPF.MainWindow themNVWindow = new AddStaffWPF.MainWindow();
+            ThemNhanVien.MainWindow themNVWindow = new ThemNhanVien.MainWindow();
             themNVWindow.Show();
             
         }
