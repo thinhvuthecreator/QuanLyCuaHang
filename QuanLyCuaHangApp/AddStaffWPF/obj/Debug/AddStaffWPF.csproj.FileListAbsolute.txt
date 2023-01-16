@@ -18,3 +18,11 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\D
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.csproj.CopyComplete
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\SQL_Connection.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\SQL_Connection.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\MaterialDesignColors.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\MaterialDesignColors.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\Microsoft.Xaml.Behaviors.xml

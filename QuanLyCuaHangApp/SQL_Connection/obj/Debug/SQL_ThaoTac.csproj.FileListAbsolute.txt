@@ -7,3 +7,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\ob
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\obj\Debug\SQL_ThaoTac.csproj.CopyComplete
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\obj\Debug\SQL_Connection.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\obj\Debug\SQL_Connection.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\SQL_Connection\bin\Debug\Microsoft.Xaml.Behaviors.xml
