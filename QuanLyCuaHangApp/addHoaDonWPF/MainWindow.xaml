@@ -104,7 +104,7 @@
                 <ListView x:Name="dsSPListview" ItemsSource="{Binding dsSP}"  Background="White">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn DisplayMemberBinding="{Binding tenSP}" Header="Sản phẩm" Width="160"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding tenSP}" Header="Sản phẩm" Width="200"/>
                             <GridViewColumn DisplayMemberBinding="{Binding SoLuong}" Header="Số lượng" Width="120"/>
                             <GridViewColumn DisplayMemberBinding="{Binding gia}" Header="Giá" Width="200"/>
                         </GridView>
