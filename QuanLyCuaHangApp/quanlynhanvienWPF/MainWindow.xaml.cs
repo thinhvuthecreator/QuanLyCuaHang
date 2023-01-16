@@ -236,11 +236,24 @@ namespace quanlynhanvienWPF
             nhanVienListView.SelectedIndex = 0;
         }
 
+        private void nvImage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog imageChoose = new OpenFileDialog();
+            if (imageChoose.ShowDialog() == true)
+            {
+
+                string sourceAnh = imageChoose.FileName;
+                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(imageChoose.FileName));
+                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+                Uri fileUri = new Uri(sourceAnhApp);
+                nvImage.Source = new BitmapImage(fileUri);
+            }
+        }
+
+
+
+
         #endregion
-
-
-
-
 
     }
 }

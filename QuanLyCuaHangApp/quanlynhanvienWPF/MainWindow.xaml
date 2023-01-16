@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:quanlynhanvienWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="870" ResizeMode="NoResize" Activated="quanLyNVWindow_Activated">
-    <Grid Width="880">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="650" Width="1070" ResizeMode="NoResize" Activated="quanLyNVWindow_Activated">
+    <Grid Width="1380">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="663*"/>
             <ColumnDefinition Width="162*"/>
             <ColumnDefinition Width="24*"/>
             <ColumnDefinition Width="31*"/>
         </Grid.ColumnDefinitions>
-        <Grid Margin="0,-55,0,0" Grid.ColumnSpan="4">
+        <Grid Margin="0,-95,0,0" Grid.ColumnSpan="4">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -23,7 +24,7 @@
 
             <Grid Width="190" Height="200" Margin="500,-250,10,0">
                 <Border BorderBrush="Black" BorderThickness="1">
-                    <Image x:Name="nvImage" Width="190" Height="200"  Stretch="Fill" >
+                    <Image x:Name="nvImage" Width="190" Height="200"  Stretch="Fill" MouseDown="nvImage_MouseDown" >
                     </Image>
                 </Border>
             </Grid>
@@ -33,25 +34,25 @@
             <TextBox x:Name="timKiemTxtbox" Width="300" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,92,0,0" TextChanged="timKiemTxtbox_TextChanged">
             </TextBox>
 
-            <TextBox x:Name="maNVTxtbox" Width="100" Height="20" Margin="505,40,98,0">
+            <TextBox x:Name="maNVTxtbox" Width="100" Background="White" Height="25" Margin="505,40,98,0">
             </TextBox>
-            <TextBox x:Name="tenNVTxtbox" Width="180" Height="20" Margin="585,110,98,0">
+            <TextBox x:Name="tenNVTxtbox" Width="180" Background="White" Height="25" Margin="585,115,98,0">
             </TextBox>
-            <TextBox x:Name="sdtNVTxtbox" Width="180" Height="20" Margin="585,190,98,0">
+            <TextBox x:Name="sdtNVTxtbox" Width="180" Background="White" Height="25" Margin="585,195,98,0">
             </TextBox>
-            <TextBox x:Name="luongNVTxtbox" Width="180" Height="20" Margin="585,265,98,0">
+            <TextBox x:Name="luongNVTxtbox" Width="180" Background="White" Height="25" Margin="585,270,98,0">
             </TextBox>
-            <ComboBox x:Name="gioiTinhNVCombobox" Width="180" Height="20" Margin="585,338,98,0">
+            <ComboBox x:Name="gioiTinhNVCombobox" Width="180" Background="White" Height="25" Margin="585,343,98,0">
             </ComboBox>
-            <DatePicker x:Name="ngSinhNVDatePicker" Width="180" Height="20" Margin="585,420,98,0">
+            <DatePicker x:Name="ngSinhNVDatePicker" Width="180" Background="White" Height="25" Margin="585,420,98,0">
             </DatePicker>
 
-            <TextBlock Width="130" Height="25" FontSize="15" Text="Mã nhân viên" Margin="500,0,60,0" Foreground="White"></TextBlock>
-            <TextBlock Width="130" Height="25" FontSize="15" Text="Tên nhân viên" Margin="500,77,60,0" Foreground="White"></TextBlock>
-            <TextBlock Width="130" Height="25" FontSize="15" Text="Số điện thoại" Margin="500,152,60,0" Foreground="White"></TextBlock>
-            <TextBlock Width="130" Height="25" FontSize="15" Text="Lương nhân viên" Margin="500,230,60,0" Foreground="White"></TextBlock>
-            <TextBlock Width="130" Height="25" FontSize="15" Text="Giới tính" Margin="500,306,60,0" Foreground="White"></TextBlock>
-            <TextBlock Width="130" Height="25" FontSize="15" Text="Ngày sinh" Margin="500,380,60,0" Foreground="White"></TextBlock>
+            <TextBlock Width="130" Height="25" FontSize="13" Text="Mã nhân viên" Margin="500,5,60,0" Foreground="White"></TextBlock>
+            <TextBlock Width="130" Height="25" FontSize="13" Text="Tên nhân viên" Margin="500,85,60,0" Foreground="White"></TextBlock>
+            <TextBlock Width="130" Height="25" FontSize="13" Text="Số điện thoại" Margin="500,159,60,0" Foreground="White"></TextBlock>
+            <TextBlock Width="130" Height="25" FontSize="13" Text="Lương nhân viên" Margin="500,237,60,0" Foreground="White"></TextBlock>
+            <TextBlock Width="130" Height="25" FontSize="13" Text="Giới tính" Margin="500,313,60,0" Foreground="White"></TextBlock>
+            <TextBlock Width="130" Height="25" FontSize="13" Text="Ngày sinh" Margin="500,387,60,0" Foreground="White"></TextBlock>
 
             <Button x:Name="addBtn" Width="150" Height="25" Margin="578,490,90,0" Content="Thêm nhân viên" FontSize="16" Foreground="White" Click="addBtn_Click">
                 <Button.Background>
@@ -78,18 +79,20 @@
                 </Button.Background>
             </Button>
         </Grid>
-        <ListView x:Name="nhanVienListView" Width="535" Height="530" HorizontalAlignment="Left" Margin="30,60,0,31" Background ="Black" Foreground="BlueViolet" ItemsSource="{Binding ListNV}" SelectionChanged="nhanVienListView_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility ="Visible" >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding MaNV}" Width="30" ></GridViewColumn>
-                    <GridViewColumn Header="Tên" DisplayMemberBinding="{Binding TenNV}" Width="100" ></GridViewColumn>
-                    <GridViewColumn Header="SDT" DisplayMemberBinding="{Binding SdtNV}" Width="90" ></GridViewColumn>
-                    <GridViewColumn Header="Lương" DisplayMemberBinding="{Binding LuongNV}" Width="100" ></GridViewColumn>
-                    <GridViewColumn Header="Giới tính" DisplayMemberBinding="{Binding GioiTinh}" Width="45" ></GridViewColumn>
-                    <GridViewColumn Header="Ngày sinh" DisplayMemberBinding="{Binding NgSinhNV}" Width="150" ></GridViewColumn>
-                    <GridViewColumn Header="Ảnh nhân viên" DisplayMemberBinding="{Binding FileAnh}" Width="80" ></GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <materialDesign:Card Width="800" Height="530" HorizontalAlignment="Left" Margin="10,60,0,31">
+            <ListView x:Name="nhanVienListView"  Background ="Black" Foreground="BlueViolet" ItemsSource="{Binding ListNV}" SelectionChanged="nhanVienListView_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility ="Visible" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding MaNV}" Width="0" />
+                        <GridViewColumn Header="Tên" DisplayMemberBinding="{Binding TenNV}" Width="200" />
+                        <GridViewColumn Header="SDT" DisplayMemberBinding="{Binding SdtNV}" Width="100" />
+                        <GridViewColumn Header="Lương" DisplayMemberBinding="{Binding LuongNV}" Width="150" />
+                        <GridViewColumn Header="Giới tính" DisplayMemberBinding="{Binding GioiTinh}" Width="115" />
+                        <GridViewColumn Header="Ngày sinh" DisplayMemberBinding="{Binding NgSinhNV}" Width="160" />
+                        <GridViewColumn Header="Ảnh nhân viên" DisplayMemberBinding="{Binding FileAnh}" Width="0"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </materialDesign:Card>
     </Grid>
 </Window>
