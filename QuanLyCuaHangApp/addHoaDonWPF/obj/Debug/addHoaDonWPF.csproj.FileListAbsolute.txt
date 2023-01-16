@@ -18,3 +18,12 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\bin\
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\bin\Debug\NhanVien_Model.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\bin\Debug\SQL_Connection.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\obj\Debug\addHoaDonWPF.csproj.CopyComplete
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\bin\Debug\MaterialDesignColors.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\bin\Debug\MaterialDesignColors.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\addHoaDonWPF\obj\Debug\App.baml
