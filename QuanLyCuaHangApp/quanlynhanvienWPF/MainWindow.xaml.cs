@@ -152,23 +152,31 @@ namespace quanlynhanvienWPF
         }
         private void updateBtn_Click(object sender, RoutedEventArgs e)
         {
-            NhanVien nvUpdate = new NhanVien();
-            nvUpdate.MaNV = int.Parse(maNVTxtbox.Text);
-            nvUpdate.TenNV = tenNVTxtbox.Text;
-            nvUpdate.SdtNV = int.Parse(sdtNVTxtbox.Text);
-            nvUpdate.NgSinhNV = DateTime.Parse(ngSinhNVDatePicker.Text);
-            nvUpdate.GioiTinh = gioiTinhNVCombobox.Text;
-            nvUpdate.FileAnh =  nvImage.Source.ToString();
-            nvUpdate.LuongNV = decimal.Parse(luongNVTxtbox.Text);
+            UpdateNhanVien capNhatnvWindow = new UpdateNhanVien();
+            NhanVien nv = new NhanVien();
+            nv.MaNV = int.Parse(maNVTxtbox.Text); 
+            nv.TenNV = tenNVTxtbox.Text;
+            nv.GioiTinh = gioiTinhNVCombobox.Text;
+            nv.LuongNV = decimal.Parse(luongNVTxtbox.Text);
+            nv.SdtNV = int.Parse(sdtNVTxtbox.Text);
+            nv.NgSinhNV = DateTime.Parse(ngSinhNVDatePicker.Text);
 
-            if(NhanVien_DAL.updateNhanVien(nvUpdate) == true)
+            foreach (Window window in Application.Current.Windows)
             {
-                MessageBox.Show("Cập nhật thành công !");
+                if (window.GetType() == typeof(UpdateNhanVien))
+                {
+                    (window as UpdateNhanVien).MaNVTxtbox.Text = nv.MaNV.ToString();
+                    (window as UpdateNhanVien).genderCombobox.Text = nv.GioiTinh;
+                    (window as UpdateNhanVien).tenNVTxtbox.Text = nv.TenNV;
+                    (window as UpdateNhanVien).sdtNVTxtbox.Text = nv.SdtNV.ToString();
+                    (window as UpdateNhanVien).luongTxtbox.Text = nv.LuongNV.ToString();
+                    (window as UpdateNhanVien).ngsinhNVDatePicker.Text = nv.NgSinhNV.ToString();
+                    (window as UpdateNhanVien).loadimageImage.Source = nvImage.Source;
+
+                }
             }
-            else
-            {
-                MessageBox.Show("Cập nhật thất bại !");
-            }
+            capNhatnvWindow.Show();
+          
         }
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -238,16 +246,7 @@ namespace quanlynhanvienWPF
 
         private void nvImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpenFileDialog imageChoose = new OpenFileDialog();
-            if (imageChoose.ShowDialog() == true)
-            {
-
-                string sourceAnh = imageChoose.FileName;
-                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(imageChoose.FileName));
-                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
-                Uri fileUri = new Uri(sourceAnhApp);
-                nvImage.Source = new BitmapImage(fileUri);
-            }
+         
         }
 
 
