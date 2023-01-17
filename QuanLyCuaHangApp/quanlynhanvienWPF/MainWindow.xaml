@@ -14,7 +14,7 @@
             <ColumnDefinition Width="24*"/>
             <ColumnDefinition Width="31*"/>
         </Grid.ColumnDefinitions>
-        <Grid Margin="0,-95,0,0" Grid.ColumnSpan="4">
+        <Grid Margin="0,-95,0,0" Grid.ColumnSpan="5">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -29,9 +29,9 @@
                 </Border>
             </Grid>
 
-            <ComboBox x:Name ="timKiemCmb" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,92,0,0">
+            <ComboBox x:Name ="timKiemCmb" Background="White" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,130,0,0" Padding="0">
             </ComboBox>
-            <TextBox x:Name="timKiemTxtbox" Width="300" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,92,0,0" TextChanged="timKiemTxtbox_TextChanged">
+            <TextBox x:Name="timKiemTxtbox" Background="White" Width="300" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,130,0,0" TextChanged="timKiemTxtbox_TextChanged" Padding="0">
             </TextBox>
 
             <TextBox x:Name="maNVTxtbox" Width="100" Background="White" Height="25" Margin="505,40,98,0">

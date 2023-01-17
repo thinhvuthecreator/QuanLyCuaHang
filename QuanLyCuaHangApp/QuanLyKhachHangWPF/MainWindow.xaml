@@ -5,19 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyKhachHangWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="870" ResizeMode="NoResize" Activated="Window_Activated">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="650" Width="1070" ResizeMode="NoResize" Activated="Window_Activated">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="15*"/>
             <ColumnDefinition Width="17*"/>
         </Grid.ColumnDefinitions>
-        <Grid Width="880" Grid.ColumnSpan="2" Margin="0,0,-16,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="663*"/>
-                <ColumnDefinition Width="162*"/>
-                <ColumnDefinition Width="24*"/>
-                <ColumnDefinition Width="31*"/>
-            </Grid.ColumnDefinitions>
+        <Grid Width="1380" Grid.ColumnSpan="2" Margin="0,0,-16,0">
+          
            
             <Grid Margin="0,-55,0,0" Grid.ColumnSpan="4">
                 <Grid.Background>
@@ -27,31 +23,31 @@
                     </LinearGradientBrush>
                 </Grid.Background>
 
-                <Grid Width="190" Height="200" Margin="500,-250,10,0">
+                <Grid Width="190" Height="200" Margin="500,-300,10,0">
                     <Border BorderBrush="Black" BorderThickness="1" >
                         <Image x:Name="khImage" Width="190" Height="200"  Stretch="Fill" MouseDown="khImage_MouseDown" >
                         </Image>
                     </Border>
                 </Grid>
-                <TextBox x:Name="maKHTxtbox" Width="100" Height="20" Margin="505,40,98,0">
+                <TextBox x:Name="maKHTxtbox" Background="White" Width="100" Height="25" Margin="505,40,98,34">
                 </TextBox>
-                <TextBox x:Name="tenKHTxtbox" Width="180" Height="20" Margin="585,110,98,0">
+                <TextBox x:Name="tenKHTxtbox" Background="White" Width="180" Height="25" Margin="585,110,98,30">
                 </TextBox>
-                <TextBox x:Name="sdtKHTxtbox" Width="180" Height="20" Margin="585,190,98,0">
+                <TextBox x:Name="sdtKHTxtbox" Background="White" Width="180" Height="25" Margin="585,190,98,30">
                 </TextBox>
-                <TextBox x:Name="doanhsoKHTxtbox" Width="180" Height="20" Margin="585,265,98,0">
+                <TextBox x:Name="doanhsoKHTxtbox" Background="White" Width="180" Height="25" Margin="585,265,98,30">
                 </TextBox>
-                <ComboBox x:Name="gioiTinhKHCombobox" Width="180" Height="20" Margin="585,338,98,0">
+                <ComboBox x:Name="gioiTinhKHCombobox" Background="White" Width="180" Height="25" Margin="585,338,98,30">
                 </ComboBox>
-                <DatePicker x:Name="ngSinhKHDatePicker" Width="180" Height="20" Margin="585,420,98,0">
+                <DatePicker x:Name="ngSinhKHDatePicker" Background="White" Width="180" Height="25" Margin="585,420,98,30">
                 </DatePicker>
 
-                <TextBlock Width="130" Height="25" FontSize="15" Text="Mã khách hàng" Margin="500,0,60,0" Foreground="White"></TextBlock>
-                <TextBlock Width="130" Height="25" FontSize="15" Text="Tên khách hàng" Margin="500,77,60,0" Foreground="White"></TextBlock>
-                <TextBlock Width="130" Height="25" FontSize="15" Text="Số điện thoại" Margin="500,152,60,0" Foreground="White"></TextBlock>
-                <TextBlock Width="130" Height="25" FontSize="15" Text="Doanh số" Margin="500,230,60,0" Foreground="White"></TextBlock>
-                <TextBlock Width="130" Height="25" FontSize="15" Text="Giới tính" Margin="500,306,60,0" Foreground="White"></TextBlock>
-                <TextBlock Width="130" Height="25" FontSize="15" Text="Ngày sinh" Margin="500,380,60,0" Foreground="White"></TextBlock>
+                <TextBlock Width="130" Height="20" FontSize="13" Text="Mã khách hàng" Margin="500,0,60,34" Foreground="White"></TextBlock>
+                <TextBlock Width="130" Height="20" FontSize="13" Text="Tên khách hàng" Margin="500,77,60,34" Foreground="White"></TextBlock>
+                <TextBlock Width="130" Height="20" FontSize="13" Text="Số điện thoại" Margin="500,152,60,30" Foreground="White"></TextBlock>
+                <TextBlock Width="130" Height="20" FontSize="13" Text="Doanh số" Margin="500,230,60,32" Foreground="White"></TextBlock>
+                <TextBlock Width="130" Height="20" FontSize="13" Text="Giới tính" Margin="500,306,60,32" Foreground="White"></TextBlock>
+                <TextBlock Width="130" Height="20" FontSize="13" Text="Ngày sinh" Margin="500,380,60,30" Foreground="White"></TextBlock>
 
                 <Button x:Name="addBtn" Width="150" Height="25" Margin="578,490,90,0" Content="Thêm khách hàng" FontSize="16" Foreground="White" Click="addBtn_Click">
                     <Button.Background>
@@ -78,22 +74,25 @@
                     </Button.Background>
                 </Button>
             </Grid>
-            <ListView x:Name="khachhangListView" Width="535" Height="530" HorizontalAlignment="Left" Margin="30,60,0,31" Background ="Black" Foreground="BlueViolet" ItemsSource="{Binding ListKH}" SelectionChanged="khachhangListView_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility ="Visible" >
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding MaKH}" Width="30" ></GridViewColumn>
-                        <GridViewColumn Header="Tên" DisplayMemberBinding="{Binding TenKH}" Width="100" ></GridViewColumn>
-                        <GridViewColumn Header="SDT" DisplayMemberBinding="{Binding SdtKH}" Width="90" ></GridViewColumn>
-                        <GridViewColumn Header="Doanh số" DisplayMemberBinding="{Binding DoanhSoKH}" Width="100" ></GridViewColumn>
-                        <GridViewColumn Header="Giới tính" DisplayMemberBinding="{Binding GioiTinhKH}" Width="45" ></GridViewColumn>
-                        <GridViewColumn Header="Ngày sinh" DisplayMemberBinding="{Binding NgSinhKH}" Width="150" ></GridViewColumn>
-                        <GridViewColumn Header="Ảnh khách hàng" DisplayMemberBinding="{Binding FileAnh}" Width="80" ></GridViewColumn>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-            <ComboBox x:Name ="timKiemCmb" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,35,0,0">
+            <materialDesign:Card Width="800" Height="530" HorizontalAlignment="Left" Margin="10,60,0,31">
+                <ListView x:Name="khachhangListView" Background ="Black" Foreground="BlueViolet" ItemsSource="{Binding ListKH}" SelectionChanged="khachhangListView_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility ="Visible" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" DisplayMemberBinding="{Binding MaKH}" Width="0" ></GridViewColumn>
+                            <GridViewColumn Header="Tên" DisplayMemberBinding="{Binding TenKH}" Width="200" ></GridViewColumn>
+                            <GridViewColumn Header="SDT" DisplayMemberBinding="{Binding SdtKH}" Width="100" ></GridViewColumn>
+                            <GridViewColumn Header="Doanh số" DisplayMemberBinding="{Binding DoanhSoKH}" Width="0" ></GridViewColumn>
+                            <GridViewColumn Header="Giới tính" DisplayMemberBinding="{Binding GioiTinhKH}" Width="115" ></GridViewColumn>
+                            <GridViewColumn Header="Ngày sinh" DisplayMemberBinding="{Binding NgSinhKH}" Width="160" ></GridViewColumn>
+                            <GridViewColumn Header="Ảnh khách hàng" DisplayMemberBinding="{Binding FileAnh}" Width="0" ></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </materialDesign:Card>
+            <ComboBox x:Name ="timKiemCmb" Background="White" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,35,0,0" Padding="0">
             </ComboBox>
-            <TextBox x:Name="timKiemTxtbox" Width="300" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,35,0,0" TextChanged="timKiemTxtbox_TextChanged">
+            
+            <TextBox x:Name="timKiemTxtbox" Background="White" Width="300" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="136,35,0,0" TextChanged="timKiemTxtbox_TextChanged" Padding="0">
             </TextBox>
         </Grid>
     </Grid>
