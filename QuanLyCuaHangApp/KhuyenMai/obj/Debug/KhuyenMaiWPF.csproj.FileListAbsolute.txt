@@ -17,3 +17,13 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Deb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMaiWPF.csproj.CopyComplete
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMai.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMai.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\MaterialDesignColors.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\MaterialDesignColors.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\App.baml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMaiWPF.csproj.AssemblyReference.cache

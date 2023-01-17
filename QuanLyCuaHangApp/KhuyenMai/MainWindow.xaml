@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KhuyenMai"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="650">
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="450" Width="750">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -43,24 +44,26 @@
         <DockPanel Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,50,0,0">
             <StackPanel >
                 <TextBlock Text="Mức giá (trở lên) để được khuyến mãi" FontSize="12" Foreground="White"></TextBlock>
-                <TextBox x:Name="giaTriDKTextbox" Height="20" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBox x:Name="giaTriDKTextbox" Background="White" Height="20" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0">
                 </TextBox>
             </StackPanel>
             <StackPanel Margin="40,0,0,0">
-                <TextBlock Text="Giá trị khuyến mãi" FontSize="12" Foreground="White"></TextBlock>
-                <TextBox x:Name="giaTriKMTextbox" Height="20" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBlock Text="Giá trị khuyến mãi" FontSize="12" Foreground="White" Margin="1,0,0,0"></TextBlock>
+                <TextBox x:Name="giaTriKMTextbox" Background="white" Height="20" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0">
                 </TextBox>
             </StackPanel>
         </DockPanel>
-        <ListView x:Name="kmListView"  Width="400" Height="300" HorizontalAlignment="Left" Margin="50,80,0,0" ItemsSource="{Binding kmList}" SelectionChanged="kmListView_SelectionChanged">
-            <ListView.View >
-                <GridView>
-                    <GridViewColumn Header="Mã khuyến mãi" DisplayMemberBinding="{Binding MaKM}" Width="90" ></GridViewColumn>
-                    <GridViewColumn Header="Giá trị điều kiện" DisplayMemberBinding="{Binding GiaTriDK}" Width="150" ></GridViewColumn>
-                    <GridViewColumn Header="Giá trị khuyến mãi (%)" DisplayMemberBinding="{Binding GiaTriKM}" Width="160" ></GridViewColumn>
-                    
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <materialDesign:Card Width="550" Height="300" HorizontalAlignment="Left" Margin="20,80,0,0">
+            <ListView x:Name="kmListView"  ItemsSource="{Binding kmList}" SelectionChanged="kmListView_SelectionChanged">
+                <ListView.View >
+                    <GridView>
+                        <GridViewColumn Header="Mã khuyến mãi" DisplayMemberBinding="{Binding MaKM}" Width="160" ></GridViewColumn>
+                        <GridViewColumn Header="Giá trị điều kiện" DisplayMemberBinding="{Binding GiaTriDK}" Width="200" ></GridViewColumn>
+                        <GridViewColumn Header="Giá trị khuyến mãi (%)" DisplayMemberBinding="{Binding GiaTriKM}" Width="195" ></GridViewColumn>
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </materialDesign:Card>
     </Grid>
 </Window>
