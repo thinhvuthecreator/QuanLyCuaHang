@@ -4,99 +4,56 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MenuWPF"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="730" Width="1000">
-    <Grid>
-
-
-        <Grid x:Name="menu" Width="160" Height="590" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="1,0.5" MappingMode="RelativeToBoundingBox" StartPoint="0,0.5">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF260272" Offset="1"/>
-                    <GradientStop Color="#FF100031" Offset="0.337"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-            <StackPanel>
-                <Border BorderThickness="1" BorderBrush="Aqua">
-                    <TextBlock Height="50" Text="Hàng hóa" FontSize="20" Foreground="White" Padding="30,15,0,0" FontFamily="Arial Rounded MT Bold" Margin="0,2,0,0" PreviewMouseDown="TextBlock_PreviewMouseDown">
-                        <TextBlock.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="#FF393985" Offset="1"/>
-                            </LinearGradientBrush>
-                        </TextBlock.Background>
-                    </TextBlock>
-                </Border>
-                <Border BorderThickness="1" BorderBrush="Aqua">
-                    <TextBlock Height="50" Text="Nhân viên" FontSize="20" Foreground="White" Padding="28,15,0,0" FontFamily="Arial Rounded MT Bold" Margin="0,2,0,0" PreviewMouseDown="TextBlock_PreviewMouseDown_1">
-                        <TextBlock.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="#FF393985" Offset="1"/>
-                            </LinearGradientBrush>
-                        </TextBlock.Background>
-                    </TextBlock>
-                </Border>
-                <Border BorderThickness="1" BorderBrush="Aqua">
-                    <TextBlock Height="50" Text="Khách hàng" FontSize="20" Foreground="White" Padding="20,15,0,0" FontFamily="Arial Rounded MT Bold" Margin="0,2,0,0" PreviewMouseDown="TextBlock_PreviewMouseDown_2">
-                        <TextBlock.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="#FF393985" Offset="1"/>
-                            </LinearGradientBrush>
-                        </TextBlock.Background>
-                    </TextBlock>
-                </Border>
-                <Border BorderThickness="1" BorderBrush="Aqua">
-                    <TextBlock Height="50" Text="Hóa đơn" FontSize="20" Foreground="White" Padding="35,15,0,0" FontFamily="Arial Rounded MT Bold" Margin="0,2,0,0" PreviewMouseDown="TextBlock_PreviewMouseDown_3">
-                        <TextBlock.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="#FF393985" Offset="1"/>
-                            </LinearGradientBrush>
-                        </TextBlock.Background>
-                    </TextBlock>
-                </Border>
-                <Border BorderThickness="1" BorderBrush="Aqua">
-                    <TextBlock Height="50" Text="Thống kê" FontSize="20" Foreground="White" Padding="33,15,0,0" FontFamily="Arial Rounded MT Bold" Margin="0,2,0,0" PreviewMouseDown="TextBlock_PreviewMouseDown_4">
-                        <TextBlock.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="#FF393985" Offset="1"/>
-                            </LinearGradientBrush>
-                        </TextBlock.Background>
-                    </TextBlock>
-                </Border>
-                <Border BorderThickness="1" BorderBrush="Aqua">
-                    <TextBlock Height="50" Text="Thùng rác" FontSize="20" Foreground="White" Padding="28,15,0,0" FontFamily="Arial Rounded MT Bold" Margin="0,2,0,0" PreviewMouseDown="TextBlock_PreviewMouseDown_5">
-                        <TextBlock.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="#FF393985" Offset="1"/>
-                            </LinearGradientBrush>
-                        </TextBlock.Background>
-                    </TextBlock>
-                </Border>
-                
-            </StackPanel>
-        </Grid>
-
-        <Grid x:Name="menuTitleGrid" Height="100" Width="830" VerticalAlignment="Top" HorizontalAlignment="Right">
+        Title="MainWindow" Height="650" Width="920">
+    <Grid Background="#FF0C0A1D">
+        <Grid VerticalAlignment="Top" Height="190">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF1C0664" Offset="1"/>
+                    <GradientStop Color="#FF3D17A2" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
+            <Image x:Name="storeImage" Width="250" HorizontalAlignment="Left" Margin="30,0,0,0"/>
+            <TextBlock Text="QUẢN LÝ CỬA HÀNG ABC" FontSize="40" FontFamily="Arial Rounded MT Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="230,0,0,0"></TextBlock>
         </Grid>
+        <Grid x:Name="tempGrid" Background="#FF3E3E59" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden">
+        </Grid>
+        <Grid x:Name="tempGrid2" Background="#FFB6B6FF" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden">
+        </Grid>
+        
+        <WrapPanel Width="900" Height="380" VerticalAlignment="Center" Margin="0,200,0,0">
+           
+            <Grid x:Name="nvIcon" Background="#FF3E3E59" Width="250" Height="150" Margin="25" MouseEnter="nvIcon_MouseEnter" MouseLeave="nvIcon_MouseLeave" MouseDown="nvIcon_MouseDown" MouseUp="nvIcon_MouseUp">
+                <materialDesign:PackIcon Kind="AccountMultiple" Width="250" Height="130"/>
+                <TextBlock Text="NHÂN VIÊN" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+            </Grid>
+            <Grid x:Name="khIcon" Background="#FF3E3E59" Width="250" Height="150" Margin="25" MouseEnter="khIcon_MouseEnter" MouseLeave="khIcon_MouseLeave" MouseDown="khIcon_MouseDown" MouseUp="khIcon_MouseUp">
+                <materialDesign:PackIcon Kind="AccountMultiplePlusOutline" Width="250" Height="130"/>
+                <TextBlock Text="KHÁCH HÀNG" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,0,0,10"/>
+            </Grid>
+            <Grid x:Name="hhIcon" Background="#FF3E3E59" Width="250" Height="150" Margin="25" MouseEnter="hhIcon_MouseEnter" MouseLeave="hhIcon_MouseLeave" MouseDown="hhIcon_MouseDown" MouseUp="hhIcon_MouseUp">
+                <materialDesign:PackIcon Kind="Dropbox" Width="235" Height="130"/>
+                <TextBlock Text="HÀNG HÓA" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,10,10"/>
+            </Grid>
+            <Grid x:Name="hdIcon" Background="#FF3E3E59" Width="250" Height="150" Margin="25" MouseEnter="hdIcon_MouseEnter" MouseLeave="hdIcon_MouseLeave" MouseDown="hdIcon_MouseDown" MouseUp="hdIcon_MouseUp">
+                <materialDesign:PackIcon Kind="Script" Width="250" Height="120"/>
+              <TextBlock Text="HÓA ĐƠN" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+            </Grid>
+            <Grid x:Name="kmIcon" Background="#FF3E3E59" Width="250" Height="150" Margin="25" MouseEnter="kmIcon_MouseEnter" MouseLeave="kmIcon_MouseLeave" MouseDown="kmIcon_MouseDown" MouseUp="kmIcon_MouseUp">
+                <materialDesign:PackIcon Kind="Sale" Width="250" Height="120"/>
+                <TextBlock Text="KHUYẾN MÃI" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+            </Grid>
+            <Grid x:Name="tkIcon" Background="#FF3E3E59" Width="250" Height="150" Margin="25" MouseEnter="tkIcon_MouseEnter" MouseLeave="tkIcon_MouseLeave" MouseDown="tkIcon_MouseDown" MouseUp="tkIcon_MouseUp">
+                <materialDesign:PackIcon Kind="ChartBar" Width="250" Height="130"/>
+                <TextBlock Text="THỐNG KÊ" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+            </Grid>
 
-        <Grid x:Name="logoMenu" VerticalAlignment="Top" HorizontalAlignment="Left" Height="107" Width="160" Background="White" >
-        </Grid>
+        </WrapPanel>
 
-        <Grid x:Name="quanLyGrid" Height="600" Width="830" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-            
-        </Grid>
+
+
     </Grid>
 
 </Window>

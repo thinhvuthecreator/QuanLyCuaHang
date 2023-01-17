@@ -12,10 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 using quanlynhanvienWPF;
 using QuanLyHoaDon;
 using QuanLySanPham;
 using QuanLyKhachHangWPF;
+using KhuyenMai;
+using ThongKe;
 
 namespace MenuWPF
 {
@@ -27,70 +30,200 @@ namespace MenuWPF
         public MainWindow()
         {
             InitializeComponent();
-            loadtitle("QUẢN LÝ CỬA HÀNG ABC");
+            loadImages();
         }
 
         #region methods
-        void loadtitle(string title)
+        void loadImages()
         {
-            TextBlock titleTextBlock = new TextBlock();
-            titleTextBlock.Text = title;
-            titleTextBlock.Foreground = Brushes.White;
-            titleTextBlock.FontSize = 40;
-            titleTextBlock.FontFamily = new FontFamily("Arial Rounded MT Bold");
-            WrapPanel titleWrapPanel = new WrapPanel();
-            titleWrapPanel.HorizontalAlignment = HorizontalAlignment.Center;
-            titleWrapPanel.VerticalAlignment = VerticalAlignment.Center;
-            titleWrapPanel.Children.Add(titleTextBlock);
-            menuTitleGrid.Children.Add(titleWrapPanel);
+            string resourceImage1 = System.IO.Path.GetFullPath("aaa.png");
+            BitmapImage logoLogin = new BitmapImage();
+            logoLogin.BeginInit();
+            logoLogin.UriSource = new Uri(resourceImage1);
+            logoLogin.EndInit();
+            storeImage.Source = logoLogin;
+            
         }
-
-        #endregion
-
-        #region events
-        #endregion
-
-        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        void mouseEnter(object sender)
         {
-            menuTitleGrid.Children.Clear();
-            loadtitle("QUẢN LÝ HÀNG HÓA");
-            foreach(Window window in Application.Current.Windows)
+            Grid thisGrid = sender as Grid;
+            thisGrid.Background = tempGrid2.Background;
+            foreach(Object ct in thisGrid.Children)
             {
-                if(window.GetType() == typeof(QuanLySanPham.MainWindow))
+                if(ct.GetType() == typeof(TextBlock))
                 {
-                    quanLyGrid.Children.Add((window as QuanLySanPham.MainWindow).spViewWrapPanel);
+                    (ct as TextBlock).Foreground = Brushes.Black;
+                }
+            }
+        }
+        void mouseClick(object sender)
+        {
+            Grid thisGrid = sender as Grid;
+            thisGrid.Background = Brushes.White;
+            foreach (Object ct in thisGrid.Children)
+            {
+                if (ct.GetType() == typeof(TextBlock))
+                {
+                    (ct as TextBlock).Foreground = Brushes.Black;
+                }
+            }
+        }
+        void mouseLeave(object sender)
+        {
+            Grid thisGrid = sender as Grid;
+            thisGrid.Background = tempGrid.Background;
+            foreach (Object ct in thisGrid.Children)
+            {
+                if (ct.GetType() == typeof(TextBlock))
+                {
+                    (ct as TextBlock).Foreground = Brushes.DarkGray;
                 }
             }
         }
 
-        private void TextBlock_PreviewMouseDown_1(object sender, MouseButtonEventArgs e)
+
+
+
+
+        #endregion
+
+        #region events
+
+       
+
+        #region mouseleave_mouseEnter_events
+        private void nvIcon_MouseEnter(object sender, MouseEventArgs e)
         {
-            menuTitleGrid.Children.Clear();
-            loadtitle("QUẢN LÝ NHÂN VIÊN");
+            mouseEnter(sender); 
+        }
+        private void nvIcon_MouseLeave(object sender, MouseEventArgs e)
+        {
+            mouseLeave(sender);
+        }
+          
+
+        private void khIcon_MouseEnter(object sender, MouseEventArgs e)
+        {
+            mouseEnter(sender);
+        }
+        private void khIcon_MouseLeave(object sender, MouseEventArgs e)
+        {
+            mouseLeave(sender);
         }
 
-        private void TextBlock_PreviewMouseDown_2(object sender, MouseButtonEventArgs e)
+
+        private void hhIcon_MouseEnter(object sender, MouseEventArgs e)
         {
-            menuTitleGrid.Children.Clear();
-            loadtitle("QUẢN LÝ KHÁCH HÀNG");
+            mouseEnter(sender);
+        }
+        private void hhIcon_MouseLeave(object sender, MouseEventArgs e)
+        {
+            mouseLeave(sender);
         }
 
-        private void TextBlock_PreviewMouseDown_3(object sender, MouseButtonEventArgs e)
+
+        private void hdIcon_MouseEnter(object sender, MouseEventArgs e)
         {
-            menuTitleGrid.Children.Clear();
-            loadtitle("QUẢN LÝ HÓA ĐƠN");
+            mouseEnter(sender);
+        }
+        private void hdIcon_MouseLeave(object sender, MouseEventArgs e)
+        {
+            mouseLeave(sender);
         }
 
-        private void TextBlock_PreviewMouseDown_4(object sender, MouseButtonEventArgs e)
+      
+        private void kmIcon_MouseEnter(object sender, MouseEventArgs e)
         {
-            menuTitleGrid.Children.Clear();
-            loadtitle("THỐNG KÊ");
+            mouseEnter(sender);
+        }
+        private void kmIcon_MouseLeave(object sender, MouseEventArgs e)
+        {
+            mouseLeave(sender);
         }
 
-        private void TextBlock_PreviewMouseDown_5(object sender, MouseButtonEventArgs e)
+      
+        private void tkIcon_MouseEnter(object sender, MouseEventArgs e)
         {
-            menuTitleGrid.Children.Clear();
-            loadtitle("THÙNG RÁC");
+            mouseEnter(sender);
         }
+        private void tkIcon_MouseLeave(object sender, MouseEventArgs e)
+        {
+            mouseLeave(sender);
+        }
+        #endregion
+
+        #region mouseDown_events
+        private void nvIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            mouseClick(sender);
+        }
+        private void khIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            mouseClick(sender);
+        }
+        private void hhIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            mouseClick(sender);
+        }
+        private void hdIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            mouseClick(sender);
+        }
+        private void kmIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            mouseClick(sender);
+        }
+        private void tkIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            mouseClick(sender);
+        }
+        #endregion
+
+        #region mouseUp_events
+        private void nvIcon_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            mouseLeave(sender);
+            quanlynhanvienWPF.MainWindow window = new quanlynhanvienWPF.MainWindow();
+            window.Show();
+        }
+        private void khIcon_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            mouseLeave(sender);
+            QuanLyKhachHangWPF.MainWindow window = new QuanLyKhachHangWPF.MainWindow();
+            window.Show();
+        }
+        private void hhIcon_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            mouseLeave(sender);
+            QuanLySanPham.MainWindow window = new QuanLySanPham.MainWindow();
+            window.Show();
+        }
+        private void hdIcon_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            mouseLeave(sender);
+            QuanLyHoaDon.MainWindow window = new QuanLyHoaDon.MainWindow();
+            window.Show();
+        }
+        private void kmIcon_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            mouseLeave(sender);
+            KhuyenMai.MainWindow window = new KhuyenMai.MainWindow();
+            window.Show();
+        }
+        private void tkIcon_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            mouseLeave(sender);
+            ThongKe.MainWindow window = new ThongKe.MainWindow();
+            window.Show();
+        }
+        #endregion
+
+        #endregion
+
+
+
+
+
+
     }
 }
