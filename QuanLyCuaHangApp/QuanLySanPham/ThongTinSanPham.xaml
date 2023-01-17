@@ -13,27 +13,38 @@
                 <GradientStop Color="#FF2B006A" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
+        <Grid.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="Padding" Value="0"></Setter>
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="Padding" Value="0"></Setter>
+            </Style>
+            <Style TargetType="DatePicker">
+                <Setter Property="Padding" Value="0"></Setter>
+            </Style>
+        </Grid.Resources>
         <Grid HorizontalAlignment="Right" Height="500" Margin="0,-60,0,0">
 
             <StackPanel Width="300" HorizontalAlignment="Right" Margin="0,90,0,0">
                 <TextBlock Width="200" Height="25"  Foreground="White" FontSize="15" Text="Mã sản phẩm" HorizontalAlignment="Left"></TextBlock>
-                <TextBox x:Name="maSPTxtbox" Width="80" Height="20" HorizontalAlignment="Left" >
+                <TextBox x:Name="maSPTxtbox" Width="80" Height="20" Background="White"  HorizontalAlignment="Left" >
                 </TextBox>
                 <TextBlock Width="200" Height="25"  Foreground="White" FontSize="15" Text="Tên sản phẩm" HorizontalAlignment="Left"></TextBlock>
-                <TextBox x:Name="tenSPTxtbox" Width="280" Height="20" HorizontalAlignment="Left" >
+                <TextBox x:Name="tenSPTxtbox" Width="280" Height="20" Background="White"  HorizontalAlignment="Left" >
                 </TextBox>
                 <TextBlock Width="200" Height="25"  Foreground="White" FontSize="15" Text="Loại sản phẩm" HorizontalAlignment="Left"></TextBlock>
-                <ComboBox x:Name="loaiSPcombobox" Width="280" Height="20" HorizontalAlignment="Left">
+                <ComboBox x:Name="loaiSPcombobox" Width="280" Height="20" Background="White"  HorizontalAlignment="Left">
                 </ComboBox>
                 <TextBlock Width="200" Height="25"  Foreground="White" FontSize="15" Text="Giá sản phẩm" HorizontalAlignment="Left"></TextBlock>
-                <TextBox x:Name="giaTxtbox" Width="200" Height="20" HorizontalAlignment="Left"></TextBox>
+                <TextBox x:Name="giaTxtbox" Width="200" Height="20" Background="White"  HorizontalAlignment="Left"></TextBox>
                 <TextBlock Width="200" Height="25"  Foreground="White" FontSize="15" Text="Giá bán sản phẩm" HorizontalAlignment="Left"></TextBlock>
-                <TextBox x:Name="giaBanTxtbox" Width="200" Height="20" HorizontalAlignment="Left"></TextBox>
+                <TextBox x:Name="giaBanTxtbox" Width="200" Height="20" Background="White"  HorizontalAlignment="Left"></TextBox>
                 <TextBlock Width="200" Height="25"  Foreground="White" FontSize="15" Text="Số lượng sản phẩm" HorizontalAlignment="Left"></TextBlock>
-                <TextBox x:Name="soluongTxtbox" Width="150" Height="20" HorizontalAlignment="Left">
+                <TextBox x:Name="soluongTxtbox" Width="150" Height="20" Background="White"  HorizontalAlignment="Left">
                 </TextBox>
                 <TextBlock Width="200" Height="25"  Foreground="White" FontSize="15" Text="Ngày thêm sản phẩm" HorizontalAlignment="Left"></TextBlock>
-                <DatePicker x:Name="ngThemspDatePicker" Width="200" Height="24" HorizontalAlignment="Left"/>
+                <DatePicker x:Name="ngThemspDatePicker" Width="200" Height="24" Background="White"  HorizontalAlignment="Left"/>
                 <DockPanel>
                     <Button x:Name="updateSPBtn" Width="100" Height="30" Content="Cập nhật" FontWeight="Bold" Foreground="White" Margin="0,20,0,0" BorderBrush="Black" HorizontalAlignment="Left" Click="updateSPBtn_Click">
                         <Button.Background>

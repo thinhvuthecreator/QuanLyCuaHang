@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLySanPham"
         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="MainWindow" Height="650" Width="800" Activated="Window_Activated">
     <Grid x:Name="girddddd" x:FieldModifier="public">
 
@@ -17,17 +18,19 @@
             </Grid.Background>
 
             <Grid Width="550" HorizontalAlignment="Left" Margin="30,107,0,32" >
-                <ScrollViewer  ScrollViewer.VerticalScrollBarVisibility="Visible">
-                    <WrapPanel x:Name="spViewWrapPanel" Width="550" HorizontalAlignment="Left" Grid.ColumnSpan="2" x:FieldModifier="public" VerticalAlignment="Top">
+                
+                    <ScrollViewer  ScrollViewer.VerticalScrollBarVisibility="Visible">
+                        <WrapPanel x:Name="spViewWrapPanel" Width="550" HorizontalAlignment="Left" Grid.ColumnSpan="2" x:FieldModifier="public" VerticalAlignment="Top">
 
-                        <WrapPanel.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="#FF12004D" Offset="1"/>
-                            </LinearGradientBrush>
-                        </WrapPanel.Background>
-                    </WrapPanel>
-                </ScrollViewer>
+                            <WrapPanel.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black" Offset="0"/>
+                                    <GradientStop Color="#FF12034D" Offset="1"/>
+                                </LinearGradientBrush>
+                            </WrapPanel.Background>
+                        </WrapPanel>
+                    </ScrollViewer>
+              
             </Grid>
 
             <StackPanel Width="150" Height="300" HorizontalAlignment="Right" Margin="0,0,40,90">
@@ -52,9 +55,9 @@
         </Grid>
         <TextBlock Text="Tìm kiếm" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,55,0,0" Foreground="White" FontSize="15">
         </TextBlock>
-        <ComboBox x:Name ="timKiemCmb" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,78,0,0">
+        <ComboBox x:Name ="timKiemCmb" Width="100" Height="20" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,78,0,0" Padding="0">
         </ComboBox>
-        <TextBox x:Name="timKiemTxtbox" Width="300" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,78,0,0" TextChanged="timKiemTxtbox_TextChanged"/>
+        <TextBox x:Name="timKiemTxtbox" Width="300" Height="20" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,78,0,0" TextChanged="timKiemTxtbox_TextChanged" Padding="0"/>
 
 
 

@@ -17,7 +17,7 @@ using Models;
 using SQL_Connection;
 using System.Data;
 using System.Data.SqlClient;
-using ProductWPF;
+using ThemSanPham;
 
 namespace QuanLySanPham
 {
@@ -161,7 +161,7 @@ namespace QuanLySanPham
         
         private void addSPButton_Click(object sender, RoutedEventArgs e)
         {
-            ProductWPF.MainWindow themSPWindow = new ProductWPF.MainWindow();
+            ThemSanPham.MainWindow themSPWindow = new ThemSanPham.MainWindow();
             themSPWindow.Show();
         }
         private void lspSPButton_Click(object sender, RoutedEventArgs e)
