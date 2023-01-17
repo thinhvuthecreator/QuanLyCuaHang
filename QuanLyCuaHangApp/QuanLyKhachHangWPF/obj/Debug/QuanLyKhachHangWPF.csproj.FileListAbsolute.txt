@@ -30,3 +30,5 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWP
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\obj\Debug\App.baml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\obj\Debug\UpdateKhachHang.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\obj\Debug\UpdateKhachHang.baml

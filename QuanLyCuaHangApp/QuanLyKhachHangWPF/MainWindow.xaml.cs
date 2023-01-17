@@ -123,14 +123,20 @@ namespace QuanLyKhachHangWPF
             khUpdate.FileAnh = khImage.Source.ToString();
             khUpdate.DoanhSoKH = decimal.Parse(doanhsoKHTxtbox.Text);
 
-            if (KhachHang_DAL.updateKhachHang(khUpdate) == true)
+            UpdateKhachHang updateKH = new UpdateKhachHang();
+            foreach(Window window in Application.Current.Windows)
             {
-                MessageBox.Show("Cập nhật thành công !");
+                if(window.GetType() == typeof(UpdateKhachHang))
+                {
+                    (window as UpdateKhachHang).MaKHTxtbox.Text = khUpdate.MaKH.ToString();
+                    (window as UpdateKhachHang).genderCombobox.Text = khUpdate.GioiTinhKH;
+                    (window as UpdateKhachHang).tenKHTxtbox.Text = khUpdate.TenKH;
+                    (window as UpdateKhachHang).sdtKHTxtbox.Text = khUpdate.SdtKH.ToString();
+                    (window as UpdateKhachHang).ngsinhKHDatePicker.Text = khUpdate.NgSinhKH.ToString();
+                    (window as UpdateKhachHang).loadimageImage.Source = khImage.Source;
+                }
             }
-            else
-            {
-                MessageBox.Show("Cập nhật thất bại !");
-            }
+            updateKH.Show();
         }
         private void khImage_MouseDown(object sender, MouseButtonEventArgs e)
         {

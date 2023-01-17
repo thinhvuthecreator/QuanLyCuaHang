@@ -1,0 +1,87 @@
+﻿<Window x:Class="QuanLyKhachHangWPF.UpdateKhachHang"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyKhachHangWPF"
+        mc:Ignorable="d"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="500" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="#FF4700E0" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="233*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Width="200" Height="25" Margin="365.102,47,116,397" Foreground="White" FontSize="15" Text="Giới tính" Grid.Column="1"></TextBlock>
+        <Grid HorizontalAlignment="Right" Grid.Column="1" >
+            <ComboBox x:Name="genderCombobox" Background="White" Foreground="Black" Width="60" Height="30" Margin="-243,-299,-260,0">
+                <ComboBoxItem x:Name="namItem">Nam</ComboBoxItem>
+                <ComboBoxItem x:Name="nuItem">Nữ</ComboBoxItem>
+            </ComboBox>
+
+
+
+
+            <TextBox x:Name="MaKHTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="80" Height="30" Margin="276,20,38.54,315" Visibility="Hidden">
+            </TextBox>
+            <TextBox x:Name="tenKHTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="280" Height="30" Margin="276,124,38.54,315">
+            </TextBox>
+            <TextBox x:Name="sdtKHTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="280" Height="30" Margin="276,180,38.54,259">
+            </TextBox>
+
+
+
+            <TextBlock Width="200" Height="25" Margin="210,-240,50,0" Foreground="White" FontSize="15" Text="Tên khách hàng"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,-130,50,0" Foreground="White" FontSize="15" Text="Số điện thoại khách hàng"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,-14,50,0" Foreground="White" FontSize="15" Text="Ngày sinh khách hàng"></TextBlock>
+            <Button x:Name="upDateKHBtn" Width="149" Height="30" Content="Cập nhật" FontWeight="Bold" Foreground="White" Margin="170,250,50,0" BorderBrush="Black" Click="upDateKHBtn_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF3B0FFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="huyBtn" Width="100" Height="30" Content="Hủy" FontWeight="Bold" Foreground="White" Margin="460,250,50,0" BorderBrush="Black" Click="huyBtn_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF3B0FFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <DatePicker x:Name="ngsinhKHDatePicker" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="200" Height="26" Margin="255,240,100,201">
+            </DatePicker>
+
+        </Grid>
+
+        <Image x:Name="loadimageImage" Width="300" Height="280" Margin="81,50,411,139"  Stretch="Fill" Grid.ColumnSpan="2" >
+        </Image>
+        <Button x:Name="addImageBtn" Width="100" Height="30" Margin="45,342,581,97" BorderBrush="Black" Content="Thêm ảnh" FontSize="14" FontWeight="Bold" Foreground="White" Click="addImageBtn_Click" Grid.ColumnSpan="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF3B0FFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+
+
+
+    </Grid>
+</Window>
