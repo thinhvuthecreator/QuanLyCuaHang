@@ -140,16 +140,7 @@ namespace QuanLyKhachHangWPF
         }
         private void khImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpenFileDialog imageChoose = new OpenFileDialog();
-            if (imageChoose.ShowDialog() == true)
-            {
-
-                string sourceAnh = imageChoose.FileName;
-                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(imageChoose.FileName));
-                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
-                Uri fileUri = new Uri(sourceAnhApp);
-                khImage.Source = new BitmapImage(fileUri);
-            }
+         
         }
         private void khachhangListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
