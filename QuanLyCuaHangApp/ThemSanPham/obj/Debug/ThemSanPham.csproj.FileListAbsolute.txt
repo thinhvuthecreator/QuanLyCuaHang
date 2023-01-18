@@ -13,7 +13,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemSanPham\bin\D
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemSanPham\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemSanPham\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemSanPham\bin\Debug\Microsoft.Xaml.Behaviors.xml
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemSanPham\obj\Debug\ThemSanPham.csproj.AssemblyReference.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemSanPham\obj\Debug\MainWindow.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemSanPham\obj\Debug\App.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemSanPham\obj\Debug\ThemSanPham_MarkupCompile.cache

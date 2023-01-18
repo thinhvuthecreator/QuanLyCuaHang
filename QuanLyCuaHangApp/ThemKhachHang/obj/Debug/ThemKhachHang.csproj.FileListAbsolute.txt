@@ -26,4 +26,3 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemKhachHang\obj
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemKhachHang\obj\Debug\ThemKhachHang.csproj.CopyComplete
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemKhachHang\obj\Debug\ThemKhachHang.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemKhachHang\obj\Debug\ThemKhachHang.pdb
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThemKhachHang\obj\Debug\ThemKhachHang.csproj.AssemblyReference.cache

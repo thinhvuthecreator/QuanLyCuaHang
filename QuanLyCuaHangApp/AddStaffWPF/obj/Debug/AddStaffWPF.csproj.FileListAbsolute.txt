@@ -12,7 +12,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\D
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.csproj.CoreCompileInputs.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.pdb
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.csproj.AssemblyReference.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\NhanVien_Model.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\bin\Debug\NhanVien_Model.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\AddStaffWPF\obj\Debug\AddStaffWPF.csproj.CopyComplete

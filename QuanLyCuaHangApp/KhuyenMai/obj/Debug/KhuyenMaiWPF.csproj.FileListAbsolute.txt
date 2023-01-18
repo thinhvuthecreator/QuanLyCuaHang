@@ -26,4 +26,3 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Deb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\App.baml
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhuyenMai\obj\Debug\KhuyenMaiWPF.csproj.AssemblyReference.cache

@@ -1,7 +1,6 @@
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\bin\Debug\ProductWPF.exe.config
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\bin\Debug\ProductWPF.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\bin\Debug\ProductWPF.pdb
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\obj\Debug\AddProductWPF.csproj.AssemblyReference.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\obj\Debug\MainWindow.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\obj\Debug\App.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ProductWPF\obj\Debug\ProductWPF_MarkupCompile.cache

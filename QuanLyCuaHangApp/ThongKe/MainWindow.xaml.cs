@@ -30,7 +30,7 @@ namespace ThongKe
             loadListThongKeSP();
             loadThongTinDongTien();
         }
-
+         
         #region objects
         public class sanPham
         {

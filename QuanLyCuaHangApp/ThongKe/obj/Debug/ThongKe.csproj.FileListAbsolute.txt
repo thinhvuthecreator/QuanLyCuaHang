@@ -27,3 +27,7 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug\SQL_Connection.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug\NhanVien_Model.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug\SQL_Connection.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug\Syncfusion.SfChart.WPF.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug\Syncfusion.SfChart.WPF.xml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\obj\Debug\GeneratedInternalTypeHelper.g.cs

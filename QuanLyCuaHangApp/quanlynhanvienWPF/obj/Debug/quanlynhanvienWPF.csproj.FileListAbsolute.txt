@@ -30,6 +30,5 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\ThemNhanVien.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\ThemNhanVien.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\bin\Debug\ThemNhanVien.exe.config
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\obj\Debug\CapNhatNhanVien.baml
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\obj\Debug\UpdateNhanVien.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\quanlynhanvienWPF\obj\Debug\UpdateNhanVien.baml

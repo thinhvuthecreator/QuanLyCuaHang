@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:ThongKe"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="650" Width="800">
+        xmlns:chart="clr-namespace:Syncfusion.UI.Xaml.Charts;assembly=Syncfusion.Sfchart.WPF"
+        Title="MainWindow" Height="2650" Width="800">
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
     <ScrollViewer>
         <Grid>
             <Grid.Background>
@@ -86,19 +90,35 @@
                 </materialDesign:Card>
 
             </StackPanel>
+            <StackPanel>
+                <Border x:Name="bieudoThongKeTitle" Width="700" Height="100" HorizontalAlignment="Left" Margin="10,1520,0,0" BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="30,30,30,30" Background="#FFFF6DBC">
+                    <Grid>
+
+                        <DockPanel>
+                            <WrapPanel VerticalAlignment="Center" Margin="20,0,0,0">
+                                <materialDesign:PackIcon Width="70" Height="70" Kind="ChartAreaspline" />
+                            </WrapPanel>
+                            <TextBlock Text="BIỂU ĐỒ DOANH THU TRONG 5 THÁNG" Height="35" Foreground="White" FontSize="25" FontFamily="Arial Rounded MT Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,0,80,0"/>
+                        </DockPanel>
+                    </Grid>
+                </Border>
+                <chart:SfChart Width="700" Height="450" Margin="0,10,0,0" HorizontalAlignment="Left" Foreground="White" Header="Doanh thu">
+                    <chart:SfChart.PrimaryAxis>
+                        <chart:CategoryAxis/>
+                    </chart:SfChart.PrimaryAxis>
+                    
+
+                    <chart:SfChart.SecondaryAxis>
+                        <chart:NumericalAxis/>
+                    </chart:SfChart.SecondaryAxis>
+                    <chart:ColumnSeries ItemsSource="{Binding data}" XBindingPath="thangNay" YBindingPath="doanhThu">
+                    </chart:ColumnSeries>
+                    <chart:ColumnSeries ItemsSource="{Binding data}" XBindingPath="thangTruo" YBindingPath="doanhThu" BorderThickness="3">
+                    </chart:ColumnSeries>
 
 
-            <Border x:Name="bieudoThongKeTitle" Width="700" Height="100" HorizontalAlignment="Left" Margin="10,420,0,0" BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="30,30,30,30" Background="#FFFF6DBC">
-                <Grid>
-
-                    <DockPanel>
-                        <WrapPanel VerticalAlignment="Center" Margin="20,0,0,0">
-                            <materialDesign:PackIcon Width="70" Height="70" Kind="ChartAreaspline" />
-                        </WrapPanel>
-                        <TextBlock Text="BIỂU ĐỒ DOANH THU" Height="43" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,80,0"/>
-                    </DockPanel>
-                </Grid>
-            </Border>
+                </chart:SfChart>
+            </StackPanel>
 
         </Grid>
     </ScrollViewer>
