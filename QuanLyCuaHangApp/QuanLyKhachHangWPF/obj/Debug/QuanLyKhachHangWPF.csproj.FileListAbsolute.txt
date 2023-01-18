@@ -18,9 +18,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWP
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\obj\Debug\QuanLyKhachHangWPF.csproj.CopyComplete
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\obj\Debug\QuanLyKhachHangWPF.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\obj\Debug\QuanLyKhachHangWPF.pdb
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\bin\Debug\AddKhachHangWPF.exe
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\bin\Debug\AddKhachHangWPF.pdb
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\bin\Debug\AddKhachHangWPF.exe.config
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\bin\Debug\MaterialDesignColors.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\bin\Debug\Microsoft.Xaml.Behaviors.dll
@@ -32,3 +29,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWP
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\obj\Debug\App.baml
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\obj\Debug\UpdateKhachHang.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\obj\Debug\UpdateKhachHang.baml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\bin\Debug\ThemKhachHang.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\bin\Debug\ThemKhachHang.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyKhachHangWPF\bin\Debug\ThemKhachHang.exe.config

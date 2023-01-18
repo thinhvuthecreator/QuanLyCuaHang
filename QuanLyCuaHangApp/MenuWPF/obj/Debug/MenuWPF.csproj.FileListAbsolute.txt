@@ -18,7 +18,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\quanlynhanvienWPF.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\QuanLySanPham.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\NhanVien_Model.dll
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\AddKhachHangWPF.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\SQL_Connection.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\AddLoaiSPWPF.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\QuanLyHoaDon.pdb
@@ -30,8 +29,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\QuanLySanPham.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\QuanLySanPham.exe.config
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\NhanVien_Model.pdb
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\AddKhachHangWPF.pdb
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\AddKhachHangWPF.exe.config
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\SQL_Connection.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\AddLoaiSPWPF.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\AddLoaiSPWPF.exe.config
@@ -63,3 +60,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\Syncfusion.Licensing.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\Syncfusion.SfChart.WPF.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\Syncfusion.SfChart.WPF.xml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\ThemKhachHang.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\ThemKhachHang.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\ThemKhachHang.exe.config

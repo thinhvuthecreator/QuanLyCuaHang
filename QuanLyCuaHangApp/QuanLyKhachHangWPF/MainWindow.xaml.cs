@@ -94,7 +94,7 @@ namespace QuanLyKhachHangWPF
         #region events
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddKhachHangWPF.MainWindow themKHWindow = new AddKhachHangWPF.MainWindow();
+            ThemKhachHang.MainWindow themKHWindow = new ThemKhachHang.MainWindow();
             themKHWindow.Show();
         }
         private void deleteBtn_Click(object sender, RoutedEventArgs e)

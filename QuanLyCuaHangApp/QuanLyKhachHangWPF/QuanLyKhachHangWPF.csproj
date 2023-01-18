@@ -114,10 +114,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AddKhachHangWPF\AddKhachHangWPF.csproj">
-      <Project>{79728115-7837-4330-8b34-fa1f9fec3b6b}</Project>
-      <Name>AddKhachHangWPF</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NhanVien_Model\DTO_Models.csproj">
       <Project>{6716402c-37d2-4f19-a39f-e0f8148818a0}</Project>
       <Name>DTO_Models</Name>
@@ -125,6 +121,10 @@
     <ProjectReference Include="..\SQL_Connection\SQL_ThaoTac.csproj">
       <Project>{15379ede-436b-49b5-b560-33eee3dad98e}</Project>
       <Name>SQL_ThaoTac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThemKhachHang\ThemKhachHang.csproj">
+      <Project>{ca1a6819-961e-41d5-b979-74865efa62ad}</Project>
+      <Name>ThemKhachHang</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
