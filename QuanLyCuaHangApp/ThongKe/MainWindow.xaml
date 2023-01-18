@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:chart="clr-namespace:Syncfusion.UI.Xaml.Charts;assembly=Syncfusion.Sfchart.WPF"
-        Title="MainWindow" Height="2650" Width="800">
+        Title="MainWindow" Height="650" Width="800">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
@@ -90,15 +90,15 @@
                 </materialDesign:Card>
 
             </StackPanel>
-            <StackPanel>
-                <Border x:Name="bieudoThongKeTitle" Width="700" Height="100" HorizontalAlignment="Left" Margin="10,1520,0,0" BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="30,30,30,30" Background="#FFFF6DBC">
+            <StackPanel Width="730" Height="680" HorizontalAlignment="Left" Margin="0,980,0,0">
+                <Border x:Name="bieudoThongKeTitle" Width="700" Height="100" HorizontalAlignment="Left" Margin="10,20,0,0" BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="30,30,30,30" Background="#FFFF6DBC">
                     <Grid>
 
                         <DockPanel>
                             <WrapPanel VerticalAlignment="Center" Margin="20,0,0,0">
                                 <materialDesign:PackIcon Width="70" Height="70" Kind="ChartAreaspline" />
                             </WrapPanel>
-                            <TextBlock Text="BIỂU ĐỒ DOANH THU TRONG 5 THÁNG" Height="35" Foreground="White" FontSize="25" FontFamily="Arial Rounded MT Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,0,80,0"/>
+                            <TextBlock Text="BIỂU ĐỒ DOANH THU" Height="45" Foreground="White" FontSize="25" FontFamily="Arial Rounded MT Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,0,80,0"/>
                         </DockPanel>
                     </Grid>
                 </Border>
@@ -106,15 +106,13 @@
                     <chart:SfChart.PrimaryAxis>
                         <chart:CategoryAxis/>
                     </chart:SfChart.PrimaryAxis>
-                    
+
 
                     <chart:SfChart.SecondaryAxis>
                         <chart:NumericalAxis/>
                     </chart:SfChart.SecondaryAxis>
-                    <chart:ColumnSeries ItemsSource="{Binding data}" XBindingPath="thangNay" YBindingPath="doanhThu">
-                    </chart:ColumnSeries>
-                    <chart:ColumnSeries ItemsSource="{Binding data}" XBindingPath="thangTruo" YBindingPath="doanhThu" BorderThickness="3">
-                    </chart:ColumnSeries>
+                    <chart:ColumnSeries ItemsSource="{Binding data}" XBindingPath="thangNay" YBindingPath="doanhThu"/>
+                    <chart:ColumnSeries ItemsSource="{Binding data}" XBindingPath="thangTruo" YBindingPath="doanhThu" BorderThickness="3"/>
 
 
                 </chart:SfChart>

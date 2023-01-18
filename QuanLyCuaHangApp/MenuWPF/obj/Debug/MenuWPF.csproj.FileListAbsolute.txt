@@ -60,3 +60,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\KhuyenMai.exe.config
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\ThongKe.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\ThongKe.exe.config
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\Syncfusion.SfChart.WPF.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuWPF\bin\Debug\Syncfusion.SfChart.WPF.xml
