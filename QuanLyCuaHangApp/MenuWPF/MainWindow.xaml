@@ -8,6 +8,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="920">
     <Grid Background="#FF0C0A1D">
+        <Grid.Resources>
+            <Style x:Key="roundedCornerStyle" TargetType="Border">
+                <Setter Property="CornerRadius" Value="20,20,20,20"></Setter>
+                <Setter Property="Width" Value="250"></Setter>
+                <Setter Property="Height" Value="150"></Setter>
+                <Setter Property="Margin" Value="25"></Setter>
+                <Setter Property="Background" Value="#FF3E3E59"></Setter>
+            </Style>
+        </Grid.Resources>
         <Grid VerticalAlignment="Top" Height="190">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -15,6 +24,7 @@
                     <GradientStop Color="#FF3D17A2" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
+           
             <Image x:Name="storeImage" Width="250" HorizontalAlignment="Left" Margin="30,0,0,0"/>
             <TextBlock Text="QUẢN LÝ CỬA HÀNG ABC" FontSize="40" FontFamily="Arial Rounded MT Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="230,0,0,0"></TextBlock>
         </Grid>
@@ -24,31 +34,42 @@
         </Grid>
         
         <WrapPanel Width="900" Height="380" VerticalAlignment="Center" Margin="0,200,0,0">
-           
-            <Grid x:Name="nvIcon" Background="#FF3E3E59" Width="250" Height="150" Margin="25" MouseEnter="nvIcon_MouseEnter" MouseLeave="nvIcon_MouseLeave" MouseDown="nvIcon_MouseDown" MouseUp="nvIcon_MouseUp">
-                <materialDesign:PackIcon Kind="AccountMultiple" Width="250" Height="130"/>
-                <TextBlock Text="NHÂN VIÊN" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
-            </Grid>
-            <Grid x:Name="khIcon" Background="#FF3E3E59" Width="250" Height="150" Margin="25" MouseEnter="khIcon_MouseEnter" MouseLeave="khIcon_MouseLeave" MouseDown="khIcon_MouseDown" MouseUp="khIcon_MouseUp">
-                <materialDesign:PackIcon Kind="AccountMultiplePlusOutline" Width="250" Height="130"/>
-                <TextBlock Text="KHÁCH HÀNG" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,0,0,10"/>
-            </Grid>
-            <Grid x:Name="hhIcon" Background="#FF3E3E59" Width="250" Height="150" Margin="25" MouseEnter="hhIcon_MouseEnter" MouseLeave="hhIcon_MouseLeave" MouseDown="hhIcon_MouseDown" MouseUp="hhIcon_MouseUp">
-                <materialDesign:PackIcon Kind="Dropbox" Width="235" Height="130"/>
-                <TextBlock Text="HÀNG HÓA" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,10,10"/>
-            </Grid>
-            <Grid x:Name="hdIcon" Background="#FF3E3E59" Width="250" Height="150" Margin="25" MouseEnter="hdIcon_MouseEnter" MouseLeave="hdIcon_MouseLeave" MouseDown="hdIcon_MouseDown" MouseUp="hdIcon_MouseUp">
-                <materialDesign:PackIcon Kind="Script" Width="250" Height="120"/>
-              <TextBlock Text="HÓA ĐƠN" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
-            </Grid>
-            <Grid x:Name="kmIcon" Background="#FF3E3E59" Width="250" Height="150" Margin="25" MouseEnter="kmIcon_MouseEnter" MouseLeave="kmIcon_MouseLeave" MouseDown="kmIcon_MouseDown" MouseUp="kmIcon_MouseUp">
-                <materialDesign:PackIcon Kind="Sale" Width="250" Height="120"/>
-                <TextBlock Text="KHUYẾN MÃI" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
-            </Grid>
-            <Grid x:Name="tkIcon" Background="#FF3E3E59" Width="250" Height="150" Margin="25" MouseEnter="tkIcon_MouseEnter" MouseLeave="tkIcon_MouseLeave" MouseDown="tkIcon_MouseDown" MouseUp="tkIcon_MouseUp">
-                <materialDesign:PackIcon Kind="ChartBar" Width="250" Height="130"/>
-                <TextBlock Text="THỐNG KÊ" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
-            </Grid>
+            <Border x:Name="nvBorder" Width="250" Height="150" Margin="25" CornerRadius="20,20,20,20" BorderThickness="1,1,1,1" Background="#FF3E3E59" MouseEnter="nvBorder_MouseEnter" MouseLeave="nvBorder_MouseLeave" MouseDown="nvBorder_MouseDown" MouseUp="nvBorder_MouseUp">
+                <Grid x:Name="nvIcon" Width="250" Height="150">
+                    <materialDesign:PackIcon Kind="AccountMultiple" Width="250" Height="130"/>
+                    <TextBlock Text="NHÂN VIÊN" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+                </Grid>
+            </Border>
+            <Border x:Name="khBorder" Background="#FF3E3E59" Width="250" Height="150" Margin="25" CornerRadius="20,20,20,20" MouseEnter="khBorder_MouseEnter" MouseLeave="khBorder_MouseLeave" MouseDown="khBorder_MouseDown" MouseUp="khBorder_MouseUp">
+                <Grid x:Name="khIcon" Width="250" Height="150">
+                    <materialDesign:PackIcon Kind="AccountMultiplePlusOutline" Width="250" Height="130"/>
+                    <TextBlock Text="KHÁCH HÀNG" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,0,0,10"/>
+                </Grid>
+            </Border>
+            <Border x:Name="hhBorder" Style="{StaticResource roundedCornerStyle}" MouseEnter="hhBorder_MouseEnter" MouseLeave="hhBorder_MouseLeave" MouseDown="hhBorder_MouseDown" MouseUp="hhBorder_MouseUp">
+                <Grid x:Name="hhIcon" Width="250" Height="150">
+                    <materialDesign:PackIcon Kind="Dropbox" Width="235" Height="130"/>
+                    <TextBlock Text="HÀNG HÓA" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,10,10"/>
+                </Grid>
+            </Border>
+            <Border x:Name="hdBorder" Style="{StaticResource roundedCornerStyle}" MouseEnter="hdBorder_MouseEnter" MouseLeave="hdBorder_MouseLeave" MouseDown="hdBorder_MouseDown" MouseUp="hdBorder_MouseUp">
+                <Grid x:Name="hdIcon" Width="250" Height="150">
+                    <materialDesign:PackIcon Kind="Script" Width="250" Height="120"/>
+                    <TextBlock Text="HÓA ĐƠN" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+                </Grid>
+            </Border>
+            <Border x:Name="kmBorder" Style="{StaticResource roundedCornerStyle}" MouseEnter="kmBorder_MouseEnter" MouseLeave="kmBorder_MouseLeave" MouseDown="kmBorder_MouseDown" MouseUp="kmBorder_MouseUp">
+                <Grid x:Name="kmIcon" Width="250" Height="150">
+                    <materialDesign:PackIcon Kind="Sale" Width="250" Height="120"/>
+                    <TextBlock Text="KHUYẾN MÃI" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+                </Grid>
+            </Border>
+            <Border x:Name="tkBorder" Style="{StaticResource roundedCornerStyle}" MouseEnter="tkBorder_MouseEnter" MouseLeave="tkBorder_MouseLeave" MouseDown="tkBorder_MouseDown" MouseUp="tkBorder_MouseUp">
+                <Grid x:Name="tkIcon" Width="250" Height="150">
+                    <materialDesign:PackIcon Kind="ChartBar" Width="250" Height="130"/>
+                    <TextBlock Text="THỐNG KÊ" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+                </Grid>
+            </Border>
 
         </WrapPanel>
 
