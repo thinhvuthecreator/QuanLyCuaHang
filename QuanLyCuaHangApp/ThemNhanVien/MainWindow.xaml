@@ -22,16 +22,18 @@
     <Grid>
         <TextBlock Width="200" Height="25" Margin="400,-344,50,0" Foreground="White" FontSize="15" Text="Giới tính"></TextBlock>
         <Grid HorizontalAlignment="Right" >
-            <ComboBox x:Name="genderCombobox" Background="White" Foreground="Black" Width="60" Height="30" Margin="100,-299,81,0">
-                <ComboBoxItem x:Name="namItem">Nam</ComboBoxItem>
-                <ComboBoxItem x:Name="nuItem">Nữ</ComboBoxItem>
-            </ComboBox>
+           
+                <ComboBox x:Name="genderCombobox" Background="White" Foreground="Black" Width="60" Height="30" Margin="100,-299,81,0">
+                    <ComboBoxItem x:Name="namItem">Nam</ComboBoxItem>
+                    <ComboBoxItem x:Name="nuItem">Nữ</ComboBoxItem>
+                </ComboBox>
 
 
 
-
-            <TextBox x:Name="tenNVTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="280" Height="30" Margin="276,124,38.54,315">
-            </TextBox>
+            
+                <TextBox x:Name="tenNVTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="280" Height="30" Margin="276,124,38.54,315">
+                </TextBox>
+          
             <TextBox x:Name="sdtNVTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Width="280" Background="White" Foreground="Black" Height="30" Margin="276,180,38.54,259">
             </TextBox>
             <TextBox x:Name="luongTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Width="200" Background="White" Foreground="Black" Height="30" Margin="276,234,118.54,205">

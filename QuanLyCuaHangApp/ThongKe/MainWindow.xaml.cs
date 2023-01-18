@@ -48,18 +48,43 @@ namespace ThongKe
         #region methods
         string luongNV()
         {
+            decimal luong = 0;
             DataTable data = SQL_Connect.Instance.ExecuteSQL("SELECT SUM(LUONG) FROM NHANVIEN");
-            return data.Rows[0][0].ToString();
+            if (decimal.TryParse(data.Rows[0][0].ToString(),out luong) == false)
+            {
+                return "0";
+            }
+            else
+            {
+                return data.Rows[0][0].ToString();
+            }
         }
         string tienNhapHang()
-        {
+        { 
+
+            decimal tien = 0;
             DataTable data = SQL_Connect.Instance.ExecuteSQL("SELECT SUM(GIA) FROM SANPHAM");
-            return data.Rows[0][0].ToString();
+            if (decimal.TryParse(data.Rows[0][0].ToString(), out tien) == false)
+            {
+                return "0";
+            }
+            else
+            {
+                return data.Rows[0][0].ToString();
+            }
         }
         string doanhThu()
         {
+            decimal doanhthu = 0;
             DataTable data = SQL_Connect.Instance.ExecuteSQL("SELECT SUM(TRIGIASAUKM) FROM HOADON");
-            return data.Rows[0][0].ToString();
+            if (decimal.TryParse(data.Rows[0][0].ToString(), out doanhthu) == false)
+            {
+                return "0";
+            }
+            else
+            {
+                return data.Rows[0][0].ToString();
+            }
         }
         string lai()
         {

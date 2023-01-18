@@ -30,10 +30,10 @@ namespace addHoaDonWPF
         {
             InitializeComponent();
 
-
             loadNVcmb();
             loadKHcmb();
             loadSPcmb();
+            ngHoaDonDatePicker.Text = DateTime.Now.ToString();
 
         }
         #region object
@@ -93,15 +93,23 @@ namespace addHoaDonWPF
         #region methods
         decimal timGiaTriDK_Max(List<decimal> list)
         {
-            decimal max = list[0];
-            for(int i = 0; i < list.Count;i++)
+            DataTable data = KhuyenMai_DAL.loadDuLieuKM();
+            if (data.Rows.Count > 0)
             {
-                if(max <= list[i])
+                decimal max = list[0];
+                for (int i = 0; i < list.Count; i++)
                 {
-                    max = list[i];
+                    if (max <= list[i])
+                    {
+                        max = list[i];
+                    }
                 }
+                return max;
             }
-            return max;
+            else
+            {
+                return 0;
+            }
         }
         string xuLyChuoi(string s)
         {
@@ -271,22 +279,36 @@ namespace addHoaDonWPF
             else
             {
                 DataTable dataKM = KhuyenMai_DAL.loadDuLieuKM();
-                foreach (DataRow row in dataKM.Rows)
+                if (dataKM.Rows.Count > 0)
                 {
-                    if (giaTriKM == int.Parse(row[1].ToString()))
+                    foreach (DataRow row in dataKM.Rows)
                     {
-                        return int.Parse(row[0].ToString());
+                        if (giaTriKM == int.Parse(row[1].ToString()))
+                        {
+                            return int.Parse(row[0].ToString());
+                        }
                     }
+                    return -1;
                 }
-                return -1;
+                else
+                {
+                    return -1;
+                }
             }
         }
         int layGiaTriKM(decimal giaTriDK)
         {
             int giaTriKM;
             DataTable data = SQL_Connect.Instance.ExecuteSQL("SELECT GIATRIKM FROM KHUYENMAI WHERE GIATRIDIEUKIEN =" + giaTriDK);
-            giaTriKM = int.Parse(data.Rows[0][0].ToString());
-            return giaTriKM;
+            if (data.Rows.Count > 0)
+            {
+                giaTriKM = int.Parse(data.Rows[0][0].ToString());
+                return giaTriKM;
+            }
+            else
+            {
+                return 0;
+            }
         }
           
             
@@ -294,7 +316,7 @@ namespace addHoaDonWPF
 
        
         #region events
-        
+         
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
 
@@ -431,84 +453,88 @@ namespace addHoaDonWPF
 
         private void kmCheckBox_Click(object sender, RoutedEventArgs e)
         {
-            int giaTriKM_MaxPossible = 0;
-            List<decimal> giaTriDKList = new List<decimal>();
-            if (tongtriGiaTextbox.Text == "0")
-            {
-                kmTextBlock.Visibility = Visibility.Hidden;
-                tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
-            }
-            else
-            {
-                if (kmCheckBox.IsChecked == true && tongtriGiaTextbox.Text != "0 VND")
+            DataTable data = KhuyenMai_DAL.loadDuLieuKM();
+           
+                int giaTriKM_MaxPossible = 0;
+                List<decimal> giaTriDKList = new List<decimal>();
+                if (tongtriGiaTextbox.Text == "0")
                 {
-                    kmTextBlock.Visibility = Visibility.Visible;
-                    DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
-                    
-                    for (int i = 0; i < dataKm.Rows.Count; i++)
-                    {
-                       
-                       if (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) >= decimal.Parse(dataKm.Rows[i][2].ToString()))
-                       {
-                            giaTriDKList.Add(decimal.Parse(dataKm.Rows[i][2].ToString()));
-                       }
-                       
-                    }
-                    decimal giaTriDKMax = timGiaTriDK_Max(giaTriDKList);
-                    giaTriKM_MaxPossible = layGiaTriKM(giaTriDKMax);
-                    kmTextBlock.Text = giaTriKM_MaxPossible.ToString();
-                    tongtriGiaSauKMTextbox.Text = (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) - (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) * giaTriKM_MaxPossible) / 100).ToString() + " VND";
-                }
-                else if (kmCheckBox.IsChecked == true && tongtriGiaTextbox.Text == "0")
-                {
-                    kmTextBlock.Visibility = Visibility.Visible;
-                    kmTextBlock.Text = "0";
+                    kmTextBlock.Visibility = Visibility.Hidden;
+                    tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
                 }
                 else
                 {
-                    tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
-                    kmTextBlock.Visibility = Visibility.Hidden;
-                }
-            }
+                    if (kmCheckBox.IsChecked == true && tongtriGiaTextbox.Text != "0 VND")
+                    {
+                        kmTextBlock.Visibility = Visibility.Visible;
+                        DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
 
+                        for (int i = 0; i < dataKm.Rows.Count; i++)
+                        {
+
+                            if (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) >= decimal.Parse(dataKm.Rows[i][2].ToString()))
+                            {
+                                giaTriDKList.Add(decimal.Parse(dataKm.Rows[i][2].ToString()));
+                            }
+
+                        }
+                        decimal giaTriDKMax = timGiaTriDK_Max(giaTriDKList);
+                        giaTriKM_MaxPossible = layGiaTriKM(giaTriDKMax);
+                        kmTextBlock.Text = giaTriKM_MaxPossible.ToString();
+                        tongtriGiaSauKMTextbox.Text = (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) - (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) * giaTriKM_MaxPossible) / 100).ToString() + " VND";
+                    }
+                    else if (kmCheckBox.IsChecked == true && tongtriGiaTextbox.Text == "0")
+                    {
+                        kmTextBlock.Visibility = Visibility.Visible;
+                        kmTextBlock.Text = "0";
+                    }
+                    else
+                    {
+                        tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
+                        kmTextBlock.Visibility = Visibility.Hidden;
+                    }
+                }
+       
 
         }
         private void tongtriGiaTextbox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            int giaTriKM_MaxPossible = 0;
-            List<decimal> giaTriDKList = new List<decimal>();
-            if (tongtriGiaTextbox.Text == "0")
-            {
-                kmTextBlock.Visibility = Visibility.Hidden;
-                tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
-            }
-            else
-            {
-                if (kmCheckBox.IsChecked == true)
+         
+                int giaTriKM_MaxPossible = 0;
+                List<decimal> giaTriDKList = new List<decimal>();
+                if (tongtriGiaTextbox.Text == "0")
                 {
-                    kmTextBlock.Visibility = Visibility.Visible;
-                    DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
-
-                    for (int i = 0; i < dataKm.Rows.Count; i++)
-                    {
-
-                        if (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) >= decimal.Parse(dataKm.Rows[i][2].ToString()))
-                        {
-                            giaTriDKList.Add(decimal.Parse(dataKm.Rows[i][2].ToString()));
-                        }
-
-                    }
-                    decimal giaTriDKMax = timGiaTriDK_Max(giaTriDKList);
-                    giaTriKM_MaxPossible = layGiaTriKM(giaTriDKMax);
-                    kmTextBlock.Text = giaTriKM_MaxPossible.ToString();
-                    tongtriGiaSauKMTextbox.Text = (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) - (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) * giaTriKM_MaxPossible) / 100).ToString() + " VND";
+                    kmTextBlock.Visibility = Visibility.Hidden;
+                    tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
                 }
                 else
                 {
-                    tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
-                    kmTextBlock.Visibility = Visibility.Hidden;
+                    if (kmCheckBox.IsChecked == true)
+                    {
+                        kmTextBlock.Visibility = Visibility.Visible;
+                        DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
+
+                        for (int i = 0; i < dataKm.Rows.Count; i++)
+                        {
+
+                            if (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) >= decimal.Parse(dataKm.Rows[i][2].ToString()))
+                            {
+                                giaTriDKList.Add(decimal.Parse(dataKm.Rows[i][2].ToString()));
+                            }
+
+                        }
+                        decimal giaTriDKMax = timGiaTriDK_Max(giaTriDKList);
+                        giaTriKM_MaxPossible = layGiaTriKM(giaTriDKMax);
+                        kmTextBlock.Text = giaTriKM_MaxPossible.ToString();
+                        tongtriGiaSauKMTextbox.Text = (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) - (decimal.Parse(xuLyChuoi(tongtriGiaTextbox.Text)) * giaTriKM_MaxPossible) / 100).ToString() + " VND";
+                    }
+                    else
+                    {
+                        tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text;
+                        kmTextBlock.Visibility = Visibility.Hidden;
+                    }
                 }
-            }
+            
 
         }
 

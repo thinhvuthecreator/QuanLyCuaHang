@@ -30,6 +30,7 @@ namespace ThemSanPham
             InitializeComponent();
             loadForm();
             loadImages();
+            ngThemspDatePicker.Text = DateTime.Now.ToString();
         }
 
         #region methods

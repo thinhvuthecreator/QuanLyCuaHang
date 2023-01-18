@@ -65,7 +65,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <DatePicker x:Name="ngThemspDatePicker" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Height="25" Margin="280,280,154,146"/>
+            <DatePicker x:Name="ngThemspDatePicker" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Height="25" Margin="280,280,154,146" IsEnabled="False"/>
 
         </Grid>
 

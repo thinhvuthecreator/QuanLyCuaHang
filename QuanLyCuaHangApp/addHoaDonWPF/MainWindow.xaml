@@ -44,8 +44,10 @@
             <ComboBox x:Name="khachhangCombobox" Width="215" >
             </ComboBox>
             <TextBlock Text="Ngày lập hóa đơn" Foreground="White"></TextBlock>
-            <DatePicker x:Name="ngHoaDonDatePicker" Width="215">
-            </DatePicker>
+           
+             <DatePicker x:Name="ngHoaDonDatePicker" Width="215" IsEnabled="False">
+             </DatePicker>
+            
             <TextBlock Text="Sản phẩm trong giỏ hàng" Foreground="White"></TextBlock>
             <DockPanel >
                 <ComboBox x:Name ="sanPhamCombobox" Width="150" ></ComboBox>
