@@ -26,23 +26,36 @@
             <ColumnDefinition Width="703*"/>
         </Grid.ColumnDefinitions>
 
-
+        <Grid.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10,10,10,10"></Setter>
+            </Style>
+        </Grid.Resources>
 
 
         <Grid HorizontalAlignment="Right" Height="500" Margin="0,-44,0,15" Grid.Column="1">
 
 
-            <TextBox x:Name="tenSPTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="280" Height="25" Margin="276,29,38.54,315">
-            </TextBox>
-            <ComboBox x:Name="loaiSPcombobox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="280" Height="25" Margin="278,103,37,307">
-            </ComboBox>
-            <TextBox x:Name="giaTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="200" Height="25" Margin="276,90,118.54,205">
-            </TextBox>
-            <TextBox x:Name="giaBanTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="200" Height="25" Margin="276,170,118.54,205">
-            </TextBox>
-            <TextBox x:Name="soluongTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="150" Height="25" Margin="276,200,168.54,155">
-            </TextBox>
-
+            <Border Width="280" Height="25" Margin="276,29,38.54,315" Background="White" CornerRadius="10,10,10,10">
+                <TextBox x:Name="tenSPTxtbox" materialDesign:HintAssist.Hint ="Không được để trống"  Foreground="Black" >
+                </TextBox>
+            </Border>
+            <Border Width="280" Height="25" Margin="278,103,37,307" Background="White">
+                <ComboBox x:Name="loaiSPcombobox" materialDesign:HintAssist.Hint ="Không được để trống"  Foreground="Black" >
+                </ComboBox>
+            </Border>
+            <Border Width="200" Height="25" Margin="276,90,118.54,205" Background="White">
+                <TextBox x:Name="giaTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Foreground="Black" >
+                </TextBox>
+            </Border>
+            <Border Width="200" Height="25" Margin="276,170,118.54,205" Background="White">
+                <TextBox x:Name="giaBanTxtbox" materialDesign:HintAssist.Hint ="Không được để trống"  Foreground="Black" >
+                </TextBox>
+            </Border>
+            <Border  Width="150" Height="25" Margin="276,200,168.54,155" Background="White">
+                <TextBox x:Name="soluongTxtbox" materialDesign:HintAssist.Hint ="Không được để trống"  Foreground="Black" >
+                </TextBox>
+            </Border>
             <TextBlock Width="200" Height="25" Margin="210,-320,50,0" Foreground="White" FontSize="15" Text="Tên sản phẩm"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-240,50,0" Foreground="White" FontSize="15" Text="Loại sản phẩm"></TextBlock>
             <TextBlock Width="200" Height="25" Margin="210,-150,50,0" Foreground="White" FontSize="15" Text="Giá sản phẩm"></TextBlock>
@@ -65,8 +78,9 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <DatePicker x:Name="ngThemspDatePicker" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Height="25" Margin="280,280,154,146" IsEnabled="False"/>
-
+            <Border Height="25" Margin="277,280,154,146" Background="White">
+                <DatePicker x:Name="ngThemspDatePicker" materialDesign:HintAssist.Hint ="Không được để trống"  Foreground="Black"  IsEnabled="False"/>
+            </Border>
         </Grid>
 
 

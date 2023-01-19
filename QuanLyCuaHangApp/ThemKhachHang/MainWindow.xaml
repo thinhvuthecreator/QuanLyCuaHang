@@ -26,25 +26,30 @@
         </Grid.ColumnDefinitions>
         <TextBlock Width="200" Height="25" Margin="365.102,47,116,397" Foreground="White" FontSize="15" Text="Giới tính" Grid.Column="1"></TextBlock>
         <Grid HorizontalAlignment="Right" Grid.Column="1" >
-            <ComboBox x:Name="genderCombobox" Background="White" Foreground="Black" Width="60" Height="30" Margin="-243,-299,-260,0">
-                <ComboBoxItem x:Name="namItem">Nam</ComboBoxItem>
-                <ComboBoxItem x:Name="nuItem">Nữ</ComboBoxItem>
-            </ComboBox>
+            <Border Width="60" Height="30" Margin="-243,-299,-260,0"  Background="White" CornerRadius="10,10,10,10">
+                <ComboBox x:Name="genderCombobox" Foreground="Black" >
+                    <ComboBoxItem x:Name="namItem">Nam</ComboBoxItem>
+                    <ComboBoxItem x:Name="nuItem">Nữ</ComboBoxItem>
+                </ComboBox>
+            </Border>
 
 
 
 
-
-            <TextBox x:Name="tenKHTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="280" Height="30" Margin="276,124,38.54,315">
-            </TextBox>
-            <TextBox x:Name="sdtKHTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="280" Height="30" Margin="276,180,38.54,259">
-            </TextBox>
+            <Border Width="280" Height="30" Margin="276,111,38.54,315" Background="White" CornerRadius="10,10,10,10">
+                <TextBox x:Name="tenKHTxtbox" materialDesign:HintAssist.Hint ="Không được để trống"  Foreground="Black" >
+                </TextBox>
+            </Border>
+            <Border Width="280" Height="30" Margin="276,160,38.54,259" Background="White" CornerRadius="10,10,10,10">
+                <TextBox x:Name="sdtKHTxtbox" materialDesign:HintAssist.Hint ="Không được để trống"  Foreground="Black" >
+                </TextBox>
+            </Border>
 
 
 
             <TextBlock Width="200" Height="25" Margin="210,-240,50,0" Foreground="White" FontSize="15" Text="Tên khách hàng"></TextBlock>
-            <TextBlock Width="200" Height="25" Margin="210,-130,50,0" Foreground="White" FontSize="15" Text="Số điện thoại khách hàng"></TextBlock>
-            <TextBlock Width="200" Height="25" Margin="210,-14,50,0" Foreground="White" FontSize="15" Text="Ngày sinh khách hàng"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,-140,50,0" Foreground="White" FontSize="15" Text="Số điện thoại khách hàng"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,-40,50,0" Foreground="White" FontSize="15" Text="Ngày sinh khách hàng"></TextBlock>
             <Button x:Name="themKHBtn" Width="149" Height="30" Content="Thêm khách hàng" FontWeight="Bold" Foreground="White" Margin="170,250,50,0" BorderBrush="Black" Click="themNVBtn_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -61,9 +66,10 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-
-            <DatePicker x:Name="ngsinhKHDatePicker" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="200" Height="26" Margin="255,240,100,201">
-            </DatePicker>
+            <Border Width="200" Height="26" Margin="255,200,100,201" Background="White" CornerRadius="10,10,10,10">
+                <DatePicker x:Name="ngsinhKHDatePicker" materialDesign:HintAssist.Hint ="Không được để trống"  Foreground="Black" >
+                </DatePicker>
+            </Border>
 
         </Grid>
 

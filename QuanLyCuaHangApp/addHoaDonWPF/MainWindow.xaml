@@ -20,29 +20,32 @@
        
         <StackPanel Margin="0,30,0,0" HorizontalAlignment="Left" Width="300">
             <StackPanel.Resources>
-                <Style TargetType="ComboBox">
+                <Style TargetType="Border">
                     <Setter Property="HorizontalAlignment" Value="Left" ></Setter>
                     <Setter Property="Margin" Value="20,0,0,0"></Setter>
+                    <Setter Property="Background" Value="White"></Setter>
+                    <Setter Property="CornerRadius" Value="10,10,10,10"></Setter>
                 </Style>
                 <Style TargetType="TextBlock">
                     <Setter Property="HorizontalAlignment" Value="Left" ></Setter>
                     <Setter Property="Margin" Value="20,0,0,0"></Setter>
                 </Style>
-                <Style TargetType="TextBox">
-                    <Setter Property="HorizontalAlignment" Value="Left" ></Setter>
-                    <Setter Property="Margin" Value="20,0,0,0"></Setter>
-                </Style>
+                
                 <Style TargetType="DatePicker">
                     <Setter Property="HorizontalAlignment" Value="Left" ></Setter>
                     <Setter Property="Margin" Value="20,0,0,0"></Setter>
                 </Style>
             </StackPanel.Resources>
             <TextBlock Text="Nhân viên lập hóa đơn"  Foreground="White"></TextBlock>
-            <ComboBox x:Name="nhanVienCombobox" Width="215">
-            </ComboBox>
+            <Border>
+                <ComboBox x:Name="nhanVienCombobox" Width="215">
+                </ComboBox>
+            </Border>
             <TextBlock Text="Khách mua hàng" Foreground="White"></TextBlock>
-            <ComboBox x:Name="khachhangCombobox" Width="215" >
-            </ComboBox>
+            <Border>
+                <ComboBox x:Name="khachhangCombobox" Width="215" >
+                </ComboBox>
+            </Border>
             <TextBlock Text="Ngày lập hóa đơn" Foreground="White"></TextBlock>
            
              <DatePicker x:Name="ngHoaDonDatePicker" Width="215" IsEnabled="False">
@@ -50,7 +53,9 @@
             
             <TextBlock Text="Sản phẩm trong giỏ hàng" Foreground="White"></TextBlock>
             <DockPanel >
-                <ComboBox x:Name ="sanPhamCombobox" Width="150" ></ComboBox>
+                <Border>
+                    <ComboBox x:Name ="sanPhamCombobox" Width="150" ></ComboBox>
+                </Border>
                 <Button x:Name="addBtn" Width="30" Margin="4,0,0,0" Content="+" Foreground="White" Click="addBtn_Click" Padding="0">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -69,14 +74,18 @@
                 </Button>
             </DockPanel>
             <TextBlock Text="Trị giá hóa đơn"  Foreground="White"></TextBlock>
-            <TextBox  x:Name ="tongtriGiaTextbox" Width="215" TextChanged="tongtriGiaTextbox_TextChanged"/>
+            <Border Width="215" >
+                <TextBox  x:Name ="tongtriGiaTextbox" TextChanged="tongtriGiaTextbox_TextChanged"/>
+            </Border>
             <DockPanel Margin="20,8,0,0">
                 <CheckBox x:Name="kmCheckBox" Click="kmCheckBox_Click"/>
                 <TextBlock Text="Áp dụng khuyến mãi"  Foreground="White" Margin="5,0,0,0" Background="Black"></TextBlock>
                 <TextBlock x:Name="kmTextBlock" Width="60" Foreground="White" Visibility="Hidden"></TextBlock>
             </DockPanel>
             <TextBlock Text="Tổng trị giá hóa đơn"  Foreground="White" Margin="20,3,0,0"></TextBlock>
-            <TextBox  x:Name ="tongtriGiaSauKMTextbox" Width="215"/>
+            <Border Width="215">
+                <TextBox  x:Name ="tongtriGiaSauKMTextbox" />
+            </Border>
             <DockPanel>
                 <materialDesign:Card Width="70" Height="30" Margin="20,10,0,0">
                     <Button x:Name="addHDBtn"  Content="Thêm" Foreground="White" Click="addHDBtn_Click">

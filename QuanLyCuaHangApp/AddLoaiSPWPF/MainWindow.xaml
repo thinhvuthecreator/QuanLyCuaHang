@@ -17,19 +17,15 @@
 
         <Grid.Resources>
             <Style TargetType="ListViewItem">
-                <Setter Property="BorderBrush" Value="Black"> </Setter>
+                <Setter Property="BorderBrush" Value="Black"></Setter>
                 <Setter Property="FontSize" Value="20"></Setter>
             </Style>
         </Grid.Resources>
 
-        <TextBlock  Text="  Loại sản phẩm" Width="200" Height="40" FontSize="25" Foreground="White" Margin="20,-350,25,0" FontFamily="Segoe UI Symbol" FontWeight="Bold">
-           <Border Width="200" Height="40" BorderBrush="White" BorderThickness="5" Margin="25,-350,25,0"></Border>
-            <TextBlock.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF16229C" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBlock.Background></TextBlock>
+        <Border Width="200" Height="40" Margin="20,-330,25,0" Background="#FF480BB2" CornerRadius="10,10,10,10">
+            <TextBlock  Text="LOẠI SẢN PHẨM"  FontSize="20" Foreground="White"  FontFamily="Arial Rounded MT Bold" Padding="20,6,0,0" >
+            </TextBlock>
+        </Border>
         <materialDesign:Card Width="250" Height="300" Margin="0,50,0,8">
             <ListView x:Name="loaiSPListView"  x:FieldModifier="public">
                 <ScrollBar HorizontalAlignment="Right">

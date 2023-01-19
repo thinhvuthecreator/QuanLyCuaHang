@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="920">
-    <Grid Background="#FF0C0A1D">
+    <Grid>
         <Grid.Resources>
             <Style x:Key="roundedCornerStyle" TargetType="Border">
                 <Setter Property="CornerRadius" Value="20,20,20,20"></Setter>
@@ -17,22 +17,24 @@
                 <Setter Property="Background" Value="#FF3E3E59"></Setter>
             </Style>
         </Grid.Resources>
-        <Grid VerticalAlignment="Top" Height="190">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF3D17A2" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-           
-            <Image x:Name="storeImage" Width="250" HorizontalAlignment="Left" Margin="30,0,0,0"/>
-            <TextBlock Text="QUẢN LÝ CỬA HÀNG ABC" FontSize="40" FontFamily="Arial Rounded MT Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="230,0,0,0"></TextBlock>
-        </Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF100A3A" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border VerticalAlignment="Top" Height="190" CornerRadius="30,30,30,30" Background="#FF4000B2">
+
+            <Grid>
+                <Image x:Name="storeImage" Width="250" HorizontalAlignment="Left" Margin="30,0,0,0"/>
+                <TextBlock Text="QUẢN LÝ CỬA HÀNG ABC" FontSize="40" FontFamily="Arial Rounded MT Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="230,0,0,0"></TextBlock>
+            </Grid>
+        </Border>
         <Grid x:Name="tempGrid" Background="#FF3E3E59" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden">
         </Grid>
         <Grid x:Name="tempGrid2" Background="#FFB6B6FF" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden">
         </Grid>
-        
+
         <WrapPanel Width="900" Height="380" VerticalAlignment="Center" Margin="0,200,0,0">
             <Border x:Name="nvBorder" Width="250" Height="150" Margin="25" CornerRadius="20,20,20,20" BorderThickness="1,1,1,1" Background="#FF3E3E59" MouseEnter="nvBorder_MouseEnter" MouseLeave="nvBorder_MouseLeave" MouseDown="nvBorder_MouseDown" MouseUp="nvBorder_MouseUp">
                 <Grid x:Name="nvIcon" Width="250" Height="150">
