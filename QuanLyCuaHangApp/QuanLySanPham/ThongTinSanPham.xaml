@@ -28,6 +28,7 @@
 
             <StackPanel Width="300" HorizontalAlignment="Right" Margin="0,90,0,0">
                 <TextBlock Width="200" Height="25"  Foreground="White" FontSize="15" Text="Mã sản phẩm" HorizontalAlignment="Left"></TextBlock>
+               
                 <TextBox x:Name="maSPTxtbox" Width="80" Height="20" Background="White"  HorizontalAlignment="Left" >
                 </TextBox>
                 <TextBlock Width="200" Height="25"  Foreground="White" FontSize="15" Text="Tên sản phẩm" HorizontalAlignment="Left"></TextBlock>

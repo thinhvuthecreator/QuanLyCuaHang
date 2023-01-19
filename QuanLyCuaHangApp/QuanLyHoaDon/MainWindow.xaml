@@ -8,6 +8,14 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="MainWindow" Height="720" Width="1090" Activated="Window_Activated">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10,10,10,10"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Width" Value="220"/>
+                <Setter Property="Margin" Value="1,0,0,0"/>
+            </Style>
+        </Grid.Resources>
         <StackPanel>
             <StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -74,6 +82,8 @@
 
 
                             <TextBlock Text="Số hóa đơn" FontSize="10" Style="{StaticResource ResourceKey=childTitle}" Margin="0,0,135,0"></TextBlock>
+                            
+                         
                             <TextBox x:Name="soHDTextBox"></TextBox>
                             <TextBlock Text="Người lập hóa đơn" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
                             <TextBox x:Name="nvTextbox"></TextBox>

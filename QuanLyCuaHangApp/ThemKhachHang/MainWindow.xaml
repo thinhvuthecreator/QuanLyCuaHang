@@ -75,7 +75,7 @@
 
         <Image x:Name="loadimageImage" Width="300" Height="280" Margin="81,50,411,139"  Stretch="Fill" Grid.ColumnSpan="2" >
         </Image>
-        <Button x:Name="addImageBtn" Width="100" Height="30" Margin="45,342,581,97" BorderBrush="Black" Content="Thêm ảnh" FontSize="14" FontWeight="Bold" Foreground="White" Click="addImageBtn_Click" Grid.ColumnSpan="2">
+        <Button x:Name="addImageBtn" Width="100" Height="30" Margin="45,320,581,97" BorderBrush="Black" Content="Thêm ảnh" FontSize="14" FontWeight="Bold" Foreground="White" Click="addImageBtn_Click" Grid.ColumnSpan="2">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
