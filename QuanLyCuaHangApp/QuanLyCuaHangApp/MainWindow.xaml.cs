@@ -81,7 +81,10 @@ namespace QuanLyCuaHangApp
         {
             if(login(usernameTxtBox.Text,passBox.Password.ToString()))
             {
-                MessageBox.Show("Đăng nhập thành công !");
+                              
+                MenuWPF.MainWindow window = new MenuWPF.MainWindow();
+                window.Show();
+                
             }
             else
             {
