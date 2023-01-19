@@ -21,28 +21,36 @@
     <Grid>
         <TextBlock Width="200" Height="25" Margin="400,-344,50,0" Foreground="White" FontSize="15" Text="Giới tính"></TextBlock>
         <Grid HorizontalAlignment="Right" >
-            <ComboBox x:Name="genderCombobox" Background="White" Foreground="Black" Width="60" Height="30" Margin="100,-299,81,0" x:FieldModifier="public">
-                <ComboBoxItem x:Name="namItem">Nam</ComboBoxItem>
-                <ComboBoxItem x:Name="nuItem">Nữ</ComboBoxItem>
-            </ComboBox>
+            <Border Background="White" Width="60" Height="30" Margin="100,-299,81,0" CornerRadius="10,10,10,10">
+                <ComboBox x:Name="genderCombobox"  Foreground="Black"  x:FieldModifier="public">
+                    <ComboBoxItem x:Name="namItem">Nam</ComboBoxItem>
+                    <ComboBoxItem x:Name="nuItem">Nữ</ComboBoxItem>
+                </ComboBox>
+            </Border>
 
 
 
             <TextBox x:Name="MaNVTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="80" Height="30" Margin="300,0,0,300" Visibility="Hidden" >
             </TextBox>
-            <TextBox x:Name="tenNVTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="280" Height="30" Margin="276,124,38.54,315">
-            </TextBox>
-            <TextBox x:Name="sdtNVTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Width="280" Background="White" Foreground="Black" Height="30" Margin="276,180,38.54,259">
-            </TextBox>
-            <TextBox x:Name="luongTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Width="200" Background="White" Foreground="Black" Height="30" Margin="276,234,118.54,205">
-            </TextBox>
+            <Border Background="White" Width="280" Height="30" Margin="276,111,38.54,315" CornerRadius="10,10,10,10">
+                <TextBox x:Name="tenNVTxtbox" materialDesign:HintAssist.Hint ="Không được để trống"  Foreground="Black" >
+                </TextBox>
+            </Border>
+            <Border  Height="30" Margin="276,155,38.54,259"  Background="White" CornerRadius="10,10,10,10">
+                <TextBox x:Name="sdtNVTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Width="280" Foreground="Black">
+                </TextBox>
+            </Border>
+            <Border  Height="30" Margin="276,200,118.54,205" Background="White" CornerRadius="10,10,10,10">
+                <TextBox x:Name="luongTxtbox" materialDesign:HintAssist.Hint ="Không được để trống" Width="200" Foreground="Black">
+                </TextBox>
+            </Border>
 
 
 
             <TextBlock Width="200" Height="25" Margin="210,-240,50,0" Foreground="White" FontSize="15" Text="Tên nhân viên"></TextBlock>
-            <TextBlock Width="200" Height="25" Margin="210,-130,50,0" Foreground="White" FontSize="15" Text="Số điện thoại nhân viên"></TextBlock>
-            <TextBlock Width="200" Height="25" Margin="210,-20,50,0" Foreground="White" FontSize="15" Text="Lương nhân viên"></TextBlock>
-            <TextBlock Width="200" Height="25" Margin="210,93,50,0" Foreground="White" FontSize="15" Text="Ngày sinh nhân viên"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,-145,50,0" Foreground="White" FontSize="15" Text="Số điện thoại nhân viên"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,-50,50,0" Foreground="White" FontSize="15" Text="Lương nhân viên"></TextBlock>
+            <TextBlock Width="200" Height="25" Margin="210,50,50,0" Foreground="White" FontSize="15" Text="Ngày sinh nhân viên"></TextBlock>
             <Button x:Name="updateNVBtn" Width="140" Height="30" Content="Cập nhật" FontWeight="Bold" Foreground="White" Margin="150,250,50,0" BorderBrush="Black" Click="updateNVBtn_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -59,8 +67,10 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <DatePicker x:Name="ngsinhNVDatePicker" materialDesign:HintAssist.Hint ="Không được để trống" Background="White" Foreground="Black" Width="200" Height="26" Margin="255,240,100,100">
-            </DatePicker>
+            <Border  Width="200" Height="26" Margin="255,190,100,100" Background="White" CornerRadius="10,10,10,10">
+                <DatePicker x:Name="ngsinhNVDatePicker" materialDesign:HintAssist.Hint ="Không được để trống"  Foreground="Black">
+                </DatePicker>
+            </Border>
 
         </Grid>
 

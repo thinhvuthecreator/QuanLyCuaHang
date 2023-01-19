@@ -29,23 +29,38 @@
                 </Border>
             </Grid>
 
-            <ComboBox x:Name ="timKiemCmb" Background="White" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,130,0,0" Padding="0">
-            </ComboBox>
-            <TextBox x:Name="timKiemTxtbox" Background="White" Width="300" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,130,0,0" TextChanged="timKiemTxtbox_TextChanged" Padding="0">
-            </TextBox>
-
-            <TextBox x:Name="maNVTxtbox" Width="100" Background="White" Height="25" Margin="505,40,98,0">
-            </TextBox>
-            <TextBox x:Name="tenNVTxtbox" Width="180" Background="White" Height="25" Margin="585,115,98,0">
-            </TextBox>
-            <TextBox x:Name="sdtNVTxtbox" Width="180" Background="White" Height="25" Margin="585,195,98,0">
-            </TextBox>
-            <TextBox x:Name="luongNVTxtbox" Width="180" Background="White" Height="25" Margin="585,270,98,0">
-            </TextBox>
-            <ComboBox x:Name="gioiTinhNVCombobox" Width="180" Background="White" Height="25" Margin="585,343,98,0">
-            </ComboBox>
-            <DatePicker x:Name="ngSinhNVDatePicker" Width="180" Background="White" Height="25" Margin="585,420,98,0">
-            </DatePicker>
+            <Border Background="White" Width="100" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="32,130,0,0" CornerRadius="5,5,5,5">
+                <ComboBox x:Name ="timKiemCmb"  Padding="0">
+                </ComboBox>
+            </Border>
+            <Border Background="White" Width="300" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,130,0,0" CornerRadius="5,5,5,5">
+                <TextBox x:Name="timKiemTxtbox"  TextChanged="timKiemTxtbox_TextChanged" Padding="0">
+                </TextBox>
+            </Border>
+            <Border  Width="100" Background="White" Height="25" Margin="505,40,98,0" CornerRadius="10,10,10,10">
+                <TextBox x:Name="maNVTxtbox">
+                </TextBox>
+            </Border>
+            <Border Width="180" Background="White" Height="25" Margin="585,115,98,0" CornerRadius="10,10,10,10">
+                <TextBox x:Name="tenNVTxtbox" >
+                </TextBox>
+            </Border>
+            <Border Width="180" Background="White" Height="25" Margin="585,195,98,0" CornerRadius="10,10,10,10">
+                <TextBox x:Name="sdtNVTxtbox" >
+                </TextBox>
+            </Border>
+            <Border Width="180" Background="White" Height="25" Margin="585,270,98,0" CornerRadius="10,10,10,10">
+                <TextBox x:Name="luongNVTxtbox" >
+                </TextBox>
+            </Border>
+            <Border Width="180" Background="White" Height="25" Margin="585,343,98,0" CornerRadius="10,10,10,10">
+                <ComboBox x:Name="gioiTinhNVCombobox" >
+                </ComboBox>
+            </Border>
+            <Border Width="180" Background="White" Height="25" Margin="585,420,98,0" CornerRadius="10,10,10,10">
+                <DatePicker x:Name="ngSinhNVDatePicker" >
+                </DatePicker>
+            </Border>
 
             <TextBlock Width="130" Height="25" FontSize="13" Text="Mã nhân viên" Margin="500,5,60,0" Foreground="White"></TextBlock>
             <TextBlock Width="130" Height="25" FontSize="13" Text="Tên nhân viên" Margin="500,85,60,0" Foreground="White"></TextBlock>
