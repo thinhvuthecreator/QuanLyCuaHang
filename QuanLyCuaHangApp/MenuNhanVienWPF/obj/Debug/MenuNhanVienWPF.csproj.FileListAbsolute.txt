@@ -39,3 +39,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuNhanVienWPF\b
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuNhanVienWPF\bin\Debug\KhachHangNhanVien.exe.config
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuNhanVienWPF\bin\Debug\ThemKhachHang.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuNhanVienWPF\bin\Debug\ThemKhachHang.exe.config
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuNhanVienWPF\bin\Debug\ThongTinTaiKhoan.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuNhanVienWPF\bin\Debug\ThongTinTaiKhoan.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\MenuNhanVienWPF\bin\Debug\ThongTinTaiKhoan.exe.config

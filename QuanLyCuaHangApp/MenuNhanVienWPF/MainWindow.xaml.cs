@@ -129,8 +129,30 @@ namespace MenuNhanVienWPF
             HoaDonNhanVien.MainWindow window = new HoaDonNhanVien.MainWindow();
             window.Show();
         }
+
+        #endregion
+        #region events_TK
+        private void tkBorder_MouseEnter(object sender, MouseEventArgs e)
+        {
+            mouseEnter(sender);
+        }
+        private void tkBorder_MouseLeave(object sender, MouseEventArgs e)
+        {
+            mouseLeave(sender);
+        }
+        private void tkBorder_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            mouseClick(sender);
+        }
+        private void tkBorder_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            mouseLeave(sender);
+            ThongTinTaiKhoan.MainWindow window = new ThongTinTaiKhoan.MainWindow();
+            window.Show();
+        }
+
+
         #endregion
 
-      
     }
 }

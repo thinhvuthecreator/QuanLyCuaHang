@@ -49,6 +49,12 @@
                     <TextBlock Text="HÓA ĐƠN" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
                 </Grid>
             </Border>
+            <Border x:Name="tkBorder" Style="{StaticResource roundedCornerStyle}" MouseEnter="tkBorder_MouseEnter" MouseLeave="tkBorder_MouseLeave" MouseDown="tkBorder_MouseDown" MouseUp="tkBorder_MouseUp">
+                <Grid x:Name="tkIcon" Width="250" Height="150">
+                    <materialDesign:PackIcon Kind="AccountEdit" Width="250" Height="120"/>
+                    <TextBlock Text="TÀI KHOẢN" FontSize="20" Foreground="DarkGray" FontFamily="Arial Rounded MT Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
+                </Grid>
+            </Border>
                     
 
         </WrapPanel>

@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ThongTinTaiKhoan"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="450" Width="450">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF3A78FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10,10,10,10"/>
+            </Style>
+        </Grid.Resources>
+        <TextBlock Width="80" Height="25" Margin="10,15,350,100" Foreground="White"  FontFamily="Arial Rounded MT Bold" Text="Tài khoản" FontSize="15"/>
+        <TextBlock Width="80" Height="25" Margin="10,115,350,100" Foreground="White"  FontFamily="Arial Rounded MT Bold" Text="Mật khẩu" FontSize="15"/>
+        <Border Width="400" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0">
+            <TextBlock x:Name="title" FontSize="40" Text="Tài khoản của bạn" Foreground="White" Padding="30,0,0,0" FontFamily="Arial Rounded MT Bold" >
+            </TextBlock>
+        </Border>
+        <Border Width="250" Height="25" Background="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,150,0,0"> 
+            <TextBox x:Name="taiKhoanTextbox">
+            </TextBox>
+        </Border>
+        <Border Width="250" Height="25" Background="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0">
+            <TextBox x:Name="matKhauTextbox">
+            </TextBox>
+        </Border>
+        <DockPanel Width="200" Height="30" Margin="0,110,0,0">
+            <Button x:Name="changePassButton" Width="100" Margin="0,0,0,0" Content="Đổi mật khẩu" FontSize="11" FontFamily="Arial Rounded MT Bold">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF322CB4" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="saveButton" Width="70" Margin="30,0,0,0" FontSize="11" Foreground="White" Content="Lưu" FontFamily="Arial Rounded MT Bold">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF322CB4" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </DockPanel>
     </Grid>
+  
 </Window>
