@@ -127,7 +127,13 @@ namespace MenuWPF
         {
             mouseEnter(sender);
         }
-        
+      
+        private void accountBorder_MouseEnter(object sender, MouseEventArgs e)
+        {
+            mouseEnter(sender);
+        }
+       
+       
         #endregion
 
         #region mouseleave_mouseEnter_events
@@ -160,7 +166,10 @@ namespace MenuWPF
         {
             mouseLeave(sender);
         }
-
+        private void accountBorder_MouseLeave(object sender, MouseEventArgs e)
+        {
+            mouseLeave(sender);
+        }
 
         #endregion
 
@@ -197,7 +206,13 @@ namespace MenuWPF
         {
             mouseClick(sender);
         }
+       
+        private void accountBorder_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            mouseClick(sender);
+        }
         #endregion
+       
         #region mouseUp_events
 
         private void nvBorder_MouseUp(object sender, MouseButtonEventArgs e)
@@ -241,12 +256,21 @@ namespace MenuWPF
             ThongKe.MainWindow window = new ThongKe.MainWindow();
             window.Show();
         }
-        #endregion
+
+        private void accountBorder_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            mouseLeave(sender);
+            QuanLyTaiKhoan.MainWindow window = new QuanLyTaiKhoan.MainWindow();
+            window.Show();
+        }
+
+
+
+
 
         #endregion
 
-
-
+        #endregion
 
 
     }

@@ -81,9 +81,17 @@ namespace QuanLyCuaHangApp
         {
             if(login(usernameTxtBox.Text,passBox.Password.ToString()))
             {
-                              
-                MenuWPF.MainWindow window = new MenuWPF.MainWindow();
-                window.Show();
+                if(usernameTxtBox.Text == "admin")
+                {
+                    MenuWPF.MainWindow window = new MenuWPF.MainWindow();
+                    window.Show();
+                }
+                else
+                {
+                    MenuNhanVienWPF.MainWindow window = new MenuNhanVienWPF.MainWindow();
+                    window.Show();
+                }
+                
                 
             }
             else
@@ -92,11 +100,6 @@ namespace QuanLyCuaHangApp
             }
         }
 
-        private void signUpButton_Click(object sender, RoutedEventArgs e)
-        {
-            SignUpWPF signUpWindow = new SignUpWPF();
-            this.Hide();
-            signUpWindow.Show();
-        }
+    
     }
 }

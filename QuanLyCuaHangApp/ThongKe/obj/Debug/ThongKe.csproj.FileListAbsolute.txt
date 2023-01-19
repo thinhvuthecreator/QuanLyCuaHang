@@ -20,7 +20,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug\Microsoft.Xaml.Behaviors.xml
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\obj\Debug\ThongKe.csproj.AssemblyReference.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\obj\Debug\App.baml
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\obj\Debug\ThongKe.csproj.CopyComplete
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug\NhanVien_Model.dll
@@ -31,3 +30,4 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug\Syncfusion.SfChart.WPF.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\bin\Debug\Syncfusion.SfChart.WPF.xml
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongKe\obj\Debug\ThongKe.csproj.AssemblyReference.cache

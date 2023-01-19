@@ -62,19 +62,7 @@ namespace QuanLyCuaHangApp
             nhanvienCombobox.DisplayMemberPath = "tenNV";
             nhanvienCombobox.SelectedValuePath = "maNV";
         }
-        bool kiemTraEmail(string email)
-        {
-            try
-            {
-                MailAddress m = new MailAddress(email);
-                return true;
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Email không hợp lệ !");
-                return false;
-            }
-        }
+        
         bool kiemTraTenNguoiDung(string taiKhoan)
         {
             if (taiKhoan.Length <= 20 && Encoding.ASCII.GetByteCount(taiKhoan) == Encoding.UTF8.GetByteCount(taiKhoan))
@@ -131,17 +119,18 @@ namespace QuanLyCuaHangApp
         #region events
         private void signUpBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (kiemTraEmail(emailTxtbox.Text) && kiemTraTenNguoiDung(usernameTxtbox.Text) && kiemTraMatKhau(passwordTxtbox.Text) && kiemTraXavNhanMatKau(passwordTxtbox.Text, comfirmPasswordTxtbox.Text))
+            if ( kiemTraTenNguoiDung(usernameTxtbox.Text) && kiemTraMatKhau(passwordTxtbox.Text) && kiemTraXavNhanMatKau(passwordTxtbox.Text, comfirmPasswordTxtbox.Text))
             {
                 TaiKhoan tk = new TaiKhoan();
                 tk.MaNV = int.Parse(nhanvienCombobox.SelectedValue.ToString());
                 tk.taiKhoan = usernameTxtbox.Text;
                 tk.MatKhau = passwordTxtbox.Text;
-                tk.EMail = emailTxtbox.Text;
+               
 
                 if (TaiKhoan_DAL.themTaiKhoan(tk))
                 {
                     MessageBox.Show("Thêm thành công !");
+                    this.Close();
                 }
                 else
                 {
@@ -153,13 +142,13 @@ namespace QuanLyCuaHangApp
                 MessageBox.Show("Lỗi !");
             }
         }
-
         private void signInBtn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow loginWindow = new MainWindow();
             this.Hide();
             loginWindow.Show();
         }
+
         #endregion
     }
 }

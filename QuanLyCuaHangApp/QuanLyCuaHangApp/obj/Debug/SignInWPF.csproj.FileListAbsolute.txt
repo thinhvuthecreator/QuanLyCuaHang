@@ -17,8 +17,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\SQL_Connection.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\NhanVien_Model.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\obj\Debug\SignInWPF.csproj.CopyComplete
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\obj\Debug\SignUpWPF.g.cs
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\obj\Debug\SignUpWPF.baml
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\obj\Debug\SignInWPF.csproj.AssemblyReference.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\MenuWPF.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\Syncfusion.Licensing.dll
@@ -67,3 +65,18 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\MenuNhanVienWPF.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\KhachHangNhanVien.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\HoaDonNhanVien.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\MenuNhanVienWPF.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\MenuNhanVienWPF.exe.config
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\KhachHangNhanVien.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\KhachHangNhanVien.exe.config
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\HoaDonNhanVien.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\HoaDonNhanVien.exe.config
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\QuanLyTaiKhoan.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\TaoTaiKhoan.exe
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\QuanLyTaiKhoan.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\QuanLyTaiKhoan.exe.config
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\TaoTaiKhoan.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyCuaHangApp\bin\Debug\TaoTaiKhoan.exe.config

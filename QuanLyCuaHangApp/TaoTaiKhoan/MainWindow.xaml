@@ -1,0 +1,37 @@
+﻿<Window x:Class="TaoTaiKhoan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaoTaiKhoan"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="900">
+    <Grid>
+        <Image Source="D:\lol\SUPbackground.jpg">
+        </Image>
+        <Grid Width="900" Height="500"  Margin="-10,120,50,0">
+            <TextBlock Width="300" Height="60" Margin="70,-420,50,0" FontSize="30" Text="     TẠO TÀI KHOẢN" FontFamily="Adobe Caslon Pro Bold">
+            </TextBlock>
+            <ComboBox x:Name="nhanvienCombobox" Width="180" Height="25" BorderBrush="Black" HorizontalAlignment="Center" Margin="100,-300,200,0">
+            </ComboBox>
+            <TextBox  x:Name="usernameTxtbox" Width="180" Height="25" BorderBrush="Black" HorizontalAlignment="Center" Margin="100,0,200,200">
+            </TextBox>
+
+
+
+            <TextBox x:Name="passwordTxtbox" Width="300" Height="25" BorderBrush="Black" HorizontalAlignment="Center" Margin="220,0,200,100">
+            </TextBox>
+            <TextBox x:Name="comfirmPasswordTxtbox" Width="300" Height="25" BorderBrush="Black" HorizontalAlignment="Center" Margin="220,0,200,0">
+            </TextBox>
+            <Button x:Name="signUpBtn" Width="100" Height="40" Margin="220,100,20,0" Content="Tạo" FontSize="15" Foreground="White" FontFamily="Helvetica Neue LT Std" Background="#FFFF9494" Click="signUpBtn_Click"/>
+            <TextBlock Width="200" Height="20" Margin="240,-350,315,0" Text="Nhân viên lập tài khoản" FontSize="15"></TextBlock>
+            <TextBlock Width="200" Height="20" Margin="240,0,315,250" Text="Tài khoản" FontSize="15"></TextBlock>
+            <TextBlock Width="200" Height="20" Margin="240,-50,315,100" Text="Mật khẩu" FontSize="15"></TextBlock>
+            <TextBlock Width="200" Height="20" Margin="240,50,315,100" Text="Xác nhận mật khẩu" FontSize="15"></TextBlock>
+            <TextBlock Width="215" Height="20" Margin="240,0,165,250" Text="Không dấu và tối đa 20 kí tự" FontSize="15" Foreground="DarkRed"></TextBlock>
+            <TextBlock Width="215" Height="20" Margin="240,-50,166,100" Text="Không dấu và tối đa 30 kí tự" FontSize="15" Foreground="DarkRed"></TextBlock>
+        </Grid>
+
+
+    </Grid>
+</Window>

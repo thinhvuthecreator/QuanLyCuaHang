@@ -42,24 +42,6 @@
         </Image>
 
 
-        <Button x:Name="signUpButton" Width="100" Height="35" Margin="280,250,2,2" Content="SIGN UP" FontSize="15" Foreground="White" FontFamily="Segoe UI Black" Click="signUpButton_Click">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF7C00E4" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button x:Name="forgotPassButton" Width="100" Height="35" Margin="585,250,2,2" Content="Forgot Password ?" FontSize="10.5"  Foreground="White" FontFamily="Segoe UI Black">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF7C00E4" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-
-
 
     </Grid>
 </Window>

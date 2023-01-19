@@ -133,6 +133,14 @@
       <Project>{bacec745-a8aa-462c-a019-4f382e393e11}</Project>
       <Name>QuanLySanPham</Name>
     </ProjectReference>
+    <ProjectReference Include="..\QuanLyTaiKhoan\QuanLyTaiKhoan.csproj">
+      <Project>{48e9d9d6-9af1-4e36-afd8-f34be4c52591}</Project>
+      <Name>QuanLyTaiKhoan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaoTaiKhoan\TaoTaiKhoan.csproj">
+      <Project>{54fc2c2a-8468-4f5d-bdfc-629030f90494}</Project>
+      <Name>TaoTaiKhoan</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ThongKe\ThongKe.csproj">
       <Project>{0db68da6-7992-4a25-bc4f-fc899fd11004}</Project>
       <Name>ThongKe</Name>

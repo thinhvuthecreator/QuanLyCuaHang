@@ -24,7 +24,7 @@ namespace SQL_Connection
             {
                 
              
-                    string themTKQuerry = "INSERT ACCOUNT VALUES ("+ tk.MaNV + ",N'" + tk.EMail + "',N'" + tk.taiKhoan + "',N'" + tk.MatKhau + "')";
+                    string themTKQuerry = "INSERT ACCOUNT VALUES ("+ tk.MaNV + ", N'" + tk.taiKhoan + "',N'" + tk.MatKhau + "')";
                     SQL_Connect.Instance.ExecuteNONquerrySQL(themTKQuerry);
                
             }

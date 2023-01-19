@@ -72,9 +72,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SignUpWPF.xaml.cs">
-      <DependentUpon>SignUpWPF.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -87,10 +84,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SignUpWPF.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -120,6 +113,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MenuNhanVienWPF\MenuNhanVienWPF.csproj">
+      <Project>{3061da04-36da-4291-85db-a311e63c0caa}</Project>
+      <Name>MenuNhanVienWPF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MenuWPF\MenuWPF.csproj">
       <Project>{8fa3b3f4-fd8f-436b-82a5-08f90e3893d8}</Project>
       <Name>MenuWPF</Name>
