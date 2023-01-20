@@ -27,6 +27,7 @@ namespace QuanLyTaiKhoan
         {
             InitializeComponent();
             loadTKListView();
+         
         }
         #region objects
         public class TaiKhoan
@@ -57,12 +58,54 @@ namespace QuanLyTaiKhoan
         private void Window_Activated(object sender, EventArgs e)
         {
             loadTKListView();
+            taikhoanListView.SelectedIndex = 0;
         }
         private void addTkButton_Click(object sender, RoutedEventArgs e)
         {
             TaoTaiKhoan.MainWindow window = new TaoTaiKhoan.MainWindow();
             window.Show();
         }
+        private void delTkButton_Click(object sender, RoutedEventArgs e)
+        {
+            TaiKhoan tk = (TaiKhoan)taikhoanListView.SelectedItem;
+            MessageBoxResult choice = MessageBox.Show("Xóa tài khoản của "+tk.tenNV+" ?", "", MessageBoxButton.YesNo);
+            if(choice == MessageBoxResult.Yes)
+            {
+                if (maTKTextBlock.Text == "14")
+                {
+                    MessageBox.Show("Không được xóa tài khoản này !");
+                 }
+                else
+                {
+                    if (TaiKhoan_DAL.xoaTaiKhoan(int.Parse(maTKTextBlock.Text)))
+                    {
+                        MessageBox.Show("Xóa thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại !");
+                    }
+                }
+            }
+            else
+            {
+
+            } 
+        }
+        private void taikhoanListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TaiKhoan tk = (TaiKhoan)taikhoanListView.SelectedItem; // lỗi 
+            if (tk != null)
+            {
+                maTKTextBlock.Text = tk.maTK.ToString();
+            }
+            else
+            {
+                maTKTextBlock.Text = "-1";
+            }
+            
+        }
+
         #endregion
 
     }

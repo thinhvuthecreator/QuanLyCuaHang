@@ -113,6 +113,26 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\addHoaDonWPF\addHoaDonWPF.csproj">
+      <Project>{44105335-68fe-4af4-a21c-ab3ce0c73e17}</Project>
+      <Name>addHoaDonWPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AddLoaiSPWPF\AddLoaiSPWPF.csproj">
+      <Project>{d7dad77b-4644-4f6f-b57d-ac0c8d6d92f5}</Project>
+      <Name>AddLoaiSPWPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HoaDonNhanVien\HoaDonNhanVien.csproj">
+      <Project>{2c726c1d-72c5-4506-ae72-f326c8966ba9}</Project>
+      <Name>HoaDonNhanVien</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KhachHangNhanVien\KhachHangNhanVien.csproj">
+      <Project>{756c9f25-6005-457d-8fac-8d4fab74c6dc}</Project>
+      <Name>KhachHangNhanVien</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KhuyenMai\KhuyenMaiWPF.csproj">
+      <Project>{62b3c948-b13d-4f97-976b-6d1aeebfbff8}</Project>
+      <Name>KhuyenMaiWPF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MenuNhanVienWPF\MenuNhanVienWPF.csproj">
       <Project>{3061da04-36da-4291-85db-a311e63c0caa}</Project>
       <Name>MenuNhanVienWPF</Name>
@@ -125,9 +145,53 @@
       <Project>{6716402c-37d2-4f19-a39f-e0f8148818a0}</Project>
       <Name>DTO_Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\QuanLyHoaDon\QuanLyHoaDon.csproj">
+      <Project>{a056a983-7769-4eb6-be5e-90a54b3e4be1}</Project>
+      <Name>QuanLyHoaDon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyKhachHangWPF\QuanLyKhachHangWPF.csproj">
+      <Project>{337c5ecc-b7f5-4125-b391-038cb6d9dccb}</Project>
+      <Name>QuanLyKhachHangWPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\quanlynhanvienWPF\quanlynhanvienWPF.csproj">
+      <Project>{1bd02aa9-125d-4b0a-81d8-c23679a82f6d}</Project>
+      <Name>quanlynhanvienWPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLySanPham\QuanLySanPham.csproj">
+      <Project>{bacec745-a8aa-462c-a019-4f382e393e11}</Project>
+      <Name>QuanLySanPham</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyTaiKhoan\QuanLyTaiKhoan.csproj">
+      <Project>{48e9d9d6-9af1-4e36-afd8-f34be4c52591}</Project>
+      <Name>QuanLyTaiKhoan</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SQL_Connection\SQL_ThaoTac.csproj">
       <Project>{15379ede-436b-49b5-b560-33eee3dad98e}</Project>
       <Name>SQL_ThaoTac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaoTaiKhoan\TaoTaiKhoan.csproj">
+      <Project>{54fc2c2a-8468-4f5d-bdfc-629030f90494}</Project>
+      <Name>TaoTaiKhoan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThemKhachHang\ThemKhachHang.csproj">
+      <Project>{ca1a6819-961e-41d5-b979-74865efa62ad}</Project>
+      <Name>ThemKhachHang</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThemNhanVien\ThemNhanVien.csproj">
+      <Project>{c0d10313-2175-417d-ab2d-293e0f028cdc}</Project>
+      <Name>ThemNhanVien</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThemSanPham\ThemSanPham.csproj">
+      <Project>{fd133173-4fc6-4059-9e89-71199edd6c99}</Project>
+      <Name>ThemSanPham</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThongKe\ThongKe.csproj">
+      <Project>{0db68da6-7992-4a25-bc4f-fc899fd11004}</Project>
+      <Name>ThongKe</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThongTinTaiKhoan\ThongTinTaiKhoan.csproj">
+      <Project>{ebb766a2-f181-4ad1-a2e3-3059d5c2bcdc}</Project>
+      <Name>ThongTinTaiKhoan</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

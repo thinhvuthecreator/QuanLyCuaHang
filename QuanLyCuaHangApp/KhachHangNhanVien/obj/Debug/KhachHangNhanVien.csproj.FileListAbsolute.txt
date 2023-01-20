@@ -1,4 +1,3 @@
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhachHangNhanVien\obj\Debug\KhachHangNhanVien.csproj.AssemblyReference.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhachHangNhanVien\obj\Debug\MainWindow.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhachHangNhanVien\obj\Debug\UpdateKhachHang_NV.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhachHangNhanVien\obj\Debug\App.g.cs

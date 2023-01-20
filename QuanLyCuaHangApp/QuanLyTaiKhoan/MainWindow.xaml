@@ -15,7 +15,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <materialDesign:Card Width="500" Height="350" HorizontalAlignment="Left" Margin="30,0,0,0">
-            <ListView x:Name="taikhoanListView" ItemsSource="{Binding tkList}">
+            <ListView x:Name="taikhoanListView" ItemsSource="{Binding tkList}" SelectionChanged="taikhoanListView_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding maTK}" Header="Mã tài khoản" Width="150"/>
@@ -27,7 +27,7 @@
                 </ListView.View>
             </ListView>
         </materialDesign:Card>
-        <Button x:Name="addTkButton" Content="Thêm tài khoản"  Width="130" Height="25" HorizontalAlignment="Right" Margin="0,0,20,300" Click="addTkButton_Click">
+        <Button x:Name="addTkButton" Content="Thêm tài khoản"  Width="130" Height="25" HorizontalAlignment="Right" Margin="0,0,20,300" Click="addTkButton_Click" Foreground="White">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -35,7 +35,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="delTkButton" Content="Xóa" Width="130" Height="25" HorizontalAlignment="Right" Margin="0,0,20,230">
+        <Button x:Name="delTkButton" Content="Xóa" Width="130" Height="25" HorizontalAlignment="Right" Margin="0,0,20,230" Click="delTkButton_Click" Foreground="White">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -43,6 +43,15 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-       
+        <Button x:Name="thongtinTkButton" FontSize="13" Content="Tài khoản admin" Width="130" Height="25" HorizontalAlignment="Right" Margin="0,70,20,230" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF1D00D6" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="maTKTextBlock" Width="100" Height="30" HorizontalAlignment="Right" Background="White" Visibility="Hidden"></TextBlock>
+
     </Grid>
 </Window>
