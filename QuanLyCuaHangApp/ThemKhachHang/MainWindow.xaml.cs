@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Models;
 using Microsoft.Win32;
 using SQL_Connection;
+using System.IO;
 
 namespace ThemKhachHang
 {
@@ -73,16 +74,16 @@ namespace ThemKhachHang
 
             if (loadKHImage.ShowDialog() == true)
             {
-
-                try
+                FileInfo file = new FileInfo(loadKHImage.FileName);
+                if(file.Extension == ".jpg" || file.Extension == ".JPG" || file.Extension == ".png" || file.Extension == ".PNG")
                 {
                     string sourceAnh = loadKHImage.FileName;
                     string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadKHImage.FileName));
                     Uri imageUri = new Uri(sourceAnhApp);
-                    loadimageImage.Source = new BitmapImage(imageUri);
                     System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+                    loadimageImage.Source = new BitmapImage(imageUri);
                 }
-                catch
+                else
                 {
                     MessageBox.Show("Vui lòng chọn file hình ảnh !");
                 }

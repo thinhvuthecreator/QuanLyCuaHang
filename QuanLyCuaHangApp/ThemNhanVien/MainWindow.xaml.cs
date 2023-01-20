@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using SQL_Connection;
 using Models;
+using System.IO;
 namespace ThemNhanVien
 {
     /// <summary>
@@ -26,6 +27,7 @@ namespace ThemNhanVien
         {
             InitializeComponent();
             loadImages();
+            loadControls();
         }
 
         #region methods
@@ -58,7 +60,13 @@ namespace ThemNhanVien
 
         }
 
-
+        void loadControls()
+        {
+            genderCombobox.SelectedIndex = 0;
+            sdtNVTxtbox.Text = "0";
+            luongTxtbox.Text = "0";
+            ngsinhNVDatePicker.Text = "1/1/1900";
+        }
 
         #endregion
 
@@ -67,13 +75,20 @@ namespace ThemNhanVien
             OpenFileDialog loadImage = new OpenFileDialog();
             if (loadImage.ShowDialog() == true)
             {
-
-
-                string sourceAnh = loadImage.FileName;
-                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadImage.FileName));
-                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
-                Uri fileUri = new Uri(sourceAnhApp);
-                loadimageImage.Source = new BitmapImage(fileUri);
+                FileInfo file = new FileInfo(loadImage.FileName);
+                
+                if(file.Extension == ".jpg" || file.Extension == ".JPG" || file.Extension == ".png" || file.Extension == ".PNG")
+                {
+                    string sourceAnh = loadImage.FileName;
+                    string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadImage.FileName));
+                    Uri fileUri = new Uri(sourceAnhApp);
+                    System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+                    loadimageImage.Source = new BitmapImage(fileUri);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn file ảnh !");
+                }
 
 
             }
@@ -87,19 +102,36 @@ namespace ThemNhanVien
 
         private void themNVBtn_Click(object sender, RoutedEventArgs e)
         {
-            NhanVien nv = new NhanVien();
-            ganGiaTriNhanVien(nv);
-            if (NhanVien_DAL.themNhanVien(nv))
+            int sdt = 0;
+            decimal luong = 0;
+            DateTime date;
+            if (tenNVTxtbox.Text == "")
             {
-                MessageBox.Show("thêm thành công !");
-                this.Close();
+                MessageBox.Show("Tên nhân viên bị để trống ! ");
+            }
+            else if(int.TryParse(sdtNVTxtbox.Text,out sdt) == false)
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ !");
+            }
+            else if(decimal.TryParse(luongTxtbox.Text, out luong) == false)
+            {
+                MessageBox.Show("Lương nhân viên không hợp lệ !");
             }
             else
             {
-                MessageBox.Show("thêm thất bại !");
+                NhanVien nv = new NhanVien();
+                ganGiaTriNhanVien(nv);
+                if (NhanVien_DAL.themNhanVien(nv))
+                {
+                    MessageBox.Show("thêm thành công !");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("thêm thất bại !");
 
+                }
             }
-
 
         }
     }

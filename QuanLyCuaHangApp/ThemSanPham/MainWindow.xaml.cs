@@ -17,6 +17,7 @@ using SQL_Connection;
 using Models;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace ThemSanPham
 {
@@ -31,6 +32,7 @@ namespace ThemSanPham
             loadForm();
             loadImages();
             ngThemspDatePicker.Text = DateTime.Now.ToString();
+            loadControls();
         }
 
         #region methods
@@ -66,7 +68,13 @@ namespace ThemSanPham
 
         }
 
-
+        void loadControls()
+        {
+            giaTxtbox.Text = "0";
+            giaBanTxtbox.Text = "0";
+            loaiSPcombobox.SelectedIndex = 0;
+            soluongTxtbox.Text = "1";          
+        }
 
         void ganGiaTriSP(SanPham sp)
         {
@@ -92,28 +100,55 @@ namespace ThemSanPham
             OpenFileDialog loadImage = new OpenFileDialog();
             if (loadImage.ShowDialog() == true)
             {
-
-
-                string sourceAnh = loadImage.FileName;
-                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadImage.FileName));
-                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
-                Uri fileUri = new Uri(sourceAnhApp);
-                ProductImage.Source = new BitmapImage(fileUri);
+                FileInfo file = new FileInfo(loadImage.FileName);
+                if (file.Extension == ".jpg" || file.Extension == ".JPG" || file.Extension == ".png" || file.Extension == ".PNG")
+                {
+                    string sourceAnh = loadImage.FileName;
+                    string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadImage.FileName));
+                    System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+                    Uri fileUri = new Uri(sourceAnhApp);
+                    ProductImage.Source = new BitmapImage(fileUri);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn file ảnh !");
+                }
             }
 
         }
         private void themspBtn_Click(object sender, RoutedEventArgs e)
         {
-            SanPham sp = new SanPham();
-            ganGiaTriSP(sp);
-            if (SanPham_DAL.themSanPham(sp))
+            decimal gia, giaBan;
+            int soLuong;
+            if (tenSPTxtbox.Text == "")
             {
-                MessageBox.Show("Thêm thành công !");
-                this.Close();
+                MessageBox.Show("Tên sản phẩm bị bỏ trống !");
+            }
+            else if(int.TryParse(soluongTxtbox.Text,out soLuong) == false)
+            {
+                MessageBox.Show("Số lượng không hợp lệ !");
+            }
+            else if(decimal.TryParse(giaTxtbox.Text,out gia) == false)
+            {
+                MessageBox.Show("Giá sản phẩm không hợp lệ !");
+            }
+            else if (decimal.TryParse(giaBanTxtbox.Text, out giaBan) == false)
+            {
+                MessageBox.Show("Giá bán sản phẩm không hợp lệ !");
             }
             else
             {
-                MessageBox.Show("Thêm thất bại !");
+                SanPham sp = new SanPham();
+                ganGiaTriSP(sp);
+                if (SanPham_DAL.themSanPham(sp))
+                {
+                    MessageBox.Show("Thêm thành công !");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại !");
+                }
             }
         }
         private void huyBtn_Click(object sender, RoutedEventArgs e)
