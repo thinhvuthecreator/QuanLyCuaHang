@@ -31,3 +31,4 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhachHangNhanVien
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhachHangNhanVien\obj\Debug\KhachHangNhanVien.csproj.CopyComplete
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhachHangNhanVien\obj\Debug\KhachHangNhanVien.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhachHangNhanVien\obj\Debug\KhachHangNhanVien.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\KhachHangNhanVien\obj\Debug\KhachHangNhanVien.csproj.AssemblyReference.cache

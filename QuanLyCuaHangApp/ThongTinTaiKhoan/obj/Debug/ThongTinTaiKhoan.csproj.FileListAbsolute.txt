@@ -9,7 +9,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\bin\Debug\Microsoft.Xaml.Behaviors.xml
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\obj\Debug\ThongTinTaiKhoan.csproj.AssemblyReference.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\obj\Debug\MainWindow.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\obj\Debug\App.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\obj\Debug\ThongTinTaiKhoan_MarkupCompile.cache
@@ -27,4 +26,3 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\bin\Debug\SQL_Connection.dll
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\bin\Debug\NhanVien_Model.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\bin\Debug\SQL_Connection.pdb
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\obj\Debug\ThongTinTaiKhoan.baml

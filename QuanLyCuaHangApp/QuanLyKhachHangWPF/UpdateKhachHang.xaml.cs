@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using SQL_Connection;
 using Models;
 using Microsoft.Win32;
+using System.IO;
 
 namespace QuanLyKhachHangWPF
 {
@@ -58,6 +59,12 @@ namespace QuanLyKhachHangWPF
 
 
         }
+        void loadControls()
+        {
+            genderCombobox.SelectedIndex = 0;
+            sdtKHTxtbox.Text = "0";
+         
+        }
 
         #endregion
 
@@ -71,12 +78,20 @@ namespace QuanLyKhachHangWPF
             if (loadKHImage.ShowDialog() == true)
             {
 
+                FileInfo file = new FileInfo(loadKHImage.FileName);
 
-                string sourceAnh = loadKHImage.FileName;
-                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadKHImage.FileName));
-                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
-                Uri imageUri = new Uri(sourceAnhApp);
-                loadimageImage.Source = new BitmapImage(imageUri);
+                if (file.Extension == ".jpg" || file.Extension == ".JPG" || file.Extension == ".png" || file.Extension == ".PNG")
+                {
+                    string sourceAnh = loadKHImage.FileName;
+                    string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadKHImage.FileName));
+                    Uri fileUri = new Uri(sourceAnhApp);
+                    System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+                    loadimageImage.Source = new BitmapImage(fileUri);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn file ảnh !");
+                }
             }
         }
 
@@ -87,16 +102,29 @@ namespace QuanLyKhachHangWPF
 
         private void upDateKHBtn_Click(object sender, RoutedEventArgs e)
         {
-            KhachHang kh = new KhachHang();
-            ganDuLieuKH(kh);
-            if (KhachHang_DAL.updateKhachHang(kh))
+            int sdt;
+
+            if (tenKHTxtbox.Text == "")
             {
-                MessageBox.Show("Cập nhật thành công !");
-                this.Close();
+                MessageBox.Show("Tên khách hàng bị bỏ trống ! ");
+            }
+            else if (int.TryParse(sdtKHTxtbox.Text, out sdt) == false)
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ !");
             }
             else
             {
-                MessageBox.Show("Cập nhật thất bại !");
+                KhachHang kh = new KhachHang();
+                ganDuLieuKH(kh);
+                if (KhachHang_DAL.updateKhachHang(kh))
+                {
+                    MessageBox.Show("Cập nhật thành công !");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thất bại !");
+                }
             }
         }
 

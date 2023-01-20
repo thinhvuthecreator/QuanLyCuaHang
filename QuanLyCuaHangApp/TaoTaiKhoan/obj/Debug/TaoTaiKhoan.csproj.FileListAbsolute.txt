@@ -19,3 +19,4 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\TaoTaiKhoan\obj\D
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\TaoTaiKhoan\obj\Debug\TaoTaiKhoan.csproj.CopyComplete
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\TaoTaiKhoan\obj\Debug\TaoTaiKhoan.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\TaoTaiKhoan\obj\Debug\TaoTaiKhoan.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\TaoTaiKhoan\obj\Debug\TaoTaiKhoan.csproj.AssemblyReference.cache

@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Models;
 using SQL_Connection;
 using Microsoft.Win32;
+using System.IO;
 
 namespace quanlynhanvienWPF
 {
@@ -26,6 +27,7 @@ namespace quanlynhanvienWPF
         {
             InitializeComponent();
             loadImages();
+            loadControls();
         }
 
         #region methods
@@ -58,6 +60,12 @@ namespace quanlynhanvienWPF
 
         }
 
+        void loadControls()
+        {
+            sdtNVTxtbox.Text = "0";
+            luongTxtbox.Text = "0";          
+            genderCombobox.SelectedIndex = 0;
+        }
 
         #endregion
 
@@ -70,13 +78,22 @@ namespace quanlynhanvienWPF
             OpenFileDialog loadImage = new OpenFileDialog();
             if (loadImage.ShowDialog() == true)
             {
+                FileInfo file = new FileInfo(loadImage.FileName);
+                if(file.Extension == ".jpg" || file.Extension == ".JPG" || file.Extension == ".png" || file.Extension == ".PNG")
+                {
+                    string sourceAnh = loadImage.FileName;
+                    string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadImage.FileName));
+                    System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+                    Uri fileUri = new Uri(sourceAnhApp);
+                    loadimageImage.Source = new BitmapImage(fileUri);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn file ảnh !");
+                }
 
 
-                string sourceAnh = loadImage.FileName;
-                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadImage.FileName));
-                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
-                Uri fileUri = new Uri(sourceAnhApp);
-                loadimageImage.Source = new BitmapImage(fileUri);
+              
 
 
             }
@@ -84,17 +101,36 @@ namespace quanlynhanvienWPF
 
         private void updateNVBtn_Click(object sender, RoutedEventArgs e)
         {
-            NhanVien nv = new NhanVien();
-            ganGiaTriNhanVien(nv);
-            if (NhanVien_DAL.updateNhanVien(nv))
+            int sdt;
+            decimal luong;
+            if (tenNVTxtbox.Text == "")
             {
-                MessageBox.Show("Cập nhật thành công !");
-                this.Close();
+                MessageBox.Show("Tên nhân viên bị bỏ trống ! ");
+            }
+            else if(decimal.TryParse(luongTxtbox.Text,out luong) == false)
+            {
+                MessageBox.Show("Lương nhân viên không hợp lệ !");
+            }
+            else if (int.TryParse(sdtNVTxtbox.Text, out sdt) == false)
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ !");
             }
             else
             {
-                MessageBox.Show("Cập nhật thất bại !");
 
+
+                NhanVien nv = new NhanVien();
+                ganGiaTriNhanVien(nv);
+                if (NhanVien_DAL.updateNhanVien(nv))
+                {
+                    MessageBox.Show("Cập nhật thành công !");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thất bại !");
+
+                }
             }
         }
 

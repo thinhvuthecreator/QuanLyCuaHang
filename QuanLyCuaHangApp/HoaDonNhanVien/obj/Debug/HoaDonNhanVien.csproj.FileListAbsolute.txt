@@ -1,4 +1,3 @@
-C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\HoaDonNhanVien.csproj.AssemblyReference.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\MainWindow.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\App.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\HoaDonNhanVien_MarkupCompile.cache

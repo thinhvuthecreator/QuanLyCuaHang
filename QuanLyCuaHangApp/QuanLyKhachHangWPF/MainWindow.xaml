@@ -31,27 +31,27 @@
                 </Grid>
                 
                 <Border Background="White" Width="100" Height="25" Margin="505,40,98,34" CornerRadius="10,10,10,10">
-                    <TextBox x:Name="maKHTxtbox">
+                    <TextBox x:Name="maKHTxtbox" IsEnabled="False">
                     </TextBox>
                 </Border>
                 <Border Background="White" Width="180" Height="25" Margin="585,110,98,30" CornerRadius="10,10,10,10">
-                    <TextBox x:Name="tenKHTxtbox" >
+                    <TextBox x:Name="tenKHTxtbox" IsEnabled="False">
                     </TextBox>
                 </Border>
                 <Border Background="White" Width="180" Height="25" Margin="585,190,98,30" CornerRadius="10,10,10,10">
-                    <TextBox x:Name="sdtKHTxtbox" >
+                    <TextBox x:Name="sdtKHTxtbox" IsEnabled="False">
                     </TextBox>
                 </Border>
                 <Border Background="White" Width="180" Height="25" Margin="585,265,98,30" CornerRadius="10,10,10,10">
-                    <TextBox x:Name="doanhsoKHTxtbox" >
+                    <TextBox x:Name="doanhsoKHTxtbox" IsEnabled="False">
                     </TextBox>
                 </Border>
                 <Border Background="White" Width="180" Height="25" Margin="585,338,98,30" CornerRadius="10,10,10,10">
-                    <ComboBox x:Name="gioiTinhKHCombobox" >
+                    <ComboBox x:Name="gioiTinhKHCombobox" IsEnabled="False">
                     </ComboBox>
                 </Border>
                 <Border Background="White" Width="180" Height="25" Margin="585,420,98,30" CornerRadius="10,10,10,10">
-                    <DatePicker x:Name="ngSinhKHDatePicker" >
+                    <DatePicker x:Name="ngSinhKHDatePicker" IsEnabled="False">
                     </DatePicker>
                 </Border>
 

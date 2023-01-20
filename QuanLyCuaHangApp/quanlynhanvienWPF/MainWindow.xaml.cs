@@ -137,16 +137,25 @@ namespace quanlynhanvienWPF
 
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
+           
             MessageBoxResult decicion = MessageBox.Show("Bạn có muốn xóa nhân viên này không ?", "", MessageBoxButton.YesNo);
             if (decicion == MessageBoxResult.Yes)
             {
-                if (NhanVien_DAL.xoaNhanVien(int.Parse(maNVTxtbox.Text)))
+                if (tenNVTxtbox.Text != "Quản Trị Viên")
                 {
-                    MessageBox.Show("Xóa thành công !");
+                   
+                    if (NhanVien_DAL.xoaNhanVien(int.Parse(maNVTxtbox.Text)))
+                    {
+                        MessageBox.Show("Xóa thành công !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại ! Tài khoản nhân viên còn tồn tại trong hệ thống");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Xóa thất bại ! Tài khoản nhân viên còn tồn tại trong hệ thống");
+                    MessageBox.Show("Bạn không được xóa QUẢN TRỊ VIÊN !");
                 }
             }
         }
