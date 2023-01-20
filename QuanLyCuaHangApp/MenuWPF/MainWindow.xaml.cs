@@ -31,6 +31,7 @@ namespace MenuWPF
         {
             InitializeComponent();
             loadImages();
+            
         }
 
         #region methods

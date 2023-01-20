@@ -34,14 +34,14 @@ namespace SQL_Connection
             }
             return isSuccess;
         }
-        static public bool updateTaiKhoan(TaiKhoan tk)
+        static public bool updateTaiKhoan(string matk, string matKhau )
         {
             bool isSuccess = true;
 
             try
             {
                
-                    string updateTKQuerry = "UPDATE ACCOUNT SET EMAIL = N'" + tk.EMail + "', MATKHAU = N'" + tk.MatKhau + "' WHERE MATK =" + tk.MaTK;
+                    string updateTKQuerry = "UPDATE ACCOUNT SET MATKHAU = N'" + matKhau + "' WHERE MATK =" + matk;
                     SQL_Connect.Instance.ExecuteNONquerrySQL(updateTKQuerry);
                 
             }

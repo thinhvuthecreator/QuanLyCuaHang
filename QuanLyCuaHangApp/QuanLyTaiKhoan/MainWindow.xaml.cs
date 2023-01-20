@@ -105,6 +105,11 @@ namespace QuanLyTaiKhoan
             }
             
         }
+        private void thongtinTkButton_Click(object sender, RoutedEventArgs e)
+        {
+            ThongTinAccount window = new ThongTinAccount();
+            window.Show();
+        }
 
         #endregion
 

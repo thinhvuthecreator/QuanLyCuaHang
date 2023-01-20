@@ -30,3 +30,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyTaiKhoan\ob
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyTaiKhoan\bin\Debug\TaoTaiKhoan.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyTaiKhoan\bin\Debug\TaoTaiKhoan.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyTaiKhoan\bin\Debug\TaoTaiKhoan.exe.config
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyTaiKhoan\obj\Debug\ThongTinAccount.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyTaiKhoan\obj\Debug\ThongTinTaiKhoan.baml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\QuanLyTaiKhoan\obj\Debug\ThongTinAccount.baml

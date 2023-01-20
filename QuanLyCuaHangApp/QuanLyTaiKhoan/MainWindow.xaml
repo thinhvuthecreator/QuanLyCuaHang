@@ -43,7 +43,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="thongtinTkButton" FontSize="13" Content="Tài khoản admin" Width="130" Height="25" HorizontalAlignment="Right" Margin="0,70,20,230" Foreground="White">
+        <Button x:Name="thongtinTkButton" FontSize="13" Content="Tài khoản admin" Width="130" Height="25" HorizontalAlignment="Right" Margin="0,70,20,230" Foreground="White" Click="thongtinTkButton_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>

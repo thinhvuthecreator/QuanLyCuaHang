@@ -102,13 +102,20 @@ namespace QuanLyKhachHangWPF
             MessageBoxResult decicion = MessageBox.Show("Bạn có muốn xóa khách hàng này không ?", "", MessageBoxButton.YesNo);
             if (decicion == MessageBoxResult.Yes)
             {
-                if (KhachHang_DAL.xoaKhachHang(int.Parse(maKHTxtbox.Text)))
+                if (tenKHTxtbox.Text == "Khách Hàng Lạ")
                 {
-                    MessageBox.Show("Xóa thành công !");
+                    MessageBox.Show("Không được xóa khách hàng này !");
                 }
                 else
                 {
-                    MessageBox.Show("Xóa thất bại ! Tài khoản nhân viên còn tồn tại trong hệ thống");
+                    if (KhachHang_DAL.xoaKhachHang(int.Parse(maKHTxtbox.Text)))
+                    {
+                        MessageBox.Show("Xóa thành công !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại ! Hóa đơn của khách hàng này còn tồn tại trong hệ thống");
+                    }
                 }
             }
         }

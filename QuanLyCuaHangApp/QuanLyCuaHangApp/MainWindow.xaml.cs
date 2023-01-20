@@ -75,8 +75,6 @@ namespace QuanLyCuaHangApp
         #endregion
 
         #region events
-        #endregion
-
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
             if(login(usernameTxtBox.Text,passBox.Password.ToString()))
@@ -84,11 +82,16 @@ namespace QuanLyCuaHangApp
                 if(usernameTxtBox.Text == "admin")
                 {
                     MenuWPF.MainWindow window = new MenuWPF.MainWindow();
+                    QuanLyTaiKhoan.Account.TaiKhoan = usernameTxtBox.Text;
+                    QuanLyTaiKhoan.Account.MatKhau = passBox.Password.ToString();
                     window.Show();
+                   
                 }
                 else
                 {
                     MenuNhanVienWPF.MainWindow window = new MenuNhanVienWPF.MainWindow();
+                    ThongTinTaiKhoan.Account.TaiKhoan = usernameTxtBox.Text;
+                    ThongTinTaiKhoan.Account.MatKhau = passBox.Password.ToString();
                     window.Show();
                 }
                 
@@ -99,6 +102,8 @@ namespace QuanLyCuaHangApp
                 MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu !");
             }
         }
+        #endregion
+
 
     
     }

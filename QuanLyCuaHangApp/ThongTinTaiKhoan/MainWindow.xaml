@@ -26,15 +26,15 @@
             </TextBlock>
         </Border>
         <Border Width="250" Height="25" Background="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,150,0,0"> 
-            <TextBox x:Name="taiKhoanTextbox">
+            <TextBox x:Name="taiKhoanTextbox" IsEnabled="False">
             </TextBox>
         </Border>
         <Border Width="250" Height="25" Background="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0">
             <TextBox x:Name="matKhauTextbox">
             </TextBox>
         </Border>
-        <DockPanel Width="200" Height="30" Margin="0,110,0,0">
-            <Button x:Name="changePassButton" Width="100" Margin="0,0,0,0" Content="Đổi mật khẩu" FontSize="11" FontFamily="Arial Rounded MT Bold">
+        <DockPanel Width="300" Height="30" Margin="0,110,0,0">
+            <Button x:Name="changePassButton" Width="100" Margin="0,0,0,0" Content="Đổi mật khẩu" FontSize="11" FontFamily="Arial Rounded MT Bold" Click="changePassButton_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -42,7 +42,15 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="saveButton" Width="70" Margin="30,0,0,0" FontSize="11" Foreground="White" Content="Lưu" FontFamily="Arial Rounded MT Bold">
+            <Button x:Name="saveButton" Width="70" Margin="20,0,0,0" FontSize="11" Foreground="White" Content="Lưu" FontFamily="Arial Rounded MT Bold" Click="saveButton_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF322CB4" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="huyButton" Width="70" Margin="0,0,0,0" FontSize="11" Foreground="White" Content="Hủy" FontFamily="Arial Rounded MT Bold" Click="huyButton_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>

@@ -206,6 +206,7 @@ namespace addHoaDonWPF
             khachhangCombobox.ItemsSource = listKH;
             khachhangCombobox.DisplayMemberPath = "tenKH";
             khachhangCombobox.SelectedValuePath = "maKH";
+            khachhangCombobox.SelectedIndex = 0;
         }
 
         void loadSPcmb()

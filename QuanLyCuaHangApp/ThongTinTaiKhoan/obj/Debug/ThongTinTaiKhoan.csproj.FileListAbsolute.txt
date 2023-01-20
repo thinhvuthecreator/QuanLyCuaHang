@@ -23,3 +23,8 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\obj\Debug\ThongTinTaiKhoan.csproj.CopyComplete
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\obj\Debug\ThongTinTaiKhoan.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\obj\Debug\ThongTinTaiKhoan.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\bin\Debug\NhanVien_Model.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\bin\Debug\SQL_Connection.dll
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\bin\Debug\NhanVien_Model.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\bin\Debug\SQL_Connection.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\ThongTinTaiKhoan\obj\Debug\ThongTinTaiKhoan.baml
