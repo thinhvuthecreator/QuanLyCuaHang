@@ -75,7 +75,7 @@
             </DockPanel>
             <TextBlock Text="Trị giá hóa đơn"  Foreground="White"></TextBlock>
             <Border Width="215" >
-                <TextBox  x:Name ="tongtriGiaTextbox" TextChanged="tongtriGiaTextbox_TextChanged"/>
+                <TextBox  x:Name ="tongtriGiaTextbox" TextChanged="tongtriGiaTextbox_TextChanged" IsEnabled="False"/>
             </Border>
             <DockPanel Margin="20,8,0,0">
                 <CheckBox x:Name="kmCheckBox" Click="kmCheckBox_Click"/>
@@ -84,7 +84,7 @@
             </DockPanel>
             <TextBlock Text="Tổng trị giá hóa đơn"  Foreground="White" Margin="20,3,0,0"></TextBlock>
             <Border Width="215">
-                <TextBox  x:Name ="tongtriGiaSauKMTextbox" />
+                <TextBox  x:Name ="tongtriGiaSauKMTextbox" IsEnabled="False" />
             </Border>
             <DockPanel>
                 <materialDesign:Card Width="70" Height="30" Margin="20,10,0,0">

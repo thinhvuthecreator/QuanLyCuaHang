@@ -28,7 +28,7 @@ namespace ThongKe
         decimal doanhThuHomNay()
         {
             DataTable doanhThu = SQL_Connect.Instance.ExecuteSQL("SELECT SUM(TRIGIASAUKM) FROM HOADON WHERE DAY(NGHD) = DAY(GETDATE())");
-            if (doanhThu.Rows.Count > 0)
+            if (doanhThu.Rows[0][0].ToString() != "")
             {
                 return decimal.Parse(doanhThu.Rows[0][0].ToString());
             }
@@ -41,7 +41,7 @@ namespace ThongKe
         decimal doanhThuHomQua()
         {
             DataTable doanhThu = SQL_Connect.Instance.ExecuteSQL("SELECT SUM(TRIGIASAUKM) FROM HOADON WHERE DAY(NGHD) = DAY(GETDATE()) - 1");
-            if (doanhThu.Rows.Count > 0)
+            if (doanhThu.Rows[0][0].ToString() != "")
             {
                 return decimal.Parse(doanhThu.Rows[0][0].ToString());
             }
@@ -53,7 +53,7 @@ namespace ThongKe
         decimal doanhThuHomKia()
         {
             DataTable doanhThu = SQL_Connect.Instance.ExecuteSQL("SELECT SUM(TRIGIASAUKM) FROM HOADON WHERE DAY(NGHD) = DAY(GETDATE()) - 2");
-            if (doanhThu.Rows.Count > 0)
+            if (doanhThu.Rows[0][0].ToString() != "")
             {
                 return decimal.Parse(doanhThu.Rows[0][0].ToString());
             }

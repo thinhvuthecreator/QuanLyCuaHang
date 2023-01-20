@@ -34,7 +34,7 @@ namespace addHoaDonWPF
             loadKHcmb();
             loadSPcmb();
             ngHoaDonDatePicker.Text = DateTime.Now.ToString();
-
+            loadTriGiaTextBox();
         }
         #region object
         public class danhSachSanPham
@@ -91,6 +91,13 @@ namespace addHoaDonWPF
         #endregion
 
         #region methods
+        void loadTriGiaTextBox()
+        {
+            if(dsSPListview.Items.Count == 0)
+            {
+                tongtriGiaSauKMTextbox.Text = tongtriGiaTextbox.Text = "0";
+            }
+        }
         decimal timGiaTriDK_Max(List<decimal> list)
         {
             DataTable data = KhuyenMai_DAL.loadDuLieuKM();
@@ -188,6 +195,7 @@ namespace addHoaDonWPF
             nhanVienCombobox.ItemsSource = listNV;
             nhanVienCombobox.DisplayMemberPath = "tenNV";
             nhanVienCombobox.SelectedValuePath = "maNV";
+            nhanVienCombobox.SelectedIndex = 0;
         }
 
         void  loadKHcmb()
@@ -225,6 +233,7 @@ namespace addHoaDonWPF
             sanPhamCombobox.ItemsSource = listSP;
             sanPhamCombobox.DisplayMemberPath = "tenSP";
             sanPhamCombobox.SelectedValuePath = "maSP";
+            sanPhamCombobox.SelectedIndex = 0;
         }
 
         int layMaNV()
@@ -260,9 +269,18 @@ namespace addHoaDonWPF
         bool themDoanhSoKH(decimal triGia,int maKH)
         {
             bool isSuccess = true;
+            decimal tongDoanhSo = triGia;
             try
             {
-                string addDoanhSoKHQuerry = "UPDATE KHACHHANG SET DOANHSO = " + triGia + " WHERE MAKH =" + maKH;
+                DataTable dataKH = KhachHang_DAL.loadDuLieuKH();
+                foreach(DataRow row in dataKH.Rows)
+                {
+                    if(maKH.ToString() == row[0].ToString())
+                    {
+                        tongDoanhSo += decimal.Parse(row[5].ToString());
+                    }
+                }
+                string addDoanhSoKHQuerry = "UPDATE KHACHHANG SET DOANHSO = " + tongDoanhSo + " WHERE MAKH =" + maKH;
                 SQL_Connect.Instance.ExecuteNONquerrySQL(addDoanhSoKHQuerry);
             }
             catch
@@ -376,9 +394,9 @@ namespace addHoaDonWPF
             }
 
             tongtriGiaTextbox.Text = tongTriGia > 0 ?  tongTriGia.ToString().Remove(tongTriGia.ToString().IndexOf(".")) + " VND" : "0";
-          
-            #endregion
 
+            #endregion
+            loadTriGiaTextBox();
 
 
         }
@@ -390,42 +408,49 @@ namespace addHoaDonWPF
         {
             #region themHoaDon
             decimal tongTriGia = 0;
-
-            for (int i = 0; i < dsSPListview.Items.Count; i++)
+            if (dsSPListview.Items.Count == 0)
             {
-                danhSachSanPham sp = (danhSachSanPham)dsSPListview.Items[i];
-                tongTriGia += sp.gia * sp.SoLuong;
-            }
-
-            HoaDon hd = new HoaDon();
-            hd.MaKH = layMaKH();
-            hd.MaNV = layMaNV();
-            hd.TriGia = tongTriGia;
-            hd.NgHoaDon = DateTime.Parse(ngHoaDonDatePicker.Text);
-            if (kmCheckBox.IsChecked == true && tongtriGiaTextbox.Text != "0 VND")
-            {
-                hd.MaKM = layMaKM(int.Parse(kmTextBlock.Text));   
+                MessageBox.Show("Chưa có sản phẩm nào trong hóa đơn");
             }
             else
             {
-                hd.MaKM = -1;
-            }
-            hd.TriGiaSauKM = decimal.Parse(xuLyChuoi(tongtriGiaSauKMTextbox.Text));
-          
-            if (HoaDon_DAL.themHoaDon(hd) && themDoanhSoKH(hd.TriGia, hd.MaKH))
-            {
-                if(hd.MaKM != -1)
+
+                for (int i = 0; i < dsSPListview.Items.Count; i++)
                 {
-                   DataTable soHDCuaHDMoiThemVao = SQL_Connect.Instance.ExecuteSQL("SELECT SOHD FROM HOADON WHERE SOHD = (SELECT MAX(SOHD) FROM HOADON)");
-                   int soHD = int.Parse(soHDCuaHDMoiThemVao.Rows[0][0].ToString());
-                   HoaDon_DAL.capNhatKhuyenMai(hd.MaKM, soHD);
+                    danhSachSanPham sp = (danhSachSanPham)dsSPListview.Items[i];
+                    tongTriGia += sp.gia * sp.SoLuong;
                 }
-                MessageBox.Show("Thêm thành công !");
-                this.Close(); 
-            }
-            else
-            {
-                MessageBox.Show("Thêm thất bại !");
+
+                HoaDon hd = new HoaDon();
+                hd.MaKH = layMaKH();
+                hd.MaNV = layMaNV();
+                hd.TriGia = tongTriGia;
+                hd.NgHoaDon = DateTime.Parse(ngHoaDonDatePicker.Text);
+                if (kmCheckBox.IsChecked == true && tongtriGiaTextbox.Text != "0 VND")
+                {
+                    hd.MaKM = layMaKM(int.Parse(kmTextBlock.Text));
+                }
+                else
+                {
+                    hd.MaKM = -1;
+                }
+                hd.TriGiaSauKM = decimal.Parse(xuLyChuoi(tongtriGiaSauKMTextbox.Text));
+
+                if (HoaDon_DAL.themHoaDon(hd) && themDoanhSoKH(hd.TriGia, hd.MaKH))
+                {
+                    if (hd.MaKM != -1)
+                    {
+                        DataTable soHDCuaHDMoiThemVao = SQL_Connect.Instance.ExecuteSQL("SELECT SOHD FROM HOADON WHERE SOHD = (SELECT MAX(SOHD) FROM HOADON)");
+                        int soHD = int.Parse(soHDCuaHDMoiThemVao.Rows[0][0].ToString());
+                        HoaDon_DAL.capNhatKhuyenMai(hd.MaKM, soHD);
+                    }
+                    MessageBox.Show("Thêm thành công !");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại !");
+                }
             }
             #endregion
 
@@ -465,8 +490,10 @@ namespace addHoaDonWPF
                 }
                 else
                 {
+
                     if (kmCheckBox.IsChecked == true && tongtriGiaTextbox.Text != "0 VND")
                     {
+                       
                         kmTextBlock.Visibility = Visibility.Visible;
                         DataTable dataKm = KhuyenMai_DAL.loadDuLieuKM();
 
