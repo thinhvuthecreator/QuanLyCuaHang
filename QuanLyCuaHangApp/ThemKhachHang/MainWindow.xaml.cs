@@ -27,6 +27,7 @@ namespace ThemKhachHang
         {
             InitializeComponent();
             loadImages();
+            loadControl();
         }
         #region methods
         void ganDuLieuKH(KhachHang kh)
@@ -45,7 +46,6 @@ namespace ThemKhachHang
             kh.GioiTinhKH = cmbValue;
             kh.FileAnh = loadimageImage.Source.ToString();
         }
-
         void loadImages()
         {
             string resourceImage1 = System.IO.Path.GetFullPath("imageDefault.jpg");
@@ -58,6 +58,12 @@ namespace ThemKhachHang
 
 
         }
+        void loadControl()
+        {
+            sdtKHTxtbox.Text = "0";
+            ngsinhKHDatePicker.Text = "1/1/1900";
+            genderCombobox.SelectedIndex = 0;
+        }
 
         #endregion
         #region events
@@ -68,27 +74,49 @@ namespace ThemKhachHang
             if (loadKHImage.ShowDialog() == true)
             {
 
-
-                string sourceAnh = loadKHImage.FileName;
-                string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadKHImage.FileName));
-                System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
-                Uri imageUri = new Uri(sourceAnhApp);
-                loadimageImage.Source = new BitmapImage(imageUri);
+                try
+                {
+                    string sourceAnh = loadKHImage.FileName;
+                    string sourceAnhApp = System.IO.Path.GetFullPath(System.IO.Path.GetFileName(loadKHImage.FileName));
+                    Uri imageUri = new Uri(sourceAnhApp);
+                    loadimageImage.Source = new BitmapImage(imageUri);
+                    System.IO.File.Copy(sourceAnh, sourceAnhApp, true);
+                }
+                catch
+                {
+                    MessageBox.Show("Vui lòng chọn file hình ảnh !");
+                }
             }
         }
         private void themNVBtn_Click(object sender, RoutedEventArgs e)
         {
-            
-            KhachHang kh = new KhachHang();
-            ganDuLieuKH(kh);
-            if (KhachHang_DAL.themKhachHang(kh))
+            int sdt = 0;
+            DateTime date;
+            if (tenKHTxtbox.Text == "")
             {
-                MessageBox.Show("Thêm thành công !");
-                this.Close();
+                MessageBox.Show("Tên khách hàng bị để trống !");
+            }
+            else if (int.TryParse(sdtKHTxtbox.Text,out sdt) == false)
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ !");
+            }
+            else if (DateTime.TryParse(ngsinhKHDatePicker.Text,out date) == false)
+            {
+                MessageBox.Show("Ngày sinh khách hàng không hợp lệ !");
             }
             else
             {
-                MessageBox.Show("thêm thất bại !");
+                KhachHang kh = new KhachHang();
+                ganDuLieuKH(kh);
+                if (KhachHang_DAL.themKhachHang(kh))
+                {
+                    MessageBox.Show("Thêm thành công !");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("thêm thất bại !");
+                }
             }
         }
         private void huyBtn_Click(object sender, RoutedEventArgs e)
