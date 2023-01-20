@@ -81,17 +81,45 @@ namespace KhuyenMai
         }
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
-           
-            Khuyenmai km = new Khuyenmai();
-            ganGiaTriKhuyenMai(km);
-            if(KhuyenMai_DAL.themKhuyenMai(km))
-            { 
-                MessageBox.Show("Thêm khuyến mãi thành công !");
-                loadDuLieuKhuyenMai();
+            decimal gia;
+            int kmm;
+            bool checkTrung = false;
+            if(decimal.TryParse(giaTriDKTextbox.Text,out gia) == false)
+            {
+                MessageBox.Show("Giá trị điều kiện không hợp lệ !");
+            }
+            else if(int.TryParse(giaTriKMTextbox.Text,out kmm) == false)
+            {
+                MessageBox.Show("Giá trị khuyến mãi không hợp lệ !");
             }
             else
             {
-                MessageBox.Show("Thêm thất bại !");
+                DataTable giaTrikm = KhuyenMai_DAL.loadDuLieuKM();
+                foreach(DataRow row in giaTrikm.Rows)
+                {
+                   if( decimal.Parse(giaTriDKTextbox.Text) == decimal.Parse(row[2].ToString()))
+                    {
+                        checkTrung = true;
+                    }
+                }
+                if (checkTrung == true)
+                {
+                    MessageBox.Show("Giá trị điều kiện bị trùng !");
+                }
+                else
+                {
+                    Khuyenmai km = new Khuyenmai();
+                    ganGiaTriKhuyenMai(km);
+                    if (KhuyenMai_DAL.themKhuyenMai(km))
+                    {
+                        MessageBox.Show("Thêm khuyến mãi thành công !");
+                        loadDuLieuKhuyenMai();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm thất bại !");
+                    }
+                }
             }
         }
       

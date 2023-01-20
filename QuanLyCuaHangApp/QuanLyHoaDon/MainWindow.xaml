@@ -15,6 +15,9 @@
                 <Setter Property="Width" Value="220"/>
                 <Setter Property="Margin" Value="1,0,0,0"/>
             </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="IsEnabled" Value="False"/>
+            </Style>
         </Grid.Resources>
         <StackPanel>
             <StackPanel.Background>
@@ -84,13 +87,13 @@
                             <TextBlock Text="Số hóa đơn" FontSize="10" Style="{StaticResource ResourceKey=childTitle}" Margin="0,0,135,0"></TextBlock>
                             
                          
-                            <TextBox x:Name="soHDTextBox"></TextBox>
+                            <TextBox x:Name="soHDTextBox" IsEnabled="False"></TextBox>
                             <TextBlock Text="Người lập hóa đơn" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
-                            <TextBox x:Name="nvTextbox"></TextBox>
+                            <TextBox x:Name="nvTextbox" IsEnabled="False"></TextBox>
                             <TextBlock Text="Khách hàng" FontSize="10" Style="{StaticResource ResourceKey=childTitle}" Margin="0,0,127,0"></TextBlock>
-                            <TextBox x:Name="khTextbox"></TextBox>
+                            <TextBox x:Name="khTextbox" IsEnabled="False"></TextBox>
                             <TextBlock Text="Ngày tạo hoá đơn" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
-                            <TextBox x:Name="ngHdTextBox"></TextBox>
+                            <TextBox x:Name="ngHdTextBox" IsEnabled="False"></TextBox>
 
                         </StackPanel>
                         <StackPanel Width="250" Height="240" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" >
@@ -130,11 +133,11 @@
 
 
                             <TextBlock Text="Trị giá hoá đơn" FontSize="10" Style="{StaticResource ResourceKey=childTitle}" Margin="0,0,110,0"></TextBlock>
-                            <TextBox x:Name="triGiaHDTextbox"></TextBox>
+                            <TextBox x:Name="triGiaHDTextbox" IsEnabled="False"></TextBox>
                             <TextBlock Text="Khuyến mãi(%)" FontSize="10" Style="{StaticResource ResourceKey=childTitle}" Margin="0,0,110,0"></TextBlock>
-                            <TextBox x:Name="kmTextbox"></TextBox>
+                            <TextBox x:Name="kmTextbox" IsEnabled="False"></TextBox>
                             <TextBlock Text="Trị giá hoá đơn sau khuyến mãi" FontSize="10" Style="{StaticResource ResourceKey=childTitle}" Margin="0,0,35,0"></TextBlock>
-                            <TextBox x:Name="triGiaHDSauKMTextbox"></TextBox>
+                            <TextBox x:Name="triGiaHDSauKMTextbox" IsEnabled="False"></TextBox>
                         </StackPanel>
                     </DockPanel>
                 </StackPanel>
@@ -175,11 +178,11 @@
                         <TextBlock Text="Chi Tiết Hóa Đơn" FontSize="22" HorizontalAlignment="Center" Foreground="White" FontFamily="Arial Rounded MT Bold" ></TextBlock>
 
                         <TextBlock Text="Sản phẩm" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
-                        <TextBox x:Name="spTextBox"></TextBox>
+                        <TextBox x:Name="spTextBox" IsEnabled="False"></TextBox>
                         <TextBlock Text="Đơn giá" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
-                        <TextBox x:Name="donGiaTextbox"></TextBox>
+                        <TextBox x:Name="donGiaTextbox" IsEnabled="False"></TextBox>
                         <TextBlock Text="Số lượng" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
-                        <TextBox x:Name="soLuongTextBox"></TextBox>
+                        <TextBox x:Name="soLuongTextBox" IsEnabled="False"></TextBox>
                     </StackPanel>
                     <Button x:Name="addHDButton" Height="25" Width="98" Margin="80,160,190,0" Content="Thêm hóa đơn" FontSize="10" Foreground="White" Click="addHDButton_Click">
                         <Button.Background>

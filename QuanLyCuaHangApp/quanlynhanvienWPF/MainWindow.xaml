@@ -38,27 +38,27 @@
                 </TextBox>
             </Border>
             <Border  Width="100" Background="White" Height="25" Margin="505,40,98,0" CornerRadius="10,10,10,10">
-                <TextBox x:Name="maNVTxtbox">
+                <TextBox x:Name="maNVTxtbox" IsEnabled="False">
                 </TextBox>
             </Border>
             <Border Width="180" Background="White" Height="25" Margin="585,115,98,0" CornerRadius="10,10,10,10">
-                <TextBox x:Name="tenNVTxtbox" >
+                <TextBox x:Name="tenNVTxtbox" IsEnabled="False">
                 </TextBox>
             </Border>
             <Border Width="180" Background="White" Height="25" Margin="585,195,98,0" CornerRadius="10,10,10,10">
-                <TextBox x:Name="sdtNVTxtbox" >
+                <TextBox x:Name="sdtNVTxtbox" IsEnabled="False">
                 </TextBox>
             </Border>
             <Border Width="180" Background="White" Height="25" Margin="585,270,98,0" CornerRadius="10,10,10,10">
-                <TextBox x:Name="luongNVTxtbox" >
+                <TextBox x:Name="luongNVTxtbox" IsEnabled="False">
                 </TextBox>
             </Border>
             <Border Width="180" Background="White" Height="25" Margin="585,343,98,0" CornerRadius="10,10,10,10">
-                <ComboBox x:Name="gioiTinhNVCombobox" >
+                <ComboBox x:Name="gioiTinhNVCombobox" IsEnabled="False">
                 </ComboBox>
             </Border>
             <Border Width="180" Background="White" Height="25" Margin="585,420,98,0" CornerRadius="10,10,10,10">
-                <DatePicker x:Name="ngSinhNVDatePicker" >
+                <DatePicker x:Name="ngSinhNVDatePicker" IsEnabled="False">
                 </DatePicker>
             </Border>
 
