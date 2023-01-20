@@ -143,10 +143,30 @@ namespace addHoaDonWPF
                    soLanXuatHien++;
                     if (soLanXuatHien <= 1)
                     {
-                        dsSPListview.Items.Remove(dsSPListview.Items[i]);
-                        sp.SoLuong += sl;
-                        dsSPListview.Items.Add(sp);
-                        ketQua = sp.SoLuong;
+                        DataTable soLuongCuaSP = SQL_Connect.Instance.ExecuteSQL("SELECT SOLUONGSP FROM SANPHAM WHERE TENSP = N'" + sp.tenSP + "'");
+
+                        if (sp.SoLuong == int.Parse(soLuongCuaSP.Rows[0][0].ToString()))
+                        {
+                            if (sl == 1)
+                            {
+                                MessageBox.Show("Đạt tối đa số lượng sản phẩm này có trong cửa hàng !");
+                            }
+                            else
+                            {
+                                dsSPListview.Items.Remove(dsSPListview.Items[i]);
+                                sp.SoLuong += sl;
+                                dsSPListview.Items.Add(sp);
+                                ketQua = sp.SoLuong;
+                            }
+                        }
+                        else
+                        {
+                            dsSPListview.Items.Remove(dsSPListview.Items[i]);
+                            sp.SoLuong += sl;
+                            dsSPListview.Items.Add(sp);
+                            ketQua = sp.SoLuong;
+                        }
+                      
                     }
                     else
                     {
@@ -338,35 +358,42 @@ namespace addHoaDonWPF
          
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
-
-            #region capNhatDS
-            int soLuong = 1;
-            // nếu có rồi thì update giá
-            if (checkTrung(sanPhamCombobox.Text))
+            DataTable soLuongCuaSP = SQL_Connect.Instance.ExecuteSQL("SELECT SOLUONGSP FROM SANPHAM WHERE TENSP = N'" + sanPhamCombobox.Text + "'");
+            if (soLuongCuaSP.Rows[0][0].ToString() == "0")
             {
-               
-                upDateGia(sanPhamCombobox.Text,soLuong);
-               
+                MessageBox.Show("Trong cửa hàng hiện không có sẵn sản phẩm này !");
             }
-            else  // chưa có thì thêm mới
+            else
             {
-                themSPListView();
-            }
-            #endregion
-            #region capNhatTriGiaTextBox
+                #region capNhatDS
+                int soLuong = 1;
+                // nếu có rồi thì update giá
+                if (checkTrung(sanPhamCombobox.Text))
+                {
 
-            decimal tongTriGia = 0;
-            
-           
-            for(int i = 0; i < dsSPListview.Items.Count;i++)
-            {
-                danhSachSanPham sp = (danhSachSanPham)dsSPListview.Items[i];
-                tongTriGia += sp.gia * sp.SoLuong;
-            }
+                    upDateGia(sanPhamCombobox.Text, soLuong);
 
-            tongtriGiaTextbox.Text = tongTriGia.ToString().Remove(tongTriGia.ToString().IndexOf(".")) + " VND";
-          
-            #endregion
+                }
+                else  // chưa có thì thêm mới
+                {
+                    themSPListView();
+                }
+                #endregion
+                #region capNhatTriGiaTextBox
+
+                decimal tongTriGia = 0;
+
+
+                for (int i = 0; i < dsSPListview.Items.Count; i++)
+                {
+                    danhSachSanPham sp = (danhSachSanPham)dsSPListview.Items[i];
+                    tongTriGia += sp.gia * sp.SoLuong;
+                }
+
+                tongtriGiaTextbox.Text = tongTriGia.ToString().Remove(tongTriGia.ToString().IndexOf(".")) + " VND";
+
+                #endregion
+            }
         }
         private void reduceBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -472,6 +499,16 @@ namespace addHoaDonWPF
                 cthd.MaSP = int.Parse(MaSP);
                 cthd.SoLuong = sp.SoLuong;
                 CTHD_DAL.themCTHD(cthd);
+            }
+            #endregion
+
+            #region capnhat_soluong_sanpham_trong_cuahang
+            foreach(danhSachSanPham sp in dsSPListview.Items)
+            {   // lay ra so luong san pham trong cua hang co trong hoa don
+                DataTable dataSP = SQL_Connect.Instance.ExecuteSQL("SELECT SOLUONGSP FROM SANPHAM WHERE TENSP = N'" + sp.tenSP + "'");
+                int soLuong_SP_conLai_Trong_CuaHang = int.Parse(dataSP.Rows[0][0].ToString()) - sp.SoLuong;
+                // cap nhat lai so luong san pham trong cua hang cua san pham hien tai
+                SQL_Connect.Instance.ExecuteNONquerrySQL("UPDATE SANPHAM SET SOLUONGSP =" + soLuong_SP_conLai_Trong_CuaHang + " WHERE TENSP =N'" + sp.tenSP + "'");
             }
             #endregion
 

@@ -28,6 +28,7 @@ namespace TaoTaiKhoan
         {
             InitializeComponent();
             loadNhanVienCombobox();
+            loadImages();
         }
         #region objects
         public class NhanVien
@@ -112,6 +113,23 @@ namespace TaoTaiKhoan
                 return isEqual;
             }
 
+        }
+        void loadImages()
+        {
+            string resourceImage1 = System.IO.Path.GetFullPath("SUPbackground.jpg");
+            BitmapImage backImage = new BitmapImage();
+            backImage.BeginInit();
+            backImage.UriSource = new Uri(resourceImage1);
+            backImage.EndInit();
+            backGroundImage.Source = backImage;
+
+
+        }
+        bool login(string tk, string mk)
+        {
+            string loginQuerry = "EXEC Login @TK = N'" + tk + "', @MK = N'" + mk + "'";
+            DataTable accountData = SQL_Connect.Instance.ExecuteSQL(loginQuerry);
+            return accountData.Rows.Count > 0;
         }
 
         #endregion

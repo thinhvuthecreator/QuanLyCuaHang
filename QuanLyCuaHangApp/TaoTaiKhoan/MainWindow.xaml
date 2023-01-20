@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="900">
     <Grid>
-        <Image Source="D:\lol\SUPbackground.jpg">
+        <Image x:Name="backGroundImage">
         </Image>
         <Grid Width="900" Height="500"  Margin="-10,120,50,0">
             <TextBlock Width="300" Height="60" Margin="70,-420,50,0" FontSize="30" Text="     TẠO TÀI KHOẢN" FontFamily="Adobe Caslon Pro Bold">

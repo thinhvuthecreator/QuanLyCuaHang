@@ -29,3 +29,4 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\ob
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\HoaDonNhanVien.csproj.CopyComplete
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\HoaDonNhanVien.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\HoaDonNhanVien.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\HoaDonNhanVien.csproj.AssemblyReference.cache

@@ -50,18 +50,24 @@ namespace QuanLyTaiKhoan
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            DataTable data = SQL_Connect.Instance.ExecuteSQL("SELECT MATK FROM ACCOUNT WHERE TAIKHOAN =N'" + taiKhoanTextbox.Text + "'");
-
-            string maTK = data.Rows[0][0].ToString();
-            if (TaiKhoan_DAL.updateTaiKhoan(maTK, matKhauTextbox.Text))
+            if (matKhauTextbox.Text == "")
             {
-                MessageBox.Show("Cập nhật thành công !");
-                Account.MatKhau = matKhauTextbox.Text;
-                en_dis(false);
+                MessageBox.Show("Mật khẩu không được trống !");
             }
             else
             {
-                MessageBox.Show("Cập nhật thất bại !");
+                DataTable data = SQL_Connect.Instance.ExecuteSQL("SELECT MATK FROM ACCOUNT WHERE TAIKHOAN =N'" + taiKhoanTextbox.Text + "'");
+                string maTK = data.Rows[0][0].ToString();
+                if (TaiKhoan_DAL.updateTaiKhoan(maTK, matKhauTextbox.Text))
+                {
+                    MessageBox.Show("Cập nhật thành công !");
+                    Account.MatKhau = matKhauTextbox.Text;
+                    en_dis(false);
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thất bại !");
+                }
             }
         }
 

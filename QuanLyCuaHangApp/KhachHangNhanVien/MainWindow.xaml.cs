@@ -97,29 +97,36 @@ namespace KhachHangNhanVien
 
         private void updateBtn_Click(object sender, RoutedEventArgs e)
         {
-            KhachHang khUpdate = new KhachHang();
-            khUpdate.MaKH = int.Parse(maKHTxtbox.Text);
-            khUpdate.TenKH = tenKHTxtbox.Text;
-            khUpdate.SdtKH = int.Parse(sdtKHTxtbox.Text);
-            khUpdate.NgSinhKH = DateTime.Parse(ngSinhKHDatePicker.Text);
-            khUpdate.GioiTinhKH = gioiTinhKHCombobox.Text;
-            khUpdate.FileAnh = khImage.Source.ToString();
-            khUpdate.DoanhSoKH = decimal.Parse(doanhsoKHTxtbox.Text);
-
-            UpdateKhachHang_NV updateKH = new UpdateKhachHang_NV();
-            foreach (Window window in Application.Current.Windows)
+            if (tenKHTxtbox.Text == "Khách Hàng Lạ")
             {
-                if (window.GetType() == typeof(UpdateKhachHang_NV))
-                {
-                    (window as UpdateKhachHang_NV).MaKHTxtbox.Text = khUpdate.MaKH.ToString();
-                    (window as UpdateKhachHang_NV).genderCombobox.Text = khUpdate.GioiTinhKH;
-                    (window as UpdateKhachHang_NV).tenKHTxtbox.Text = khUpdate.TenKH;
-                    (window as UpdateKhachHang_NV).sdtKHTxtbox.Text = khUpdate.SdtKH.ToString();
-                    (window as UpdateKhachHang_NV).ngsinhKHDatePicker.Text = khUpdate.NgSinhKH.ToString();
-                    (window as UpdateKhachHang_NV).loadimageImage.Source = khImage.Source;
-                }
+                MessageBox.Show("Không được sửa khách hàng này !");
             }
-            updateKH.Show();
+            else
+            {
+                KhachHang khUpdate = new KhachHang();
+                khUpdate.MaKH = int.Parse(maKHTxtbox.Text);
+                khUpdate.TenKH = tenKHTxtbox.Text;
+                khUpdate.SdtKH = int.Parse(sdtKHTxtbox.Text);
+                khUpdate.NgSinhKH = DateTime.Parse(ngSinhKHDatePicker.Text);
+                khUpdate.GioiTinhKH = gioiTinhKHCombobox.Text;
+                khUpdate.FileAnh = khImage.Source.ToString();
+                khUpdate.DoanhSoKH = decimal.Parse(doanhsoKHTxtbox.Text);
+
+                UpdateKhachHang_NV updateKH = new UpdateKhachHang_NV();
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window.GetType() == typeof(UpdateKhachHang_NV))
+                    {
+                        (window as UpdateKhachHang_NV).MaKHTxtbox.Text = khUpdate.MaKH.ToString();
+                        (window as UpdateKhachHang_NV).genderCombobox.Text = khUpdate.GioiTinhKH;
+                        (window as UpdateKhachHang_NV).tenKHTxtbox.Text = khUpdate.TenKH;
+                        (window as UpdateKhachHang_NV).sdtKHTxtbox.Text = khUpdate.SdtKH.ToString();
+                        (window as UpdateKhachHang_NV).ngsinhKHDatePicker.Text = khUpdate.NgSinhKH.ToString();
+                        (window as UpdateKhachHang_NV).loadimageImage.Source = khImage.Source;
+                    }
+                }
+                updateKH.Show();
+            }
         }
 
         private void timKiemTxtbox_TextChanged(object sender, TextChangedEventArgs e)
