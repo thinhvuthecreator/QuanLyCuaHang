@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AddLoaiSPWPF"
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Them" Height="180" Width="400">
+        Title="Thêm loại sản phẩm" Height="180" Width="400">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

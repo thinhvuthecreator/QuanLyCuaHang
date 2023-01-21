@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HoaDonNhanVien"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="720" Width="1090" Activated="Window_Activated">
+        Title="Hóa đơn | Nhân viên" Height="720" Width="1090" Activated="Window_Activated">
 
         <Grid>
             <Grid.Resources>
@@ -182,7 +182,7 @@
                             <TextBlock Text="Số lượng" FontSize="10" Style="{StaticResource ResourceKey=childTitle}"></TextBlock>
                         <TextBox x:Name="soLuongTextBox" IsEnabled="False"></TextBox>
                         </StackPanel>
-                        <Button x:Name="addHDButton" Height="25" Width="98" Margin="80,160,190,0" Content="Thêm hóa đơn" FontSize="10" Foreground="White" Click="addHDButton_Click">
+                        <Button x:Name="addHDButton" Height="25" Width="98" Margin="0,160,190,0" Content="Thêm hóa đơn" FontSize="10" Foreground="White" Click="addHDButton_Click">
                             <Button.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black" Offset="0"/>
@@ -190,7 +190,7 @@
                                 </LinearGradientBrush>
                             </Button.Background>
                         </Button>
-                        <Button x:Name="deleteHDButton" Height="25" Width="90" Margin="100,160,0,0" Content="Xóa hóa đơn" FontSize="10" Foreground="White" IsEnabled="False">
+                        <Button x:Name="deleteHDButton" Height="25" Width="90" Margin="10,160,0,0" Content="Xóa hóa đơn" FontSize="10" Foreground="White" IsEnabled="False">
                             <Button.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black" Offset="0"/>
@@ -198,7 +198,15 @@
                                 </LinearGradientBrush>
                             </Button.Background>
                         </Button>
-                    </Grid>
+                    <Button x:Name="inHDButton" Height="25" Width="90" Margin="200,160,0,0" Content="In hóa đơn" FontSize="10" Foreground="White" Click="inHDButton_Click" >
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FF170ECB" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </Grid>
                 </DockPanel>
                 <materialDesign:Card Width="1000">
                     <ListView x:Name="hoadonListView" Height="200" Foreground="#FF9247FF" ItemsSource="{Binding ListHD}" ScrollViewer.VerticalScrollBarVisibility ="Visible" SelectionChanged="hoadonListView_SelectionChanged" >

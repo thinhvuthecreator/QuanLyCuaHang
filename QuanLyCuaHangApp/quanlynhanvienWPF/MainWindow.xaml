@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:quanlynhanvienWPF"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="650" Width="1070" ResizeMode="NoResize" Activated="quanLyNVWindow_Activated">
+        Title="Nhân viên" Height="650" Width="1070" ResizeMode="NoResize" Activated="quanLyNVWindow_Activated">
     <Grid Width="1380">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="663*"/>

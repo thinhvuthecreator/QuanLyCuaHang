@@ -38,7 +38,7 @@ namespace QuanLySanPham
         #region methods
         void loadTimKiemCmb()
         {
-            List<string> danhMuc = new List<string> { "ID", "Tên", "Giá", "Loại" };
+            List<string> danhMuc = new List<string> { "ID", "Tên", "Giá", "Loại","Số lượng"};
             timKiemCmb.ItemsSource = danhMuc;
             timKiemCmb.SelectedIndex = 0;
         }
@@ -153,6 +153,7 @@ namespace QuanLySanPham
 
         private void Window_Activated(object sender, EventArgs e)
         {
+           
             spViewWrapPanel.Children.Clear();
             loadSanPhamView();
     
@@ -172,21 +173,43 @@ namespace QuanLySanPham
         private void timKiemTxtbox_TextChanged(object sender, TextChangedEventArgs e)
         {
             string Querry = "";
-            if (timKiemCmb.SelectedIndex == 0)
+            if (hetHangCheckBox.IsChecked == false)
             {
-                Querry = "SELECT * FROM SANPHAM WHERE MASP LIKE '%" + timKiemTxtbox.Text + "%'";
+                if (timKiemCmb.SelectedIndex == 0)
+                {
+                    Querry = "SELECT * FROM SANPHAM WHERE MASP LIKE '%" + timKiemTxtbox.Text + "%'";
+                }
+                else if (timKiemCmb.SelectedIndex == 1)
+                {
+                    Querry = "SELECT * FROM SANPHAM WHERE TENSP LIKE N'%" + timKiemTxtbox.Text + "%'";
+                }
+                else if (timKiemCmb.SelectedIndex == 2)
+                {
+                    Querry = "SELECT * FROM SANPHAM WHERE GIA LIKE '%" + timKiemTxtbox.Text + "%'";
+                }
+                else if (timKiemCmb.SelectedIndex == 3)
+                {
+                    Querry = "SELECT * FROM SANPHAM,LOAISP WHERE SANPHAM.MALOAISP = LOAISP.MALOAISP AND LOAISP.TENLOAISP LIKE N'%" + timKiemTxtbox.Text + "%'";
+                }
             }
-            else if (timKiemCmb.SelectedIndex == 1)
+            else
             {
-                Querry = "SELECT * FROM SANPHAM WHERE TENSP LIKE N'%" + timKiemTxtbox.Text + "%'";
-            }
-            else if (timKiemCmb.SelectedIndex == 2)
-            {
-                Querry = "SELECT * FROM SANPHAM WHERE GIA LIKE '%" + timKiemTxtbox.Text + "%'";
-            }
-            else if (timKiemCmb.SelectedIndex == 3)
-            {
-                Querry = "SELECT * FROM SANPHAM,LOAISP WHERE SANPHAM.MALOAISP = LOAISP.MALOAISP AND LOAISP.TENLOAISP LIKE N'%" + timKiemTxtbox.Text + "%'";
+                if (timKiemCmb.SelectedIndex == 0)
+                {
+                    Querry = "SELECT * FROM SANPHAM WHERE MASP LIKE '%" + timKiemTxtbox.Text + "%' AND SOLUONGSP = 0";
+                }
+                else if (timKiemCmb.SelectedIndex == 1)
+                {
+                    Querry = "SELECT * FROM SANPHAM WHERE TENSP LIKE N'%" + timKiemTxtbox.Text + "%' AND SOLUONGSP = 0";
+                }
+                else if (timKiemCmb.SelectedIndex == 2)
+                {
+                    Querry = "SELECT * FROM SANPHAM WHERE GIA LIKE '%" + timKiemTxtbox.Text + "%' AND SOLUONGSP = 0";
+                }
+                else if (timKiemCmb.SelectedIndex == 3)
+                {
+                    Querry = "SELECT * FROM SANPHAM,LOAISP WHERE SANPHAM.MALOAISP = LOAISP.MALOAISP AND LOAISP.TENLOAISP LIKE N'%" + timKiemTxtbox.Text + "%'  AND SOLUONGSP = 0";
+                }
             }
             spViewWrapPanel.Children.Clear();
             DataTable dataSP = SQL_Connect.Instance.ExecuteSQL(Querry);
@@ -240,6 +263,69 @@ namespace QuanLySanPham
 
 
 
+        }
+
+        private void hetHangCheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            if(hetHangCheckBox.IsChecked == true)
+            {
+                spViewWrapPanel.Children.Clear();
+                DataTable dataSP = SQL_Connect.Instance.ExecuteSQL("SELECT * FROM SANPHAM WHERE SOLUONGSP = 0");
+                foreach (DataRow row in dataSP.Rows)
+                {
+                    decimal giaBan;
+                    StackPanel SPstckPanel = new StackPanel();
+                    SPstckPanel.Width = 130;
+                    SPstckPanel.Height = 130;
+
+                    #region tao_doi_tuong_san_pham
+                    SanPhamObject spObject = new SanPhamObject();
+                    string filePath = System.IO.Path.GetFullPath("shopping.png");
+                    Uri imageUri = new Uri(filePath);
+                    try
+                    {
+                        imageUri = new Uri(xuLyChuoi(row[6].ToString()));
+                    }
+                    catch
+                    {
+                        imageUri = new Uri(filePath);
+                    }
+
+                    spObject.Source = new BitmapImage(imageUri);
+                    spObject.Width = 100;
+                    spObject.Height = 100;
+                    spObject.HorizontalAlignment = HorizontalAlignment.Center;
+                    spObject.MaSP = int.Parse(row[0].ToString());
+                    spObject.TenSP = row[1].ToString();
+                    spObject.GiaSP = decimal.Parse(row[2].ToString());
+                    spObject.MaLoaiSP = int.Parse(row[3].ToString());
+                    spObject.SoLuongSP = int.Parse(row[4].ToString());
+                    spObject.NgThemSP = DateTime.Parse(row[5].ToString());
+                    spObject.giaBanSP = decimal.TryParse(row[7].ToString(), out giaBan) == true ? giaBan : 0;
+                    spObject.MouseDown += ImgeSP_MouseDown;
+                    #endregion
+
+                    #region tao_ten_san_pham_de_hien_thi
+                    TextBlock SPtxtblock = new TextBlock();
+                    SPtxtblock.Text = row[1].ToString();
+                    SPtxtblock.Foreground = Brushes.White;
+                    SPtxtblock.HorizontalAlignment = HorizontalAlignment.Center;
+                    #endregion
+
+                    SPstckPanel.Children.Add(spObject);
+                    SPstckPanel.Children.Add(SPtxtblock);
+
+
+                    spViewWrapPanel.Children.Add(SPstckPanel);
+
+                }
+
+            }
+            else
+            {
+                spViewWrapPanel.Children.Clear();
+                loadSanPhamView();
+            }
         }
     }
 

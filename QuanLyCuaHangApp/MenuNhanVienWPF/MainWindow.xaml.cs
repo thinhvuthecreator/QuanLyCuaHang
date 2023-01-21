@@ -98,7 +98,9 @@ namespace MenuNhanVienWPF
         {
             mouseLeave(sender);
             KhachHangNhanVien.MainWindow window = new KhachHangNhanVien.MainWindow();
-            window.Show();
+            this.Hide();
+            window.ShowDialog();
+            this.Show();
         }
         private void khBorder_MouseLeave(object sender, MouseEventArgs e)
         {
@@ -127,7 +129,9 @@ namespace MenuNhanVienWPF
         {
             mouseLeave(sender);
             HoaDonNhanVien.MainWindow window = new HoaDonNhanVien.MainWindow();
-            window.Show();
+            this.Hide();
+            window.ShowDialog();
+            this.Show();
         }
 
         #endregion
@@ -148,7 +152,9 @@ namespace MenuNhanVienWPF
         {
             mouseLeave(sender);
             ThongTinTaiKhoan.MainWindow window = new ThongTinTaiKhoan.MainWindow();
-            window.Show();
+            this.Hide();
+            window.ShowDialog();
+            this.Show();
         }
 
 

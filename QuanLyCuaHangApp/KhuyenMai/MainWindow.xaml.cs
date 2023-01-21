@@ -59,7 +59,9 @@ namespace KhuyenMai
             int giaTriKM;
 
             km.GiaTriDK = decimal.TryParse(giaTriDKTextbox.Text,out giaTriDK) == true ? giaTriDK : -1;
+            km.GiaTriDK = Math.Abs(km.GiaTriDK);
             km.GiaTriKM = int.TryParse(giaTriKMTextbox.Text, out giaTriKM) == true ? giaTriKM : -1;
+            km.GiaTriKM = Math.Abs(km.GiaTriKM);
         }
 
 

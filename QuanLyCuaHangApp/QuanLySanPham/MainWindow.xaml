@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:QuanLySanPham"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="650" Width="800" Activated="Window_Activated">
+        Title="Sản phẩm" Height="650" Width="800" Activated="Window_Activated">
     <Grid x:Name="girddddd" x:FieldModifier="public">
 
         <Grid x:Name="windowGrid" Width="800" Height="620" x:FieldModifier="public">
@@ -60,8 +60,10 @@
         <Border  Width="300" Height="20" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,78,0,0" CornerRadius="5,5,5,5">
             <TextBox x:Name="timKiemTxtbox" TextChanged="timKiemTxtbox_TextChanged" Padding="0"/>
         </Border>
-
-
+        <Grid Width="15" Height="15" Margin="110,0,0,435" Background="White">
+            <CheckBox x:Name="hetHangCheckBox" Width="16" Height="16" Foreground="Black"  Click="hetHangCheckBox_Click"  BorderThickness="10" Margin="0,0,1,0"></CheckBox>
+        </Grid>
+        <TextBlock x:Name="hetHangTextBlock" Width="180" Height="20" Margin="310,0,0,430" Text="Hết hàng" FontSize="11" Foreground="White"></TextBlock>
 
     </Grid>
 </Window>

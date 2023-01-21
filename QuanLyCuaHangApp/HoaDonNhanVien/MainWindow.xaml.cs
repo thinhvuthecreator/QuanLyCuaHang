@@ -70,6 +70,10 @@ namespace HoaDonNhanVien
             hoadonListView.ItemsSource = listHD;
             hoadonListView.SelectedIndex = 0;
             CTHDListView.SelectedIndex = 0;
+            HoaDonView hd = (HoaDonView)hoadonListView.SelectedItem;
+            HoaDonTemp.SoHD = hd.soHD;
+            HoaDonTemp.GiamGia = hd.giaTriKM.ToString() + " (%)";
+            HoaDonTemp.TongDonGia = hd.triGiaSauKM.ToString() + " VND";
         }
         void loadDuLieuCTHDListView(int soHD)
         {
@@ -113,7 +117,11 @@ namespace HoaDonNhanVien
                 triGiaHDSauKMTextbox.Text = hd.triGiaSauKM.ToString();
                 loadDuLieuCTHDListView(hd.soHD);
                 CTHDListView.SelectedIndex = 0;
+                HoaDonTemp.SoHD = hd.soHD;
+                HoaDonTemp.GiamGia = hd.giaTriKM.ToString() + " (%)";
+                HoaDonTemp.TongDonGia = hd.triGiaSauKM.ToString() + " VND";
             }
+
         }
 
         private void CTHDListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -135,7 +143,13 @@ namespace HoaDonNhanVien
         {
             loadDuLieuHDListView();
         }
+        private void inHDButton_Click(object sender, RoutedEventArgs e)
+        {
+            InHoaDon window = new InHoaDon();
+            window.Show();
+        }
 
         #endregion
+
     }
 }

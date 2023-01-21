@@ -220,59 +220,74 @@ namespace MenuWPF
         {
             mouseLeave(sender);
             quanlynhanvienWPF.MainWindow  window = new quanlynhanvienWPF.MainWindow();
-            window.Show();
+            this.Hide();
+            window.ShowDialog();
+            this.Show();
         }
 
         private void khBorder_MouseUp(object sender, MouseButtonEventArgs e)
         {
             mouseLeave(sender);
             QuanLyKhachHangWPF .MainWindow window = new QuanLyKhachHangWPF.MainWindow();
-            window.Show();
+            this.Hide();
+            window.ShowDialog();
+            this.Show();
         }
 
         private void hhBorder_MouseUp(object sender, MouseButtonEventArgs e)
         {
             mouseLeave(sender);
             QuanLySanPham.MainWindow window = new QuanLySanPham.MainWindow();
-            window.Show();
+            this.Hide();
+            window.ShowDialog();
+            this.Show();
         }
 
         private void hdBorder_MouseUp(object sender, MouseButtonEventArgs e)
         {
             mouseLeave(sender);
             QuanLyHoaDon.MainWindow window = new QuanLyHoaDon.MainWindow();
-            window.Show();
+            this.Hide();
+            window.ShowDialog();
+            this.Show();
         }
 
         private void kmBorder_MouseUp(object sender, MouseButtonEventArgs e)
         {
             mouseLeave(sender);
             KhuyenMai.MainWindow window = new KhuyenMai.MainWindow();
-            window.Show();
+            this.Hide();
+            window.ShowDialog();
+            this.Show();
         }
 
         private void tkBorder_MouseUp(object sender, MouseButtonEventArgs e)
         {
             mouseLeave(sender);
             ThongKe.MainWindow window = new ThongKe.MainWindow();
-            window.Show();
+            this.Hide();
+            window.ShowDialog();
+            this.Show();
         }
 
         private void accountBorder_MouseUp(object sender, MouseButtonEventArgs e)
         {
             mouseLeave(sender);
             QuanLyTaiKhoan.MainWindow window = new QuanLyTaiKhoan.MainWindow();
-            window.Show();
+            this.Hide();
+            window.ShowDialog();
+            this.Show();
         }
 
 
 
 
 
-        #endregion
 
         #endregion
+        
 
+        #endregion
 
     }
 }

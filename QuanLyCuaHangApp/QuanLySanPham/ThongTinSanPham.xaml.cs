@@ -83,10 +83,13 @@ namespace QuanLySanPham
                 sp.TenSP = tenSPTxtbox.Text;
                 sp.MaLoaiSP = int.Parse(loaiSPcombobox.SelectedValue.ToString());
                 sp.GiaSP = decimal.Parse(giaTxtbox.Text);
+                sp.GiaSP = Math.Abs(sp.GiaSP);
                 sp.SoLuongSP = int.Parse(soluongTxtbox.Text);
+                sp.SoLuongSP = Math.Abs(sp.SoLuongSP);
                 sp.NgThemSp = DateTime.Parse(ngThemspDatePicker.Text);
                 sp.FileAnh = ProductImage.Source.ToString();
                 sp.GiaBanSP = decimal.Parse(giaBanTxtbox.Text);
+                sp.GiaBanSP = Math.Abs(sp.GiaBanSP);
                 if (SanPham_DAL.updateSanPham(sp))
                 {
                     MessageBox.Show("Cập nhật sản phẩm thành công !");
@@ -127,15 +130,19 @@ namespace QuanLySanPham
         }
         private void xoaBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (SanPham_DAL.xoaSanPham(int.Parse(maSPTxtbox.Text)))
+            MessageBoxResult decision = MessageBox.Show("Xóa sản phẩm này ? ");
+            if (decision == MessageBoxResult.Yes)
             {
-                MessageBox.Show("Xóa thành công !");
-                this.Close();
+                if (SanPham_DAL.xoaSanPham(int.Parse(maSPTxtbox.Text)))
+                {
+                    MessageBox.Show("Xóa thành công !");
+                    this.Close();
 
-            }
-            else
-            {
-                MessageBox.Show("Xóa thất bại !");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại !");
+                }
             }
 
         }

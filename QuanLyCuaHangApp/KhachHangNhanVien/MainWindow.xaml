@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:KhachHangNhanVien"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="1070" Activated="Window_Activated">
+        Title="Khách hàng" Height="650" Width="1070" Activated="Window_Activated">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="15*"/>

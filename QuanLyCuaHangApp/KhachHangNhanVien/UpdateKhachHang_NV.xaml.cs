@@ -42,6 +42,7 @@ namespace KhachHangNhanVien
             kh.MaKH = int.Parse(MaKHTxtbox.Text);
             kh.TenKH = tenKHTxtbox.Text;
             kh.SdtKH = int.TryParse(sdtKHTxtbox.Text, out sdtKH) == true ? sdtKH : -1;
+            kh.SdtKH = Math.Abs(kh.SdtKH);
             kh.NgSinhKH = DateTime.Parse(ngsinhKHDatePicker.Text);
             kh.DoanhSoKH = 0;
             kh.GioiTinhKH = cmbValue;
@@ -96,6 +97,10 @@ namespace KhachHangNhanVien
             else if(int.TryParse(sdtKHTxtbox.Text,out sdt) == false)
             {
                 MessageBox.Show("Số điện thoại khách hàng không hợp lệ !");
+            }
+            else if (DateTime.Parse(ngsinhKHDatePicker.ToString()) > DateTime.Now)
+            {
+                MessageBox.Show("Ngày sinh khách hàng không hợp lý !");
             }
             else
             {

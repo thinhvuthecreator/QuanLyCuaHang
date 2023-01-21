@@ -44,8 +44,10 @@ namespace ThemNhanVien
             nv.TenNV = tenNVTxtbox.Text;
             nv.GioiTinh = gioiTinh;
             nv.SdtNV = int.TryParse(sdtNVTxtbox.Text, out sdt) == true ? sdt : 0;
+            nv.SdtNV = Math.Abs(nv.SdtNV);
             nv.NgSinhNV = DateTime.Parse(ngsinhNVDatePicker.Text);
             nv.LuongNV = int.TryParse(luongTxtbox.Text, out luong) == true ? luong : 0;
+            nv.LuongNV = Math.Abs(nv.LuongNV);
             nv.FileAnh = loadimageImage.Source.ToString();
         }
 
@@ -103,8 +105,7 @@ namespace ThemNhanVien
         private void themNVBtn_Click(object sender, RoutedEventArgs e)
         {
             int sdt = 0;
-            decimal luong = 0;
-            DateTime date;
+            decimal luong = 0;         
             if (tenNVTxtbox.Text == "")
             {
                 MessageBox.Show("Tên nhân viên bị để trống ! ");
@@ -116,6 +117,10 @@ namespace ThemNhanVien
             else if(decimal.TryParse(luongTxtbox.Text, out luong) == false)
             {
                 MessageBox.Show("Lương nhân viên không hợp lệ !");
+            }
+            else if (DateTime.Parse(ngsinhNVDatePicker.ToString()) > DateTime.Now)
+            {
+                MessageBox.Show("Ngày sinh nhân viên không hợp lý !");
             }
             else
             {

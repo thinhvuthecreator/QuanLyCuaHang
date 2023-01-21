@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:QuanLyTaiKhoan"
          mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="ThongTinTaiKhoan" Height="450" Width="450">
+        Title="Tài khoản của bạn" Height="450" Width="450">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

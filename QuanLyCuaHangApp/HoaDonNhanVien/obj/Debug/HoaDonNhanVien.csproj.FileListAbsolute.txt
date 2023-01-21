@@ -30,3 +30,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\ob
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\HoaDonNhanVien.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\HoaDonNhanVien.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\HoaDonNhanVien.csproj.AssemblyReference.cache
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\InHoaDon.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\InHoaDon.baml
+C:\Users\admin\OneDrive\Desktop\QuanLyCuaHang\QuanLyCuaHangApp\HoaDonNhanVien\obj\Debug\GeneratedInternalTypeHelper.g.cs

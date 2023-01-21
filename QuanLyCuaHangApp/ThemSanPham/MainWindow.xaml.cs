@@ -85,11 +85,14 @@ namespace ThemSanPham
 
             sp.TenSP = tenSPTxtbox.Text;
             sp.GiaSP = decimal.TryParse(giaTxtbox.Text, out giaSP) == true ? giaSP : -1;
+            sp.GiaSP = Math.Abs(sp.GiaSP);
             sp.NgThemSp = DateTime.Parse(ngThemspDatePicker.Text);
             sp.SoLuongSP = int.TryParse(soluongTxtbox.Text, out soLuong) == true ? soLuong : -1;
+            sp.SoLuongSP = Math.Abs(sp.SoLuongSP);
             sp.MaLoaiSP = int.Parse(returnMaLoaiSPcuaCombobox());
             sp.FileAnh = ProductImage.Source.ToString();
             sp.GiaBanSP = decimal.Parse(giaBanTxtbox.Text);
+            sp.GiaBanSP = Math.Abs(sp.GiaBanSP);
         }
 
 

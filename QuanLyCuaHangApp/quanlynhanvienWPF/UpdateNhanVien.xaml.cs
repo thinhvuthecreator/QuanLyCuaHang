@@ -44,8 +44,10 @@ namespace quanlynhanvienWPF
             nv.TenNV = tenNVTxtbox.Text;
             nv.GioiTinh = gioiTinh;
             nv.SdtNV = int.TryParse(sdtNVTxtbox.Text, out sdt) == true ? sdt : 0;
+            nv.SdtNV = Math.Abs(nv.SdtNV);
             nv.NgSinhNV = DateTime.Parse(ngsinhNVDatePicker.Text);
             nv.LuongNV = int.TryParse(luongTxtbox.Text, out luong) == true ? luong : 0;
+            nv.LuongNV = Math.Abs(nv.LuongNV);
             nv.FileAnh = loadimageImage.Source.ToString();
         }
 
@@ -114,6 +116,10 @@ namespace quanlynhanvienWPF
             else if (int.TryParse(sdtNVTxtbox.Text, out sdt) == false)
             {
                 MessageBox.Show("Số điện thoại không hợp lệ !");
+            }
+            else if (DateTime.Parse(ngsinhNVDatePicker.ToString()) > DateTime.Now)
+            {
+                MessageBox.Show("Ngày sinh nhân viên không hợp lý !");
             }
             else
             {
