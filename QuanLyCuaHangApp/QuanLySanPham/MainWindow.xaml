@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:QuanLySanPham"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Sản phẩm" Height="650" Width="800" Activated="Window_Activated">
+        Title="Sản phẩm" Height="650" Width="800" Activated="Window_Activated" ResizeMode="NoResize">
     <Grid x:Name="girddddd" x:FieldModifier="public">
 
         <Grid x:Name="windowGrid" Width="800" Height="620" x:FieldModifier="public">

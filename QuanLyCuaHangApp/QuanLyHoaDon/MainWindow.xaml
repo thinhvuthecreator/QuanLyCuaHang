@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:QuanLyHoaDon"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Hóa đơn" Height="720" Width="1090" Activated="Window_Activated">
+        Title="Hóa đơn" Height="720" Width="1090" Activated="Window_Activated" ResizeMode="NoResize">
     <Grid>
         <Grid.Resources>
             <Style TargetType="Border">

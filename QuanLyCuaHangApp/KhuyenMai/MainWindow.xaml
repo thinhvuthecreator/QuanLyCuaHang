@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:KhuyenMai"
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Khuyến mãi" Height="450" Width="750">
+        Title="Khuyến mãi" Height="450" Width="750" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

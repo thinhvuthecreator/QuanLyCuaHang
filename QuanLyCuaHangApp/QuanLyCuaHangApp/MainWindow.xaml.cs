@@ -84,7 +84,7 @@ namespace QuanLyCuaHangApp
                     MenuWPF.MainWindow window = new MenuWPF.MainWindow();
                     QuanLyTaiKhoan.Account.TaiKhoan = usernameTxtBox.Text;
                     QuanLyTaiKhoan.Account.MatKhau = passBox.Password.ToString();
-                    
+                    this.Close();
                     window.Show();
                     
                    
@@ -94,7 +94,7 @@ namespace QuanLyCuaHangApp
                     MenuNhanVienWPF.MainWindow window = new MenuNhanVienWPF.MainWindow();
                     ThongTinTaiKhoan.Account.TaiKhoan = usernameTxtBox.Text;
                     ThongTinTaiKhoan.Account.MatKhau = passBox.Password.ToString();
-                   
+                    this.Close();
                     window.Show();
                     
                 }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:chart="clr-namespace:Syncfusion.UI.Xaml.Charts;assembly=Syncfusion.Sfchart.WPF"
-        Title="Thống kê bán hàng" Height="650" Width="800">
+        Title="Thống kê bán hàng" Height="650" Width="800" ResizeMode="NoResize">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>

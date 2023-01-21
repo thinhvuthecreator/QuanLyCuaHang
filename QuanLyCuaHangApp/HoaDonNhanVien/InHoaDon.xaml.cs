@@ -83,6 +83,8 @@ namespace HoaDonNhanVien
             if(print.ShowDialog() == true)
             {
                 print.PrintVisual(HD_Receipt,"Hóa Đơn ABC Store");
+                MessageBox.Show("Đã xuất file PDF để in !");
+                
             }
         }
     }

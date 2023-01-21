@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HoaDonNhanVien"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="In hóa đơn" Height="550" Width="505" Activated="hoaDonWindow_Activated">
+        Title="In hóa đơn" Height="550" Width="505" Activated="hoaDonWindow_Activated" ResizeMode="NoResize">
     <Window.DataContext>
         <local:HoaDonTemp/>
     </Window.DataContext>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MenuWPF"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Quản lý cửa hàng | Quản trị viên" Height="650" Width="1200">
+        Title="Quản lý cửa hàng | Quản trị viên" Height="650" Width="1200" ResizeMode="NoResize">
     <Grid>
         <Grid.Resources>
             <Style x:Key="roundedCornerStyle" TargetType="Border">
