@@ -11,58 +11,20 @@ namespace ThongKe
     public class ViewModel
     {
         public List<Sale> data { get; set; }
-        
         public ViewModel()
         {
-            data = new List<Sale>()
+            data = new List<Sale>();
+            DataTable dataa = SQL_Connect.Instance.ExecuteSQL("SELECT SUM(TRIGIASAUKM) AS DOANHTHU ,DAY(NGHD) AS NGAY FROM HOADON WHERE MONTH(NGHD) = MONTH(GETDATE()) GROUP BY NGHD ORDER BY NGHD ASC ");
+            foreach(DataRow row in dataa.Rows)
             {
-                new Sale {doanhThu = doanhThuHomKia() ,Ngay = "Hôm kia"},
-                new Sale {doanhThu = doanhThuHomQua() ,Ngay = "Hôm qua"},
-                new Sale {doanhThu = doanhThuHomNay() ,Ngay = "Hôm nay"},
-
-            };
+                data.Add(new Sale {doanhThu = decimal.Parse(row[0].ToString()),Ngay ="Ngày " + row[1].ToString()});
+            }
 
 
         }
 
-        decimal doanhThuHomNay()
-        {
-            DataTable doanhThu = SQL_Connect.Instance.ExecuteSQL("SELECT SUM(TRIGIASAUKM) FROM HOADON WHERE DAY(NGHD) = DAY(GETDATE())");
-            if (doanhThu.Rows[0][0].ToString() != "")
-            {
-                return decimal.Parse(doanhThu.Rows[0][0].ToString());
-            }
-            else
-            {
-                return 0;
-            }
-        }
 
-        decimal doanhThuHomQua()
-        {
-            DataTable doanhThu = SQL_Connect.Instance.ExecuteSQL("SELECT SUM(TRIGIASAUKM) FROM HOADON WHERE DAY(NGHD) = DAY(GETDATE()) - 1");
-            if (doanhThu.Rows[0][0].ToString() != "")
-            {
-                return decimal.Parse(doanhThu.Rows[0][0].ToString());
-            }
-            else
-            {
-                return 0;
-            }
-        }
-        decimal doanhThuHomKia()
-        {
-            DataTable doanhThu = SQL_Connect.Instance.ExecuteSQL("SELECT SUM(TRIGIASAUKM) FROM HOADON WHERE DAY(NGHD) = DAY(GETDATE()) - 2");
-            if (doanhThu.Rows[0][0].ToString() != "")
-            {
-                return decimal.Parse(doanhThu.Rows[0][0].ToString());
-            }
-            else
-            {
-                return 0;
-            }
-        }
-
+      
 
     }
 }
