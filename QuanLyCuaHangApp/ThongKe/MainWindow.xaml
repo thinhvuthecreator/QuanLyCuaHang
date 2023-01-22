@@ -98,7 +98,7 @@
                             <WrapPanel VerticalAlignment="Center" Margin="20,0,0,0">
                                 <materialDesign:PackIcon Width="70" Height="70" Kind="ChartAreaspline" />
                             </WrapPanel>
-                            <TextBlock Text="BIỂU ĐỒ DOANH THU TRONG 3 NGÀY GẦN ĐÂY" Height="45" Foreground="White" FontSize="20" FontFamily="Arial Rounded MT Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,0,80,0"/>
+                            <TextBlock Text="BIỂU ĐỒ DOANH THU TRONG THÁNG NÀY" Height="45" Foreground="White" FontSize="20" FontFamily="Arial Rounded MT Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,0,80,0"/>
                         </DockPanel>
                     </Grid>
                 </Border>

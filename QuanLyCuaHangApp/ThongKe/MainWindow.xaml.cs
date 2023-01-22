@@ -24,6 +24,7 @@ namespace ThongKe
     /// </summary>
     public partial class MainWindow : Window
     {
+        int soLuongNhap = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -105,10 +106,15 @@ namespace ThongKe
             DataTable dataTatCaSP = SQL_Connect.Instance.ExecuteSQL("SELECT MASP,TENSP,SOLUONGSP FROM SANPHAM");
             foreach(DataRow row in dataTatCaSP.Rows)
             {
-                listSP.Add(new sanPham { maSP = int.Parse(row[0].ToString()),tenSP = row[1].ToString(), soluongNhap = int.Parse(row[2].ToString())});
+                listSP.Add(new sanPham { maSP = int.Parse(row[0].ToString()), tenSP = row[1].ToString(), soluongNhap = int.Parse(row[2].ToString())});
+              
             }
 
+           
+               
+
             DataTable dataSP_in_CTHD = SQL_Connect.Instance.ExecuteSQL("SELECT MASP,SUM(SOLUONG) as BANDUOC FROM CTHD GROUP BY MASP");
+
             foreach (sanPham sp in listSP)
             {
                 foreach (DataRow row in dataSP_in_CTHD.Rows)
@@ -116,6 +122,7 @@ namespace ThongKe
                     if(sp.maSP == int.Parse(row[0].ToString()))
                     {
                         sp.soluongBan = int.Parse(row[1].ToString());
+                        sp.soluongNhap += sp.soluongBan;
                     }
                 }
             }
