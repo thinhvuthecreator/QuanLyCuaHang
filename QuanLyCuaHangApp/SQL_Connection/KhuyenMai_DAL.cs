@@ -74,7 +74,7 @@ namespace SQL_Connection
             bool isSuccess = true;
             try
             {
-                string deleteKMQuerry = "DELETE KHUYENMAI WHERE MAKM = " + maKM;
+                string deleteKMQuerry = "DELETE FROM KHUYENMAI WHERE MAKM = " + maKM;
                 SQL_Connect.Instance.ExecuteNONquerrySQL(deleteKMQuerry);
             }
             catch

@@ -19,6 +19,7 @@ using SQL_Connection;
 using Models;
 using System.Collections.ObjectModel;
 using Microsoft.Win32;
+using System.Threading;
 
 namespace quanlynhanvienWPF
 {
@@ -27,8 +28,8 @@ namespace quanlynhanvienWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+
         
-      
         public MainWindow()
         {
             InitializeComponent();
@@ -36,6 +37,7 @@ namespace quanlynhanvienWPF
             loadGioiTinhCombobox();
             loadImages();
             loadTimKiemCmb();
+            nhanVienListView.SelectedIndex = 0;
         }
 
         #region objects
@@ -45,7 +47,7 @@ namespace quanlynhanvienWPF
         #region methods
         void loadTimKiemCmb()
         {
-            List<string> danhMuc = new List<string> { "ID", "Tên","SDT","Lương","Giới tính"};
+            List<string> danhMuc = new List<string> {"Tên","SDT","Lương","Giới tính"};
             timKiemCmb.ItemsSource = danhMuc;
             timKiemCmb.SelectedIndex = 0;
         }
@@ -58,7 +60,6 @@ namespace quanlynhanvienWPF
                 listNV.Add(new NhanVien() { MaNV = int.Parse(nhanvienData[0].ToString()), TenNV = nhanvienData[1].ToString(),SdtNV = int.Parse(nhanvienData[2].ToString()),LuongNV = decimal.Parse(nhanvienData[3].ToString()),GioiTinh = nhanvienData[4].ToString(),NgSinhNV = DateTime.Parse(nhanvienData[5].ToString()),FileAnh = nhanvienData[6].ToString() });
             }
             nhanVienListView.ItemsSource = listNV;
-            nhanVienListView.SelectedIndex = 0;
         }
         void loadGioiTinhCombobox()
         {
@@ -96,15 +97,15 @@ namespace quanlynhanvienWPF
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
             ThemNhanVien.MainWindow themNVWindow = new ThemNhanVien.MainWindow();
-            themNVWindow.Show();
-            
+            themNVWindow.ShowDialog();
+            nhanVienListView.SelectedIndex = 0;
         }
 
     
 
         private void nhanVienListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-              NhanVien nv = (NhanVien)nhanVienListView.SelectedItem;
+            NhanVien nv = (NhanVien)nhanVienListView.SelectedItem;
 
             if (nv == null)
             {
@@ -122,7 +123,6 @@ namespace quanlynhanvienWPF
                 image.UriSource = new Uri(resourceImage1);
                 image.EndInit();
 
-
                 maNVTxtbox.Text = nv.MaNV.ToString();
                 tenNVTxtbox.Text = nv.TenNV;
                 sdtNVTxtbox.Text = nv.SdtNV.ToString();
@@ -137,16 +137,17 @@ namespace quanlynhanvienWPF
 
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
-           
+            
             MessageBoxResult decicion = MessageBox.Show("Bạn có muốn xóa nhân viên này không ?", "", MessageBoxButton.YesNo);
             if (decicion == MessageBoxResult.Yes)
             {
                 if (tenNVTxtbox.Text != "Quản Trị Viên")
                 {
-                   
+                  
                     if (NhanVien_DAL.xoaNhanVien(int.Parse(maNVTxtbox.Text)))
                     {
                         MessageBox.Show("Xóa thành công !");
+                        nhanVienListView.SelectedIndex = 0;
                     }
                     else
                     {
@@ -184,7 +185,8 @@ namespace quanlynhanvienWPF
 
                 }
             }
-            capNhatnvWindow.Show();
+            capNhatnvWindow.ShowDialog();
+            nhanVienListView.SelectedIndex = 0;
           
         }
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -203,6 +205,7 @@ namespace quanlynhanvienWPF
         }
         private void quanLyNVWindow_Activated(object sender, EventArgs e)
         {
+           
             if (!nhanVienListView.Items.IsEmpty)
             {
                 nhanVienListView.ItemsSource = null;
@@ -218,24 +221,21 @@ namespace quanlynhanvienWPF
             string Querry = "";
             if(timKiemCmb.SelectedIndex == 0)
             {
-                Querry = "SELECT * FROM NHANVIEN WHERE MANV LIKE '%" + timKiemTxtbox.Text + "%'";
+                Querry = "SELECT * FROM NHANVIEN WHERE TENNV LIKE N'%" + timKiemTxtbox.Text + "%'";
             }
             else if(timKiemCmb.SelectedIndex == 1)
             {
-                Querry = "SELECT * FROM NHANVIEN WHERE TENNV LIKE N'%" + timKiemTxtbox.Text + "%'";
+                Querry = "SELECT * FROM NHANVIEN WHERE SDTNV LIKE '%" + timKiemTxtbox.Text + "%'";
             }
             else if(timKiemCmb.SelectedIndex == 2)
             {
-                Querry = "SELECT * FROM NHANVIEN WHERE SDTNV LIKE '%" + timKiemTxtbox.Text + "%'";
+                Querry = "SELECT * FROM NHANVIEN WHERE LUONG LIKE '%" + timKiemTxtbox.Text + "%'";
             }
             else if(timKiemCmb.SelectedIndex == 3)
             {
-                Querry = "SELECT * FROM NHANVIEN WHERE LUONG LIKE '%" + timKiemTxtbox.Text + "%'";
-            }         
-            else if (timKiemCmb.SelectedIndex == 4)
-            {
                 Querry = "SELECT * FROM NHANVIEN WHERE GIOITINH LIKE N'%" + timKiemTxtbox.Text + "%'";
-            }
+            }         
+           
             List<NhanVien> listNV = new List<NhanVien>();
             DataTable dataNhanVien = SQL_Connect.Instance.ExecuteSQL(Querry);
             foreach (DataRow nhanvienData in dataNhanVien.Rows)

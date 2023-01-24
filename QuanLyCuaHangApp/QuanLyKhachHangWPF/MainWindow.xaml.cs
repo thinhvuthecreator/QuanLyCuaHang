@@ -58,7 +58,7 @@ namespace QuanLyKhachHangWPF
                 listKH.Add(new KhachHang() { MaKH = int.Parse(khachhangData[0].ToString()), TenKH = khachhangData[1].ToString(), SdtKH = int.Parse(khachhangData[4].ToString()), DoanhSoKH = decimal.Parse(khachhangData[5].ToString()), GioiTinhKH = khachhangData[3].ToString(), NgSinhKH = DateTime.Parse(khachhangData[2].ToString()), FileAnh = khachhangData[6].ToString() });
             }
             khachhangListView.ItemsSource = listKH;
-            khachhangListView.SelectedIndex = 0;
+            
         }
         string xuLyChuoi(string s)
         {
@@ -83,7 +83,7 @@ namespace QuanLyKhachHangWPF
         }
         void loadTimKiemCmb()
         {
-            List<string> danhMuc = new List<string> { "ID", "Tên", "SDT", "Doanh số", "Giới tính" };
+            List<string> danhMuc = new List<string> { "Tên", "SDT", "Doanh số", "Giới tính" };
             timKiemCmb.ItemsSource = danhMuc;
             timKiemCmb.SelectedIndex = 0;
         }
@@ -95,7 +95,8 @@ namespace QuanLyKhachHangWPF
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
             ThemKhachHang.MainWindow themKHWindow = new ThemKhachHang.MainWindow();
-            themKHWindow.Show();
+            themKHWindow.ShowDialog();
+            khachhangListView.SelectedIndex = 0;
         }
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -111,6 +112,7 @@ namespace QuanLyKhachHangWPF
                     if (KhachHang_DAL.xoaKhachHang(int.Parse(maKHTxtbox.Text)))
                     {
                         MessageBox.Show("Xóa thành công !");
+                        khachhangListView.SelectedIndex = 0;
                     }
                     else
                     {
@@ -146,7 +148,8 @@ namespace QuanLyKhachHangWPF
                         (window as UpdateKhachHang).loadimageImage.Source = khImage.Source;
                     }
                 }
-                updateKH.Show();
+                updateKH.ShowDialog();
+                khachhangListView.SelectedIndex = 0;
             }
             else
             {
@@ -197,24 +200,21 @@ namespace QuanLyKhachHangWPF
             string Querry = "";
             if (timKiemCmb.SelectedIndex == 0)
             {
-                Querry = "SELECT * FROM KHACHHANG WHERE MAKH LIKE '%" + timKiemTxtbox.Text + "%'";
+                Querry = "SELECT * FROM KHACHHANG WHERE TENKH LIKE N'%" + timKiemTxtbox.Text + "%'";
             }
             else if (timKiemCmb.SelectedIndex == 1)
             {
-                Querry = "SELECT * FROM KHACHHANG WHERE TENKH LIKE N'%" + timKiemTxtbox.Text + "%'";
+                Querry = "SELECT * FROM KHACHHANG WHERE SDTKH LIKE '%" + timKiemTxtbox.Text + "%'";
             }
             else if (timKiemCmb.SelectedIndex == 2)
             {
-                Querry = "SELECT * FROM KHACHHANG WHERE SDTKH LIKE '%" + timKiemTxtbox.Text + "%'";
+                Querry = "SELECT * FROM KHACHHANG WHERE DOANHSO LIKE '%" + timKiemTxtbox.Text + "%'";
             }
             else if (timKiemCmb.SelectedIndex == 3)
             {
-                Querry = "SELECT * FROM KHACHHANG WHERE DOANHSO LIKE '%" + timKiemTxtbox.Text + "%'";
-            }
-            else if (timKiemCmb.SelectedIndex == 4)
-            {
                 Querry = "SELECT * FROM KHACHHANG WHERE GIOITINH LIKE N'%" + timKiemTxtbox.Text + "%'";
             }
+           
             List<KhachHang> listKH = new List<KhachHang>();
             DataTable dataKhachHang = SQL_Connect.Instance.ExecuteSQL(Querry);
             foreach (DataRow khachhangData in dataKhachHang.Rows)

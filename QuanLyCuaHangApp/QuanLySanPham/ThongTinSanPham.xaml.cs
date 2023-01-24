@@ -128,9 +128,10 @@ namespace QuanLySanPham
             }
 
         }
+
         private void xoaBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult decision = MessageBox.Show("Xóa sản phẩm này ? ");
+            MessageBoxResult decision = MessageBox.Show("Xóa sản phẩm này ?","",MessageBoxButton.YesNo);
             if (decision == MessageBoxResult.Yes)
             {
                 if (SanPham_DAL.xoaSanPham(int.Parse(maSPTxtbox.Text)))
@@ -143,9 +144,9 @@ namespace QuanLySanPham
                 {
                     MessageBox.Show("Xóa thất bại !");
                 }
-            }
-
+            
         }
+    }
 
 
 

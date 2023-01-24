@@ -56,7 +56,7 @@ namespace SQL_Connection
             bool isSuccess = true;
             try
             {
-                string deleteTKQuerry = "DELETE ACCOUNT WHERE MATK = " + ma;
+                string deleteTKQuerry = "DELETE FROM ACCOUNT WHERE MATK = " + ma;
                 SQL_Connect.Instance.ExecuteNONquerrySQL(deleteTKQuerry);
             }
             catch

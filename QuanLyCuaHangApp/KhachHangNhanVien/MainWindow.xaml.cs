@@ -80,7 +80,7 @@ namespace KhachHangNhanVien
         }
         void loadTimKiemCmb()
         {
-            List<string> danhMuc = new List<string> { "ID", "Tên", "SDT", "Doanh số", "Giới tính" };
+            List<string> danhMuc = new List<string> { "Tên", "SDT", "Doanh số", "Giới tính" };
             timKiemCmb.ItemsSource = danhMuc;
             timKiemCmb.SelectedIndex = 0;
         }
@@ -134,24 +134,22 @@ namespace KhachHangNhanVien
             string Querry = "";
             if (timKiemCmb.SelectedIndex == 0)
             {
-                Querry = "SELECT * FROM KHACHHANG WHERE MAKH LIKE '%" + timKiemTxtbox.Text + "%'";
+                Querry = "SELECT * FROM KHACHHANG WHERE TENKH LIKE N'%" + timKiemTxtbox.Text + "%'";
             }
             else if (timKiemCmb.SelectedIndex == 1)
             {
-                Querry = "SELECT * FROM KHACHHANG WHERE TENKH LIKE N'%" + timKiemTxtbox.Text + "%'";
+               
+                Querry = "SELECT * FROM KHACHHANG WHERE SDTKH LIKE '%" + timKiemTxtbox.Text + "%'";
             }
             else if (timKiemCmb.SelectedIndex == 2)
             {
-                Querry = "SELECT * FROM KHACHHANG WHERE SDTKH LIKE '%" + timKiemTxtbox.Text + "%'";
+                Querry = "SELECT * FROM KHACHHANG WHERE DOANHSO LIKE '%" + timKiemTxtbox.Text + "%'";
             }
             else if (timKiemCmb.SelectedIndex == 3)
             {
-                Querry = "SELECT * FROM KHACHHANG WHERE DOANHSO LIKE '%" + timKiemTxtbox.Text + "%'";
-            }
-            else if (timKiemCmb.SelectedIndex == 4)
-            {
                 Querry = "SELECT * FROM KHACHHANG WHERE GIOITINH LIKE N'%" + timKiemTxtbox.Text + "%'";
             }
+          
             List<KhachHang> listKH = new List<KhachHang>();
             DataTable dataKhachHang = SQL_Connect.Instance.ExecuteSQL(Querry);
             foreach (DataRow khachhangData in dataKhachHang.Rows)

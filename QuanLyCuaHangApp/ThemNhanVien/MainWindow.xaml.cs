@@ -28,6 +28,7 @@ namespace ThemNhanVien
             InitializeComponent();
             loadImages();
             loadControls();
+            
         }
 
         #region methods
@@ -39,14 +40,15 @@ namespace ThemNhanVien
             string gioiTinh = chuoi[1];
             #endregion
 
-            int sdt, luong;
+            int sdt; 
+            decimal luong;
 
             nv.TenNV = tenNVTxtbox.Text;
             nv.GioiTinh = gioiTinh;
             nv.SdtNV = int.TryParse(sdtNVTxtbox.Text, out sdt) == true ? sdt : 0;
             nv.SdtNV = Math.Abs(nv.SdtNV);
             nv.NgSinhNV = DateTime.Parse(ngsinhNVDatePicker.Text);
-            nv.LuongNV = int.TryParse(luongTxtbox.Text, out luong) == true ? luong : 0;
+            nv.LuongNV = decimal.TryParse(luongTxtbox.Text, out luong) == true ? luong : 0;
             nv.LuongNV = Math.Abs(nv.LuongNV);
             nv.FileAnh = loadimageImage.Source.ToString();
         }

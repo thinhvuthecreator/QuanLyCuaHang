@@ -73,7 +73,7 @@ namespace SQL_Connection
             bool isSuccess = true;
             try
             {
-                string deleteNVQuerry = "DELETE NHANVIEN WHERE MANV = " + maNV;
+                string deleteNVQuerry = "DELETE FROM NHANVIEN WHERE MANV = " + maNV;
                 SQL_Connect.Instance.ExecuteNONquerrySQL(deleteNVQuerry);
             }
             catch

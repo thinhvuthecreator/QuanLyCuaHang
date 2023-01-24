@@ -38,7 +38,7 @@ namespace QuanLySanPham
         #region methods
         void loadTimKiemCmb()
         {
-            List<string> danhMuc = new List<string> { "ID", "Tên", "Giá", "Loại","Số lượng"};
+            List<string> danhMuc = new List<string> { "Tên", "Giá", "Loại","Số lượng"};
             timKiemCmb.ItemsSource = danhMuc;
             timKiemCmb.SelectedIndex = 0;
         }
@@ -58,8 +58,19 @@ namespace QuanLySanPham
         }
         public void loadSanPhamView()
         {
-            DataTable dataSP = SanPham_DAL.loadDuLieuSP();
-            foreach(DataRow row in dataSP.Rows)
+            string sqlCommand = "";
+            if (hetHangCheckBox.IsChecked == false)
+            {
+                sqlCommand = "EXEC SanPhamSelect";
+              
+            }
+            else
+            {
+                sqlCommand = "SELECT * FROM SANPHAM WHERE SOLUONGSP = 0";
+            }
+
+            DataTable dataSP = SQL_Connect.Instance.ExecuteSQL(sqlCommand);
+            foreach (DataRow row in dataSP.Rows)
             {
                 decimal giaBan;
                 StackPanel SPstckPanel = new StackPanel();
@@ -102,8 +113,8 @@ namespace QuanLySanPham
 
                 SPstckPanel.Children.Add(spObject);
                 SPstckPanel.Children.Add(SPtxtblock);
-               
-            
+
+
                 spViewWrapPanel.Children.Add(SPstckPanel);
 
             }
@@ -177,38 +188,41 @@ namespace QuanLySanPham
             {
                 if (timKiemCmb.SelectedIndex == 0)
                 {
-                    Querry = "SELECT * FROM SANPHAM WHERE MASP LIKE '%" + timKiemTxtbox.Text + "%'";
+                    Querry = "SELECT * FROM SANPHAM WHERE TENSP LIKE N'%" + timKiemTxtbox.Text + "%'";
                 }
                 else if (timKiemCmb.SelectedIndex == 1)
                 {
-                    Querry = "SELECT * FROM SANPHAM WHERE TENSP LIKE N'%" + timKiemTxtbox.Text + "%'";
+                    Querry = "SELECT * FROM SANPHAM WHERE GIA LIKE '%" + timKiemTxtbox.Text + "%'";
                 }
                 else if (timKiemCmb.SelectedIndex == 2)
                 {
-                    Querry = "SELECT * FROM SANPHAM WHERE GIA LIKE '%" + timKiemTxtbox.Text + "%'";
+                    Querry = "SELECT * FROM SANPHAM,LOAISP WHERE SANPHAM.MALOAISP = LOAISP.MALOAISP AND LOAISP.TENLOAISP LIKE N'%" + timKiemTxtbox.Text + "%'";
                 }
                 else if (timKiemCmb.SelectedIndex == 3)
                 {
-                    Querry = "SELECT * FROM SANPHAM,LOAISP WHERE SANPHAM.MALOAISP = LOAISP.MALOAISP AND LOAISP.TENLOAISP LIKE N'%" + timKiemTxtbox.Text + "%'";
+                    Querry = "SELECT * FROM SANPHAM WHERE SOLUONGSP LIKE '%" + timKiemTxtbox.Text + "%'";
                 }
+
+                  
+
             }
             else
             {
                 if (timKiemCmb.SelectedIndex == 0)
                 {
-                    Querry = "SELECT * FROM SANPHAM WHERE MASP LIKE '%" + timKiemTxtbox.Text + "%' AND SOLUONGSP = 0";
+                    Querry = "SELECT * FROM SANPHAM WHERE TENSP LIKE N'%" + timKiemTxtbox.Text + "%' AND SOLUONGSP = 0";
                 }
                 else if (timKiemCmb.SelectedIndex == 1)
                 {
-                    Querry = "SELECT * FROM SANPHAM WHERE TENSP LIKE N'%" + timKiemTxtbox.Text + "%' AND SOLUONGSP = 0";
+                    Querry = "SELECT * FROM SANPHAM WHERE GIA LIKE '%" + timKiemTxtbox.Text + "%' AND SOLUONGSP = 0";
                 }
                 else if (timKiemCmb.SelectedIndex == 2)
                 {
-                    Querry = "SELECT * FROM SANPHAM WHERE GIA LIKE '%" + timKiemTxtbox.Text + "%' AND SOLUONGSP = 0";
+                    Querry = "SELECT * FROM SANPHAM,LOAISP WHERE SANPHAM.MALOAISP = LOAISP.MALOAISP AND LOAISP.TENLOAISP LIKE N'%" + timKiemTxtbox.Text + "%'  AND SOLUONGSP = 0";
                 }
                 else if (timKiemCmb.SelectedIndex == 3)
                 {
-                    Querry = "SELECT * FROM SANPHAM,LOAISP WHERE SANPHAM.MALOAISP = LOAISP.MALOAISP AND LOAISP.TENLOAISP LIKE N'%" + timKiemTxtbox.Text + "%'  AND SOLUONGSP = 0";
+                    Querry = "SELECT * FROM SANPHAM WHERE SOLUONGSP = 0";
                 }
             }
             spViewWrapPanel.Children.Clear();
