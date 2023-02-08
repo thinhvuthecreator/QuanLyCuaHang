@@ -27,8 +27,9 @@ namespace QuanLyHoaDon
         public MainWindow()
         {
             InitializeComponent();
-         // loadDuLieuHDListView();
-         // loadDuLieuCTHDListView();
+            hoadonListView.SelectedIndex = 0;
+            // loadDuLieuHDListView();
+            // loadDuLieuCTHDListView();
         }
 
         #region objects
@@ -71,7 +72,6 @@ namespace QuanLyHoaDon
                 listHD.Add(new HoaDonView() { soHD = int.Parse(HDdata[0].ToString()), tenNV = HDdata[1].ToString(), tenKH = HDdata[2].ToString(), ngHD = DateTime.Parse(HDdata[3].ToString()), triGia = decimal.Parse(HDdata[4].ToString()), giaTriKM = HDdata[5].ToString() != "" ? int.Parse(HDdata[5].ToString()) : 0, triGiaSauKM = decimal.Parse(HDdata[6].ToString())});
             }
             hoadonListView.ItemsSource = listHD;
-            hoadonListView.SelectedIndex = 0;
             CTHDListView.SelectedIndex = 0;
         }
         void loadDuLieuCTHDListView(int soHD)
