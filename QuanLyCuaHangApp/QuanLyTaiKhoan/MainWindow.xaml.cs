@@ -72,7 +72,7 @@ namespace QuanLyTaiKhoan
             MessageBoxResult choice = MessageBox.Show("Xóa tài khoản của "+tk.tenNV+" ?", "", MessageBoxButton.YesNo);
             if(choice == MessageBoxResult.Yes)
             {
-                if (maTKTextBlock.Text == "14")
+                if (maTKTextBlock.Text == "19")
                 {
                     MessageBox.Show("Không được xóa tài khoản này !");
                 }
@@ -97,9 +97,19 @@ namespace QuanLyTaiKhoan
         private void taikhoanListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             TaiKhoan tk = (TaiKhoan)taikhoanListView.SelectedItem; // lỗi 
+           
+
             if (tk != null)
             {
                 maTKTextBlock.Text = tk.maTK.ToString();
+                if(maTKTextBlock.Text == "20")
+                {
+                    delTkButton.IsEnabled = false;
+                }
+                else
+                {
+                    delTkButton.IsEnabled = true;
+                }
             }
             else
             {

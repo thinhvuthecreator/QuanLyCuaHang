@@ -1,0 +1,8 @@
+Tài khoản nhân viên : 
+- user : nv01
+- password : 123
+Tài khoản quản trị viên :
+- user : admin
+- password : admin 
+*note : đăng nhập bằng tài khoản admin vào phần tài khoản sẽ có
+thông tin tất cả các tài khoản có thể đăng nhập được
