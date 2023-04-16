@@ -30,6 +30,8 @@ namespace QuanLyHoaDon
             hoadonListView.SelectedIndex = 0;
             // loadDuLieuHDListView();
             // loadDuLieuCTHDListView();
+            
+            
         }
 
         #region objects
@@ -62,6 +64,7 @@ namespace QuanLyHoaDon
         #endregion
 
         #region methods
+
         void loadDuLieuHDListView()
         {
             hoadonListView.ItemsSource = null;
@@ -73,7 +76,7 @@ namespace QuanLyHoaDon
             }
             hoadonListView.ItemsSource = listHD;
             CTHDListView.SelectedIndex = 0;
-        }
+        }   
         void loadDuLieuCTHDListView(int soHD)
         {
             CTHDListView.ItemsSource = null;
